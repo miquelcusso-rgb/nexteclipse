@@ -22,6 +22,12 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Next Eclipse","url":"https://www.next-eclipse.com","description":"Countdown to the next solar and lunar eclipse. Upcoming eclipses 2026–2028.","potentialAction":{"@type":"ReadAction","target":"https://www.next-eclipse.com/upcoming"}}
 </script>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#030304">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Eclipse">
+<link rel="apple-touch-icon" href="/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -111,6 +117,43 @@ h2{font-family:'Cinzel',serif;font-weight:400;font-size:.8rem;letter-spacing:.25
 
 footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.18);text-align:center;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.1);}
+
+/* ── sticky mobile bar ── */
+.mob-bar{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(3,3,4,.92);
+  border-top:1px solid rgba(220,160,50,.12);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:.55rem 1.2rem .65rem;
+  z-index:200;
+  align-items:center;gap:.9rem;
+}
+@media(max-width:640px){
+  .mob-bar{display:flex;}
+  body{padding-bottom:5.5rem;}
+}
+.mob-disc{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:#030304;
+  box-shadow:0 0 0 1px rgba(255,150,20,.2),0 0 8px 3px rgba(255,110,10,.28),0 0 18px 7px rgba(255,60,0,.15);
+  animation:discFloat 8s ease-in-out infinite;
+  cursor:pointer;
+}
+.mob-disc.lunar{
+  background:radial-gradient(circle at 55% 55%,rgba(150,30,10,.85),#030304 80%);
+  box-shadow:0 0 8px 3px rgba(160,25,8,.28),0 0 18px 7px rgba(100,10,2,.15);
+}
+.mob-disc.annular{
+  background:#030304;
+  box-shadow:0 0 0 4px rgba(255,195,35,.55),0 0 12px 5px rgba(255,140,20,.3);
+}
+.mob-info{flex:1;min-width:0;}
+.mob-name{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,248,220,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mob-cd{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.12em;color:rgba(220,160,50,.7);margin-top:.1rem;}
+.mob-install{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.4);background:none;border:1px solid rgba(220,160,50,.15);padding:.3rem .65rem;border-radius:2px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0;}
+.mob-install:hover{color:rgba(220,160,50,.75);border-color:rgba(220,160,50,.35);}
+.mob-install.hidden{display:none;}
 </style>
 </head>
 <body>
@@ -170,6 +213,17 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
   </footer>
 
 </div>
+
+<!-- sticky mobile bar -->
+<div class="mob-bar" id="mob-bar">
+  <div class="mob-disc" id="mob-disc" onclick="window.scrollTo({top:0,behavior:'smooth'})"></div>
+  <div class="mob-info">
+    <div class="mob-name" id="mob-name">Total Solar Eclipse</div>
+    <div class="mob-cd" id="mob-cd">-- d · -- h · -- m</div>
+  </div>
+  <button class="mob-install hidden" id="mob-install" onclick="installApp()">+ Add</button>
+</div>
+
 <script>
 const ECLIPSES = [
   { utc:'2026-08-12T17:47:00Z', type:'solar_total',
@@ -258,7 +312,7 @@ function renderUpcoming(){
 
 function tick(){
   const diff=target-Date.now();
-  if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>{document.getElementById(id).textContent='0';});return;}
+  if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>{document.getElementById(id).textContent='0';});tickMob(0);return;}
   const d=Math.floor(diff/86400000);
   const h=Math.floor((diff%86400000)/3600000);
   const m=Math.floor((diff%3600000)/60000);
@@ -267,17 +321,60 @@ function tick(){
   document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
   document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
   document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  tickMob(diff);
 }
+
+function tickMob(diff){
+  const mc=document.getElementById('mob-cd');
+  if(!mc)return;
+  if(diff<=0){mc.textContent='—';return;}
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor((diff%86400000)/3600000);
+  const m=Math.floor((diff%3600000)/60000);
+  mc.textContent=d+'d · '+String(h).padStart(2,'0')+'h · '+String(m).padStart(2,'0')+'m';
+}
+
+function updateMobBar(){
+  const disc=document.getElementById('mob-disc');
+  const name=document.getElementById('mob-name');
+  if(!disc||!name)return;
+  disc.className='mob-disc '+(DISC_CLASS[nextEclipse.type]||'');
+  name.textContent=nextEclipse[lang].name;
+}
+
+// PWA install prompt
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  const btn=document.getElementById('mob-install');
+  if(btn)btn.classList.remove('hidden');
+});
+function installApp(){
+  if(!deferredPrompt)return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(()=>{
+    deferredPrompt=null;
+    const btn=document.getElementById('mob-install');
+    if(btn)btn.classList.add('hidden');
+  });
+}
+window.addEventListener('appinstalled',()=>{
+  const btn=document.getElementById('mob-install');
+  if(btn)btn.classList.add('hidden');
+});
 
 function toggleLang(){
   lang=lang==='en'?'es':'en';
   localStorage.setItem('ne-lang',lang);
   render();
+  updateMobBar();
 }
 
 nextEclipse=findNext();
 target=new Date(nextEclipse.utc).getTime();
 render();
+updateMobBar();
 tick();
 setInterval(tick,1000);
 </script>
