@@ -15,6 +15,7 @@
 <meta property="og:image" content="https://www.next-eclipse.com/og-eclipse.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Total solar eclipse corona against a black sky">
 <link rel="manifest" href="/manifest.json">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Support Next Eclipse · Keep the eclipse tracked">
@@ -55,12 +56,15 @@ ul li::before{content:'·';position:absolute;left:0;color:rgba(220,160,50,.28);}
 .sister-link:hover{color:rgba(196,196,255,.6);border-color:rgba(196,196,255,.25);}
 footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.32);text-align:center;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.1);}
+.share-btn{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);background:none;border:none;cursor:pointer;padding:0;transition:color .2s;}
+.share-btn:hover{color:rgba(220,160,50,.75);}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="topbar">
     <a class="back" id="back-link" href="/">← Next Eclipse</a>
+    <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Share</button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
   </div>
 
@@ -100,8 +104,8 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 
 <script>
 const STRINGS = {
-  en:{eyebrow:'Community',h1:'Support Next Eclipse',subtitle:'Free, beautiful and tracker-free',pIntro:"If Next Eclipse brings you something — a moment of wonder, a date saved, or just the satisfaction of knowing exactly when the sky will go dark — consider keeping it alive with a small contribution.",hPara:'What your contribution supports',li1:'Domain and hosting',li2:'Design improvements and new eclipse data',li3:'Sister site: Next Full Moon (nextfullmoon.co)',li4:'No invasive ads — ever',note:'Your contribution goes directly to keeping the project alive. Thank you.',sisterLabel:'Also from the same project',back:'← Next Eclipse',langBtn:'ES',fPrivacy:'Privacy'},
-  es:{eyebrow:'Comunidad',h1:'Apoya Next Eclipse',subtitle:'Libre, bonita y sin trackers',pIntro:'Si Next Eclipse te aporta algo — un momento de asombro, una fecha guardada, o simplemente la satisfacción de saber exactamente cuándo el cielo se oscurecerá — considera mantenerlo vivo con una pequeña aportación.',hPara:'¿Para qué sirve tu aportación?',li1:'Dominio y hosting',li2:'Mejoras de diseño y nuevos datos de eclipses',li3:'Sitio hermano: Next Full Moon (nextfullmoon.co)',li4:'Sin publicidad invasiva — para siempre',note:'Tu aportación se destina directamente a mantener el proyecto activo. Gracias.',sisterLabel:'También del mismo proyecto',back:'← Next Eclipse',langBtn:'EN',fPrivacy:'Privacidad'}
+  en:{eyebrow:'Community',h1:'Support Next Eclipse',subtitle:'Free, beautiful and tracker-free',share:'Share',pIntro:"If Next Eclipse brings you something — a moment of wonder, a date saved, or just the satisfaction of knowing exactly when the sky will go dark — consider keeping it alive with a small contribution.",hPara:'What your contribution supports',li1:'Domain and hosting',li2:'Design improvements and new eclipse data',li3:'Sister site: Next Full Moon (nextfullmoon.co)',li4:'No invasive ads — ever',note:'Your contribution goes directly to keeping the project alive. Thank you.',sisterLabel:'Also from the same project',back:'← Next Eclipse',langBtn:'ES',fPrivacy:'Privacy'},
+  es:{eyebrow:'Comunidad',h1:'Apoya Next Eclipse',subtitle:'Libre, bonita y sin trackers',share:'Compartir',pIntro:'Si Next Eclipse te aporta algo — un momento de asombro, una fecha guardada, o simplemente la satisfacción de saber exactamente cuándo el cielo se oscurecerá — considera mantenerlo vivo con una pequeña aportación.',hPara:'¿Para qué sirve tu aportación?',li1:'Dominio y hosting',li2:'Mejoras de diseño y nuevos datos de eclipses',li3:'Sitio hermano: Next Full Moon (nextfullmoon.co)',li4:'Sin publicidad invasiva — para siempre',note:'Tu aportación se destina directamente a mantener el proyecto activo. Gracias.',sisterLabel:'También del mismo proyecto',back:'← Next Eclipse',langBtn:'EN',fPrivacy:'Privacidad'}
 };
 
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
@@ -122,9 +126,20 @@ function render(){
   document.getElementById('sister-label').textContent=S.sisterLabel;
   document.getElementById('back-link').textContent=S.back;
   document.getElementById('lang-btn').textContent=S.langBtn;
+  document.getElementById('share-btn').textContent='↗ '+S.share;
   document.getElementById('f-privacy').textContent=S.fPrivacy;
 }
 
+function shareApp(){
+  const d=document.querySelector('meta[name="description"]');
+  const data={title:document.title,text:d?d.getAttribute('content'):'',url:window.location.href};
+  if(navigator.share){navigator.share(data).catch(()=>{});}
+  else{
+    (navigator.clipboard?navigator.clipboard.writeText(data.url):Promise.reject())
+    .then(()=>{const b=document.getElementById('share-btn');const o=b.textContent;b.textContent='✓';setTimeout(()=>b.textContent=o,2e3);})
+    .catch(()=>{window.open('https://x.com/intent/tweet?url='+encodeURIComponent(data.url),'_blank');});
+  }
+}
 function toggleLang(){
   lang=lang==='en'?'es':'en';
   localStorage.setItem('ne-lang',lang);

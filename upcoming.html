@@ -15,6 +15,7 @@
 <meta property="og:image" content="https://www.next-eclipse.com/og-eclipse.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Total solar eclipse corona against a black sky">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Upcoming Solar and Lunar Eclipses 2026–2028","description":"Full calendar of upcoming solar and lunar eclipses 2026 to 2028. Dates, visibility, type and duration for each eclipse.","url":"https://www.next-eclipse.com/upcoming","publisher":{"@type":"Organization","name":"Next Eclipse","url":"https://www.next-eclipse.com"},"inLanguage":"en"}
 </script>
@@ -64,6 +65,8 @@ hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.32);text-align:center;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.15);}
 .hidden{display:none;}
+.share-btn{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);background:none;border:none;cursor:pointer;padding:0;transition:color .2s;}
+.share-btn:hover{color:rgba(220,160,50,.75);}
 </style>
 </head>
 <body>
@@ -74,6 +77,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
     <div class="nav-links">
       <a class="nav-link" href="/history" id="nav-history">History</a>
       <a class="nav-link" href="/support" id="nav-support">Support</a>
+      <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Share</button>
       <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
     </div>
   </div>
@@ -154,8 +158,8 @@ const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',luna
 const YEARS = ['2026','2027','2028'];
 
 const STRINGS = {
-  en:{eyebrow:'Astronomy',h1:'Upcoming Eclipses',subtitle:'Solar and lunar eclipses 2026–2028',fAll:'All',fSolar:'Solar',fLunar:'Lunar',nextBadge:'Next',pastNote:'passed',back:'← Next Eclipse',navHistory:'History',navSupport:'Support',langBtn:'ES',fPrivacy:'Privacy',fHistory:'History',source:'Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'},
-  es:{eyebrow:'Astronomía',h1:'Próximos Eclipses',subtitle:'Eclipses solares y lunares 2026–2028',fAll:'Todos',fSolar:'Solares',fLunar:'Lunares',nextBadge:'Próximo',pastNote:'pasado',back:'← Next Eclipse',navHistory:'Historia',navSupport:'Apoya',langBtn:'EN',fPrivacy:'Privacidad',fHistory:'Historia',source:'Fuente: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'}
+  en:{eyebrow:'Astronomy',h1:'Upcoming Eclipses',subtitle:'Solar and lunar eclipses 2026–2028',fAll:'All',fSolar:'Solar',fLunar:'Lunar',nextBadge:'Next',pastNote:'passed',back:'← Next Eclipse',navHistory:'History',navSupport:'Support',share:'Share',langBtn:'ES',fPrivacy:'Privacy',fHistory:'History',source:'Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'},
+  es:{eyebrow:'Astronomía',h1:'Próximos Eclipses',subtitle:'Eclipses solares y lunares 2026–2028',fAll:'Todos',fSolar:'Solares',fLunar:'Lunares',nextBadge:'Próximo',pastNote:'pasado',back:'← Next Eclipse',navHistory:'Historia',navSupport:'Apoya',share:'Compartir',langBtn:'EN',fPrivacy:'Privacidad',fHistory:'Historia',source:'Fuente: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'}
 };
 
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
@@ -176,6 +180,7 @@ function render(){
   document.getElementById('nav-history').textContent=S.navHistory;
   document.getElementById('nav-support').textContent=S.navSupport;
   document.getElementById('lang-btn').textContent=S.langBtn;
+  document.getElementById('share-btn').textContent='↗ '+S.share;
   document.getElementById('f-privacy').textContent=S.fPrivacy;
   document.getElementById('f-history').textContent=S.fHistory;
   document.getElementById('source-note').innerHTML=S.source;
@@ -225,6 +230,16 @@ function setFilter(f){
   renderGrid();
 }
 
+function shareApp(){
+  const d=document.querySelector('meta[name="description"]');
+  const data={title:document.title,text:d?d.getAttribute('content'):'',url:window.location.href};
+  if(navigator.share){navigator.share(data).catch(()=>{});}
+  else{
+    (navigator.clipboard?navigator.clipboard.writeText(data.url):Promise.reject())
+    .then(()=>{const b=document.getElementById('share-btn');const o=b.textContent;b.textContent='✓';setTimeout(()=>b.textContent=o,2e3);})
+    .catch(()=>{window.open('https://x.com/intent/tweet?url='+encodeURIComponent(data.url),'_blank');});
+  }
+}
 function toggleLang(){
   lang=lang==='en'?'es':'en';
   localStorage.setItem('ne-lang',lang);
