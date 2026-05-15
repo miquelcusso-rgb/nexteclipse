@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.next-eclipse.com/sitemap.xml

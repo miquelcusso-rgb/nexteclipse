@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historical Eclipses — Famous Eclipses in History · Next Eclipse</title>
+<meta name="description" content="The most famous solar and lunar eclipses in history: from Thales in 585 BC to the Great American Eclipse of 2017 and the North American eclipse of 2024. Science, myth and discovery.">
+<link rel="canonical" href="https://www.next-eclipse.com/history">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Next Eclipse">
+<meta property="og:title" content="Historical Eclipses — Famous Eclipses in History · Next Eclipse">
+<meta property="og:description" content="From Thales to the Great American Eclipse — the most significant eclipses in history and what they revealed about science, myth and the cosmos.">
+<meta property="og:url" content="https://www.next-eclipse.com/history">
+<meta property="og:image" content="https://www.next-eclipse.com/og-eclipse.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Famous Eclipses in History","description":"The most famous solar and lunar eclipses in history: from Thales in 585 BC to the Great American Eclipse of 2017 and North American eclipse of 2024.","url":"https://www.next-eclipse.com/history","publisher":{"@type":"Organization","name":"Next Eclipse","url":"https://www.next-eclipse.com"},"inLanguage":"en"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.72);min-height:100vh;padding:2.5rem 1.5rem 5rem;line-height:1.75;}
+.wrap{max-width:700px;margin:0 auto;}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem;}
+.back{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.3);text-decoration:none;transition:color .2s;}
+.back:hover{color:rgba(220,160,50,.6);}
+.nav-links{display:flex;gap:1.2rem;align-items:center;}
+.nav-link{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.3);text-decoration:none;transition:color .2s;}
+.nav-link:hover{color:rgba(220,160,50,.6);}
+.lang-btn{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.35);background:none;border:1px solid rgba(220,160,50,.15);padding:.28rem .65rem;border-radius:2px;cursor:pointer;transition:all .2s;}
+.lang-btn:hover{color:rgba(220,160,50,.7);border-color:rgba(220,160,50,.3);}
+.eyebrow{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.32);margin-bottom:.5rem;}
+h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem);color:rgba(255,248,228,.88);letter-spacing:.04em;margin-bottom:.4rem;}
+.subtitle{font-size:1.05rem;font-style:italic;color:rgba(220,160,50,.4);margin-bottom:3rem;}
+hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
+
+/* timeline */
+.timeline{position:relative;padding-left:2.5rem;}
+.timeline::before{content:'';position:absolute;left:.7rem;top:.5rem;bottom:.5rem;width:1px;background:rgba(220,160,50,.1);}
+.entry{position:relative;margin-bottom:2.5rem;}
+.entry::before{content:'';position:absolute;left:-2.1rem;top:.55rem;width:.5rem;height:.5rem;border-radius:50%;background:rgba(220,160,50,.3);border:1px solid rgba(220,160,50,.5);}
+.entry-year{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.38);margin-bottom:.3rem;}
+.entry-title{font-family:'Cinzel',serif;font-weight:400;font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,220,.58);margin-bottom:.5rem;}
+.entry-icon{margin-right:.4rem;}
+.entry-body{font-size:1.02rem;color:rgba(220,210,180,.5);margin-bottom:.3rem;}
+.entry-note{font-size:.9rem;font-style:italic;color:rgba(220,180,100,.3);}
+
+footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.18);text-align:center;}
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.1);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="/" id="back-link">← Next Eclipse</a>
+    <div class="nav-links">
+      <a class="nav-link" href="/upcoming" id="nav-upcoming">Upcoming</a>
+      <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+
+  <p class="eyebrow" id="eyebrow">History</p>
+  <h1 id="h1">Famous Eclipses in History</h1>
+  <p class="subtitle" id="subtitle">From battles ended to relativity confirmed</p>
+
+  <div class="timeline" id="timeline"></div>
+
+  <hr>
+  <footer>
+    <p>© 2026 <a href="/">Next Eclipse</a> · <a href="/upcoming" id="f-upcoming">Upcoming</a> · <a href="/privacy" id="f-privacy">Privacy</a></p>
+  </footer>
+</div>
+
+<script>
+const EVENTS = [
+  {
+    en:{year:'585 BC · May 28',title:'The Eclipse That Ended a War',icon:'⚔️',body:"During the Battle of Halys between the Medes and the Lydians, a total solar eclipse suddenly darkened the sky. The soldiers took it as an omen and both sides immediately laid down their arms. The philosopher Thales of Miletus had reportedly predicted the eclipse — one of the earliest recorded scientific forecasts in history.",note:'Herodotus, Histories, Book I'},
+    es:{year:'585 a.C. · 28 de mayo',title:'El Eclipse Que Detuvo una Guerra',icon:'⚔️',body:'Durante la Batalla de Halys entre medos y lidios, un eclipse solar total oscureció el cielo de repente. Los soldados lo tomaron como un presagio y ambos bandos depusieron las armas de inmediato. Según la tradición, el filósofo Tales de Mileto había predicho el eclipse — uno de los primeros pronósticos científicos registrados en la historia.',note:'Heródoto, Historias, Libro I'}
+  },
+  {
+    en:{year:'1504 · February 29',title:'Columbus and the Lunar Eclipse',icon:'🧭',body:"Stranded in Jamaica for a year, Christopher Columbus used his astronomical almanac to predict a total lunar eclipse. He warned the Taíno people that his god would punish them by making the moon disappear. When the Blood Moon rose, the terrified Taínos agreed to supply food to Columbus's crew. The eclipse lasted over an hour.",note:'Columbus used the eclipse calculated by Abraham Zacuto\'s almanac'},
+    es:{year:'1504 · 29 de febrero',title:'Colón y el Eclipse Lunar',icon:'🧭',body:'Varado en Jamaica durante un año, Cristóbal Colón usó su almanaque astronómico para predecir un eclipse lunar total. Avisó al pueblo Taíno que su dios los castigaría haciendo desaparecer la luna. Cuando la Luna de Sangre ascendió, los Taínos aterrados acordaron suministrar comida a la tripulación. El eclipse duró más de una hora.',note:'Colón usó el eclipse calculado en el almanaque de Abraham Zacut'}
+  },
+  {
+    en:{year:'1919 · May 29',title:'Einstein Confirmed',icon:'🔭',body:"Arthur Eddington led two expeditions — to Príncipe island and Sobral, Brazil — to photograph stars near the Sun during a total solar eclipse. The images showed that starlight was bent by the Sun's gravity, exactly as Einstein's theory of general relativity predicted. The announcement made Einstein world-famous overnight.",note:'Philosophical Transactions of the Royal Society, 1920'},
+    es:{year:'1919 · 29 de mayo',title:'Einstein Confirmado',icon:'🔭',body:'Arthur Eddington dirigió dos expediciones — a la isla de Príncipe y a Sobral, Brasil — para fotografiar estrellas cerca del Sol durante un eclipse solar total. Las imágenes mostraron que la luz de las estrellas se curvaba por la gravedad del Sol, exactamente como predecía la teoría de la relatividad general de Einstein. El anuncio hizo a Einstein famoso de la noche a la mañana.',note:'Philosophical Transactions of the Royal Society, 1920'}
+  },
+  {
+    en:{year:'1973 · June 30',title:'The Concorde Eclipse',icon:'✈️',body:"A specially modified Concorde SST prototype chased the shadow of a total solar eclipse across the Sahara at twice the speed of sound, keeping the crew inside totality for 74 continuous minutes. Normal ground observers had a maximum of 7 minutes. Scientists aboard conducted experiments impossible to replicate from a stationary position.",note:'One of the longest totalities ever experienced by humans'},
+    es:{year:'1973 · 30 de junio',title:'El Eclipse del Concorde',icon:'✈️',body:'Un prototipo del Concorde SST especialmente modificado persiguió la sombra de un eclipse solar total sobre el Sahara a dos veces la velocidad del sonido, manteniendo a la tripulación en totalidad durante 74 minutos continuos. Los observadores en tierra tenían un máximo de 7 minutos. Los científicos a bordo realizaron experimentos imposibles de replicar desde una posición estacionaria.',note:'Una de las totalidades más largas jamás experimentadas por humanos'}
+  },
+  {
+    en:{year:'1999 · August 11',title:'The European Eclipse',icon:'🌍',body:"The last total solar eclipse of the 20th century swept across Europe — Cornwall, Normandy, Stuttgart, Salzburg, Bucharest — drawing millions of spectators. It was the most-watched eclipse in history up to that point. The path of totality was only 112 km wide, but the partial phases were visible across the entire continent.",note:'Peak totality: 2 min 23 sec near Reims, France'},
+    es:{year:'1999 · 11 de agosto',title:'El Eclipse Europeo',icon:'🌍',body:'El último eclipse solar total del siglo XX atravesó Europa — Cornualles, Normandía, Stuttgart, Salzburgo, Bucarest — atrayendo a millones de espectadores. Fue el eclipse más observado de la historia hasta ese momento. El camino de totalidad tenía solo 112 km de ancho, pero las fases parciales fueron visibles en todo el continente.',note:'Totalidad máxima: 2 min 23 seg cerca de Reims, Francia'}
+  },
+  {
+    en:{year:'2017 · August 21',title:'The Great American Eclipse',icon:'🇺🇸',body:"The first total solar eclipse to cross the continental United States coast-to-coast since 1918. The path of totality stretched from Oregon to South Carolina. An estimated 215 million Americans watched some portion of the eclipse — the most-viewed natural event in US history. NASA livestreamed it to a global audience of over 40 million.",note:'Path: Oregon → Idaho → Wyoming → Missouri → Tennessee → South Carolina'},
+    es:{year:'2017 · 21 de agosto',title:'El Gran Eclipse Americano',icon:'🇺🇸',body:'El primer eclipse solar total en cruzar los Estados Unidos continentales de costa a costa desde 1918. El camino de totalidad se extendió de Oregón a Carolina del Sur. Se estima que 215 millones de estadounidenses observaron alguna parte del eclipse — el evento natural más observado en la historia de EE.UU. La NASA lo retransmitió en directo a una audiencia global de más de 40 millones.',note:'Camino: Oregón → Idaho → Wyoming → Missouri → Tennessee → Carolina del Sur'}
+  },
+  {
+    en:{year:'2024 · April 8',title:'North American Total Solar Eclipse',icon:'🌎',body:"A total solar eclipse swept from Mexico across the US Midwest and into Atlantic Canada. The path crossed 13 US states including Texas, Indiana, Ohio and Vermont. Totality lasted up to 4 min 28 sec — the longest path through North America in decades. Cities like Dallas, Indianapolis and Cleveland experienced full totality.",note:'Maximum totality: 4 min 28 sec near Torreon, Mexico'},
+    es:{year:'2024 · 8 de abril',title:'Eclipse Solar Total de América del Norte',icon:'🌎',body:'Un eclipse solar total barrió desde México por el centro de EE.UU. hasta el Atlántico canadiense. El camino cruzó 13 estados americanos incluyendo Texas, Indiana, Ohio y Vermont. La totalidad duró hasta 4 min 28 seg — el camino más largo por América del Norte en décadas. Ciudades como Dallas, Indianápolis y Cleveland experimentaron la totalidad completa.',note:'Totalidad máxima: 4 min 28 seg cerca de Torreón, México'}
+  },
+];
+
+const STRINGS = {
+  en:{eyebrow:'History',h1:'Famous Eclipses in History',subtitle:'From battles ended to relativity confirmed',back:'← Next Eclipse',navUpcoming:'Upcoming',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming'},
+  es:{eyebrow:'Historia',h1:'Eclipses Famosos en la Historia',subtitle:'De guerras detenidas a la relatividad confirmada',back:'← Next Eclipse',navUpcoming:'Próximos',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos'}
+};
+
+let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
+
+function render(){
+  const S=STRINGS[lang];
+  const L=lang;
+  document.getElementById('eyebrow').textContent=S.eyebrow;
+  document.getElementById('h1').textContent=S.h1;
+  document.getElementById('subtitle').textContent=S.subtitle;
+  document.getElementById('back-link').textContent=S.back;
+  document.getElementById('nav-upcoming').textContent=S.navUpcoming;
+  document.getElementById('lang-btn').textContent=S.langBtn;
+  document.getElementById('f-privacy').textContent=S.fPrivacy;
+  document.getElementById('f-upcoming').textContent=S.fUpcoming;
+  document.getElementById('timeline').innerHTML=EVENTS.map(ev=>`
+    <div class="entry">
+      <div class="entry-year">${ev[L].year}</div>
+      <div class="entry-title"><span class="entry-icon">${ev[L].icon}</span>${ev[L].title}</div>
+      <div class="entry-body">${ev[L].body}</div>
+      <div class="entry-note">${ev[L].note}</div>
+    </div>`).join('');
+}
+
+function toggleLang(){
+  lang=lang==='en'?'es':'en';
+  localStorage.setItem('ne-lang',lang);
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
