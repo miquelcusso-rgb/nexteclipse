@@ -66,6 +66,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
     <a class="back" href="/" id="back-link">← Next Eclipse</a>
     <div class="nav-links">
       <a class="nav-link" href="/history" id="nav-history">History</a>
+      <a class="nav-link" href="/support" id="nav-support">Support</a>
       <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
     </div>
   </div>
@@ -142,8 +143,8 @@ const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',luna
 const YEARS = ['2026','2027','2028'];
 
 const STRINGS = {
-  en:{eyebrow:'Astronomy',h1:'Upcoming Eclipses',subtitle:'Solar and lunar eclipses 2026–2028',fAll:'All',fSolar:'Solar',fLunar:'Lunar',nextBadge:'Next',pastNote:'passed',back:'← Next Eclipse',navHistory:'History',langBtn:'ES',fPrivacy:'Privacy',fHistory:'History',source:'Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'},
-  es:{eyebrow:'Astronomía',h1:'Próximos Eclipses',subtitle:'Eclipses solares y lunares 2026–2028',fAll:'Todos',fSolar:'Solares',fLunar:'Lunares',nextBadge:'Próximo',pastNote:'pasado',back:'← Next Eclipse',navHistory:'Historia',langBtn:'EN',fPrivacy:'Privacidad',fHistory:'Historia',source:'Fuente: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'}
+  en:{eyebrow:'Astronomy',h1:'Upcoming Eclipses',subtitle:'Solar and lunar eclipses 2026–2028',fAll:'All',fSolar:'Solar',fLunar:'Lunar',nextBadge:'Next',pastNote:'passed',back:'← Next Eclipse',navHistory:'History',navSupport:'Support',langBtn:'ES',fPrivacy:'Privacy',fHistory:'History',source:'Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'},
+  es:{eyebrow:'Astronomía',h1:'Próximos Eclipses',subtitle:'Eclipses solares y lunares 2026–2028',fAll:'Todos',fSolar:'Solares',fLunar:'Lunares',nextBadge:'Próximo',pastNote:'pasado',back:'← Next Eclipse',navHistory:'Historia',navSupport:'Apoya',langBtn:'EN',fPrivacy:'Privacidad',fHistory:'Historia',source:'Fuente: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>'}
 };
 
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
@@ -161,6 +162,7 @@ function render(){
   document.getElementById('f-lunar').textContent=S.fLunar;
   document.getElementById('back-link').textContent=S.back;
   document.getElementById('nav-history').textContent=S.navHistory;
+  document.getElementById('nav-support').textContent=S.navSupport;
   document.getElementById('lang-btn').textContent=S.langBtn;
   document.getElementById('f-privacy').textContent=S.fPrivacy;
   document.getElementById('f-history').textContent=S.fHistory;

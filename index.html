@@ -121,6 +121,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
     <div class="nav-links">
       <a class="nav-link" href="/upcoming" id="nav-upcoming">Upcoming</a>
       <a class="nav-link" href="/history" id="nav-history">History</a>
+      <a class="nav-link" href="/support" id="nav-support">Support</a>
       <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
     </div>
   </div>
@@ -165,7 +166,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
   </a>
 
   <footer>
-    <p id="footer-copy">© 2026 <a href="/">Next Eclipse</a> · <a href="/upcoming" id="f-upcoming">Upcoming</a> · <a href="/history" id="f-history">History</a> · <a href="/privacy" id="f-privacy">Privacy</a> · Data: <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA GSFC</a></p>
+    <p id="footer-copy">© 2026 <a href="/">Next Eclipse</a> · <a href="/upcoming" id="f-upcoming">Upcoming</a> · <a href="/history" id="f-history">History</a> · <a href="/support" id="f-support">Support</a> · <a href="/privacy" id="f-privacy">Privacy</a> · Data: <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA GSFC</a></p>
   </footer>
 
 </div>
@@ -201,8 +202,8 @@ const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',luna
 const DISC_CLASS = {solar_total:'',solar_annular:'annular',lunar_total:'lunar',lunar_partial:'lunar',lunar_penumbral:'lunar'};
 
 const STRINGS = {
-  en:{eyebrow:'Next Eclipse',hUpcoming:'Upcoming Eclipses',seeAll:'See full calendar →',clLabel:'Also track',clName:'Next Full Moon →',days:'days',hours:'hours',min:'min',sec:'sec',navUpcoming:'Upcoming',navHistory:'History',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming',fHistory:'History'},
-  es:{eyebrow:'Próximo Eclipse',hUpcoming:'Próximos Eclipses',seeAll:'Ver calendario completo →',clLabel:'También sigue',clName:'Próxima Luna Llena →',days:'días',hours:'horas',min:'min',sec:'seg',navUpcoming:'Próximos',navHistory:'Historia',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos',fHistory:'Historia'}
+  en:{eyebrow:'Next Eclipse',hUpcoming:'Upcoming Eclipses',seeAll:'See full calendar →',clLabel:'Also track',clName:'Next Full Moon →',days:'days',hours:'hours',min:'min',sec:'sec',navUpcoming:'Upcoming',navHistory:'History',navSupport:'Support',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming',fHistory:'History',fSupport:'Support'},
+  es:{eyebrow:'Próximo Eclipse',hUpcoming:'Próximos Eclipses',seeAll:'Ver calendario completo →',clLabel:'También sigue',clName:'Próxima Luna Llena →',days:'días',hours:'horas',min:'min',sec:'seg',navUpcoming:'Próximos',navHistory:'Historia',navSupport:'Apoya',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos',fHistory:'Historia',fSupport:'Apoya'}
 };
 
 let lang = localStorage.getItem('ne-lang') || (navigator.language.startsWith('es')?'es':'en');
@@ -235,9 +236,11 @@ function render(){
   document.getElementById('lang-btn').textContent=S.langBtn;
   document.getElementById('nav-upcoming').textContent=S.navUpcoming;
   document.getElementById('nav-history').textContent=S.navHistory;
+  document.getElementById('nav-support').textContent=S.navSupport;
   document.getElementById('f-privacy').textContent=S.fPrivacy;
   document.getElementById('f-upcoming').textContent=S.fUpcoming;
   document.getElementById('f-history').textContent=S.fHistory;
+  document.getElementById('f-support').textContent=S.fSupport;
   renderUpcoming();
 }
 

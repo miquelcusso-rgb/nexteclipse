@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support Next Eclipse · Keep the eclipse tracked</title>
+<meta name="description" content="Next Eclipse is free, beautiful and tracker-free. If it brings you value, consider keeping it alive with a small contribution.">
+<link rel="canonical" href="https://www.next-eclipse.com/support">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Next Eclipse">
+<meta property="og:title" content="Support Next Eclipse · Keep the eclipse tracked">
+<meta property="og:description" content="Next Eclipse is free, beautiful and tracker-free. If it brings you value, consider keeping it alive.">
+<meta property="og:url" content="https://www.next-eclipse.com/support">
+<meta property="og:image" content="https://www.next-eclipse.com/og-eclipse.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.72);min-height:100vh;padding:3rem 1.5rem 5rem;line-height:1.75;}
+.wrap{max-width:560px;margin:0 auto;}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:3rem;}
+.back{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.3);text-decoration:none;transition:color .2s;}
+.back:hover{color:rgba(220,160,50,.6);}
+.lang-btn{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.35);background:none;border:1px solid rgba(220,160,50,.15);padding:.28rem .65rem;border-radius:2px;cursor:pointer;transition:all .2s;}
+.lang-btn:hover{color:rgba(220,160,50,.7);border-color:rgba(220,160,50,.3);}
+.eyebrow{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.32);margin-bottom:.5rem;}
+h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem);color:rgba(255,248,228,.88);letter-spacing:.04em;margin-bottom:.4rem;}
+.subtitle{font-size:1.05rem;font-style:italic;color:rgba(220,160,50,.4);margin-bottom:2.5rem;}
+hr{border:none;border-top:1px solid rgba(220,160,50,.08);margin:2rem 0;}
+h2{font-family:'Cinzel',serif;font-weight:400;font-size:.82rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.42);margin:1.8rem 0 .8rem;}
+p{font-size:1.02rem;margin-bottom:.85rem;color:rgba(220,210,180,.52);}
+ul{margin:.4rem 0 1rem 0;padding-left:0;list-style:none;}
+ul li{font-size:.98rem;color:rgba(220,195,150,.45);padding:.16rem 0 .16rem 1rem;position:relative;}
+ul li::before{content:'·';position:absolute;left:0;color:rgba(220,160,50,.28);}
+.btn-wrap{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.5rem 0;}
+.btn{font-family:'Cinzel',serif;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;padding:.75rem 2rem;border-radius:2px;cursor:pointer;text-decoration:none;text-align:center;transition:background .2s;display:inline-block;flex:1;min-width:140px;}
+.btn-stripe{background:rgba(220,160,50,.07);border:1px solid rgba(220,160,50,.22);color:rgba(220,160,50,.75);}
+.btn-stripe:hover{background:rgba(220,160,50,.14);}
+.btn-kofi{background:rgba(196,196,255,.06);border:1px solid rgba(196,196,255,.18);color:rgba(196,196,255,.65);}
+.btn-kofi:hover{background:rgba(196,196,255,.12);}
+.note{font-size:.88rem;font-style:italic;color:rgba(220,160,50,.25);margin-top:.35rem;}
+.sister-box{margin-top:2rem;padding:1rem 1.3rem;border:1px solid rgba(196,196,255,.07);border-radius:3px;}
+.sister-box p{font-size:.9rem;color:rgba(196,196,220,.38);margin-bottom:.6rem;}
+.sister-links{display:flex;gap:.6rem;flex-wrap:wrap;}
+.sister-link{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(196,196,255,.3);text-decoration:none;border:1px solid rgba(196,196,255,.1);padding:.3rem .8rem;border-radius:2px;transition:all .2s;}
+.sister-link:hover{color:rgba(196,196,255,.6);border-color:rgba(196,196,255,.25);}
+footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.18);text-align:center;}
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.1);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" id="back-link" href="/">← Next Eclipse</a>
+    <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
+  </div>
+
+  <p class="eyebrow" id="eyebrow">Community</p>
+  <h1 id="h1">Support Next Eclipse</h1>
+  <p class="subtitle" id="subtitle">Free, beautiful and tracker-free</p>
+
+  <p id="p-intro">If Next Eclipse brings you something — a moment of wonder, a date saved, or just the satisfaction of knowing exactly when the sky will go dark — consider keeping it alive with a small contribution.</p>
+
+  <h2 id="h-para">What your contribution supports</h2>
+  <ul id="list-uses">
+    <li id="li1">Domain and hosting</li>
+    <li id="li2">Design improvements and new eclipse data</li>
+    <li id="li3">Sister site: Next Full Moon (nextfullmoon.co)</li>
+    <li id="li4">No invasive ads — ever</li>
+  </ul>
+
+  <div class="btn-wrap">
+    <a class="btn btn-stripe" href="https://buy.stripe.com/4gM3cx75U5zx5Sna769R600" target="_blank" rel="noopener" id="btn-stripe">💳 Contribute · €2</a>
+    <a class="btn btn-kofi" href="https://ko-fi.com/miquelcusso" target="_blank" rel="noopener" id="btn-kofi">☕ Ko-fi</a>
+  </div>
+  <p class="note" id="note">Your contribution goes directly to keeping the project alive. Thank you.</p>
+
+  <hr>
+  <div class="sister-box">
+    <p id="sister-label">Also from the same project</p>
+    <div class="sister-links">
+      <a class="sister-link" href="https://www.nextfullmoon.co" target="_blank" rel="noopener" id="sl-nfm">🌕 Next Full Moon</a>
+      <a class="sister-link" href="https://www.lunallena.co" target="_blank" rel="noopener" id="sl-ll">🌙 Lunallena</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <a href="/">Next Eclipse</a> · <a href="/privacy" id="f-privacy">Privacy</a></p>
+  </footer>
+</div>
+
+<script>
+const STRINGS = {
+  en:{eyebrow:'Community',h1:'Support Next Eclipse',subtitle:'Free, beautiful and tracker-free',pIntro:"If Next Eclipse brings you something — a moment of wonder, a date saved, or just the satisfaction of knowing exactly when the sky will go dark — consider keeping it alive with a small contribution.",hPara:'What your contribution supports',li1:'Domain and hosting',li2:'Design improvements and new eclipse data',li3:'Sister site: Next Full Moon (nextfullmoon.co)',li4:'No invasive ads — ever',note:'Your contribution goes directly to keeping the project alive. Thank you.',sisterLabel:'Also from the same project',back:'← Next Eclipse',langBtn:'ES',fPrivacy:'Privacy'},
+  es:{eyebrow:'Comunidad',h1:'Apoya Next Eclipse',subtitle:'Libre, bonita y sin trackers',pIntro:'Si Next Eclipse te aporta algo — un momento de asombro, una fecha guardada, o simplemente la satisfacción de saber exactamente cuándo el cielo se oscurecerá — considera mantenerlo vivo con una pequeña aportación.',hPara:'¿Para qué sirve tu aportación?',li1:'Dominio y hosting',li2:'Mejoras de diseño y nuevos datos de eclipses',li3:'Sitio hermano: Next Full Moon (nextfullmoon.co)',li4:'Sin publicidad invasiva — para siempre',note:'Tu aportación se destina directamente a mantener el proyecto activo. Gracias.',sisterLabel:'También del mismo proyecto',back:'← Next Eclipse',langBtn:'EN',fPrivacy:'Privacidad'}
+};
+
+let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
+
+function render(){
+  const S=STRINGS[lang];
+  document.getElementById('eyebrow').textContent=S.eyebrow;
+  document.getElementById('h1').textContent=S.h1;
+  document.getElementById('subtitle').textContent=S.subtitle;
+  document.getElementById('p-intro').textContent=S.pIntro;
+  document.getElementById('h-para').textContent=S.hPara;
+  document.getElementById('li1').textContent=S.li1;
+  document.getElementById('li2').textContent=S.li2;
+  document.getElementById('li3').textContent=S.li3;
+  document.getElementById('li4').textContent=S.li4;
+  document.getElementById('note').textContent=S.note;
+  document.getElementById('sister-label').textContent=S.sisterLabel;
+  document.getElementById('back-link').textContent=S.back;
+  document.getElementById('lang-btn').textContent=S.langBtn;
+  document.getElementById('f-privacy').textContent=S.fPrivacy;
+}
+
+function toggleLang(){
+  lang=lang==='en'?'es':'en';
+  localStorage.setItem('ne-lang',lang);
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
