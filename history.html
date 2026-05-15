@@ -18,6 +18,12 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Famous Eclipses in History","description":"The most famous solar and lunar eclipses in history: from Thales in 585 BC to the Great American Eclipse of 2017 and North American eclipse of 2024.","url":"https://www.next-eclipse.com/history","publisher":{"@type":"Organization","name":"Next Eclipse","url":"https://www.next-eclipse.com"},"inLanguage":"en"}
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6498215334315959" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Famous Eclipses in History · Next Eclipse">
+<meta name="twitter:description" content="From Thales to the Great American Eclipse — the most significant eclipses in history and what they revealed.">
+<meta name="twitter:image" content="https://www.next-eclipse.com/og-eclipse.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -74,7 +80,6 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 
   <div class="ad-slot">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6498215334315959" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
   <hr>
@@ -123,6 +128,7 @@ const STRINGS = {
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
 
 function render(){
+  document.documentElement.lang=lang;
   const S=STRINGS[lang];
   const L=lang;
   document.getElementById('eyebrow').textContent=S.eyebrow;
@@ -150,6 +156,35 @@ function toggleLang(){
 }
 
 render();
+</script>
+
+<!-- ─ cookie consent ─ -->
+<div id="ck" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(3,3,4,.97);border-top:1px solid rgba(220,160,50,.12);padding:.75rem 1.5rem;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between;font-family:'Cinzel',serif;">
+  <span id="ck-t" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:.95rem;color:rgba(220,205,170,.58);flex:1;min-width:200px;line-height:1.5;"></span>
+  <div style="display:flex;gap:.5rem;flex-shrink:0;">
+    <button onclick="neConsent(1)" id="ck-y" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:rgba(220,160,50,.1);border:1px solid rgba(220,160,50,.28);color:rgba(220,160,50,.82);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
+    <button onclick="neConsent(0)" id="ck-n" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:none;border:1px solid rgba(220,160,50,.1);color:rgba(220,160,50,.38);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
+  </div>
+</div>
+<script>
+(function(){
+  const K='ne-consent';
+  const L=localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
+  const T={
+    en:{t:'This site uses Google AdSense for contextual advertising. <a href="/privacy" style="color:rgba(220,160,50,.6);text-decoration:underline;">Privacy policy</a>.',y:'Accept',n:'Decline'},
+    es:{t:'Este sitio usa Google AdSense para publicidad contextual. <a href="/privacy" style="color:rgba(220,160,50,.6);text-decoration:underline;">Política de privacidad</a>.',y:'Aceptar',n:'Rechazar'}
+  };
+  function push1(){(adsbygoogle=window.adsbygoogle||[]).push({});}
+  function hide(){document.getElementById('ck').style.display='none';}
+  window.neConsent=function(v){localStorage.setItem(K,String(v));hide();if(Number(v))push1();};
+  const tt=T[L]||T.en;
+  document.getElementById('ck-t').innerHTML=tt.t;
+  document.getElementById('ck-y').textContent=tt.y;
+  document.getElementById('ck-n').textContent=tt.n;
+  const v=localStorage.getItem(K);
+  if(v==='1')push1();
+  else if(!v)document.getElementById('ck').style.display='flex';
+})();
 </script>
 </body>
 </html>

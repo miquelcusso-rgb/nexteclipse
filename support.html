@@ -15,6 +15,11 @@
 <meta property="og:image" content="https://www.next-eclipse.com/og-eclipse.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<link rel="manifest" href="/manifest.json">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Support Next Eclipse · Keep the eclipse tracked">
+<meta name="twitter:description" content="Next Eclipse is free, beautiful and tracker-free. Support the project with a small contribution.">
+<meta name="twitter:image" content="https://www.next-eclipse.com/og-eclipse.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -102,6 +107,7 @@ const STRINGS = {
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
 
 function render(){
+  document.documentElement.lang=lang;
   const S=STRINGS[lang];
   document.getElementById('eyebrow').textContent=S.eyebrow;
   document.getElementById('h1').textContent=S.h1;
