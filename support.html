@@ -61,11 +61,11 @@ ul li::before{content:'·';position:absolute;left:0;color:rgba(220,160,50,.28);}
 .btn-stripe:hover{background:rgba(220,160,50,.14);}
 .btn-stripe-5{background:rgba(220,160,50,.04);border-color:rgba(220,160,50,.32);color:rgba(220,160,50,.9);}
 .note{font-size:.88rem;font-style:italic;color:rgba(220,160,50,.25);margin-top:.35rem;}
-.sister-box{margin-top:2rem;padding:1rem 1.3rem;border:1px solid rgba(196,196,255,.07);border-radius:3px;}
-.sister-box p{font-size:.9rem;color:rgba(196,196,220,.38);margin-bottom:.6rem;}
-.sister-links{display:flex;gap:.6rem;flex-wrap:wrap;}
-.sister-link{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(196,196,255,.3);text-decoration:none;border:1px solid rgba(196,196,255,.1);padding:.3rem .8rem;border-radius:2px;transition:all .2s;}
-.sister-link:hover{color:rgba(196,196,255,.6);border-color:rgba(196,196,255,.25);}
+.sister-box{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:2rem;padding:1.2rem 1.5rem;border:1px solid rgba(196,196,255,.1);border-radius:3px;background:rgba(196,196,255,.025);text-decoration:none;transition:border-color .2s,background .2s;}
+.sister-box:hover{border-color:rgba(196,196,255,.22);background:rgba(196,196,255,.05);}
+.sister-box-text{}
+.sister-eyebrow{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(196,196,255,.3);margin-bottom:.4rem;}
+.sister-name{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.06em;color:rgba(220,216,255,.72);}
 footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.32);text-align:center;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.1);}
 .share-btn{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.62);background:none;border:1px solid rgba(220,160,50,.22);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
@@ -104,23 +104,23 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
   <p class="note" id="note">Your contribution goes directly to keeping the project alive. Thank you.</p>
 
   <hr>
-  <div class="sister-box">
-    <p id="sister-label">Also from the same project</p>
-    <div class="sister-links">
-      <a class="sister-link" href="https://www.nextfullmoon.co" target="_blank" rel="noopener" id="sl-nfm">🌕 Next Full Moon</a>
-      <a class="sister-link" href="https://www.lunallena.co" target="_blank" rel="noopener" id="sl-ll">🌙 Lunallena</a>
+  <a class="sister-box" href="https://www.nextfullmoon.co" target="_blank" rel="noopener">
+    <div class="sister-box-text">
+      <p class="sister-eyebrow" id="sister-label">Also follow</p>
+      <p class="sister-name" id="sl-nfm">Next Full Moon →</p>
     </div>
-  </div>
+    <span style="font-size:1.8rem;opacity:.45;line-height:1;">🌕</span>
+  </a>
 
   <footer>
-    <p>© 2026 Furiosa Studio · <a href="/">Next Eclipse</a> · <a href="/privacy" id="f-privacy">Privacy</a></p>
+    <p>© 2026 Furiosa Studio · <a href="/">Next Eclipse</a> · <a href="/privacy.html" id="f-privacy">Privacy</a></p>
   </footer>
 </div>
 
 <script>
 const STRINGS = {
-  en:{eyebrow:'Community',h1:'Support Next Eclipse',subtitle:'Free, beautiful and tracker-free',share:'Share',pIntro:"If Next Eclipse brings you something — a moment of wonder, a date saved, or just the satisfaction of knowing exactly when the sky will go dark — consider keeping it alive with a small contribution.",hPara:'What your contribution supports',li1:'Domain and hosting',li2:'Design improvements and new eclipse data',li3:'Sister site: Next Full Moon (nextfullmoon.co)',li4:'No invasive ads — ever',note:'Your contribution goes directly to keeping the project alive. Thank you.',sisterLabel:'Also from the same project',back:'← Next Eclipse',langBtn:'ES',fPrivacy:'Privacy'},
-  es:{eyebrow:'Comunidad',h1:'Apoya Next Eclipse',subtitle:'Libre, bonita y sin trackers',share:'Compartir',pIntro:'Si Next Eclipse te aporta algo — un momento de asombro, una fecha guardada, o simplemente la satisfacción de saber exactamente cuándo el cielo se oscurecerá — considera mantenerlo vivo con una pequeña aportación.',hPara:'¿Para qué sirve tu aportación?',li1:'Dominio y hosting',li2:'Mejoras de diseño y nuevos datos de eclipses',li3:'Sitio hermano: Next Full Moon (nextfullmoon.co)',li4:'Sin publicidad invasiva — para siempre',note:'Tu aportación se destina directamente a mantener el proyecto activo. Gracias.',sisterLabel:'También del mismo proyecto',back:'← Next Eclipse',langBtn:'EN',fPrivacy:'Privacidad'}
+  en:{eyebrow:'Community',h1:'Support Next Eclipse',subtitle:'Free, beautiful and tracker-free',share:'Share',pIntro:"If Next Eclipse brings you something — a moment of wonder, a date saved, or just the satisfaction of knowing exactly when the sky will go dark — consider keeping it alive with a small contribution.",hPara:'What your contribution supports',li1:'Domain and hosting',li2:'Design improvements and new eclipse data',li3:'Sister site: Next Full Moon (nextfullmoon.co)',li4:'No invasive ads — ever',note:'Your contribution goes directly to keeping the project alive. Thank you.',sisterLabel:'Also follow',sisterName:'Next Full Moon →',back:'← Next Eclipse',langBtn:'ES',fPrivacy:'Privacy'},
+  es:{eyebrow:'Comunidad',h1:'Apoya Next Eclipse',subtitle:'Libre, bonita y sin trackers',share:'Compartir',pIntro:'Si Next Eclipse te aporta algo — un momento de asombro, una fecha guardada, o simplemente la satisfacción de saber exactamente cuándo el cielo se oscurecerá — considera mantenerlo vivo con una pequeña aportación.',hPara:'¿Para qué sirve tu aportación?',li1:'Dominio y hosting',li2:'Mejoras de diseño y nuevos datos de eclipses',li3:'Sitio hermano: Next Full Moon (nextfullmoon.co)',li4:'Sin publicidad invasiva — para siempre',note:'Tu aportación se destina directamente a mantener el proyecto activo. Gracias.',sisterLabel:'También sigue',sisterName:'Próxima Luna Llena →',back:'← Next Eclipse',langBtn:'EN',fPrivacy:'Privacidad'}
 };
 
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
@@ -139,6 +139,7 @@ function render(){
   document.getElementById('li4').textContent=S.li4;
   document.getElementById('note').textContent=S.note;
   document.getElementById('sister-label').textContent=S.sisterLabel;
+  document.getElementById('sl-nfm').textContent=S.sisterName;
   document.getElementById('back-link').textContent=S.back;
   document.getElementById('lang-btn').textContent=S.langBtn;
   document.getElementById('share-btn').textContent='↗ '+S.share;
