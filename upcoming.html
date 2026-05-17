@@ -75,6 +75,8 @@ h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem)
 .feat-where{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.38);margin:1.2rem 0 .5rem;}
 .feat-where-body{font-size:1rem;color:rgba(220,200,160,.55);}
 .feat-tip{margin-top:1rem;padding:.7rem 1rem;background:rgba(220,160,50,.04);border-left:2px solid rgba(220,160,50,.25);font-size:.95rem;font-style:italic;color:rgba(220,190,120,.5);}
+.feat-cta{display:inline-block;margin-top:1.2rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.85);border:1px solid rgba(220,160,50,.28);padding:.55rem 1.4rem;border-radius:2px;text-decoration:none;transition:background .2s,border-color .2s;}
+.feat-cta:hover{background:rgba(220,160,50,.08);border-color:rgba(220,160,50,.5);}
 
 /* ── calendar ── */
 .filter-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:2.5rem 0 1.5rem;}
@@ -147,6 +149,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
     <p class="feat-where" id="feat1-where-h">Best viewing locations — Spain</p>
     <p class="feat-where-body" id="feat1-where-b">The city of <strong>Salamanca</strong> sits almost perfectly inside the centre of the path — its Renaissance cathedral, the Plaza Mayor, and the Roman bridge over the Tormes River will all be plunged into a brief, eerie twilight. <strong>Zamora</strong>, 65 km north, is equally well placed. Outside the cities, the open tableland of the meseta offers unobstructed 360° horizons: ideal for photographing the corona. Observers in <strong>Valladolid</strong> will be just inside the northern edge of the path and will see the full totality if they move a few kilometres south. <strong>Cáceres</strong> and <strong>Mérida</strong> (Extremadura) are just south of the central path but will still experience over 1 minute 30 seconds of totality.</p>
     <p class="feat-tip" id="feat1-tip">☀️ August in inland Spain means reliably clear skies. Book accommodation in Salamanca and Zamora well in advance — eclipse tourism will make hotels scarce months before.</p>
+    <a class="feat-cta" href="/eclipse-solar-espana-2026.html" id="feat1-cta">Eclipse Solar España 2026 — Guía completa →</a>
   </article>
 
   <!-- ── FEATURED: Aug 2, 2027 ── -->
@@ -284,6 +287,7 @@ const STRINGS = {
     feat1WhereH:'Best viewing locations — Spain',
     feat1WhereB:'The city of <strong>Salamanca</strong> sits almost perfectly inside the centre of the path — its Renaissance cathedral, the Plaza Mayor, and the Roman bridge over the Tormes River will all be plunged into a brief, eerie twilight. <strong>Zamora</strong>, 65 km north, is equally well placed. Outside the cities, the open tableland of the meseta offers unobstructed 360° horizons: ideal for photographing the corona. Observers in <strong>Valladolid</strong> will be just inside the northern edge of the path. <strong>Cáceres</strong> and <strong>Mérida</strong> (Extremadura) will experience over 1 minute 30 seconds of totality.',
     feat1Tip:'☀️ August in inland Spain means reliably clear skies. Book accommodation in Salamanca and Zamora well in advance — eclipse tourism will make hotels scarce months before.',
+    feat1Cta:'Solar Eclipse Spain 2026 — Full guide →',
     feat2Eyebrow:"The century's longest total solar eclipse · Egypt · Morocco · India",
     feat2Title:'☀️ Total Solar Eclipse — August 2, 2027',
     feat2Date:'Monday, August 2, 2027 · Peak at 10:07 UTC',
@@ -313,6 +317,7 @@ const STRINGS = {
     feat1WhereH:'Mejores lugares para observar en España',
     feat1WhereB:'La ciudad de <strong>Salamanca</strong> está casi perfectamente centrada en el camino de totalidad — su catedral renacentista, la Plaza Mayor y el puente romano sobre el Tormes quedarán sumidos en un brevísimo y extraño crepúsculo. <strong>Zamora</strong>, 65 km al norte, está igualmente bien situada. Fuera de las ciudades, la meseta abierta ofrece horizontes de 360° sin obstáculos, ideal para fotografiar la corona. Los observadores en <strong>Valladolid</strong> estarán justo dentro del borde norte del camino. <strong>Cáceres</strong> y <strong>Mérida</strong> (Extremadura) experimentarán más de 1 minuto 30 segundos de totalidad.',
     feat1Tip:'☀️ Agosto en el interior de España significa cielos despejados con alta probabilidad. Reserva alojamiento en Salamanca y Zamora con mucha antelación — el turismo astronómico agotará los hoteles meses antes.',
+    feat1Cta:'Eclipse Solar España 2026 — Guía completa →',
     feat2Eyebrow:'El eclipse solar total más largo del siglo · Egipto · Marruecos · India',
     feat2Title:'☀️ Eclipse Solar Total — 2 de agosto de 2027',
     feat2Date:'Lunes, 2 de agosto de 2027 · Máximo a las 10:07 UTC',
@@ -363,6 +368,7 @@ function render(){
   document.getElementById('feat1-where-h').textContent=S.feat1WhereH;
   document.getElementById('feat1-where-b').innerHTML=S.feat1WhereB;
   document.getElementById('feat1-tip').textContent=S.feat1Tip;
+  document.getElementById('feat1-cta').textContent=S.feat1Cta;
   document.getElementById('feat2-eyebrow').textContent=S.feat2Eyebrow;
   document.getElementById('feat2-title').textContent=S.feat2Title;
   document.getElementById('feat2-date').textContent=S.feat2Date;
