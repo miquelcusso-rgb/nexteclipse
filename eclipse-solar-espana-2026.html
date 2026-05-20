@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title id="pg-title">Eclipse Solar España 2026: dónde y cuándo verlo · Next Eclipse</title>
-<meta name="description" id="pg-desc" content="Eclipse solar total en España el 12 de agosto de 2026. El camino de totalidad cruza Galicia, Zamora y Salamanca con hasta 2 min 18 seg de oscuridad. Hora, ciudades y cómo prepararse.">
+<meta name="description" id="pg-desc" content="Eclipse solar total sobre España el 12 de agosto de 2026. Horarios, ciudades en la franja de totalidad, cómo verlo y dónde colocarse para no perdértelo.">
 <link rel="canonical" id="pg-canonical" href="https://www.next-eclipse.com/eclipse-solar-espana-2026">
 <link rel="alternate" hreflang="en" href="https://www.next-eclipse.com/eclipse-solar-espana-2026">
 <link rel="alternate" hreflang="es" href="https://www.next-eclipse.com/eclipse-solar-espana-2026">
@@ -119,6 +119,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://googleads.g.doubleclick.net">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -549,10 +551,6 @@ function render(){
   set('cl-cities-title',S.clCitiesTitle||(lang==='en'?'Cities and Exact Times':'Ciudades y Horarios Exactos'));
   set('cl-htw-label',S.clHtwLabel||(lang==='en'?'Safety':'Seguridad'));
   set('cl-htw-title',S.clHtwTitle||(lang==='en'?'How to Watch Safely':'Cómo Observar sin Riesgos'));
-  if(lang==='en'){
-    document.getElementById('pg-canonical').href='https://www.next-eclipse.com/solar-eclipse-spain-2026';
-    document.getElementById('og-url').content='https://www.next-eclipse.com/solar-eclipse-spain-2026';
-  }
 }
 function toggleLang(){lang=lang==='es'?'en':'es';localStorage.setItem('ne-lang',lang);render();}
 render();
