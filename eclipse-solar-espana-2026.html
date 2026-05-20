@@ -209,6 +209,13 @@ strong{color:rgba(255,240,200,.75);font-weight:400;}
 .sister-eyebrow{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(196,196,255,.3);margin-bottom:.4rem;}
 .sister-name{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.06em;color:rgba(220,216,255,.65);}
 
+/* crosslinks */
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:2rem 0;}
+.crosslink{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;border:1px solid rgba(220,160,50,.1);border-radius:3px;text-decoration:none;transition:border-color .2s;}
+.crosslink:hover{border-color:rgba(220,160,50,.28);}
+.cl-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
+.cl-title{font-size:1rem;font-style:italic;color:rgba(255,240,200,.6);margin-top:.2rem;}
+.cl-arrow{color:rgba(220,160,50,.4);font-size:1.1rem;}
 footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.32);text-align:center;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.15);}
 
@@ -379,6 +386,18 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 
   <p id="data-source" style="font-size:.85rem;color:rgba(220,160,50,.28);margin-top:1.5rem;">Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(220,160,50,.15);text-decoration:none;">NASA Goddard Space Flight Center</a>. Los tiempos por ciudad son aproximados — consulta las efemérides exactas para tu ubicación.</p>
 
+  <h2 id="h-more-guides" style="font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.42);margin:2.5rem 0 .9rem;">Guías del Eclipse</h2>
+  <div class="crosslinks">
+    <a class="crosslink" href="/cities.html">
+      <div><span class="cl-label" id="cl-cities-label">Franja de Totalidad</span><div class="cl-title" id="cl-cities-title">Ciudades y Horarios Exactos</div></div>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a class="crosslink" href="/how-to-watch.html">
+      <div><span class="cl-label" id="cl-htw-label">Seguridad</span><div class="cl-title" id="cl-htw-title">Cómo Observar sin Riesgos</div></div>
+      <span class="cl-arrow">→</span>
+    </a>
+  </div>
+
   <a class="sister-box" href="https://www.lunallena.co" target="_blank" rel="noopener">
     <div>
       <p class="sister-eyebrow" id="sister-eyebrow">También sigue</p>
@@ -490,6 +509,11 @@ function render(){
   set('lang-btn',S.langBtn); document.getElementById('share-btn').textContent='↗ '+S.share;
   set('f-upcoming',S.fUpcoming);set('f-history',S.fHistory);set('f-privacy',S.fPrivacy);
   set('sister-eyebrow',S.sisterEyebrow);set('sister-name',S.sisterName);
+  set('h-more-guides',S.hMoreGuides||'Guías del Eclipse');
+  set('cl-cities-label',S.clCitiesLabel||(lang==='en'?'Path of Totality':'Franja de Totalidad'));
+  set('cl-cities-title',S.clCitiesTitle||(lang==='en'?'Cities and Exact Times':'Ciudades y Horarios Exactos'));
+  set('cl-htw-label',S.clHtwLabel||(lang==='en'?'Safety':'Seguridad'));
+  set('cl-htw-title',S.clHtwTitle||(lang==='en'?'How to Watch Safely':'Cómo Observar sin Riesgos'));
   if(lang==='en'){
     document.getElementById('pg-canonical').href='https://www.next-eclipse.com/solar-eclipse-spain-2026';
     document.getElementById('og-url').content='https://www.next-eclipse.com/solar-eclipse-spain-2026';
