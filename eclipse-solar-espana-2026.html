@@ -134,8 +134,15 @@ nav.topbar{display:flex;align-items:center;justify-content:space-between;padding
 .nav-link:hover{color:rgba(220,160,50,.78);}
 .lang-btn{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.52);background:none;border:1px solid rgba(220,160,50,.2);padding:.28rem .65rem;border-radius:2px;cursor:pointer;transition:all .2s;}
 .lang-btn:hover{color:rgba(220,160,50,.8);border-color:rgba(220,160,50,.4);}
-.share-btn{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.62);background:none;border:1px solid rgba(220,160,50,.22);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
+.share-btn{display:flex;align-items:center;gap:.35rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.62);background:none;border:1px solid rgba(220,160,50,.22);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
 .share-btn:hover{color:rgba(220,160,50,.9);border-color:rgba(220,160,50,.45);background:rgba(220,160,50,.05);}
+.share-btn .share-icon{flex-shrink:0;display:block;}
+.share-btn .share-label{display:inline;}
+@media(max-width:768px){
+  .share-btn{border:none;padding:.3rem .4rem;gap:0;}
+  .share-btn .share-label{display:none;}
+  .share-btn .share-icon{width:18px;height:18px;}
+}
 
 /* hero */
 .eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-bottom:.5rem;}
@@ -247,13 +254,13 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RJ7B4VQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="topbar">
-  <a class="site-name" href="/">next‑eclipse.com</a>
+  <a class="site-name" href="/">NEXT ECLIPSE</a>
   <div class="nav-links">
     <a class="nav-link" href="/cities.html" id="nav-cities">Ciudades</a>
     <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Seguridad</a>
     <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Próximos</a>
     <a class="nav-link" href="/history.html" id="nav-history">Historia</a>
-    <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Compartir</button>
+    <button class="share-btn" id="share-btn" onclick="shareApp()"><svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span class="share-label" id="share-label"></span></button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
     <button class="menu-btn" id="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -534,7 +541,7 @@ function render(){
   set('h-cities',S.hCities); set('h-where',S.hWhere); set('where-intro',S.whereIntro);
   set('h-prep',S.hPrep); set('h-faq',S.hFaq);
   set('nav-cities',S.navCities);set('nav-safety',S.navSafety);set('nav-upcoming',S.navUpcoming);set('nav-history',S.navHistory);
-  set('lang-btn',S.langBtn); document.getElementById('share-btn').textContent='↗ '+S.share;
+  set('lang-btn',S.langBtn); document.getElementById('share-label').textContent=S.share;
   set('f-upcoming',S.fUpcoming);set('f-history',S.fHistory);set('f-privacy',S.fPrivacy);
   set('sister-eyebrow',S.sisterEyebrow);set('sister-name',S.sisterName);
   set('h-more-guides',S.hMoreGuides||'Guías del Eclipse');
@@ -565,7 +572,7 @@ function shareApp(){
   if(navigator.share){navigator.share(data).catch(()=>{});}
   else{
     (navigator.clipboard?navigator.clipboard.writeText(data.url):Promise.reject())
-    .then(()=>{const b=document.getElementById('share-btn');const o=b.textContent;b.textContent='✓';setTimeout(()=>b.textContent=o,2e3);})
+    .then(()=>{const sl=document.getElementById('share-label');const o=sl?sl.textContent:'';if(sl){sl.textContent='✓';setTimeout(()=>sl.textContent=o,2e3);}})
     .catch(()=>{window.open('https://x.com/intent/tweet?url='+encodeURIComponent(data.url),'_blank');});
   }
 }
