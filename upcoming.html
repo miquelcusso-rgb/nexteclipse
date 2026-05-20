@@ -124,6 +124,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
   <div class="nav-links">
     <a class="nav-link" href="/history.html" id="nav-history">History</a>
     <a class="nav-link" href="/support.html" id="nav-support">Support</a>
+    <a class="nav-link" href="/companion.html" id="nav-companion">App</a>
     <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Share</button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
   </div>
@@ -354,6 +355,7 @@ function render(){
   document.getElementById('back-link').textContent=S.back;
   document.getElementById('nav-history').textContent=S.navHistory;
   document.getElementById('nav-support').textContent=S.navSupport;
+  if(document.getElementById('nav-companion'))document.getElementById('nav-companion').textContent=lang==='es'?'App':'App';
   document.getElementById('lang-btn').textContent=S.langBtn;
   document.getElementById('share-btn').textContent='↗ '+S.share;
   document.getElementById('f-privacy').textContent=S.fPrivacy;
