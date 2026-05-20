@@ -233,10 +233,10 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 <nav class="topbar">
   <a class="site-name" href="/">next‑eclipse.com</a>
   <div class="nav-links">
+    <a class="nav-link" href="/cities.html" id="nav-cities">Ciudades</a>
+    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Seguridad</a>
     <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Próximos</a>
     <a class="nav-link" href="/history.html" id="nav-history">Historia</a>
-    <a class="nav-link" href="/support.html" id="nav-support">Apoya</a>
-    <a class="nav-link" href="/companion.html" id="nav-companion">App</a>
     <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Compartir</button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
   </div>
@@ -458,7 +458,7 @@ const STRINGS = {
     whereIntro:'El agosto español ofrece cielos mayoritariamente despejados en el interior de la Meseta, lo que convierte a Zamora y Salamanca en los destinos óptimos. La costa gallega puede tener más riesgo de nubosidad en verano.',
     hPrep:'Cómo prepararse',
     hFaq:'Preguntas frecuentes',
-    navUpcoming:'Próximos', navHistory:'Historia', navSupport:'Apoya', share:'Compartir', langBtn:'EN',
+    navCities:'Ciudades', navSafety:'Seguridad', navUpcoming:'Próximos', navHistory:'Historia', share:'Compartir', langBtn:'EN',
     fUpcoming:'Próximos', fHistory:'Historia', fPrivacy:'Privacidad',
     sisterEyebrow:'También sigue', sisterName:'Próxima Luna Llena →'
   },
@@ -479,7 +479,7 @@ const STRINGS = {
     whereIntro:'August in Spain typically brings clear skies across the interior Meseta, making Zamora and Salamanca the optimal destinations. The Galician coast has a higher risk of cloud cover in summer.',
     hPrep:'How to prepare',
     hFaq:'Frequently asked questions',
-    navUpcoming:'Upcoming', navHistory:'History', navSupport:'Support', share:'Share', langBtn:'ES',
+    navCities:'Cities', navSafety:'Safety', navUpcoming:'Upcoming', navHistory:'History', share:'Share', langBtn:'ES',
     fUpcoming:'Upcoming', fHistory:'History', fPrivacy:'Privacy',
     sisterEyebrow:'Also follow', sisterName:'Next Full Moon →'
   }
@@ -505,7 +505,7 @@ function render(){
   set('tip-madrid',S.tipMadrid,true);
   set('h-cities',S.hCities); set('h-where',S.hWhere); set('where-intro',S.whereIntro);
   set('h-prep',S.hPrep); set('h-faq',S.hFaq);
-  set('nav-upcoming',S.navUpcoming);set('nav-history',S.navHistory);set('nav-support',S.navSupport);
+  set('nav-cities',S.navCities);set('nav-safety',S.navSafety);set('nav-upcoming',S.navUpcoming);set('nav-history',S.navHistory);
   set('lang-btn',S.langBtn); document.getElementById('share-btn').textContent='↗ '+S.share;
   set('f-upcoming',S.fUpcoming);set('f-history',S.fHistory);set('f-privacy',S.fPrivacy);
   set('sister-eyebrow',S.sisterEyebrow);set('sister-name',S.sisterName);

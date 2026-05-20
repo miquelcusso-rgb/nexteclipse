@@ -186,6 +186,8 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 @media(min-width:769px){#ne-pwa-banner,#ne-ios-hint{display:none!important;}}
 
 .ad-slot{width:100%;max-width:728px;margin:2rem auto;text-align:center;}
+.eclipse-cta{display:inline-block;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.75);border:1px solid rgba(220,160,50,.22);padding:.5rem 1.2rem;border-radius:2px;text-decoration:none;transition:background .2s,border-color .2s;}
+.eclipse-cta:hover{background:rgba(220,160,50,.07);border-color:rgba(220,160,50,.45);}
 </style>
 </head>
 <body>
@@ -195,10 +197,11 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 <nav class="topbar">
   <a class="site-name" href="/">next‑eclipse.com</a>
   <div class="nav-links">
+    <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">Spain 2026</a>
+    <a class="nav-link" href="/cities.html" id="nav-cities">Cities</a>
+    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Safety</a>
     <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Upcoming</a>
     <a class="nav-link" href="/history.html" id="nav-history">History</a>
-    <a class="nav-link" href="/support.html" id="nav-support">Support</a>
-    <a class="nav-link" href="/companion.html" id="nav-companion">App</a>
     <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Share</button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
   </div>
@@ -228,6 +231,9 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
   <div class="detail-box">
     <p id="eclipse-detail">Totality: 2 min 18 sec · Path crosses Salamanca and Zamora, Spain</p>
   </div>
+  <p style="text-align:center;margin-top:-.5rem;margin-bottom:2rem;">
+    <a href="/eclipse-solar-espana-2026.html" class="eclipse-cta" id="spain-hero-cta">Spain 2026 — Full guide →</a>
+  </p>
 
   <hr>
   <h2 id="h-upcoming">Upcoming Eclipses</h2>
@@ -326,8 +332,8 @@ const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',luna
 const DISC_CLASS = {solar_total:'',solar_annular:'annular',lunar_total:'lunar',lunar_partial:'lunar',lunar_penumbral:'lunar'};
 
 const STRINGS = {
-  en:{eyebrow:'Next Eclipse',hUpcoming:'Upcoming Eclipses',seeAll:'See full calendar →',clLabel:'Also track',clName:'Next Full Moon →',days:'days',hours:'hours',min:'min',sec:'sec',navUpcoming:'Upcoming',navHistory:'History',navSupport:'Support',share:'Share',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming',fHistory:'History',fSupport:'Support'},
-  es:{eyebrow:'Próximo Eclipse',hUpcoming:'Próximos Eclipses',seeAll:'Ver calendario completo →',clLabel:'También sigue',clName:'Próxima Luna Llena →',days:'días',hours:'horas',min:'min',sec:'seg',navUpcoming:'Próximos',navHistory:'Historia',navSupport:'Apoya',share:'Compartir',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos',fHistory:'Historia',fSupport:'Apoya'}
+  en:{eyebrow:'Next Eclipse',hUpcoming:'Upcoming Eclipses',seeAll:'See full calendar →',clLabel:'Also track',clName:'Next Full Moon →',days:'days',hours:'hours',min:'min',sec:'sec',navSpain:'Spain 2026',navCities:'Cities',navSafety:'Safety',navUpcoming:'Upcoming',navHistory:'History',share:'Share',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming',fHistory:'History',fSupport:'Support',ctaSpain:'Spain 2026 — Full guide →'},
+  es:{eyebrow:'Próximo Eclipse',hUpcoming:'Próximos Eclipses',seeAll:'Ver calendario completo →',clLabel:'También sigue',clName:'Próxima Luna Llena →',days:'días',hours:'horas',min:'min',sec:'seg',navSpain:'España 2026',navCities:'Ciudades',navSafety:'Seguridad',navUpcoming:'Próximos',navHistory:'Historia',share:'Compartir',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos',fHistory:'Historia',fSupport:'Apoya',ctaSpain:'España 2026 — Guía completa →'}
 };
 
 let lang = localStorage.getItem('ne-lang') || (navigator.language.startsWith('es')?'es':'en');
@@ -359,10 +365,12 @@ function render(){
   document.getElementById('cl-name').textContent=S.clName;
   document.getElementById('lang-btn').textContent=S.langBtn;
   document.getElementById('share-btn').textContent='↗ '+S.share;
+  document.getElementById('nav-spain').textContent=S.navSpain;
+  document.getElementById('nav-cities').textContent=S.navCities;
+  document.getElementById('nav-safety').textContent=S.navSafety;
   document.getElementById('nav-upcoming').textContent=S.navUpcoming;
   document.getElementById('nav-history').textContent=S.navHistory;
-  document.getElementById('nav-support').textContent=S.navSupport;
-  if(document.getElementById('nav-companion'))document.getElementById('nav-companion').textContent=lang==='es'?'App':'App';
+  if(document.getElementById('spain-hero-cta'))document.getElementById('spain-hero-cta').textContent=S.ctaSpain;
   document.getElementById('f-privacy').textContent=S.fPrivacy;
   document.getElementById('f-upcoming').textContent=S.fUpcoming;
   document.getElementById('f-history').textContent=S.fHistory;
@@ -374,12 +382,15 @@ function renderUpcoming(){
   const now=Date.now();
   const L=lang;
   const future=ECLIPSES.filter(e=>new Date(e.utc).getTime()>now&&e!==nextEclipse).slice(0,4);
-  document.getElementById('upcoming-list').innerHTML=future.map(e=>`
-    <div class="eclipse-row">
+  const ECLIPSE_LINKS={'2026-08-12T17:47:00Z':'/eclipse-solar-espana-2026.html'};
+  document.getElementById('upcoming-list').innerHTML=future.map(e=>{
+    const href=ECLIPSE_LINKS[e.utc]||'/upcoming.html';
+    return `<a class="eclipse-row" href="${href}">
       <span class="row-icon">${ICONS[e.type]||'🌑'}</span>
       <span class="row-name">${e[L].name}</span>
       <span class="row-date">${e[L].date}</span>
-    </div>`).join('');
+    </a>`;
+  }).join('');
 }
 
 function tick(){

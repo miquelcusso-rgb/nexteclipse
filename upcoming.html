@@ -106,6 +106,12 @@ h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem)
 .type-desc{font-size:.92rem;color:rgba(220,200,160,.48);line-height:1.6;}
 
 .source{font-size:.9rem;font-style:italic;color:rgba(220,160,50,.35);margin-top:2rem;}
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:1.5rem 0 2rem;}
+.crosslink-cal{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border:1px solid rgba(220,160,50,.12);border-radius:3px;text-decoration:none;transition:border-color .2s;background:rgba(220,160,50,.02);}
+.crosslink-cal:hover{border-color:rgba(220,160,50,.3);}
+.cl-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
+.cl-title{font-size:1.05rem;font-style:italic;color:rgba(255,240,200,.6);margin-top:.2rem;}
+.cl-arrow{color:rgba(220,160,50,.4);font-size:1.2rem;}
 .ad-slot{width:100%;max-width:728px;margin:2rem auto;text-align:center;}
 hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 h2{font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.42);margin:2rem 0 1rem;}
@@ -122,9 +128,10 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 <nav class="topbar">
   <a class="back" href="/" id="back-link">← Next Eclipse</a>
   <div class="nav-links">
+    <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">Spain 2026</a>
+    <a class="nav-link" href="/cities.html" id="nav-cities">Cities</a>
+    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Safety</a>
     <a class="nav-link" href="/history.html" id="nav-history">History</a>
-    <a class="nav-link" href="/support.html" id="nav-support">Support</a>
-    <a class="nav-link" href="/companion.html" id="nav-companion">App</a>
     <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Share</button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
   </div>
@@ -179,16 +186,17 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6498215334315959" data-ad-slot="5903745160" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </div>
 
-  <!-- ── FULL CALENDAR ── -->
+  <!-- ── FULL CALENDAR LINK ── -->
   <h2 id="h-cal">Full Calendar · 2026–2028</h2>
-
-  <div class="filter-row" id="filter-row">
-    <button class="filter-btn active" onclick="setFilter('all')" id="f-all">All</button>
-    <button class="filter-btn" onclick="setFilter('solar')" id="f-solar">Solar</button>
-    <button class="filter-btn" onclick="setFilter('lunar')" id="f-lunar">Lunar</button>
+  <div class="crosslinks">
+    <a class="crosslink-cal" href="/calendar.html">
+      <div>
+        <div class="cl-label" id="cl-cal-label">All Eclipses</div>
+        <div class="cl-title" id="cl-cal-title">Full Calendar 2026–2028</div>
+      </div>
+      <span class="cl-arrow">→</span>
+    </a>
   </div>
-
-  <div id="eclipse-grid"></div>
 
   <!-- ── ECLIPSE TYPES ── -->
   <hr>
@@ -225,7 +233,8 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 </div>
 
 <script>
-const ECLIPSES = [
+/* ECLIPSES data lives in /calendar.html */
+const ECLIPSES_UNUSED = [
   { utc:'2026-03-03T11:00:00Z', type:'lunar_total',
     en:{name:'Total Lunar Eclipse · Blood Moon',date:'Mar 3, 2026',vis:'Europe · Africa · Asia · Americas',detail:'Full totality — moon turns deep red. Duration: ~1h 45min. Best seen from western Europe.'},
     es:{name:'Eclipse Lunar Total · Luna de Sangre',date:'3 mar 2026',vis:'Europa · África · Asia · Américas',detail:'Totalidad completa — la luna se vuelve roja. Duración: ~1h 45min. Bien visible desde Europa occidental.'}
@@ -272,15 +281,14 @@ const ECLIPSES = [
   },
 ];
 
-const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',lunar_partial:'🌗',lunar_penumbral:'🌕'};
-const YEARS = ['2026','2027','2028'];
 
 const STRINGS = {
   en:{
     eyebrow:'Astronomy',h1:'Upcoming Eclipses',subtitle:'Solar and lunar eclipses 2026–2028',
     fAll:'All',fSolar:'Solar',fLunar:'Lunar',nextBadge:'Next',
-    back:'← Next Eclipse',navHistory:'History',navSupport:'Support',share:'Share',langBtn:'ES',
+    back:'← Next Eclipse',navSpain:'Spain 2026',navCities:'Cities',navSafety:'Safety',navHistory:'History',share:'Share',langBtn:'ES',
     fPrivacy:'Privacy',fHistory:'History',hCal:'Full Calendar · 2026–2028',hTypes:'Eclipse Types',
+    clCalLabel:'All Eclipses',clCalTitle:'Full Calendar 2026–2028',
     source:'Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>',
     feat1Eyebrow:'Next total solar eclipse · Spain &amp; North Africa',
     feat1Title:'☀️ Total Solar Eclipse — August 12, 2026',
@@ -309,8 +317,9 @@ const STRINGS = {
   es:{
     eyebrow:'Astronomía',h1:'Próximos Eclipses',subtitle:'Eclipses solares y lunares 2026–2028',
     fAll:'Todos',fSolar:'Solares',fLunar:'Lunares',nextBadge:'Próximo',
-    back:'← Next Eclipse',navHistory:'Historia',navSupport:'Apoya',share:'Compartir',langBtn:'EN',
+    back:'← Next Eclipse',navSpain:'España 2026',navCities:'Ciudades',navSafety:'Seguridad',navHistory:'Historia',share:'Compartir',langBtn:'EN',
     fPrivacy:'Privacidad',fHistory:'Historia',hCal:'Calendario completo · 2026–2028',hTypes:'Tipos de Eclipse',
+    clCalLabel:'Todos los Eclipses',clCalTitle:'Calendario Completo 2026–2028',
     source:'Fuente: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>',
     feat1Eyebrow:'Próximo eclipse solar total · España y Norte de África',
     feat1Title:'☀️ Eclipse Solar Total — 12 de agosto de 2026',
@@ -339,9 +348,6 @@ const STRINGS = {
 };
 
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
-let filter = 'all';
-const now = Date.now();
-const nextIdx = ECLIPSES.findIndex(e=>new Date(e.utc).getTime()>now);
 
 function render(){
   document.documentElement.lang=lang;
@@ -353,9 +359,12 @@ function render(){
   document.getElementById('f-solar').textContent=S.fSolar;
   document.getElementById('f-lunar').textContent=S.fLunar;
   document.getElementById('back-link').textContent=S.back;
+  document.getElementById('nav-spain').textContent=S.navSpain;
+  document.getElementById('nav-cities').textContent=S.navCities;
+  document.getElementById('nav-safety').textContent=S.navSafety;
   document.getElementById('nav-history').textContent=S.navHistory;
-  document.getElementById('nav-support').textContent=S.navSupport;
-  if(document.getElementById('nav-companion'))document.getElementById('nav-companion').textContent=lang==='es'?'App':'App';
+  if(document.getElementById('cl-cal-label'))document.getElementById('cl-cal-label').textContent=S.clCalLabel;
+  if(document.getElementById('cl-cal-title'))document.getElementById('cl-cal-title').textContent=S.clCalTitle;
   document.getElementById('lang-btn').textContent=S.langBtn;
   document.getElementById('share-btn').textContent='↗ '+S.share;
   document.getElementById('f-privacy').textContent=S.fPrivacy;
@@ -391,50 +400,6 @@ function render(){
   document.getElementById('t3-desc').textContent=S.t3Desc;
   document.getElementById('t4-name').textContent=S.t4Name;
   document.getElementById('t4-desc').textContent=S.t4Desc;
-  renderGrid();
-}
-
-function renderGrid(){
-  const S=STRINGS[lang];
-  const L=lang;
-  const grid=document.getElementById('eclipse-grid');
-  let html='';
-  YEARS.forEach(yr=>{
-    const items=ECLIPSES.map((e,i)=>({e,i})).filter(({e})=>{
-      const d=new Date(e.utc);
-      if(String(d.getUTCFullYear())!==yr)return false;
-      if(filter==='solar'&&!e.type.startsWith('solar'))return false;
-      if(filter==='lunar'&&!e.type.startsWith('lunar'))return false;
-      return true;
-    });
-    if(!items.length)return;
-    html+=`<div class="year-group"><div class="year-label">${yr}</div>`;
-    items.forEach(({e,i})=>{
-      const past=new Date(e.utc).getTime()<now;
-      const isNext=i===nextIdx&&!past;
-      html+=`<div class="${isNext?'card-next':''}${past?' card-passed':''}">
-        <div class="eclipse-card">
-          <div class="card-icon">${ICONS[e.type]||'🌑'}</div>
-          <div class="card-body">
-            <div class="card-name">${e[L].name}${isNext?`<span class="badge">${S.nextBadge}</span>`:''}</div>
-            <div class="card-vis">${e[L].vis}</div>
-            <div class="card-detail">${e[L].detail}</div>
-          </div>
-          <div class="card-date">${e[L].date}</div>
-        </div>
-      </div>`;
-    });
-    html+='</div>';
-  });
-  grid.innerHTML=html;
-}
-
-function setFilter(f){
-  filter=f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  const map={all:'f-all',solar:'f-solar',lunar:'f-lunar'};
-  document.getElementById(map[f]).classList.add('active');
-  renderGrid();
 }
 
 function shareApp(){

@@ -104,10 +104,11 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 <nav class="topbar">
   <a class="site-name" href="/">next‑eclipse.com</a>
   <div class="nav-links">
+    <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">Spain 2026</a>
+    <a class="nav-link" href="/cities.html" id="nav-cities">Cities</a>
+    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Safety</a>
     <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Upcoming</a>
     <a class="nav-link active" href="/history.html" id="nav-history">History</a>
-    <a class="nav-link" href="/support.html" id="nav-support">Support</a>
-    <a class="nav-link" href="/companion.html" id="nav-companion">App</a>
     <button class="share-btn" id="share-btn" onclick="shareApp()">↗ Share</button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
   </div>
@@ -251,7 +252,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 const STRINGS = {
   en:{
     eyebrow:'History',h1:'Famous Eclipses in History',subtitle:'From battles ended to relativity confirmed',
-    navUpcoming:'Upcoming',navHistory:'History',navSupport:'Support',share:'Share',langBtn:'ES',
+    navSpain:'Spain 2026',navCities:'Cities',navSafety:'Safety',navUpcoming:'Upcoming',navHistory:'History',share:'Share',langBtn:'ES',
     fUpcoming:'Upcoming',fPrivacy:'Privacy',
     timelineH2:'Complete Eclipse Timeline',
     f1eyebrow:'Landmark · Science',f1year:'May 29, 1919',f1title:'Einstein Confirmed by Starlight',
@@ -304,7 +305,7 @@ const STRINGS = {
   },
   es:{
     eyebrow:'Historia',h1:'Eclipses Famosos en la Historia',subtitle:'De guerras detenidas a la relatividad confirmada',
-    navUpcoming:'Próximos',navHistory:'Historia',navSupport:'Apoya',share:'Compartir',langBtn:'EN',
+    navSpain:'España 2026',navCities:'Ciudades',navSafety:'Seguridad',navUpcoming:'Próximos',navHistory:'Historia',share:'Compartir',langBtn:'EN',
     fUpcoming:'Próximos',fPrivacy:'Privacidad',
     timelineH2:'Cronología Completa',
     f1eyebrow:'Hito · Ciencia',f1year:'29 de mayo de 1919',f1title:'Einstein Confirmado por la Luz de las Estrellas',
@@ -367,10 +368,11 @@ function render(){
   setText('eyebrow',S.eyebrow);
   setText('h1',S.h1);
   setText('subtitle',S.subtitle);
+  setText('nav-spain',S.navSpain);
+  setText('nav-cities',S.navCities);
+  setText('nav-safety',S.navSafety);
   setText('nav-upcoming',S.navUpcoming);
   setText('nav-history',S.navHistory);
-  setText('nav-support',S.navSupport);
-  if(document.getElementById('nav-companion'))document.getElementById('nav-companion').textContent=lang==='es'?'App':'App';
   setText('lang-btn',S.langBtn);
   document.getElementById('share-btn').textContent='↗ '+S.share;
   setText('f-upcoming',S.fUpcoming);
