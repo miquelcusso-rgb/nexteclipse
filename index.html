@@ -378,8 +378,8 @@ const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',luna
 const DISC_CLASS = {solar_total:'',solar_annular:'annular',lunar_total:'lunar',lunar_partial:'lunar',lunar_penumbral:'lunar'};
 
 const STRINGS = {
-  en:{eyebrow:'Next Eclipse',hUpcoming:'Upcoming Eclipses',seeAll:'See full calendar →',clLabel:'Also track',clName:'Next Full Moon →',days:'days',hours:'hours',min:'min',sec:'sec',navSpain:'Spain 2026',navCities:'Cities',navSafety:'Safety',navUpcoming:'Upcoming',navHistory:'History',share:'Share',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming',fHistory:'History',fSupport:'Support',ctaSpain:'Spain 2026 — Full guide →'},
-  es:{eyebrow:'Próximo Eclipse',hUpcoming:'Próximos Eclipses',seeAll:'Ver calendario completo →',clLabel:'También sigue',clName:'Próxima Luna Llena →',days:'días',hours:'horas',min:'min',sec:'seg',navSpain:'España 2026',navCities:'Ciudades',navSafety:'Seguridad',navUpcoming:'Próximos',navHistory:'Historia',share:'Compartir',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos',fHistory:'Historia',fSupport:'Apoya',ctaSpain:'España 2026 — Guía completa →'}
+  en:{eyebrow:'Next Eclipse',hUpcoming:'Upcoming Eclipses',seeAll:'See full calendar →',clLabel:'Also track',clName:'Next Full Moon →',days:'days',hours:'hours',min:'min',sec:'sec',navSpain:'Spain 2026',navCities:'Cities',navSafety:'Safety',navUpcoming:'Upcoming',navHistory:'History',share:'Share',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming',fHistory:'History',fSupport:'Support',ctaSpain:'Spain 2026 — Full guide →',pwaTitle:'Install Next Eclipse',pwaSub:'Always one tap away · No App Store',iosSteps:'Tap <strong>Share</strong> in Safari, then <strong>Add to Home Screen</strong>'},
+  es:{eyebrow:'Próximo Eclipse',hUpcoming:'Próximos Eclipses',seeAll:'Ver calendario completo →',clLabel:'También sigue',clName:'Próxima Luna Llena →',days:'días',hours:'horas',min:'min',sec:'seg',navSpain:'España 2026',navCities:'Ciudades',navSafety:'Seguridad',navUpcoming:'Próximos',navHistory:'Historia',share:'Compartir',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos',fHistory:'Historia',fSupport:'Apoya',ctaSpain:'España 2026 — Guía completa →',pwaTitle:'Instalar Next Eclipse',pwaSub:'Siempre a un toque',iosSteps:'Pulsa <strong>Compartir</strong> en Safari, luego <strong>Añadir a pantalla de inicio</strong>'}
 };
 
 let lang = localStorage.getItem('ne-lang') || (navigator.language.startsWith('es')?'es':'en');
@@ -421,6 +421,9 @@ function render(){
   document.getElementById('f-upcoming').textContent=S.fUpcoming;
   document.getElementById('f-history').textContent=S.fHistory;
   document.getElementById('f-support').textContent=S.fSupport;
+  if(document.getElementById('pwa-title'))document.getElementById('pwa-title').textContent=S.pwaTitle;
+  if(document.getElementById('pwa-sub'))document.getElementById('pwa-sub').textContent=S.pwaSub;
+  if(document.getElementById('ios-steps'))document.getElementById('ios-steps').innerHTML=S.iosSteps;
   renderUpcoming();
 }
 
@@ -531,9 +534,9 @@ setInterval(tick,1000);
   };
   function applyBannerLang(){
     const s=T[lang]||T.en;
-    document.getElementById('ne-pwa-sub').textContent=s.sub;
+    document.getElementById('pwa-sub').textContent=s.sub;
     document.getElementById('ne-pwa-add').textContent=s.add;
-    document.getElementById('ne-ios-steps').innerHTML=s.steps;
+    document.getElementById('ios-steps').innerHTML=s.steps;
     document.getElementById('ne-ios-close').textContent=s.close;
   }
   window.addEventListener('beforeinstallprompt',e=>{
@@ -565,8 +568,8 @@ setInterval(tick,1000);
   <div class="ne-pwa-inner">
     <img src="/icon-192.png" alt="Next Eclipse" class="ne-pwa-icon" width="40" height="40">
     <div class="ne-pwa-text">
-      <p class="ne-pwa-title">Next Eclipse</p>
-      <p class="ne-pwa-sub" id="ne-pwa-sub">Añadir a pantalla de inicio</p>
+      <p class="ne-pwa-title" id="pwa-title">Next Eclipse</p>
+      <p class="ne-pwa-sub" id="pwa-sub">Añadir a pantalla de inicio</p>
     </div>
     <button class="ne-pwa-add" id="ne-pwa-add">Añadir</button>
     <button class="ne-pwa-close" id="ne-pwa-close" aria-label="Cerrar">✕</button>
@@ -574,7 +577,7 @@ setInterval(tick,1000);
 </div>
 <div id="ne-ios-hint">
   <div class="ne-ios-arrow">↓</div>
-  <div class="ne-ios-steps" id="ne-ios-steps">Pulsa <strong>Compartir</strong> en Safari<br>y luego <strong>"Añadir a pantalla de inicio"</strong></div>
+  <div class="ne-ios-steps" id="ios-steps">Pulsa <strong>Compartir</strong> en Safari<br>y luego <strong>"Añadir a pantalla de inicio"</strong></div>
   <button class="ne-ios-close" id="ne-ios-close">Cerrar</button>
 </div>
 <script>
@@ -601,6 +604,13 @@ setInterval(tick,1000);
   var origToggle=window.toggleLang;
   window.toggleLang=function(){if(origToggle)origToggle();setTimeout(updateDrawerLang,80);};
 })();
+</script>
+<script>
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nexteclipse",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "4321", "."],
+      "port": 4321
+    },
+    {
+      "name": "og-previews",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4322", "--directory", "/tmp"],
+      "port": 4322
+    }
+  ]
+}
