@@ -48,13 +48,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.72);min-height:100vh;padding:0 0 5rem;line-height:1.75;}
+body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.88);min-height:100vh;padding:0 0 5rem;line-height:1.75;}
 .wrap{max-width:820px;margin:0 auto;padding:2.5rem 1.5rem 0;}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);border-bottom:1px solid rgba(220,160,50,.07);}
-.back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.48);text-decoration:none;transition:color .2s;}
+.back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;}
 .back:hover{color:rgba(220,160,50,.75);}
 .nav-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
-.nav-link{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.48);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-link{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;white-space:nowrap;}
 .nav-link:hover{color:rgba(220,160,50,.75);}
 .lang-btn{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.52);background:none;border:1px solid rgba(220,160,50,.2);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
 .lang-btn:hover{color:rgba(220,160,50,.8);border-color:rgba(220,160,50,.4);}
@@ -67,19 +67,19 @@ body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgb
   .share-btn .share-label{display:none;}
   .share-btn .share-icon{width:18px;height:18px;}
 }
-.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-bottom:.5rem;}
+.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.65);margin-bottom:.5rem;}
 h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem);color:rgba(255,248,228,.88);letter-spacing:.04em;margin-bottom:.4rem;}
 .subtitle{font-size:1.05rem;font-style:italic;color:rgba(220,160,50,.52);margin-bottom:2rem;}
 h2{font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.42);margin:2rem 0 1rem;}
-p{font-size:1.06rem;color:rgba(220,210,180,.65);margin-bottom:.9rem;line-height:1.8;}
+p{font-size:1.06rem;color:rgba(220,210,180,.82);margin-bottom:.9rem;line-height:1.8;}
 hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 /* ── filter ── */
 .filter-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1.5rem;}
 .filter-btn{font-family:'Cinzel',serif;font-size:.73rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem 1rem;border-radius:2px;cursor:pointer;border:1px solid rgba(220,160,50,.18);background:none;color:rgba(220,160,50,.5);transition:all .2s;}
-.filter-btn:hover,.filter-btn.active{background:rgba(220,160,50,.08);border-color:rgba(220,160,50,.35);color:rgba(220,160,50,.8);}
+.filter-btn:hover,.filter-btn.active{background:rgba(220,160,50,.08);border-color:rgba(220,160,50,.55);color:rgba(220,160,50,.8);}
 /* ── calendar cards ── */
 .year-group{margin-bottom:2.5rem;}
-.year-label{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(220,160,50,.35);margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid rgba(220,160,50,.08);}
+.year-label{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(220,160,50,.55);margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid rgba(220,160,50,.08);}
 .eclipse-card{display:grid;grid-template-columns:2.5rem 1fr auto;gap:.8rem;align-items:start;padding:1rem 1.1rem;border:1px solid rgba(220,160,50,.07);border-radius:3px;background:rgba(220,160,50,.02);margin-bottom:.55rem;transition:border-color .2s,background .15s;}
 .eclipse-card:hover{border-color:rgba(220,160,50,.15);}
 .eclipse-card-link{text-decoration:none;display:block;}
@@ -89,7 +89,7 @@ hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 .card-name{font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,220,.72);margin-bottom:.25rem;}
 .card-vis{font-size:1rem;color:rgba(220,200,150,.55);margin-bottom:.15rem;}
 .card-detail{font-size:.95rem;font-style:italic;color:rgba(220,180,100,.42);}
-.card-date{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(220,160,50,.48);white-space:nowrap;text-align:right;}
+.card-date{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(220,160,50,.65);white-space:nowrap;text-align:right;}
 .card-passed{opacity:.4;}
 .card-next .eclipse-card{border-color:rgba(220,160,50,.2);background:rgba(220,160,50,.04);}
 .badge{display:inline-block;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.15rem .5rem;border-radius:2px;background:rgba(220,160,50,.12);color:rgba(220,160,50,.7);border:1px solid rgba(220,160,50,.2);margin-left:.5rem;vertical-align:middle;}
@@ -99,7 +99,7 @@ hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 .type-icon{font-size:1.4rem;margin-bottom:.4rem;}
 .type-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,248,220,.6);margin-bottom:.4rem;}
 .type-desc{font-size:.92rem;color:rgba(220,200,160,.48);line-height:1.6;}
-.source{font-size:.9rem;font-style:italic;color:rgba(220,160,50,.35);margin-top:2rem;}
+.source{font-size:.9rem;font-style:italic;color:rgba(220,160,50,.55);margin-top:2rem;}
 .ad-slot{width:100%;max-width:728px;margin:2rem auto;text-align:center;}
 footer{margin-top:4rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.32);text-align:center;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160,50,.15);}
@@ -120,6 +120,23 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 .drawer-link:last-child{border-bottom:none;}
 .drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}
 @media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}}
+
+/* ── readability patch: +2px body text, higher contrast ── */
+body{color:rgba(236,228,210,.88);}
+p{font-size:1.13rem;color:rgba(230,218,195,.84);}
+td{font-size:1.07rem;color:rgba(226,212,182,.78);}
+.faq-a{font-size:1.13rem !important;color:rgba(226,210,180,.76) !important;}
+.disclaimer{font-size:1.04rem;color:rgba(195,180,145,.62);}
+.path-banner-text{font-size:1.1rem;color:rgba(226,206,160,.76);}
+.cl-title{font-size:1.1rem;color:rgba(255,240,200,.76);}
+.source{font-size:1.0rem;color:rgba(195,180,145,.58);}
+.subtitle{font-size:1.1rem;}
+.detail-box p{font-size:1.1rem;color:rgba(226,206,160,.76);}
+.cov-pct{font-size:.97rem;color:rgba(226,206,170,.66);}
+#intro-in,#intro-out,.intro-text{font-size:1.13rem;}
+.row-name{color:rgba(255,248,220,.80);}
+.row-date{color:rgba(220,160,50,.65);}
+.tip-box{font-size:1.07rem;color:rgba(220,200,150,.75);}
 </style>
 </head>
 <body>
@@ -380,7 +397,7 @@ render();
 
 <!-- ─ cookie consent ─ -->
 <div id="ck" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(3,3,6,.97);border-top:1px solid rgba(220,160,50,.1);padding:.75rem 1.5rem;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between;font-family:'Cinzel',serif;">
-  <span id="ck-t" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:.95rem;color:rgba(220,200,140,.55);flex:1;min-width:200px;line-height:1.5;"></span>
+  <span id="ck-t" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:.95rem;color:rgba(220,200,140,.73);flex:1;min-width:200px;line-height:1.5;"></span>
   <div style="display:flex;gap:.5rem;flex-shrink:0;">
     <button onclick="neConsent(1)" id="ck-y" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:rgba(220,160,50,.08);border:1px solid rgba(220,160,50,.3);color:rgba(220,160,50,.8);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
     <button onclick="neConsent(0)" id="ck-n" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:none;border:1px solid rgba(220,160,50,.12);color:rgba(220,160,50,.38);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
