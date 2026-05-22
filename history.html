@@ -13,7 +13,7 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5RJ7B4VQ');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Famous Solar &amp; Lunar Eclipses in History · Next Eclipse</title>
 <meta name="description" content="Explore the most famous solar and lunar eclipses in history. From the 1919 Einstein eclipse to the longest total solar eclipse of the 20th century.">
 <link rel="canonical" href="https://www.next-eclipse.com/history">
@@ -52,7 +52,7 @@ body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgb
 .wrap{max-width:700px;margin:0 auto;padding:2.5rem 1.5rem 0;}
 
 /* topbar — full width */
-nav.topbar{display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);border-bottom:1px solid rgba(220,160,50,.07);}
+nav.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
 .site-name{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.55);text-decoration:none;transition:color .2s;white-space:nowrap;}
 .site-name:hover{color:rgba(220,160,50,.85);}
 .nav-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
@@ -122,7 +122,8 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(220,160
 
 /* ── readability patch: +2px body text, higher contrast ── */
 body{color:rgba(236,228,210,.88);}
-p{font-size:1.13rem;color:rgba(230,218,195,.84);}
+p:not(footer p){font-size:1.13rem;color:rgba(230,218,195,.84);}
+footer,footer p{font-size:.7rem !important;line-height:1.7 !important;}
 td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 .faq-a{font-size:1.13rem !important;color:rgba(226,210,180,.76) !important;}
 .disclaimer{font-size:1.04rem;color:rgba(195,180,145,.62);}
