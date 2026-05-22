@@ -31,11 +31,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.72);min-height:100vh;padding:3rem 1.5rem 5rem;line-height:1.8;}
-.wrap{max-width:600px;margin:0 auto;}
-.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:3rem;}
-.back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.48);text-decoration:none;transition:color .2s;}
-.back:hover{color:rgba(220,160,50,.75);}
+body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.72);min-height:100vh;padding:0 0 4rem;line-height:1.8;}
+.wrap{max-width:600px;margin:0 auto;padding:2.5rem 1.25rem 0;}
+.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}.site-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(220,160,50,.42);text-decoration:none;}.nav-links{display:flex;gap:1rem;align-items:center;}.nav-link{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;}.nav-link.active{color:rgba(220,160,50,.95);font-weight:600;}.nav-link:hover{color:rgba(220,160,50,.75);}.share-btn{display:flex;align-items:center;gap:.35rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.62);background:none;border:1px solid rgba(220,160,50,.22);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}.share-btn:hover{color:rgba(220,160,50,.9);border-color:rgba(220,160,50,.45);background:rgba(220,160,50,.05);}.share-icon{flex-shrink:0;display:block;}.share-btn .share-label{display:inline;}.lang-btn{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.52);background:none;border:1px solid rgba(220,160,50,.2);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}.lang-btn:hover{color:rgba(220,160,50,.8);border-color:rgba(220,160,50,.4);}.menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.45rem .35rem;flex-shrink:0;}.menu-btn span{display:block;width:19px;height:1.5px;background:rgba(220,160,50,.65);border-radius:1px;transition:all .25s;}#nav-backdrop{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,5,.55);}#nav-backdrop.open{display:block;}#nav-drawer{position:fixed;top:0;right:0;width:min(260px,88vw);height:100dvh;background:rgba(3,3,5,.98);border-left:1px solid rgba(220,160,50,.1);z-index:310;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:1.5rem;}#nav-drawer.open{transform:translateX(0);}.drawer-header{display:flex;justify-content:flex-end;margin-bottom:1.5rem;}.drawer-close{background:none;border:none;cursor:pointer;color:rgba(220,160,50,.5);font-size:1.1rem;padding:.3rem .5rem;transition:color .2s;}.drawer-close:hover{color:rgba(220,160,50,.9);}.drawer-nav{display:flex;flex-direction:column;}.drawer-link{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,248,220,.6);text-decoration:none;padding:.9rem 1rem;border-bottom:1px solid rgba(220,160,50,.06);transition:color .15s,background .15s;}.drawer-link:last-child{border-bottom:none;}.drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}footer,footer p,footer a{font-size:.68rem !important;letter-spacing:.16em !important;line-height:1.65 !important;text-transform:uppercase !important;}@media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}.share-btn{border:none;padding:.3rem .4rem;gap:0;}.share-btn .share-label{display:none;}.share-icon{width:18px;height:18px;}}
 .eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-bottom:.5rem;}
 h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.5rem,3.5vw,2rem);color:rgba(255,248,228,.88);letter-spacing:.04em;margin-bottom:.4rem;}
 .subtitle{font-size:1rem;font-style:italic;color:rgba(220,160,50,.35);margin-bottom:2.5rem;}
@@ -52,10 +50,33 @@ footer a{color:inherit;border-bottom:1px solid rgba(220,160,50,.1);}
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RJ7B4VQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="wrap">
-  <div class="topbar">
-    <a class="back" href="/">← Next Eclipse</a>
+<nav class="topbar">
+  <a class="site-name" href="/">NEXT ECLIPSE</a>
+  <div class="nav-links">
+    <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">Spain 2026</a>
+    <a class="nav-link" href="/cities.html" id="nav-cities">Cities</a>
+    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Safety</a>
+    <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Upcoming</a>
+    <a class="nav-link" href="/history.html" id="nav-history">History</a>
+    <button class="share-btn" id="share-btn" onclick="shareApp()"><svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span class="share-label" id="share-label"></span></button>
+    <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
+    <button class="menu-btn" id="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
+</nav>
+<div id="nav-backdrop"></div>
+<div id="nav-drawer">
+  <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
+  <nav class="drawer-nav">
+    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
+    <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
+    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Safety</a>
+    <a class="drawer-link" href="/upcoming.html" data-en="Upcoming" data-es="Próximos">Upcoming</a>
+    <a class="drawer-link" href="/history.html" data-en="History" data-es="Historia">History</a>
+  </nav>
+</div>
+
+<div class="wrap">
+  
 
   <p class="eyebrow">Legal</p>
   <h1>Privacy Policy</h1>
@@ -85,8 +106,39 @@ footer a{color:inherit;border-bottom:1px solid rgba(220,160,50,.1);}
 
   <hr>
   <footer>
-    <p>© 2026 Furiosa Studio · <a href="/">Next Eclipse</a> · Data: NASA GSFC</p>
+    <p>© 2026 Furiosa Studio · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
   </footer>
 </div>
+<script>
+/* ── canonical header behaviour (menu drawer + share + i18n) ── */
+(function(){
+  if(typeof window.shareApp!=='function'){
+    window.shareApp=function(){
+      var d=document.querySelector('meta[name="description"]');
+      var data={title:document.title,text:d?d.getAttribute('content'):'',url:location.href};
+      if(navigator.share){navigator.share(data).catch(function(){});}
+      else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(function(){var sl=document.getElementById('share-label');if(sl){var o=sl.textContent;sl.textContent='\u2713';setTimeout(function(){sl.textContent=o;},2000);}});}
+    };
+  }
+  var btn=document.getElementById('menu-btn'),drawer=document.getElementById('nav-drawer'),backdrop=document.getElementById('nav-backdrop'),close=document.getElementById('drawer-close');
+  if(btn&&drawer){
+    function openD(){drawer.classList.add('open');if(backdrop)backdrop.classList.add('open');document.body.style.overflow='hidden';}
+    function closeD(){drawer.classList.remove('open');if(backdrop)backdrop.classList.remove('open');document.body.style.overflow='';}
+    btn.addEventListener('click',openD);
+    if(close)close.addEventListener('click',closeD);
+    if(backdrop)backdrop.addEventListener('click',closeD);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD();});
+  }
+  var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
+           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+  function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
+  function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
+  function apply(){var l=L(),N=NAV[l]||NAV.en;S('nav-spain',N.spain);S('nav-cities',N.cities);S('nav-safety',N.safety);S('nav-upcoming',N.upcoming);S('nav-history',N.history);S('share-label',N.share);S('lang-btn',N.lang);document.querySelectorAll('#nav-drawer [data-en][data-es],footer [data-en][data-es]').forEach(function(el){el.textContent=el.getAttribute('data-'+l);});}
+  window.applyHeaderNav=apply;apply();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);
+  var _t=window.toggleLang;
+  window.toggleLang=function(){if(typeof _t==='function'){try{_t();}catch(e){}}else{localStorage.setItem('ne-lang',L()==='es'?'en':'es');}apply();};
+})();
+</script>
 </body>
 </html>
