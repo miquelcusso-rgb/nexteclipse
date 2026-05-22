@@ -154,10 +154,11 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 <div id="nav-drawer">
   <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
   <nav class="drawer-nav">
-    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">España 2026</a>
-    <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Ciudades</a>
-    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Seguridad</a>
-    <a class="drawer-link" href="/upcoming.html" data-en="Upcoming" data-es="Próximos">Próximos</a>
+    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
+    <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
+    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Safety</a>
+    <a class="drawer-link" href="/upcoming.html" data-en="Upcoming" data-es="Próximos">Upcoming</a>
+    <a class="drawer-link" href="/history.html" data-en="History" data-es="Historia">History</a>
   </nav>
 </div>
 
@@ -291,7 +292,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <hr>
   <footer>
-    <p>© 2026 Furiosa Studio · <a href="/">Next Eclipse</a> · <a href="/upcoming.html" id="f-upcoming">Upcoming</a> · <a href="/privacy.html" id="f-privacy">Privacy</a> · Data: NASA GSFC</p>
+    <p>© 2026 Furiosa Studio · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
   </footer>
 </div><!-- /wrap -->
 
@@ -510,6 +511,25 @@ render();
   updateDrawerLang();
   var origToggle=window.toggleLang;
   window.toggleLang=function(){if(origToggle)origToggle();setTimeout(updateDrawerLang,80);};
+})();
+</script>
+<script>
+/* ── Canonical header/footer i18n — shared across all pages ── */
+(function(){
+  var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
+           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+  function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
+  function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
+  function apply(){
+    var l=L(),N=NAV[l]||NAV.en;
+    S('nav-spain',N.spain);S('nav-cities',N.cities);S('nav-safety',N.safety);S('nav-upcoming',N.upcoming);S('nav-history',N.history);
+    S('share-label',N.share);S('lang-btn',N.lang);
+    document.querySelectorAll('#nav-drawer [data-en][data-es],footer [data-en][data-es]').forEach(function(el){el.textContent=el.getAttribute('data-'+l);});
+  }
+  window.applyHeaderNav=apply;apply();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);
+  var _t=window.toggleLang;
+  window.toggleLang=function(){if(typeof _t==='function'){try{_t();}catch(e){}}apply();};
 })();
 </script>
 </body>

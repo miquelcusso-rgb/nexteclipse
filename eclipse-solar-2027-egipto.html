@@ -276,12 +276,13 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 <nav class="topbar">
   <a class="site-name" href="/">NEXT ECLIPSE</a>
   <div class="nav-links">
-    <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">España 2026</a>
-    <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Próximos</a>
-    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Seguridad</a>
-    <a class="nav-link" href="/calendar.html" id="nav-calendar">Calendario</a>
-    <button class="share-btn" id="share-btn" onclick="shareApp()"><svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span class="share-label" id="share-label">Compartir</span></button>
-    <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
+    <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">Spain 2026</a>
+    <a class="nav-link" href="/cities.html" id="nav-cities">Cities</a>
+    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Safety</a>
+    <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Upcoming</a>
+    <a class="nav-link" href="/history.html" id="nav-history">History</a>
+    <button class="share-btn" id="share-btn" onclick="shareApp()"><svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span class="share-label" id="share-label"></span></button>
+    <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
     <button class="menu-btn" id="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -290,10 +291,11 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 <div id="nav-drawer">
   <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
   <nav class="drawer-nav">
-    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">España 2026</a>
-    <a class="drawer-link" href="/upcoming.html" data-en="Upcoming" data-es="Próximos">Próximos</a>
-    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Seguridad</a>
-    <a class="drawer-link" href="/calendar.html" data-en="Calendar" data-es="Calendario">Calendario</a>
+    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
+    <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
+    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Safety</a>
+    <a class="drawer-link" href="/upcoming.html" data-en="Upcoming" data-es="Próximos">Upcoming</a>
+    <a class="drawer-link" href="/history.html" data-en="History" data-es="Historia">History</a>
   </nav>
 </div>
 
@@ -489,7 +491,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
   </a>
 
   <footer>
-    <p>© 2026 Furiosa Studio · <a href="/">Next Eclipse</a> · <a href="/upcoming.html">Próximos</a> · <a href="/history.html">Historia</a> · <a href="/privacy.html">Privacidad</a> · Data: <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA GSFC</a></p>
+    <p>© 2026 Furiosa Studio · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
   </footer>
 
 </div><!-- /wrap -->
@@ -610,6 +612,25 @@ function shareApp(){
   updateDrawerLang();
   var origToggle=window.toggleLang;
   window.toggleLang=function(){if(origToggle)origToggle();setTimeout(updateDrawerLang,80);};
+})();
+</script>
+<script>
+/* ── Canonical header/footer i18n — shared across all pages ── */
+(function(){
+  var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
+           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+  function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
+  function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
+  function apply(){
+    var l=L(),N=NAV[l]||NAV.en;
+    S('nav-spain',N.spain);S('nav-cities',N.cities);S('nav-safety',N.safety);S('nav-upcoming',N.upcoming);S('nav-history',N.history);
+    S('share-label',N.share);S('lang-btn',N.lang);
+    document.querySelectorAll('#nav-drawer [data-en][data-es],footer [data-en][data-es]').forEach(function(el){el.textContent=el.getAttribute('data-'+l);});
+  }
+  window.applyHeaderNav=apply;apply();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);
+  var _t=window.toggleLang;
+  window.toggleLang=function(){if(typeof _t==='function'){try{_t();}catch(e){}}apply();};
 })();
 </script>
 </body>

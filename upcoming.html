@@ -45,6 +45,7 @@ body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgb
 .topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
 .back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;}
 .back:hover{color:rgba(220,160,50,.75);}
+.site-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(220,160,50,.42);text-decoration:none;}
 .nav-links{display:flex;gap:1rem;align-items:center;}
 .nav-link{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;}
 .nav-link:hover{color:rgba(220,160,50,.75);}
@@ -161,11 +162,12 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 <!-- End Google Tag Manager (noscript) -->
 
 <nav class="topbar">
-  <a class="back" href="/" id="back-link">← Next Eclipse</a>
+  <a class="site-name" href="/">NEXT ECLIPSE</a>
   <div class="nav-links">
     <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">Spain 2026</a>
     <a class="nav-link" href="/cities.html" id="nav-cities">Cities</a>
     <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Safety</a>
+    <a class="nav-link active" href="/upcoming.html" id="nav-upcoming">Upcoming</a>
     <a class="nav-link" href="/history.html" id="nav-history">History</a>
     <button class="share-btn" id="share-btn" onclick="shareApp()"><svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span class="share-label" id="share-label"></span></button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
@@ -177,10 +179,11 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 <div id="nav-drawer">
   <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
   <nav class="drawer-nav">
-    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">España 2026</a>
-    <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Ciudades</a>
-    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Seguridad</a>
-    <a class="drawer-link" href="/history.html" data-en="History" data-es="Historia">Historia</a>
+    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
+    <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
+    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Safety</a>
+    <a class="drawer-link" href="/upcoming.html" data-en="Upcoming" data-es="Próximos">Upcoming</a>
+    <a class="drawer-link" href="/history.html" data-en="History" data-es="Historia">History</a>
   </nav>
 </div>
 
@@ -275,7 +278,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
   <p class="source" id="source-note">Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a></p>
 
   <footer>
-    <p>© 2026 Furiosa Studio · <a href="/">Next Eclipse</a> · <a href="/history.html" id="f-history">History</a> · <a href="/privacy.html" id="f-privacy">Privacy</a> · Data: NASA GSFC</p>
+    <p>© 2026 Furiosa Studio · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
   </footer>
 </div>
 
@@ -414,8 +417,6 @@ function render(){
   if(document.getElementById('cl-cal-title'))document.getElementById('cl-cal-title').textContent=S.clCalTitle;
   document.getElementById('lang-btn').textContent=S.langBtn;
   document.getElementById('share-label').textContent=S.share;
-  document.getElementById('f-privacy').textContent=S.fPrivacy;
-  document.getElementById('f-history').textContent=S.fHistory;
   document.getElementById('h-cal').textContent=S.hCal;
   document.getElementById('h-types').textContent=S.hTypes;
   document.getElementById('source-note').innerHTML=S.source;
@@ -527,6 +528,25 @@ if('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(() => {});
   });
 }
+</script>
+<script>
+/* ── Canonical header/footer i18n — shared across all pages ── */
+(function(){
+  var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
+           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+  function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
+  function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
+  function apply(){
+    var l=L(),N=NAV[l]||NAV.en;
+    S('nav-spain',N.spain);S('nav-cities',N.cities);S('nav-safety',N.safety);S('nav-upcoming',N.upcoming);S('nav-history',N.history);
+    S('share-label',N.share);S('lang-btn',N.lang);
+    document.querySelectorAll('#nav-drawer [data-en][data-es],footer [data-en][data-es]').forEach(function(el){el.textContent=el.getAttribute('data-'+l);});
+  }
+  window.applyHeaderNav=apply;apply();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);
+  var _t=window.toggleLang;
+  window.toggleLang=function(){if(typeof _t==='function'){try{_t();}catch(e){}}apply();};
+})();
 </script>
 </body>
 </html>
