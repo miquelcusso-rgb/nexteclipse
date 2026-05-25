@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#030304">
-<title>Privacy Policy · Next Eclipse</title>
-<meta name="description" content="Privacy policy for Next Eclipse (next-eclipse.com). Information about data collected, cookies, Google AdSense and your rights.">
+<title id="pp-title">Privacy Policy · Next Eclipse</title>
+<meta name="description" id="pp-desc" content="Privacy policy for Next Eclipse (next-eclipse.com). Information about data collected, cookies, Google AdSense and your rights.">
 <link rel="canonical" href="https://www.next-eclipse.com/privacy">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
@@ -79,31 +79,31 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
 <div class="wrap">
   
 
-  <p class="eyebrow">Legal</p>
-  <h1>Privacy Policy</h1>
-  <p class="subtitle">Last updated: May 2026</p>
+  <p class="eyebrow" id="pp-eyebrow">Legal</p>
+  <h1 id="pp-h1">Privacy Policy</h1>
+  <p class="subtitle" id="pp-updated">Last updated: May 2026</p>
 
-  <h2>What we collect</h2>
-  <p>Next Eclipse does not collect personal data. The site does not require registration, does not ask for names or email addresses, and does not store user information on any server.</p>
-  <p>Language preference is saved in your browser's <strong>localStorage</strong> so the site remembers your choice on future visits. This data stays on your device and is never transmitted.</p>
+  <h2 id="pp-h-collect">What we collect</h2>
+  <p id="pp-collect1">Next Eclipse does not collect personal data. The site does not require registration, does not ask for names or email addresses, and does not store user information on any server.</p>
+  <p id="pp-collect2">Language preference is saved in your browser's <strong>localStorage</strong> so the site remembers your choice on future visits. This data stays on your device and is never transmitted.</p>
 
-  <h2>Cookies and advertising</h2>
-  <p>This site uses <strong>Google AdSense</strong> to display contextual advertisements. Google may use cookies and similar technologies to show ads based on your visits to this and other websites. To opt out of personalised advertising, visit <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
-  <p>For more information about how Google uses data, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's privacy policy</a>.</p>
+  <h2 id="pp-h-cookies">Cookies and advertising</h2>
+  <p id="pp-cookies1">This site uses <strong>Google AdSense</strong> to display contextual advertisements. Google may use cookies and similar technologies to show ads based on your visits to this and other websites. To opt out of personalised advertising, visit <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
+  <p id="pp-cookies2">For more information about how Google uses data, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's privacy policy</a>.</p>
 
-  <h2>External services</h2>
-  <p><strong>Google Fonts</strong> is used to load Cinzel and Cormorant Garamond typefaces. Your browser may send a request to Google's servers when loading the page.</p>
-  <p>Eclipse data is sourced from <strong>NASA Goddard Space Flight Center</strong> (<a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>) and is not transmitted from your device.</p>
+  <h2 id="pp-h-external">External services</h2>
+  <p id="pp-external1"><strong>Google Fonts</strong> is used to load Cinzel and Cormorant Garamond typefaces. Your browser may send a request to Google's servers when loading the page.</p>
+  <p id="pp-external2">Eclipse data is sourced from <strong>NASA Goddard Space Flight Center</strong> (<a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>) and is not transmitted from your device.</p>
 
-  <h2>Third-party links</h2>
-  <p>This site links to <a href="https://www.nextfullmoon.co" target="_blank" rel="noopener">nextfullmoon.co</a> and <a href="https://www.lunallena.co" target="_blank" rel="noopener">lunallena.co</a>. These sites have their own privacy policies.</p>
+  <h2 id="pp-h-links">Third-party links</h2>
+  <p id="pp-links1">This site links to <a href="https://www.nextfullmoon.co" target="_blank" rel="noopener">nextfullmoon.co</a> and <a href="https://www.lunallena.co" target="_blank" rel="noopener">lunallena.co</a>. These sites have their own privacy policies.</p>
 
-  <h2>Your rights</h2>
-  <p>Since we do not collect personal data, there is nothing to access, rectify or delete. If you have questions, contact us at <a href="mailto:hello@next-eclipse.com">hello@next-eclipse.com</a>.</p>
-  <p>You also have the right to lodge a complaint with a data protection supervisory authority. In Spain: <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (aepd.es)</a>.</p>
+  <h2 id="pp-h-rights">Your rights</h2>
+  <p id="pp-rights1">Since we do not collect personal data, there is nothing to access, rectify or delete. If you have questions, contact us at <a href="mailto:hello@next-eclipse.com">hello@next-eclipse.com</a>.</p>
+  <p id="pp-rights2">You also have the right to lodge a complaint with a data protection supervisory authority. In Spain: <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (aepd.es)</a>.</p>
 
-  <h2>Changes to this policy</h2>
-  <p>Any changes to this privacy policy will be posted on this page. Continued use of the site constitutes acceptance of any revised policy.</p>
+  <h2 id="pp-h-changes">Changes to this policy</h2>
+  <p id="pp-changes1">Any changes to this privacy policy will be posted on this page. Continued use of the site constitutes acceptance of any revised policy.</p>
 
   <hr>
   <footer>
@@ -139,6 +139,93 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);
   var _t=window.toggleLang;
   window.toggleLang=function(){if(typeof _t==='function'){try{_t();}catch(e){}}else{localStorage.setItem('ne-lang',L()==='es'?'en':'es');}apply();};
+})();
+</script>
+<script>
+/* ── privacy-policy body i18n (null-safe) ── */
+(function(){
+  var PP={
+    en:{
+      title:'Privacy Policy · Next Eclipse',
+      desc:'Privacy policy for Next Eclipse (next-eclipse.com). Information about data collected, cookies, Google AdSense and your rights.',
+      eyebrow:'Legal',
+      h1:'Privacy Policy',
+      updated:'Last updated: May 2026',
+      hCollect:'What we collect',
+      collect1:'Next Eclipse does not collect personal data. The site does not require registration, does not ask for names or email addresses, and does not store user information on any server.',
+      collect2:"Language preference is saved in your browser's <strong>localStorage</strong> so the site remembers your choice on future visits. This data stays on your device and is never transmitted.",
+      hCookies:'Cookies and advertising',
+      cookies1:'This site uses <strong>Google AdSense</strong> to display contextual advertisements. Google may use cookies and similar technologies to show ads based on your visits to this and other websites. To opt out of personalised advertising, visit <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.',
+      cookies2:'For more information about how Google uses data, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google\'s privacy policy</a>.',
+      hExternal:'External services',
+      external1:'<strong>Google Fonts</strong> is used to load Cinzel and Cormorant Garamond typefaces. Your browser may send a request to Google\'s servers when loading the page.',
+      external2:'Eclipse data is sourced from <strong>NASA Goddard Space Flight Center</strong> (<a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>) and is not transmitted from your device.',
+      hLinks:'Third-party links',
+      links1:'This site links to <a href="https://www.nextfullmoon.co" target="_blank" rel="noopener">nextfullmoon.co</a> and <a href="https://www.lunallena.co" target="_blank" rel="noopener">lunallena.co</a>. These sites have their own privacy policies.',
+      hRights:'Your rights',
+      rights1:'Since we do not collect personal data, there is nothing to access, rectify or delete. If you have questions, contact us at <a href="mailto:hello@next-eclipse.com">hello@next-eclipse.com</a>.',
+      rights2:'You also have the right to lodge a complaint with a data protection supervisory authority. In Spain: <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (aepd.es)</a>.',
+      hChanges:'Changes to this policy',
+      changes1:'Any changes to this privacy policy will be posted on this page. Continued use of the site constitutes acceptance of any revised policy.'
+    },
+    es:{
+      title:'Política de Privacidad · Next Eclipse',
+      desc:'Política de privacidad de Next Eclipse (next-eclipse.com). Información sobre los datos recogidos, las cookies, Google AdSense y tus derechos.',
+      eyebrow:'Legal',
+      h1:'Política de Privacidad',
+      updated:'Última actualización: mayo de 2026',
+      hCollect:'Qué recogemos',
+      collect1:'Next Eclipse no recoge datos personales. El sitio no requiere registro, no solicita nombres ni direcciones de correo electrónico y no almacena información de los usuarios en ningún servidor.',
+      collect2:'La preferencia de idioma se guarda en el <strong>localStorage</strong> de tu navegador para que el sitio recuerde tu elección en futuras visitas. Estos datos permanecen en tu dispositivo y nunca se transmiten.',
+      hCookies:'Cookies y publicidad',
+      cookies1:'Este sitio utiliza <strong>Google AdSense</strong> para mostrar anuncios contextuales. Google puede usar cookies y tecnologías similares para mostrar anuncios basados en tus visitas a este y otros sitios web. Para desactivar la publicidad personalizada, visita <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.',
+      cookies2:'Para más información sobre cómo Google utiliza los datos, consulta la <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">política de privacidad de Google</a>.',
+      hExternal:'Servicios externos',
+      external1:'Se utiliza <strong>Google Fonts</strong> para cargar las tipografías Cinzel y Cormorant Garamond. Tu navegador puede enviar una solicitud a los servidores de Google al cargar la página.',
+      external2:'Los datos del eclipse proceden del <strong>NASA Goddard Space Flight Center</strong> (<a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>) y no se transmiten desde tu dispositivo.',
+      hLinks:'Enlaces a terceros',
+      links1:'Este sitio enlaza a <a href="https://www.nextfullmoon.co" target="_blank" rel="noopener">nextfullmoon.co</a> y <a href="https://www.lunallena.co" target="_blank" rel="noopener">lunallena.co</a>. Estos sitios tienen sus propias políticas de privacidad.',
+      hRights:'Tus derechos',
+      rights1:'Dado que no recogemos datos personales, no hay nada a lo que acceder, ni que rectificar o suprimir. Si tienes preguntas, escríbenos a <a href="mailto:hello@next-eclipse.com">hello@next-eclipse.com</a>.',
+      rights2:'También tienes derecho a presentar una reclamación ante una autoridad de control de protección de datos. En España: <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (aepd.es)</a>.',
+      hChanges:'Cambios en esta política',
+      changes1:'Cualquier cambio en esta política de privacidad se publicará en esta página. El uso continuado del sitio implica la aceptación de cualquier política revisada.'
+    }
+  };
+  function lang(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
+  function setText(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+  function setHTML(id,v){var e=document.getElementById(id);if(e)e.innerHTML=v;}
+  function setAttr(id,a,v){var e=document.getElementById(id);if(e)e.setAttribute(a,v);}
+  function applyPP(){
+    var l=lang(),P=PP[l]||PP.en;
+    document.documentElement.lang=l;
+    document.title=P.title;
+    var t=document.getElementById('pp-title');if(t)t.textContent=P.title;
+    setAttr('pp-desc','content',P.desc);
+    setText('pp-eyebrow',P.eyebrow);
+    setText('pp-h1',P.h1);
+    setText('pp-updated',P.updated);
+    setText('pp-h-collect',P.hCollect);
+    setText('pp-collect1',P.collect1);
+    setHTML('pp-collect2',P.collect2);
+    setText('pp-h-cookies',P.hCookies);
+    setHTML('pp-cookies1',P.cookies1);
+    setHTML('pp-cookies2',P.cookies2);
+    setText('pp-h-external',P.hExternal);
+    setHTML('pp-external1',P.external1);
+    setHTML('pp-external2',P.external2);
+    setText('pp-h-links',P.hLinks);
+    setHTML('pp-links1',P.links1);
+    setText('pp-h-rights',P.hRights);
+    setHTML('pp-rights1',P.rights1);
+    setHTML('pp-rights2',P.rights2);
+    setText('pp-h-changes',P.hChanges);
+    setText('pp-changes1',P.changes1);
+  }
+  applyPP();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',applyPP);
+  var _tl=window.toggleLang;
+  window.toggleLang=function(){if(typeof _tl==='function'){try{_tl();}catch(e){}}else{localStorage.setItem('ne-lang',lang()==='es'?'en':'es');}applyPP();};
 })();
 </script>
 </body>
