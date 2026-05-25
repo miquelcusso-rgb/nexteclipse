@@ -8,9 +8,9 @@
   </url>
   <url>
     <loc>https://www.next-eclipse.com/upcoming</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.next-eclipse.com/history</loc>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://www.next-eclipse.com/calendar</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
