@@ -42,15 +42,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}html{background:#030304;overflow-x:clip;}body{overflow-x:clip;}
 body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.88);min-height:100vh;padding:0 0 4rem;line-height:1.75;}
-.wrap{max-width:700px;margin:0 auto;padding:2.5rem 1.5rem 0;}
-
-/* topbar — full width */
-nav.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
+.wrap{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 0;}
+.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
 .site-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(220,160,50,.42);text-decoration:none;}
 .site-name:hover{color:rgba(220,160,50,.85);}
 .nav-links{display:flex;gap:1rem;align-items:center;}
-.nav-link{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;}.nav-link:hover{color:rgba(220,160,50,.75);}
-.nav-link:hover,.nav-link.active{color:rgba(220,160,50,.95);font-weight:600;}
+.nav-link{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;}.nav-link.active{color:rgba(220,160,50,.95);font-weight:600;}
+.nav-link:hover{color:rgba(220,160,50,.75);}
 .lang-btn{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.52);background:none;border:1px solid rgba(220,160,50,.2);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
 .lang-btn:hover{color:rgba(220,160,50,.8);border-color:rgba(220,160,50,.4);}
 .share-btn{display:flex;align-items:center;gap:.35rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.62);background:none;border:1px solid rgba(220,160,50,.22);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
@@ -62,40 +60,60 @@ nav.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop
   .share-btn .share-label{display:none;}
   .share-btn .share-icon{width:18px;height:18px;}
 }
-
-/* hero */
 .eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.65);margin-bottom:.5rem;}
-h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem);color:rgba(255,248,228,.88);letter-spacing:.04em;margin-bottom:.4rem;}
-.subtitle{font-size:1.05rem;font-style:italic;color:rgba(220,160,50,.52);margin-bottom:2.5rem;}
+h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.7rem,4.5vw,2.6rem);color:rgba(255,248,228,.9);letter-spacing:.04em;margin-bottom:.45rem;line-height:1.2;}
+.subtitle{font-size:1.12rem;font-style:italic;color:rgba(220,160,50,.55);margin-bottom:2.5rem;max-width:54ch;}
+h2{font-family:'Cinzel',serif;font-weight:400;font-size:.92rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.46);margin:3rem 0 1.2rem;}
+.lead{font-size:1.15rem;color:rgba(230,218,195,.78);max-width:60ch;margin-bottom:1.6rem;}
+hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:3rem 0;}
 
-/* featured entries */
-.feature{border:1px solid rgba(220,160,50,.12);border-radius:4px;padding:1.8rem;margin-bottom:2rem;}
-.feature.star{border-color:rgba(220,160,50,.22);background:rgba(220,160,50,.03);}
-.feat-eyebrow{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.5);margin-bottom:.4rem;}
-.feat-year{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.4);margin-bottom:.3rem;}
-.feat-title{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.1rem,2.5vw,1.45rem);color:rgba(255,248,220,.85);letter-spacing:.04em;margin-bottom:.9rem;}
-.feat-body{font-size:1.05rem;color:rgba(220,210,180,.6);margin-bottom:.7rem;}
-.feat-note{font-size:.9rem;font-style:italic;color:rgba(220,180,100,.38);border-left:2px solid rgba(220,160,50,.15);padding-left:.75rem;margin-top:.5rem;}
+/* ── FEATURE STORY CARDS ── */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1rem;margin-bottom:1.5rem;}
+.feat-card{border:1px solid rgba(220,160,50,.12);border-radius:6px;padding:1.8rem 1.6rem;background:rgba(220,160,50,.018);display:flex;gap:1.2rem;}
+.feat-card.star{border-color:rgba(220,160,50,.25);background:rgba(220,160,50,.03);}
+.feat-glyph{flex:0 0 44px;display:flex;align-items:flex-start;padding-top:.2rem;}
+.feat-glyph svg{width:44px;height:44px;display:block;}
+.feat-body{flex:1;min-width:0;}
+.feat-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(220,160,50,.5);margin-bottom:.35rem;}
+.feat-year{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);margin-bottom:.3rem;}
+.feat-title{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.05rem,2.2vw,1.35rem);color:rgba(255,248,220,.85);letter-spacing:.04em;margin-bottom:.85rem;line-height:1.3;}
+.feat-text{font-size:1.04rem;color:rgba(220,210,180,.65);margin-bottom:.6rem;line-height:1.7;}
+.feat-note{font-size:.92rem;font-style:italic;color:rgba(220,180,100,.38);border-left:2px solid rgba(220,160,50,.15);padding-left:.75rem;margin-top:.4rem;}
 
-hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2.5rem 0;}
-h2{font-family:'Cinzel',serif;font-weight:400;font-size:.82rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.38);margin:2rem 0 1.5rem;}
+/* ── VISUAL TIMELINE ── */
+.timeline{position:relative;margin:0 0 1rem;padding-left:0;}
+.tl-year{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(220,160,50,.5);margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(220,160,50,.08);}
+.tl-row{position:relative;display:grid;grid-template-columns:46px 1fr;gap:1rem;padding-bottom:1rem;}
+.tl-rail{position:relative;display:flex;justify-content:center;}
+.tl-rail::before{content:'';position:absolute;top:6px;bottom:-1rem;left:50%;width:1px;background:rgba(220,160,50,.12);transform:translateX(-50%);}
+.tl-row:last-child .tl-rail::before{display:none;}
+.tl-glyph{position:relative;z-index:1;width:40px;height:40px;flex-shrink:0;}
+.tl-glyph svg{display:block;width:40px;height:40px;}
 
-/* timeline */
-.timeline{position:relative;padding-left:2.5rem;}
-.timeline::before{content:'';position:absolute;left:.7rem;top:.5rem;bottom:.5rem;width:1px;background:rgba(220,160,50,.08);}
-.entry{position:relative;margin-bottom:2.5rem;}
-.entry::before{content:'';position:absolute;left:-2.1rem;top:.58rem;width:.45rem;height:.45rem;border-radius:50%;background:rgba(220,160,50,.25);border:1px solid rgba(220,160,50,.45);}
-.entry-year{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.65);margin-bottom:.25rem;}
-.entry-title{font-family:'Cinzel',serif;font-weight:400;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,220,.68);margin-bottom:.5rem;}
-.entry-icon{margin-right:.4rem;}
-.entry-body{font-size:1.02rem;color:rgba(220,210,180,.56);margin-bottom:.3rem;}
-.entry-note{font-size:.88rem;font-style:italic;color:rgba(220,180,100,.38);}
+/* ── ECLIPSE CARD ── */
+.ec-card{border:1px solid rgba(220,160,50,.09);border-radius:5px;background:rgba(220,160,50,.018);padding:1.1rem 1.2rem 1.15rem;transition:border-color .2s,background .2s;}
+.ec-card:hover{border-color:rgba(220,160,50,.2);background:rgba(220,160,50,.03);}
+.ec-top{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem;flex-wrap:wrap;margin-bottom:.45rem;}
+.ec-name{font-family:'Cinzel',serif;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,248,220,.82);}
+.ec-date{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(220,160,50,.7);white-space:nowrap;}
+.ec-vis{font-size:1.06rem;color:rgba(224,206,168,.72);margin-bottom:.55rem;}
+.ec-chips{display:flex;gap:.4rem;flex-wrap:wrap;}
+.ec-chip{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.26rem .6rem;border:1px solid rgba(220,160,50,.14);border-radius:2px;color:rgba(220,180,120,.7);}
+.ec-chip strong{color:rgba(255,222,142,.86);font-family:inherit;font-weight:400;}
 
-/* ad */
+/* ── CROSSLINKS / SOURCE ── */
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:1rem 0 1.5rem;}
+.crosslink-cal{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border:1px solid rgba(220,160,50,.12);border-radius:3px;text-decoration:none;transition:border-color .2s;background:rgba(220,160,50,.02);}
+.crosslink-cal:hover{border-color:rgba(220,160,50,.3);}
+.cl-label{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
+.cl-title{font-size:1.1rem;font-style:italic;color:rgba(255,240,200,.78);margin-top:.2rem;}
+.cl-arrow{color:rgba(220,160,50,.4);font-size:1.2rem;}
 .ad-slot{width:100%;max-width:728px;margin:2.5rem auto;text-align:center;}
-
+.source{font-size:1rem;font-style:italic;color:rgba(195,180,145,.55);margin-top:1rem;}
+.source a{color:rgba(220,160,50,.6);text-decoration:none;border-bottom:1px solid rgba(220,160,50,.2);}
 footer{margin-top:4rem;width:100vw;margin-left:50%;transform:translateX(-50%);text-align:center;padding:1.2rem 1rem 2rem;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.19em;color:#c4c4d8;opacity:.19;text-transform:uppercase;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196,240,.13);}
+.hidden{display:none!important;}
 
 /* ── mobile hamburger ── */
 .menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.45rem .35rem;flex-shrink:0;}
@@ -112,24 +130,15 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
 .drawer-link:last-child{border-bottom:none;}
 .drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}
 @media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}}
-
-/* ── readability patch: +2px body text, higher contrast ── */
-body{color:rgba(236,228,210,.88);}
-p{font-size:1.13rem;color:rgba(230,218,195,.84);}
-footer,footer p,footer a{font-size:.62rem !important;letter-spacing:.19em !important;line-height:1.7 !important;text-transform:uppercase !important;}
-td{font-size:1.07rem;color:rgba(226,212,182,.78);}
-.faq-a{font-size:1.13rem !important;color:rgba(226,210,180,.76) !important;}
-.disclaimer{font-size:1.04rem;color:rgba(195,180,145,.62);}
-.path-banner-text{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cl-title{font-size:1.1rem;color:rgba(255,240,200,.76);}
-.source{font-size:1.0rem;color:rgba(195,180,145,.58);}
-.subtitle{font-size:1.1rem;}
-.detail-box p{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cov-pct{font-size:.97rem;color:rgba(226,206,170,.66);}
-#intro-in,#intro-out,.intro-text{font-size:1.13rem;}
-.row-name{color:rgba(255,248,220,.80);}
-.row-date{color:rgba(220,160,50,.65);}
-.tip-box{font-size:1.07rem;color:rgba(220,200,150,.75);}
+@media(max-width:580px){
+  .feature-grid{grid-template-columns:1fr;}
+  .feat-card{flex-direction:column;gap:.8rem;}
+  .feat-glyph{padding-top:0;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+}
+:focus-visible{outline:2px solid rgba(220,180,100,.7);outline-offset:2px;border-radius:2px;}
 </style>
 </head>
 <body>
@@ -153,7 +162,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
 <div id="nav-backdrop"></div>
 <div id="nav-drawer">
-  <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
+  <div class="drawer-header"><button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button></div>
   <nav class="drawer-nav">
     <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
     <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
@@ -163,200 +172,282 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
   </nav>
 </div>
 
+<!-- SVG defs (shared gradients) -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <defs>
+    <radialGradient id="coronaG" cx="50%" cy="50%" r="50%">
+      <stop offset="42%" stop-color="rgba(220,160,50,0)"/>
+      <stop offset="50%" stop-color="rgba(255,228,150,.85)"/>
+      <stop offset="62%" stop-color="rgba(220,160,50,.25)"/>
+      <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+    </radialGradient>
+    <radialGradient id="sunG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,236,170,.95)"/>
+      <stop offset="70%" stop-color="rgba(230,170,60,.9)"/>
+      <stop offset="100%" stop-color="rgba(200,130,40,.55)"/>
+    </radialGradient>
+  </defs>
+</svg>
+
 <div class="wrap">
 
   <p class="eyebrow" id="eyebrow">History</p>
   <h1 id="h1">Famous Eclipses in History</h1>
   <p class="subtitle" id="subtitle">From battles ended to relativity confirmed</p>
 
-  <!-- FEATURED: Einstein 1919 -->
-  <article class="feature star">
-    <p class="feat-eyebrow" id="f1-eyebrow">Landmark · Science</p>
-    <p class="feat-year" id="f1-year">May 29, 1919</p>
-    <h2 class="feat-title" id="f1-title">Einstein Confirmed by Starlight</h2>
-    <p class="feat-body" id="f1-body1">Arthur Eddington led two simultaneous expeditions — one to Príncipe island off the coast of West Africa, the other to Sobral in northeastern Brazil — to photograph stars near the Sun during a total solar eclipse. The goal: test whether the Sun's gravity bent light, as Einstein's general theory of relativity predicted.</p>
-    <p class="feat-body" id="f1-body2">The measurements matched Einstein's predictions precisely. When the results were announced at the Royal Society in London in November 1919, it made front pages worldwide. Albert Einstein became a household name overnight. It remains one of the most consequential scientific observations in history.</p>
-    <p class="feat-note" id="f1-note">Published in Philosophical Transactions of the Royal Society, 1920. Totality: 6 min 51 sec over the Atlantic.</p>
-  </article>
+  <!-- ── FEATURE STORY CARDS ── -->
+  <div class="feature-grid">
 
-  <!-- FEATURED: Thales 585 BC -->
-  <article class="feature">
-    <p class="feat-eyebrow" id="f2-eyebrow">Landmark · Ancient World</p>
-    <p class="feat-year" id="f2-year">May 28, 585 BC</p>
-    <h2 class="feat-title" id="f2-title">The Eclipse That Ended a War</h2>
-    <p class="feat-body" id="f2-body1">The Battle of Halys had been raging for five years between the Medes and the Lydians in what is now Turkey. On May 28, 585 BC, the sky suddenly went dark. Both armies, believing the gods were demanding a halt, laid down their weapons. The war ended immediately — and a peace treaty followed.</p>
-    <p class="feat-body" id="f2-body2">The Greek philosopher Thales of Miletus had reportedly predicted the eclipse — the earliest known scientific forecast in recorded history. Whether or not the prediction was exact, the event demonstrated that eclipses follow natural laws. This single episode marks the transition from supernatural explanation to rational astronomy.</p>
-    <p class="feat-note" id="f2-note">Recounted by Herodotus, Histories, Book I. Independently corroborated by modern astronomical back-calculation.</p>
-  </article>
+    <!-- Einstein 1919 -->
+    <article class="feat-card star">
+      <div class="feat-glyph" aria-hidden="true">
+        <!-- Corona glyph: science / totality -->
+        <svg viewBox="0 0 44 44">
+          <circle cx="22" cy="22" r="20" fill="url(#coronaG)"/>
+          <circle cx="22" cy="22" r="9" fill="#030304" stroke="rgba(255,236,180,.55)" stroke-width="1"/>
+          <!-- refraction ray lines -->
+          <line x1="22" y1="2" x2="22" y2="8" stroke="rgba(255,236,180,.4)" stroke-width="1"/>
+          <line x1="38" y1="10" x2="34" y2="14" stroke="rgba(255,236,180,.35)" stroke-width="1"/>
+          <line x1="42" y1="22" x2="36" y2="22" stroke="rgba(255,236,180,.35)" stroke-width="1"/>
+          <line x1="6" y1="22" x2="12" y2="22" stroke="rgba(255,236,180,.35)" stroke-width="1"/>
+          <line x1="8" y1="10" x2="12" y2="14" stroke="rgba(255,236,180,.35)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="feat-body">
+        <p class="feat-eyebrow" id="f1-eyebrow">Landmark · Science</p>
+        <p class="feat-year" id="f1-year">May 29, 1919</p>
+        <h2 class="feat-title" id="f1-title">Einstein Confirmed by Starlight</h2>
+        <p class="feat-text" id="f1-body1">Arthur Eddington led two simultaneous expeditions — one to Príncipe island off the coast of West Africa, the other to Sobral in northeastern Brazil — to photograph stars near the Sun during a total solar eclipse. The goal: test whether the Sun's gravity bent light, as Einstein's general theory of relativity predicted.</p>
+        <p class="feat-text" id="f1-body2">The measurements matched Einstein's predictions precisely. When the results were announced at the Royal Society in London in November 1919, it made front pages worldwide. Albert Einstein became a household name overnight. It remains one of the most consequential scientific observations in history.</p>
+        <p class="feat-note" id="f1-note">Published in Philosophical Transactions of the Royal Society, 1920. Totality: 6 min 51 sec over the Atlantic.</p>
+      </div>
+    </article>
+
+    <!-- Thales 585 BC -->
+    <article class="feat-card">
+      <div class="feat-glyph" aria-hidden="true">
+        <!-- Crossed swords / peace glyph: war ended -->
+        <svg viewBox="0 0 44 44">
+          <!-- Moon disc (dark, dramatic) -->
+          <circle cx="22" cy="22" r="18" fill="rgba(30,25,20,.9)" stroke="rgba(220,160,50,.18)" stroke-width="1"/>
+          <!-- Crescent shadow suggesting abrupt darkness -->
+          <circle cx="28" cy="18" r="15" fill="#030304"/>
+          <!-- Gold rim glow -->
+          <circle cx="22" cy="22" r="18" fill="none" stroke="rgba(220,160,50,.25)" stroke-width="1.5"/>
+          <!-- small dot — the moment of darkness -->
+          <circle cx="16" cy="26" r="2.5" fill="rgba(255,228,100,.6)"/>
+        </svg>
+      </div>
+      <div class="feat-body">
+        <p class="feat-eyebrow" id="f2-eyebrow">Landmark · Ancient World</p>
+        <p class="feat-year" id="f2-year">May 28, 585 BC</p>
+        <h2 class="feat-title" id="f2-title">The Eclipse That Ended a War</h2>
+        <p class="feat-text" id="f2-body1">The Battle of Halys had been raging for five years between the Medes and the Lydians in what is now Turkey. On May 28, 585 BC, the sky suddenly went dark. Both armies, believing the gods were demanding a halt, laid down their weapons. The war ended immediately — and a peace treaty followed.</p>
+        <p class="feat-text" id="f2-body2">The Greek philosopher Thales of Miletus had reportedly predicted the eclipse — the earliest known scientific forecast in recorded history. Whether or not the prediction was exact, the event demonstrated that eclipses follow natural laws. This single episode marks the transition from supernatural explanation to rational astronomy.</p>
+        <p class="feat-note" id="f2-note">Recounted by Herodotus, Histories, Book I. Independently corroborated by modern astronomical back-calculation.</p>
+      </div>
+    </article>
+
+  </div><!-- /feature-grid -->
 
   <div class="ad-slot">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6498215334315959" data-ad-slot="5903745160" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </div>
 
   <hr>
+
+  <!-- ── VISUAL TIMELINE ── -->
   <h2 id="timeline-h2">Complete Eclipse Timeline</h2>
+  <p class="lead" id="timeline-lead">Thirteen defining eclipses across 2,800 years of history — from ancient clay tablets to coast-to-coast spectacles.</p>
 
-  <div class="timeline">
-
-    <div class="entry" id="e763">
-      <div class="entry-year" id="e763-year">763 BC · June 15</div>
-      <div class="entry-title"><span class="entry-icon">🏺</span><span id="e763-title">The Assyrian Clay Tablet</span></div>
-      <p class="entry-body" id="e763-body">A cuneiform inscription from ancient Nineveh records "day turned to night" — a total solar eclipse preserved on clay for over 2,700 years. It is the oldest reliably dated astronomical event in history. Modern historians use this eclipse as a precise anchor point to date Assyrian kings, battles, and Biblical events in the 8th century BC.</p>
-      <p class="entry-note" id="e763-note">The tablet belongs to the Assyrian Eponym Chronicle. The eclipse is cross-referenced with Amos 8:9 ("I will make the sun go down at noon").</p>
-    </div>
-
-    <div class="entry" id="e585">
-      <div class="entry-year" id="e585-year">585 BC · May 28</div>
-      <div class="entry-title"><span class="entry-icon">⚔️</span><span id="e585-title">Thales and the Battle of Halys</span></div>
-      <p class="entry-body" id="e585-body">During the Battle of Halys between the Medes and the Lydians, a total solar eclipse darkened the sky mid-battle. Both armies interpreted it as a divine omen and immediately ceased fighting. Thales of Miletus had reportedly predicted the eclipse, making it one of the earliest recorded scientific forecasts in history.</p>
-      <p class="entry-note" id="e585-note">Herodotus, Histories, Book I. The eclipse was independently confirmed by back-calculation in the 19th century.</p>
-    </div>
-
-    <div class="entry" id="e840">
-      <div class="entry-year" id="e840-year">840 AD · May 5</div>
-      <div class="entry-title"><span class="entry-icon">👑</span><span id="e840-title">The Death of an Emperor</span></div>
-      <p class="entry-body" id="e840-body">Holy Roman Emperor Louis the Pious witnessed a total solar eclipse and, filled with terror at what medieval tradition held to be a divine portent, fell into a severe decline. He died just two months later. Frankish chroniclers linked the eclipse directly to his death. Multiple medieval sources record the event as proof of celestial punishment.</p>
-      <p class="entry-note" id="e840-note">Recorded in the Annales Bertiniani. Path of totality crossed central Europe including what is now Germany and France.</p>
-    </div>
-
-    <div class="entry" id="e1133">
-      <div class="entry-year" id="e1133-year">1133 · August 2</div>
-      <div class="entry-title"><span class="entry-icon">🏰</span><span id="e1133-title">King Henry's Eclipse</span></div>
-      <p class="entry-body" id="e1133-body">A total solar eclipse plunged England into darkness on the same day King Henry I of England crossed the Channel on his final voyage home. The Anglo-Saxon Chronicle described the sky "becoming so dark that the stars were visible at noon." Henry died two years later, and medieval writers — always alert to omens — tied the eclipse to the end of his reign.</p>
-      <p class="entry-note" id="e1133-note">Known in historical literature as "King Henry's Eclipse." Totality lasted around 4 minutes over northern England and Scotland.</p>
-    </div>
-
-    <div class="entry" id="e1504">
-      <div class="entry-year" id="e1504-year">1504 · February 29</div>
-      <div class="entry-title"><span class="entry-icon">🧭</span><span id="e1504-title">Columbus and the Lunar Eclipse</span></div>
-      <p class="entry-body" id="e1504-body">Stranded in Jamaica for over a year, Christopher Columbus used his astronomical almanac — calculated by Abraham Zacuto — to predict a total lunar eclipse. He warned the Taíno people that his god would punish them by making the moon disappear. When the Blood Moon rose exactly as he foretold, the terrified Taíno immediately agreed to supply his crew with food. Columbus revealed the moon's "return" once his demands were met.</p>
-      <p class="entry-note" id="e1504-note">The eclipse lasted 48 minutes at maximum. Columbus's tactic ended a year-long standoff with local populations.</p>
-    </div>
-
-    <div class="entry" id="e1715">
-      <div class="entry-year" id="e1715-year">1715 · May 3</div>
-      <div class="entry-title"><span class="entry-icon">🗺️</span><span id="e1715-title">Halley Maps the Shadow</span></div>
-      <p class="entry-body" id="e1715-body">Edmond Halley — of comet fame — successfully predicted a total solar eclipse visible across England and distributed printed maps showing the path of totality in advance. It was the first time the public could follow a predicted eclipse track. Halley himself observed from London, and compared observations from across the country to refine Newton's gravitational theory and map the Moon's shadow with unprecedented accuracy.</p>
-      <p class="entry-note" id="e1715-note">Halley's prediction was accurate to within 4 minutes and a few kilometres. He later published a correction for the next English eclipse of 1724.</p>
-    </div>
-
-    <div class="entry" id="e1868">
-      <div class="entry-year" id="e1868-year">1868 · August 18</div>
-      <div class="entry-title"><span class="entry-icon">🔬</span><span id="e1868-title">A New Element in the Sun</span></div>
-      <p class="entry-body" id="e1868-body">During a total solar eclipse visible from India and Southeast Asia, French astronomer Jules Janssen and British scientist Norman Pogson independently detected an unknown spectral line in the solar corona — a wavelength that matched no element known on Earth. The element was named helium, after Helios, the Greek sun god. It wasn't isolated on Earth until 1895, 27 years later, when William Ramsay found it trapped in a uranium mineral.</p>
-      <p class="entry-note" id="e1868-note">The only element first discovered on another celestial body before being found on Earth. Janssen's observations from Guntur, India were decisive.</p>
-    </div>
-
-    <div class="entry" id="e1919">
-      <div class="entry-year" id="e1919-year">1919 · May 29</div>
-      <div class="entry-title"><span class="entry-icon">🔭</span><span id="e1919-title">Einstein Confirmed</span></div>
-      <p class="entry-body" id="e1919-body">Arthur Eddington's expeditions to Príncipe and Sobral photographed stars near the Sun during totality. The measured deflection of starlight matched Einstein's general theory of relativity exactly. The announcement at the Royal Society in November 1919 made Einstein world-famous overnight.</p>
-      <p class="entry-note" id="e1919-note">Philosophical Transactions of the Royal Society, 1920. Totality: 6 min 51 sec. Path crossed West Africa and South America.</p>
-    </div>
-
-    <div class="entry" id="e1973">
-      <div class="entry-year" id="e1973-year">1973 · June 30</div>
-      <div class="entry-title"><span class="entry-icon">✈️</span><span id="e1973-title">The Concorde Eclipse</span></div>
-      <p class="entry-body" id="e1973-body">A specially modified Concorde prototype chased the Moon's shadow across the Sahara at twice the speed of sound, keeping scientists inside totality for 74 uninterrupted minutes. Ground-based observers had a maximum of 7 minutes. The experiment allowed astronomers to study the solar corona and the chromosphere in extraordinary detail — experiments impossible from any fixed location. It remains the longest artificially extended totality in history.</p>
-      <p class="entry-note" id="e1973-note">The aircraft was Concorde 001, flying at Mach 2.05 at 17,000 metres. The shadow crossed West Africa and the Atlantic.</p>
-    </div>
-
-    <div class="entry" id="e1991">
-      <div class="entry-year" id="e1991-year">1991 · July 11</div>
-      <div class="entry-title"><span class="entry-icon">🌋</span><span id="e1991-title">The Hawaii–Mexico Eclipse</span></div>
-      <p class="entry-body" id="e1991-body">One of the longest total solar eclipses of the 20th century — up to 6 min 54 sec of totality — crossed the Pacific, Hawaii and Mexico at a time when Mauna Kea's world-class observatories were perfectly positioned in the path. Hundreds of thousands gathered in Baja California. The eruption of Mount Pinatubo in the Philippines just weeks earlier put fine ash in the upper atmosphere, giving the corona an unusually vivid appearance.</p>
-      <p class="entry-note" id="e1991-note">Maximum totality near La Paz, Baja California, Mexico. One of the best-observed solar eclipses of the century.</p>
-    </div>
-
-    <div class="entry" id="e1999">
-      <div class="entry-year" id="e1999-year">1999 · August 11</div>
-      <div class="entry-title"><span class="entry-icon">🌍</span><span id="e1999-title">The European Eclipse</span></div>
-      <p class="entry-body" id="e1999-body">The last total solar eclipse of the 20th century swept across Europe — Cornwall, Normandy, Stuttgart, Salzburg, Bucharest, Istanbul — drawing an estimated 350 million viewers across the continent. The path of totality was 112 km wide, but partial phases were visible from Iceland to India. It was the most-watched eclipse in history up to that point.</p>
-      <p class="entry-note" id="e1999-note">Maximum totality: 2 min 23 sec near Reims, France. Millions gathered on Dartmoor, the beaches of Brittany and the Carpathian hills.</p>
-    </div>
-
-    <div class="entry" id="e2017">
-      <div class="entry-year" id="e2017-year">2017 · August 21</div>
-      <div class="entry-title"><span class="entry-icon">🇺🇸</span><span id="e2017-title">The Great American Eclipse</span></div>
-      <p class="entry-body" id="e2017-body">The first total solar eclipse to cross the continental United States coast-to-coast since 1918. The path of totality stretched from Oregon to South Carolina over 2,500 km. An estimated 215 million Americans watched some portion — the most-viewed natural event in US history. NASA's live stream reached over 40 million viewers. Eclipse glasses sold out weeks in advance and traffic jams extended 80 km from prime viewing sites.</p>
-      <p class="entry-note" id="e2017-note">Path: Oregon → Idaho → Wyoming → Missouri → Tennessee → South Carolina. Maximum totality: 2 min 42 sec near Hopkinsville, Kentucky.</p>
-    </div>
-
-    <div class="entry" id="e2024">
-      <div class="entry-year" id="e2024-year">2024 · April 8</div>
-      <div class="entry-title"><span class="entry-icon">🌎</span><span id="e2024-title">North American Total Solar Eclipse</span></div>
-      <p class="entry-body" id="e2024-body">A total solar eclipse swept from Mexico through 13 US states — Texas, Arkansas, Indiana, Ohio, Vermont — and into Atlantic Canada. Totality lasted up to 4 min 28 sec near Torreón, Mexico, the longest path through North America in decades. Dallas, Indianapolis, Cleveland and Montréal all experienced full totality. NASA estimated 31.6 million people lived inside the path of totality.</p>
-      <p class="entry-note" id="e2024-note">Maximum totality: 4 min 28 sec near Torreón, Mexico. The next total solar eclipse over the US will be in August 2044.</p>
-    </div>
-
-  </div><!-- /timeline -->
+  <div class="timeline" id="timeline" aria-label="Historical eclipse timeline"></div>
 
   <hr>
+
+  <!-- ── CROSSLINKS ── -->
+  <h2 id="h-links">Explore more</h2>
+  <div class="crosslinks">
+    <a class="crosslink-cal" href="/upcoming.html">
+      <div>
+        <div class="cl-label" id="cl-upcoming-label">Next Eclipses</div>
+        <div class="cl-title" id="cl-upcoming-title">Visual Timeline 2026–2028</div>
+      </div>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a class="crosslink-cal" href="/eclipse-solar-espana-2026.html">
+      <div>
+        <div class="cl-label" id="cl-spain-label">Spain · Aug 2026</div>
+        <div class="cl-title" id="cl-spain-title">Total Solar Eclipse Guide</div>
+      </div>
+      <span class="cl-arrow">→</span>
+    </a>
+  </div>
+
+  <p class="source" id="source-note">Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a></p>
+
   <footer>
     <p>© 2026 Furiosa Studio · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
   </footer>
-</div><!-- /wrap -->
+</div>
 
 <script>
+/* ── HISTORICAL ECLIPSE DATA ── */
+const HIST = [
+  { era:'BC', kind:'solar_total',
+    en:{year:'763 BC · June 15',name:'The Assyrian Clay Tablet',note:'763 BC',
+        vis:'Ancient Nineveh (modern Iraq)',c1:'Type',c1v:'Total Solar',c2:'Significance',c2v:'Oldest dated event',
+        body:'A cuneiform inscription from ancient Nineveh records "day turned to night" — a total solar eclipse preserved on clay for over 2,700 years. It is the oldest reliably dated astronomical event in history. Modern historians use this eclipse as a precise anchor point to date Assyrian kings, battles, and Biblical events in the 8th century BC.',
+        footnote:'The tablet belongs to the Assyrian Eponym Chronicle. The eclipse is cross-referenced with Amos 8:9 ("I will make the sun go down at noon").'},
+    es:{year:'763 a.C. · 15 de junio',name:'La Tablilla de Arcilla Asiria',note:'763 a.C.',
+        vis:'Antigua Nínive (actual Irak)',c1:'Tipo',c1v:'Solar Total',c2:'Significado',c2v:'Evento datado más antiguo',
+        body:'Una inscripción cuneiforme de la antigua Nínive registra que "el día se convirtió en noche" — un eclipse solar total preservado en arcilla durante más de 2.700 años. Es el acontecimiento astronómico con fecha más fiable de la historia. Los historiadores modernos utilizan este eclipse como punto de anclaje para datar reyes asirios, batallas y eventos bíblicos del siglo VIII a.C.',
+        footnote:'La tablilla pertenece a la Crónica de los Epónimos Asirios. El eclipse se relaciona con Amós 8:9 ("haré que el sol se ponga al mediodía").'}
+  },
+  { era:'BC', kind:'solar_total',
+    en:{year:'585 BC · May 28',name:'Thales and the Battle of Halys',note:'585 BC',
+        vis:'Halys River, Asia Minor (Turkey)',c1:'Type',c1v:'Total Solar',c2:'Significance',c2v:'First scientific forecast',
+        body:'During the Battle of Halys between the Medes and the Lydians, a total solar eclipse darkened the sky mid-battle. Both armies interpreted it as a divine omen and immediately ceased fighting. Thales of Miletus had reportedly predicted the eclipse, making it one of the earliest recorded scientific forecasts in history.',
+        footnote:'Herodotus, Histories, Book I. The eclipse was independently confirmed by back-calculation in the 19th century.'},
+    es:{year:'585 a.C. · 28 de mayo',name:'Tales y la Batalla de Halys',note:'585 a.C.',
+        vis:'Río Halys, Asia Menor (Turquía)',c1:'Tipo',c1v:'Solar Total',c2:'Significado',c2v:'Primera previsión científica',
+        body:'Durante la Batalla de Halys entre medos y lidios, un eclipse solar total oscureció el cielo en plena batalla. Ambos ejércitos lo interpretaron como un presagio divino y cesaron el combate inmediatamente. Se dice que Tales de Mileto había predicho el eclipse, convirtiéndolo en uno de los primeros pronósticos científicos registrados en la historia.',
+        footnote:'Heródoto, Historias, Libro I. El eclipse fue confirmado independientemente por cálculo retrospectivo en el siglo XIX.'}
+  },
+  { era:'AD', kind:'solar_total',
+    en:{year:'840 AD · May 5',name:'The Death of an Emperor',note:'840 AD',
+        vis:'Central Europe (Germany, France)',c1:'Type',c1v:'Total Solar',c2:'Event',c2v:'Louis the Pious declines',
+        body:'Holy Roman Emperor Louis the Pious witnessed a total solar eclipse and, filled with terror at what medieval tradition held to be a divine portent, fell into a severe decline. He died just two months later. Frankish chroniclers linked the eclipse directly to his death. Multiple medieval sources record the event as proof of celestial punishment.',
+        footnote:'Recorded in the Annales Bertiniani. Path of totality crossed central Europe including what is now Germany and France.'},
+    es:{year:'840 d.C. · 5 de mayo',name:'La Muerte de un Emperador',note:'840 d.C.',
+        vis:'Europa central (Alemania, Francia)',c1:'Tipo',c1v:'Solar Total',c2:'Evento',c2v:'Luis el Piadoso declina',
+        body:'El Sacro Emperador Romano Luis el Piadoso presenció un eclipse solar total y, aterrado por lo que la tradición medieval consideraba un presagio divino, cayó en un grave declive. Murió apenas dos meses después. Los cronistas francos vincularon directamente el eclipse a su muerte. Varias fuentes medievales lo registran como prueba de castigo celestial.',
+        footnote:'Recogido en los Annales Bertiniani. El camino de totalidad cruzó Europa central, incluyendo lo que hoy es Alemania y Francia.'}
+  },
+  { era:'Medieval', kind:'solar_total',
+    en:{year:'1133 · August 2',name:"King Henry's Eclipse",note:'1133',
+        vis:'Northern England · Scotland',c1:'Type',c1v:'Total Solar',c2:'Totality',c2v:'~4 min',
+        body:'A total solar eclipse plunged England into darkness on the same day King Henry I crossed the Channel on his final voyage home. The Anglo-Saxon Chronicle described the sky "becoming so dark that the stars were visible at noon." Henry died two years later, and medieval writers tied the eclipse to the end of his reign.',
+        footnote:'Known in historical literature as "King Henry\'s Eclipse." Totality lasted around 4 minutes over northern England and Scotland.'},
+    es:{year:'1133 · 2 de agosto',name:'El Eclipse del Rey Enrique',note:'1133',
+        vis:'Norte de Inglaterra · Escocia',c1:'Tipo',c1v:'Solar Total',c2:'Totalidad',c2v:'~4 min',
+        body:'Un eclipse solar total sumió Inglaterra en la oscuridad el mismo día en que el rey Enrique I de Inglaterra cruzó el Canal en su último viaje de regreso a casa. La Crónica Anglosajona describió el cielo "tan oscuro que las estrellas eran visibles al mediodía." Enrique murió dos años después y los escritores medievales relacionaron el eclipse con el fin de su reinado.',
+        footnote:'Conocido en la literatura histórica como "El Eclipse del Rey Enrique". La totalidad duró unos 4 minutos sobre el norte de Inglaterra y Escocia.'}
+  },
+  { era:'Age of Exploration', kind:'lunar_total',
+    en:{year:'1504 · February 29',name:'Columbus and the Lunar Eclipse',note:'1504',
+        vis:'Jamaica (Caribbean)',c1:'Type',c1v:'Total Lunar',c2:'Duration',c2v:'48 min',
+        body:'Stranded in Jamaica for over a year, Christopher Columbus used his astronomical almanac to predict a total lunar eclipse. He warned the Taíno people that his god would punish them by making the moon disappear. When the Blood Moon rose exactly as he foretold, the terrified Taíno agreed to supply his crew with food.',
+        footnote:"The eclipse lasted 48 minutes at maximum. Columbus's almanac was calculated by Abraham Zacuto."},
+    es:{year:'1504 · 29 de febrero',name:'Colón y el Eclipse Lunar',note:'1504',
+        vis:'Jamaica (Caribe)',c1:'Tipo',c1v:'Lunar Total',c2:'Duración',c2v:'48 min',
+        body:'Varado en Jamaica durante más de un año, Cristóbal Colón usó su almanaque astronómico para predecir un eclipse lunar total. Avisó al pueblo Taíno que su dios los castigaría haciendo desaparecer la luna. Cuando la Luna de Sangre ascendió exactamente como él había predicho, los Taínos aterrorizados accedieron a suministrar alimentos a su tripulación.',
+        footnote:'El eclipse duró 48 minutos en su punto máximo. El almanaque de Colón fue calculado por Abraham Zacut.'}
+  },
+  { era:'Enlightenment', kind:'solar_total',
+    en:{year:'1715 · May 3',name:'Halley Maps the Shadow',note:'1715',
+        vis:'England (London observed)',c1:'Type',c1v:'Total Solar',c2:'Prediction accuracy',c2v:'±4 min',
+        body:"Edmond Halley — of comet fame — predicted a total solar eclipse visible across England and distributed printed maps showing the path of totality in advance. It was the first time the public could follow a predicted eclipse track. Halley himself observed from London and used the results to refine Newton's gravitational theory.",
+        footnote:"Halley's prediction was accurate to within 4 minutes and a few kilometres. He published a correction for the next English eclipse of 1724."},
+    es:{year:'1715 · 3 de mayo',name:'Halley Cartografía la Sombra',note:'1715',
+        vis:'Inglaterra (observado desde Londres)',c1:'Tipo',c1v:'Solar Total',c2:'Precisión predicción',c2v:'±4 min',
+        body:'Edmond Halley — famoso por su cometa — predijo un eclipse solar total visible en Inglaterra y distribuyó mapas impresos con el camino de totalidad. Fue la primera vez que el público pudo seguir una trayectoria de eclipse predicha. El propio Halley observó desde Londres y utilizó los resultados para refinar la teoría gravitacional de Newton.',
+        footnote:'La predicción de Halley fue precisa en menos de 4 minutos y pocos kilómetros. Publicó una corrección para el siguiente eclipse inglés de 1724.'}
+  },
+  { era:'Discovery', kind:'solar_total',
+    en:{year:'1868 · August 18',name:'A New Element in the Sun',note:'1868',
+        vis:'India · Southeast Asia',c1:'Type',c1v:'Total Solar',c2:'Discovery',c2v:'Helium (He)',
+        body:"During a total solar eclipse over India, French astronomer Jules Janssen detected an unknown spectral line in the solar corona — a wavelength that matched no element known on Earth. Named helium after Helios, the Greek sun god, it wasn't isolated on Earth until 1895. It remains the only element discovered on another celestial body before being found on Earth.",
+        footnote:"Janssen's observations were made from Guntur, India. Confirmation came independently from Norman Pogson at Madras."},
+    es:{year:'1868 · 18 de agosto',name:'Un Nuevo Elemento en el Sol',note:'1868',
+        vis:'India · Sureste Asiático',c1:'Tipo',c1v:'Solar Total',c2:'Descubrimiento',c2v:'Helio (He)',
+        body:'Durante un eclipse solar total sobre India, el astrónomo francés Jules Janssen detectó una línea espectral desconocida en la corona solar — una longitud de onda que no correspondía a ningún elemento conocido en la Tierra. Bautizado como helio por Helios, el dios griego del sol, no se aisló en la Tierra hasta 1895. Sigue siendo el único elemento descubierto en otro cuerpo celeste antes de encontrarse en la Tierra.',
+        footnote:'Las observaciones de Janssen se realizaron desde Guntur, India. La confirmación llegó independientemente de Norman Pogson en Madrás.'}
+  },
+  { era:'Science', kind:'solar_total',
+    en:{year:'1919 · May 29',name:'Einstein Confirmed',note:'1919',
+        vis:'Príncipe Island · Sobral, Brazil',c1:'Type',c1v:'Total Solar',c2:'Totality',c2v:'6 min 51 s',
+        body:"Arthur Eddington's expeditions to Príncipe and Sobral photographed stars near the Sun during totality. The measured deflection of starlight matched Einstein's general theory of relativity exactly. The announcement at the Royal Society made Einstein world-famous overnight.",
+        footnote:'Philosophical Transactions of the Royal Society, 1920. Path crossed West Africa and South America.'},
+    es:{year:'1919 · 29 de mayo',name:'Einstein Confirmado',note:'1919',
+        vis:'Isla de Príncipe · Sobral, Brasil',c1:'Tipo',c1v:'Solar Total',c2:'Totalidad',c2v:'6 min 51 s',
+        body:'Las expediciones de Arthur Eddington a Príncipe y Sobral fotografiaron estrellas cerca del Sol durante la totalidad. La desviación medida de la luz estelar coincidió exactamente con la teoría general de la relatividad de Einstein. El anuncio en la Royal Society hizo a Einstein famoso de la noche a la mañana.',
+        footnote:'Philosophical Transactions of the Royal Society, 1920. Camino: África occidental y América del Sur.'}
+  },
+  { era:'Space Age', kind:'solar_total',
+    en:{year:'1973 · June 30',name:'The Concorde Eclipse',note:'1973',
+        vis:'Sahara Desert (West Africa)',c1:'Type',c1v:'Total Solar',c2:'Totality extended',c2v:'74 min',
+        body:"A specially modified Concorde prototype chased the Moon's shadow across the Sahara at twice the speed of sound, keeping scientists inside totality for 74 uninterrupted minutes — versus a maximum of 7 minutes on the ground. It remains the longest artificially extended totality in history.",
+        footnote:'Concorde 001, flying at Mach 2.05 at 17,000 m. Scientists studied the corona and chromosphere in unprecedented detail.'},
+    es:{year:'1973 · 30 de junio',name:'El Eclipse del Concorde',note:'1973',
+        vis:'Desierto del Sahara (África Occidental)',c1:'Tipo',c1v:'Solar Total',c2:'Totalidad extendida',c2v:'74 min',
+        body:'Un prototipo del Concorde especialmente modificado persiguió la sombra de la Luna sobre el Sahara a dos veces la velocidad del sonido, manteniendo a los científicos en totalidad durante 74 minutos ininterrumpidos — frente a un máximo de 7 minutos en tierra. Es la totalidad artificialmente extendida más larga de la historia.',
+        footnote:'Concorde 001, volando a Mach 2,05 a 17.000 m. Los científicos estudiaron la corona y la cromosfera con un detalle sin precedentes.'}
+  },
+  { era:'Modern', kind:'solar_total',
+    en:{year:'1991 · July 11',name:'The Hawaii–Mexico Eclipse',note:'1991',
+        vis:'Hawaii · Baja California, Mexico',c1:'Type',c1v:'Total Solar',c2:'Totality',c2v:'6 min 54 s',
+        body:'One of the longest total solar eclipses of the 20th century crossed the Pacific, Hawaii and Mexico. The Mauna Kea observatories were perfectly positioned in the path. The recent eruption of Mount Pinatubo put fine ash in the atmosphere, giving the corona an unusually vivid appearance.',
+        footnote:'Maximum totality near La Paz, Baja California, Mexico. One of the best-observed solar eclipses of the century.'},
+    es:{year:'1991 · 11 de julio',name:'El Eclipse Hawái-México',note:'1991',
+        vis:'Hawái · Baja California, México',c1:'Tipo',c1v:'Solar Total',c2:'Totalidad',c2v:'6 min 54 s',
+        body:'Uno de los eclipses solares totales más largos del siglo XX cruzó el Pacífico, Hawái y México. Los observatorios de Mauna Kea quedaron perfectamente ubicados en el camino. La reciente erupción del Pinatubo añadió ceniza fina a la atmósfera, dando a la corona un aspecto inusualmente vívido.',
+        footnote:'Totalidad máxima cerca de La Paz, Baja California, México. Uno de los eclipses solares mejor observados del siglo.'}
+  },
+  { era:'Modern', kind:'solar_total',
+    en:{year:'1999 · August 11',name:'The European Eclipse',note:'1999',
+        vis:'Cornwall · Normandy · Istanbul',c1:'Type',c1v:'Total Solar',c2:'Viewers',c2v:'~350 million',
+        body:'The last total solar eclipse of the 20th century swept across Europe — Cornwall, Normandy, Stuttgart, Salzburg, Bucharest, Istanbul — drawing an estimated 350 million viewers. Partial phases were visible from Iceland to India. It was the most-watched eclipse in history up to that point.',
+        footnote:'Maximum totality: 2 min 23 sec near Reims, France. Millions gathered on Dartmoor, the beaches of Brittany and the Carpathian hills.'},
+    es:{year:'1999 · 11 de agosto',name:'El Eclipse Europeo',note:'1999',
+        vis:'Cornualles · Normandía · Estambul',c1:'Tipo',c1v:'Solar Total',c2:'Espectadores',c2v:'~350 millones',
+        body:'El último eclipse solar total del siglo XX atravesó Europa — Cornualles, Normandía, Stuttgart, Salzburgo, Bucarest, Estambul — atrayendo a unos 350 millones de espectadores. Las fases parciales fueron visibles desde Islandia hasta India. Fue el eclipse más observado de la historia hasta ese momento.',
+        footnote:'Totalidad máxima: 2 min 23 seg cerca de Reims, Francia. Millones se reunieron en Dartmoor, las playas de Bretaña y los montes Cárpatos.'}
+  },
+  { era:'21st Century', kind:'solar_total',
+    en:{year:'2017 · August 21',name:'The Great American Eclipse',note:'2017',
+        vis:'Oregon → South Carolina, USA',c1:'Type',c1v:'Total Solar',c2:'Viewers',c2v:'215 million',
+        body:'The first total solar eclipse to cross the continental US coast-to-coast since 1918. The path stretched from Oregon to South Carolina. An estimated 215 million Americans watched — the most-viewed natural event in US history. Eclipse glasses sold out weeks in advance.',
+        footnote:'Path: Oregon → Idaho → Wyoming → Missouri → Tennessee → South Carolina. Maximum totality: 2 min 42 sec near Hopkinsville, Kentucky.'},
+    es:{year:'2017 · 21 de agosto',name:'El Gran Eclipse Americano',note:'2017',
+        vis:'Oregón → Carolina del Sur, EE.UU.',c1:'Tipo',c1v:'Solar Total',c2:'Espectadores',c2v:'215 millones',
+        body:'El primer eclipse solar total en cruzar los Estados Unidos continentales de costa a costa desde 1918. El camino se extendió de Oregón a Carolina del Sur. Se estima que 215 millones de estadounidenses lo observaron — el evento natural más visto de la historia de EE.UU. Las gafas de eclipse se agotaron semanas antes.',
+        footnote:'Camino: Oregón → Idaho → Wyoming → Missouri → Tennessee → Carolina del Sur. Totalidad máxima: 2 min 42 seg cerca de Hopkinsville, Kentucky.'}
+  },
+  { era:'21st Century', kind:'solar_total',
+    en:{year:'2024 · April 8',name:'North American Total Solar Eclipse',note:'2024',
+        vis:'Mexico · 13 US States · Atlantic Canada',c1:'Type',c1v:'Total Solar',c2:'Totality',c2v:'4 min 28 s',
+        body:'A total solar eclipse swept from Mexico through 13 US states — Texas, Arkansas, Indiana, Ohio, Vermont — and into Atlantic Canada. Totality lasted up to 4 min 28 sec. Dallas, Indianapolis, Cleveland and Montréal all experienced full totality. An estimated 31.6 million people lived inside the path of totality.',
+        footnote:'Maximum totality: 4 min 28 sec near Torreón, Mexico. The next total solar eclipse over the US will be in August 2044.'},
+    es:{year:'2024 · 8 de abril',name:'Eclipse Solar Total de América del Norte',note:'2024',
+        vis:'México · 13 estados EE.UU. · Canadá Atlántico',c1:'Tipo',c1v:'Solar Total',c2:'Totalidad',c2v:'4 min 28 s',
+        body:'Un eclipse solar total barrió desde México por 13 estados de EE.UU. — Texas, Arkansas, Indiana, Ohio, Vermont — hasta el Canadá Atlántico. La totalidad duró hasta 4 min 28 seg. Dallas, Indianápolis, Cleveland y Montreal experimentaron la totalidad completa. Se estima que 31,6 millones de personas vivían dentro del camino de totalidad.',
+        footnote:'Totalidad máxima: 4 min 28 seg cerca de Torreón, México. El próximo eclipse solar total sobre EE.UU. será en agosto de 2044.'}
+  },
+];
+
+/* ── i18n STRINGS ── */
 const STRINGS = {
   en:{
     eyebrow:'History',h1:'Famous Eclipses in History',subtitle:'From battles ended to relativity confirmed',
-    navSpain:'Spain 2026',navCities:'Cities',navSafety:'Safety',navUpcoming:'Upcoming',navHistory:'History',share:'Share',langBtn:'ES',
-    fUpcoming:'Upcoming',fPrivacy:'Privacy',
-    timelineH2:'Complete Eclipse Timeline',
+    share:'Share',langBtn:'ES',
     f1eyebrow:'Landmark · Science',f1year:'May 29, 1919',f1title:'Einstein Confirmed by Starlight',
     f1body1:"Arthur Eddington led two simultaneous expeditions — one to Príncipe island off the coast of West Africa, the other to Sobral in northeastern Brazil — to photograph stars near the Sun during a total solar eclipse. The goal: test whether the Sun's gravity bent light, as Einstein's general theory of relativity predicted.",
     f1body2:"The measurements matched Einstein's predictions precisely. When the results were announced at the Royal Society in London in November 1919, it made front pages worldwide. Albert Einstein became a household name overnight. It remains one of the most consequential scientific observations in history.",
-    f1note:"Published in Philosophical Transactions of the Royal Society, 1920. Totality: 6 min 51 sec over the Atlantic.",
+    f1note:'Published in Philosophical Transactions of the Royal Society, 1920. Totality: 6 min 51 sec over the Atlantic.',
     f2eyebrow:'Landmark · Ancient World',f2year:'May 28, 585 BC',f2title:'The Eclipse That Ended a War',
     f2body1:"The Battle of Halys had been raging for five years between the Medes and the Lydians in what is now Turkey. On May 28, 585 BC, the sky suddenly went dark. Both armies, believing the gods were demanding a halt, laid down their weapons. The war ended immediately — and a peace treaty followed.",
     f2body2:"The Greek philosopher Thales of Miletus had reportedly predicted the eclipse — the earliest known scientific forecast in recorded history. Whether or not the prediction was exact, the event demonstrated that eclipses follow natural laws. This single episode marks the transition from supernatural explanation to rational astronomy.",
-    f2note:"Recounted by Herodotus, Histories, Book I. Independently corroborated by modern astronomical back-calculation.",
-    e763year:'763 BC · June 15',e763title:'The Assyrian Clay Tablet',
-    e763body:"A cuneiform inscription from ancient Nineveh records \"day turned to night\" — a total solar eclipse preserved on clay for over 2,700 years. It is the oldest reliably dated astronomical event in history. Modern historians use this eclipse as a precise anchor point to date Assyrian kings, battles, and Biblical events in the 8th century BC.",
-    e763note:'The tablet belongs to the Assyrian Eponym Chronicle. The eclipse is cross-referenced with Amos 8:9 ("I will make the sun go down at noon").',
-    e585year:'585 BC · May 28',e585title:'Thales and the Battle of Halys',
-    e585body:"During the Battle of Halys between the Medes and the Lydians, a total solar eclipse darkened the sky mid-battle. Both armies interpreted it as a divine omen and immediately ceased fighting. Thales of Miletus had reportedly predicted the eclipse, making it one of the earliest recorded scientific forecasts in history.",
-    e585note:'Herodotus, Histories, Book I. The eclipse was independently confirmed by back-calculation in the 19th century.',
-    e840year:'840 AD · May 5',e840title:'The Death of an Emperor',
-    e840body:"Holy Roman Emperor Louis the Pious witnessed a total solar eclipse and, filled with terror at what medieval tradition held to be a divine portent, fell into a severe decline. He died just two months later. Frankish chroniclers linked the eclipse directly to his death. Multiple medieval sources record the event as proof of celestial punishment.",
-    e840note:'Recorded in the Annales Bertiniani. Path of totality crossed central Europe including what is now Germany and France.',
-    e1133year:'1133 · August 2',e1133title:"King Henry's Eclipse",
-    e1133body:"A total solar eclipse plunged England into darkness on the same day King Henry I crossed the Channel on his final voyage home. The Anglo-Saxon Chronicle described the sky \"becoming so dark that the stars were visible at noon.\" Henry died two years later, and medieval writers tied the eclipse to the end of his reign.",
-    e1133note:"Known in historical literature as \"King Henry's Eclipse.\" Totality lasted around 4 minutes over northern England and Scotland.",
-    e1504year:'1504 · February 29',e1504title:'Columbus and the Lunar Eclipse',
-    e1504body:"Stranded in Jamaica for over a year, Christopher Columbus used his astronomical almanac to predict a total lunar eclipse. He warned the Taíno people that his god would punish them by making the moon disappear. When the Blood Moon rose exactly as he foretold, the terrified Taíno agreed to supply his crew with food.",
-    e1504note:"The eclipse lasted 48 minutes at maximum. Columbus's almanac was calculated by Abraham Zacuto.",
-    e1715year:'1715 · May 3',e1715title:'Halley Maps the Shadow',
-    e1715body:"Edmond Halley — of comet fame — predicted a total solar eclipse visible across England and distributed printed maps showing the path of totality in advance. It was the first time the public could follow a predicted eclipse track. Halley himself observed from London and used the results to refine Newton's gravitational theory.",
-    e1715note:"Halley's prediction was accurate to within 4 minutes and a few kilometres. He published a correction for the next English eclipse of 1724.",
-    e1868year:'1868 · August 18',e1868title:'A New Element in the Sun',
-    e1868body:"During a total solar eclipse over India, French astronomer Jules Janssen detected an unknown spectral line in the solar corona — a wavelength that matched no element known on Earth. Named helium after Helios, the Greek sun god, it wasn't isolated on Earth until 1895. It remains the only element discovered on another celestial body before being found on Earth.",
-    e1868note:"Janssen's observations were made from Guntur, India. Confirmation came independently from Norman Pogson at Madras.",
-    e1919year:'1919 · May 29',e1919title:'Einstein Confirmed',
-    e1919body:"Arthur Eddington's expeditions to Príncipe and Sobral photographed stars near the Sun during totality. The measured deflection of starlight matched Einstein's general theory of relativity exactly. The announcement at the Royal Society made Einstein world-famous overnight.",
-    e1919note:'Philosophical Transactions of the Royal Society, 1920. Totality: 6 min 51 sec. Path crossed West Africa and South America.',
-    e1973year:'1973 · June 30',e1973title:'The Concorde Eclipse',
-    e1973body:"A specially modified Concorde prototype chased the Moon's shadow across the Sahara at twice the speed of sound, keeping scientists inside totality for 74 uninterrupted minutes — versus a maximum of 7 minutes on the ground. It remains the longest artificially extended totality in history.",
-    e1973note:"Concorde 001, flying at Mach 2.05 at 17,000 m. Scientists studied the corona and chromosphere in unprecedented detail.",
-    e1991year:'1991 · July 11',e1991title:'The Hawaii–Mexico Eclipse',
-    e1991body:"One of the longest total solar eclipses of the 20th century — up to 6 min 54 sec of totality — crossed the Pacific, Hawaii and Mexico. Mauna Kea's observatories were perfectly positioned in the path. The recent eruption of Mount Pinatubo put fine ash in the atmosphere, giving the corona an unusually vivid appearance.",
-    e1991note:'Maximum totality near La Paz, Baja California, Mexico. One of the best-observed solar eclipses of the century.',
-    e1999year:'1999 · August 11',e1999title:'The European Eclipse',
-    e1999body:"The last total solar eclipse of the 20th century swept across Europe — Cornwall, Normandy, Stuttgart, Salzburg, Bucharest, Istanbul — drawing an estimated 350 million viewers. Partial phases were visible from Iceland to India. It was the most-watched eclipse in history up to that point.",
-    e1999note:'Maximum totality: 2 min 23 sec near Reims, France. Millions gathered on Dartmoor, the beaches of Brittany and the Carpathian hills.',
-    e2017year:'2017 · August 21',e2017title:'The Great American Eclipse',
-    e2017body:"The first total solar eclipse to cross the continental US coast-to-coast since 1918. The path stretched from Oregon to South Carolina. An estimated 215 million Americans watched — the most-viewed natural event in US history. Eclipse glasses sold out weeks in advance.",
-    e2017note:'Path: Oregon → Idaho → Wyoming → Missouri → Tennessee → South Carolina. Maximum totality: 2 min 42 sec near Hopkinsville, Kentucky.',
-    e2024year:'2024 · April 8',e2024title:'North American Total Solar Eclipse',
-    e2024body:"A total solar eclipse swept from Mexico through 13 US states — Texas, Arkansas, Indiana, Ohio, Vermont — and into Atlantic Canada. Totality lasted up to 4 min 28 sec. Dallas, Indianapolis, Cleveland and Montréal all experienced full totality. An estimated 31.6 million people lived inside the path.",
-    e2024note:'Maximum totality: 4 min 28 sec near Torreón, Mexico. The next total solar eclipse over the US will be in August 2044.'
+    f2note:'Recounted by Herodotus, Histories, Book I. Independently corroborated by modern astronomical back-calculation.',
+    timelineH2:'Complete Eclipse Timeline',
+    timelineLead:'Thirteen defining eclipses across 2,800 years of history — from ancient clay tablets to coast-to-coast spectacles.',
+    hLinks:'Explore more',
+    clUpcomingLabel:'Next Eclipses',clUpcomingTitle:'Visual Timeline 2026–2028',
+    clSpainLabel:'Spain · Aug 2026',clSpainTitle:'Total Solar Eclipse Guide',
+    source:'Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>',
   },
   es:{
     eyebrow:'Historia',h1:'Eclipses Famosos en la Historia',subtitle:'De guerras detenidas a la relatividad confirmada',
-    navSpain:'España 2026',navCities:'Ciudades',navSafety:'Seguridad',navUpcoming:'Próximos',navHistory:'Historia',share:'Compartir',langBtn:'EN',
-    fUpcoming:'Próximos',fPrivacy:'Privacidad',
-    timelineH2:'Cronología Completa',
+    share:'Compartir',langBtn:'EN',
     f1eyebrow:'Hito · Ciencia',f1year:'29 de mayo de 1919',f1title:'Einstein Confirmado por la Luz de las Estrellas',
     f1body1:'Arthur Eddington dirigió dos expediciones simultáneas — una a la isla de Príncipe frente a las costas de África occidental y otra a Sobral, en el noreste de Brasil — para fotografiar estrellas cerca del Sol durante un eclipse solar total. El objetivo: comprobar si la gravedad del Sol curvaba la luz, tal como predecía la teoría general de la relatividad de Einstein.',
     f1body2:'Las mediciones coincidieron exactamente con las predicciones de Einstein. Cuando los resultados se anunciaron en la Royal Society de Londres en noviembre de 1919, aparecieron en portadas de todo el mundo. Albert Einstein se convirtió de la noche a la mañana en un nombre conocido por todos. Sigue siendo una de las observaciones científicas más trascendentes de la historia.',
@@ -365,81 +456,77 @@ const STRINGS = {
     f2body1:'La Batalla de Halys llevaba cinco años enfrentando a medos y lidios en lo que hoy es Turquía. El 28 de mayo del 585 a.C. el cielo se oscureció de repente. Los dos ejércitos, convencidos de que los dioses exigían una tregua, depusieron las armas de inmediato. La guerra terminó ese mismo día y se firmó un tratado de paz.',
     f2body2:'Se dice que el filósofo griego Tales de Mileto había predicho el eclipse — el pronóstico científico más antiguo registrado en la historia. Tanto si la predicción fue exacta como si no, el episodio demostró que los eclipses obedecen leyes naturales y marcó la transición de la explicación sobrenatural a la astronomía racional.',
     f2note:'Narrado por Heródoto, Historias, Libro I. Corroborado independientemente por cálculo astronómico retrospectivo moderno.',
-    e763year:'763 a.C. · 15 de junio',e763title:'La Tablilla de Arcilla Asiria',
-    e763body:'Una inscripción cuneiforme de la antigua Nínive registra que "el día se convirtió en noche" — un eclipse solar total preservado en arcilla durante más de 2.700 años. Es el acontecimiento astronómico con fecha más fiable de la historia. Los historiadores modernos utilizan este eclipse como punto de anclaje preciso para datar reyes asirios, batallas y eventos bíblicos del siglo VIII a.C.',
-    e763note:'La tablilla pertenece a la Crónica de los Epónimos Asirios. El eclipse se relaciona con Amós 8:9 ("haré que el sol se ponga al mediodía").',
-    e585year:'585 a.C. · 28 de mayo',e585title:'Tales y la Batalla de Halys',
-    e585body:'Durante la Batalla de Halys entre medos y lidios, un eclipse solar total oscureció el cielo en plena batalla. Ambos ejércitos lo interpretaron como un presagio divino y cesaron el combate inmediatamente. Se dice que Tales de Mileto había predicho el eclipse, convirtiéndolo en uno de los primeros pronósticos científicos registrados en la historia.',
-    e585note:'Heródoto, Historias, Libro I. El eclipse fue confirmado independientemente por cálculo retrospectivo en el siglo XIX.',
-    e840year:'840 d.C. · 5 de mayo',e840title:'La Muerte de un Emperador',
-    e840body:'El Sacro Emperador Romano Luis el Piadoso presenció un eclipse solar total y, aterrado por lo que la tradición medieval consideraba un presagio divino, cayó en un grave declive. Murió apenas dos meses después. Los cronistas francos vincularon directamente el eclipse a su muerte. Varias fuentes medievales lo registran como prueba de castigo celestial.',
-    e840note:'Recogido en los Annales Bertiniani. El camino de totalidad cruzó Europa central, incluyendo lo que hoy es Alemania y Francia.',
-    e1133year:'1133 · 2 de agosto',e1133title:'El Eclipse del Rey Enrique',
-    e1133body:'Un eclipse solar total sumió Inglaterra en la oscuridad el mismo día en que el rey Enrique I de Inglaterra cruzó el Canal en su último viaje de regreso a casa. La Crónica Anglosajona describió el cielo "tan oscuro que las estrellas eran visibles al mediodía." Enrique murió dos años después y los escritores medievales relacionaron el eclipse con el fin de su reinado.',
-    e1133note:'Conocido en la literatura histórica como "El Eclipse del Rey Enrique". La totalidad duró unos 4 minutos sobre el norte de Inglaterra y Escocia.',
-    e1504year:'1504 · 29 de febrero',e1504title:'Colón y el Eclipse Lunar',
-    e1504body:'Varado en Jamaica durante más de un año, Cristóbal Colón usó su almanaque astronómico para predecir un eclipse lunar total. Avisó al pueblo Taíno que su dios los castigaría haciendo desaparecer la luna. Cuando la Luna de Sangre ascendió exactamente como él había predicho, los Taínos aterrorizados accedieron a suministrar alimentos a su tripulación.',
-    e1504note:'El eclipse duró 48 minutos en su punto máximo. El almanaque de Colón fue calculado por Abraham Zacut.',
-    e1715year:'1715 · 3 de mayo',e1715title:'Halley Cartografía la Sombra',
-    e1715body:'Edmond Halley — famoso por su cometa — predijo un eclipse solar total visible en Inglaterra y distribuyó mapas impresos con el camino de totalidad. Fue la primera vez que el público pudo seguir una trayectoria de eclipse predicha. El propio Halley observó desde Londres y utilizó los resultados para refinar la teoría gravitacional de Newton.',
-    e1715note:'La predicción de Halley fue precisa en menos de 4 minutos y pocos kilómetros. Publicó una corrección para el siguiente eclipse inglés de 1724.',
-    e1868year:'1868 · 18 de agosto',e1868title:'Un Nuevo Elemento en el Sol',
-    e1868body:'Durante un eclipse solar total sobre India, el astrónomo francés Jules Janssen detectó una línea espectral desconocida en la corona solar — una longitud de onda que no correspondía a ningún elemento conocido en la Tierra. Bautizado como helio por Helios, el dios griego del sol, no se aisló en la Tierra hasta 1895. Sigue siendo el único elemento descubierto en otro cuerpo celeste antes de encontrarse en la Tierra.',
-    e1868note:'Las observaciones de Janssen se realizaron desde Guntur, India. La confirmación llegó independientemente de Norman Pogson en Madrás.',
-    e1919year:'1919 · 29 de mayo',e1919title:'Einstein Confirmado',
-    e1919body:'Las expediciones de Arthur Eddington a Príncipe y Sobral fotografiaron estrellas cerca del Sol durante la totalidad. La desviación medida de la luz estelar coincidió exactamente con la teoría general de la relatividad de Einstein. El anuncio en la Royal Society hizo a Einstein famoso de la noche a la mañana.',
-    e1919note:'Philosophical Transactions of the Royal Society, 1920. Totalidad: 6 min 51 seg. Camino: África occidental y América del Sur.',
-    e1973year:'1973 · 30 de junio',e1973title:'El Eclipse del Concorde',
-    e1973body:'Un prototipo del Concorde especialmente modificado persiguió la sombra de la Luna sobre el Sahara a dos veces la velocidad del sonido, manteniendo a los científicos en totalidad durante 74 minutos ininterrumpidos — frente a un máximo de 7 minutos en tierra. Es la totalidad artificialmente extendida más larga de la historia.',
-    e1973note:'Concorde 001, volando a Mach 2,05 a 17.000 m. Los científicos estudiaron la corona y la cromosfera con un detalle sin precedentes.',
-    e1991year:'1991 · 11 de julio',e1991title:'El Eclipse Hawái-México',
-    e1991body:'Uno de los eclipses solares totales más largos del siglo XX — hasta 6 min 54 seg de totalidad — cruzó el Pacífico, Hawái y México. Los observatorios de Mauna Kea quedaron perfectamente ubicados en el camino. La reciente erupción del Pinatubo añadió ceniza fina a la atmósfera, dando a la corona un aspecto inusualmente vívido.',
-    e1991note:'Totalidad máxima cerca de La Paz, Baja California, México. Uno de los eclipses solares mejor observados del siglo.',
-    e1999year:'1999 · 11 de agosto',e1999title:'El Eclipse Europeo',
-    e1999body:'El último eclipse solar total del siglo XX atravesó Europa — Cornualles, Normandía, Stuttgart, Salzburgo, Bucarest, Estambul — atrayendo a unos 350 millones de espectadores. Las fases parciales fueron visibles desde Islandia hasta India. Fue el eclipse más observado de la historia hasta ese momento.',
-    e1999note:'Totalidad máxima: 2 min 23 seg cerca de Reims, Francia. Millones se reunieron en Dartmoor, las playas de Bretaña y los montes Cárpatos.',
-    e2017year:'2017 · 21 de agosto',e2017title:'El Gran Eclipse Americano',
-    e2017body:'El primer eclipse solar total en cruzar los Estados Unidos continentales de costa a costa desde 1918. El camino se extendió de Oregón a Carolina del Sur. Se estima que 215 millones de estadounidenses lo observaron — el evento natural más visto de la historia de EE.UU. Las gafas de eclipse se agotaron semanas antes.',
-    e2017note:'Camino: Oregón → Idaho → Wyoming → Missouri → Tennessee → Carolina del Sur. Totalidad máxima: 2 min 42 seg cerca de Hopkinsville, Kentucky.',
-    e2024year:'2024 · 8 de abril',e2024title:'Eclipse Solar Total de América del Norte',
-    e2024body:'Un eclipse solar total barrió desde México por 13 estados de EE.UU. — Texas, Arkansas, Indiana, Ohio, Vermont — hasta el Canadá Atlántico. La totalidad duró hasta 4 min 28 seg. Dallas, Indianápolis, Cleveland y Montreal experimentaron la totalidad completa. Se estima que 31,6 millones de personas vivían dentro del camino de totalidad.',
-    e2024note:'Totalidad máxima: 4 min 28 seg cerca de Torreón, México. El próximo eclipse solar total sobre EE.UU. será en agosto de 2044.'
+    timelineH2:'Cronología Completa',
+    timelineLead:'Trece eclipses decisivos a lo largo de 2.800 años de historia — desde tablillas de arcilla antiguas hasta espectáculos de costa a costa.',
+    hLinks:'Explora más',
+    clUpcomingLabel:'Próximos Eclipses',clUpcomingTitle:'Línea de Tiempo 2026–2028',
+    clSpainLabel:'España · Ago 2026',clSpainTitle:'Guía del Eclipse Solar Total',
+    source:'Fuente: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>',
   }
 };
 
 let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
 
+function glyph(kind){
+  switch(kind){
+    case 'solar_total': return '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="url(#coronaG)"/><circle cx="20" cy="20" r="10" fill="#030304" stroke="rgba(255,236,180,.55)" stroke-width="1"/></svg>';
+    case 'solar_annular': return '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="rgba(230,170,60,.9)"/><circle cx="20" cy="20" r="9" fill="#030304"/></svg>';
+    case 'lunar_total': return '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="rgba(150,55,40,.85)" stroke="rgba(200,90,70,.55)" stroke-width="1"/></svg>';
+    case 'lunar_partial': return '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="rgba(200,196,180,.78)"/><path d="M20 6 a14 14 0 0 1 0 28 a9 9 0 0 0 0 -28" fill="rgba(55,50,45,.85)"/></svg>';
+    default: return '';
+  }
+}
+
+function renderTimeline(){
+  const tl = document.getElementById('timeline');
+  let html = '';
+  let lastEra = null;
+  HIST.forEach(h => {
+    const L = h[lang];
+    if(L.era !== lastEra){
+      html += '<div class="tl-year">' + (h.era || L.year.split(' ')[0]) + '</div>';
+      lastEra = L.era;
+    }
+    html += ''
+      + '<div class="tl-row">'
+      + '  <div class="tl-rail"><div class="tl-glyph" aria-hidden="true">' + glyph(h.kind) + '</div></div>'
+      + '  <div class="ec-card">'
+      + '    <div class="ec-top"><span class="ec-name">' + L.name + '</span><span class="ec-date">' + L.year + '</span></div>'
+      + '    <p class="ec-vis">' + L.vis + '</p>'
+      + '    <div class="ec-chips"><span class="ec-chip">' + L.c1 + ' · <strong>' + L.c1v + '</strong></span><span class="ec-chip">' + L.c2 + ' · <strong>' + L.c2v + '</strong></span></div>'
+      + '  </div>'
+      + '</div>';
+    lastEra = h.era;
+  });
+  tl.innerHTML = html;
+}
+
 function setText(id, text){ const el=document.getElementById(id); if(el) el.textContent=text; }
+function setHTML(id, html){ const el=document.getElementById(id); if(el) el.innerHTML=html; }
 
 function render(){
   document.documentElement.lang = lang;
   const S = STRINGS[lang];
-  setText('eyebrow',S.eyebrow);
-  setText('h1',S.h1);
-  setText('subtitle',S.subtitle);
-  setText('nav-spain',S.navSpain);
-  setText('nav-cities',S.navCities);
-  setText('nav-safety',S.navSafety);
-  setText('nav-upcoming',S.navUpcoming);
-  setText('nav-history',S.navHistory);
-  setText('lang-btn',S.langBtn);
-  document.getElementById('share-label').textContent=S.share;
-  setText('f-upcoming',S.fUpcoming);
-  setText('f-privacy',S.fPrivacy);
-  setText('timeline-h2',S.timelineH2);
-  // featured 1
-  setText('f1-eyebrow',S.f1eyebrow); setText('f1-year',S.f1year); setText('f1-title',S.f1title);
-  setText('f1-body1',S.f1body1); setText('f1-body2',S.f1body2); setText('f1-note',S.f1note);
-  // featured 2
-  setText('f2-eyebrow',S.f2eyebrow); setText('f2-year',S.f2year); setText('f2-title',S.f2title);
-  setText('f2-body1',S.f2body1); setText('f2-body2',S.f2body2); setText('f2-note',S.f2note);
-  // timeline entries
-  ['e763','e585','e840','e1133','e1504','e1715','e1868','e1919','e1973','e1991','e1999','e2017','e2024'].forEach(k=>{
-    setText(k+'-year',S[k+'year']);
-    setText(k+'-title',S[k+'title']);
-    setText(k+'-body',S[k+'body']);
-    setText(k+'-note',S[k+'note']);
-  });
+  setText('eyebrow', S.eyebrow);
+  setText('h1', S.h1);
+  setText('subtitle', S.subtitle);
+  setText('lang-btn', S.langBtn);
+  const sl = document.getElementById('share-label'); if(sl) sl.textContent = S.share;
+  // feature cards
+  setText('f1-eyebrow', S.f1eyebrow); setText('f1-year', S.f1year); setText('f1-title', S.f1title);
+  setText('f1-body1', S.f1body1); setText('f1-body2', S.f1body2); setText('f1-note', S.f1note);
+  setText('f2-eyebrow', S.f2eyebrow); setText('f2-year', S.f2year); setText('f2-title', S.f2title);
+  setText('f2-body1', S.f2body1); setText('f2-body2', S.f2body2); setText('f2-note', S.f2note);
+  // section labels
+  setText('timeline-h2', S.timelineH2);
+  setText('timeline-lead', S.timelineLead);
+  setText('h-links', S.hLinks);
+  setText('cl-upcoming-label', S.clUpcomingLabel);
+  setText('cl-upcoming-title', S.clUpcomingTitle);
+  setText('cl-spain-label', S.clSpainLabel);
+  setText('cl-spain-title', S.clSpainTitle);
+  setHTML('source-note', S.source);
+  renderTimeline();
 }
 
 function shareApp(){
@@ -452,6 +539,7 @@ function shareApp(){
     .catch(()=>{window.open('https://x.com/intent/tweet?url='+encodeURIComponent(data.url),'_blank');});
   }
 }
+
 function toggleLang(){
   lang=lang==='en'?'es':'en';
   localStorage.setItem('ne-lang',lang);
@@ -502,7 +590,6 @@ render();
   if(close)close.addEventListener('click',closeD);
   backdrop.addEventListener('click',closeD);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD();});
-  // sync drawer link labels with current lang
   function updateDrawerLang(){
     var l=localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
     document.querySelectorAll('.drawer-link[data-en]').forEach(function(el){
@@ -515,10 +602,17 @@ render();
 })();
 </script>
 <script>
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
+</script>
+<script>
 /* ── Canonical header/footer i18n — shared across all pages ── */
 (function(){
   var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
-           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+           es:{spain:'España 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Próximos',history:'Historia',share:'Compartir',lang:'EN'}};
   function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
   function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
   function apply(){

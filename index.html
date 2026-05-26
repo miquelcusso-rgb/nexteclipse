@@ -28,7 +28,14 @@
 <meta name="twitter:description" content="Countdown to the next solar and lunar eclipse. Total solar eclipse August 12, 2026.">
 <meta name="twitter:image" content="https://www.next-eclipse.com/og-eclipse.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Next Eclipse","url":"https://www.next-eclipse.com","description":"Countdown to the next solar and lunar eclipse. Upcoming eclipses 2026–2028.","potentialAction":{"@type":"ReadAction","target":"https://www.next-eclipse.com/upcoming"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"Next Eclipse","url":"https://www.next-eclipse.com","description":"Countdown to the next solar and lunar eclipses. Dates, maps, visibility paths and eclipse data.","inLanguage":["es","en"],"potentialAction":{"@type":"SearchAction","target":"https://www.next-eclipse.com/?q={search_term_string}","query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","name":"Furiosa Studio","url":"https://www.next-eclipse.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Upcoming Eclipses 2026–2028","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Event","name":"Total Solar Eclipse over Spain — August 12, 2026","startDate":"2026-08-12T17:30:00Z","endDate":"2026-08-12T19:30:00Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Greenland, Iceland, northern Spain, Algeria, Tunisia, Libya","address":{"@type":"PostalAddress","addressCountry":"ES"}},"description":"Total solar eclipse with up to 2 min 18 sec of totality. The path crosses Salamanca and Zamora in Spain.","url":"https://www.next-eclipse.com/eclipse-solar-espana-2026","image":"https://www.next-eclipse.com/og-eclipse.png","organizer":{"@type":"Organization","name":"Next Eclipse","url":"https://www.next-eclipse.com"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"Event","name":"Total Solar Eclipse — Longest of the Century — August 2, 2027","startDate":"2027-08-02T10:07:00Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Morocco, Algeria, Libya, Egypt, Saudi Arabia, Yemen, India"},"description":"Total solar eclipse with 6 min 23 sec of totality over Luxor, Egypt — the longest of the 21st century visible from land.","url":"https://www.next-eclipse.com/eclipse-solar-2027-egipto","image":"https://www.next-eclipse.com/og-eclipse.png","organizer":{"@type":"Organization","name":"Next Eclipse","url":"https://www.next-eclipse.com"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"Event","name":"Annular Solar Eclipse (Ring of Fire) over Spain — January 26, 2028","startDate":"2028-01-26T15:09:00Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Spain, Portugal, North Africa, South America","address":{"@type":"PostalAddress","addressCountry":"ES"}},"description":"Annular solar eclipse, the ring of fire crosses southern Spain and Portugal. Duration over Iberia about 4 minutes.","url":"https://www.next-eclipse.com/eclipse-anular-espana-2028","image":"https://www.next-eclipse.com/og-eclipse.png","organizer":{"@type":"Organization","name":"Next Eclipse","url":"https://www.next-eclipse.com"}}}
+]}
 </script>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#030304">
@@ -46,126 +53,16 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}html{background:#030304;overflow-x:clip;}body{overflow-x:clip;}
 body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.88);min-height:100vh;padding:0 0 4rem;line-height:1.75;}
-.wrap{max-width:640px;margin:0 auto;padding:2.5rem 1.5rem 0;}
+.wrap{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 0;}
 
 .topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
 .site-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(220,160,50,.42);text-decoration:none;}
+.site-name:hover{color:rgba(220,160,50,.85);}
 .nav-links{display:flex;gap:1rem;align-items:center;}
 .nav-link{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.65);text-decoration:none;transition:color .2s;}.nav-link.active{color:rgba(220,160,50,.95);font-weight:600;}
 .nav-link:hover{color:rgba(220,160,50,.75);}
 .lang-btn{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.52);background:none;border:1px solid rgba(220,160,50,.2);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
 .lang-btn:hover{color:rgba(220,160,50,.8);border-color:rgba(220,160,50,.4);}
-
-.eclipse-stage{display:flex;justify-content:center;margin:2rem 0 2.5rem;position:relative;}
-.eclipse-disc{
-  width:clamp(150px,30vw,220px);
-  height:clamp(150px,30vw,220px);
-  border-radius:50%;
-  background:#030304;
-  position:relative;
-  animation:discFloat 8s ease-in-out infinite;
-  box-shadow:
-    0 0 0 1px rgba(255,150,20,.25),
-    0 0 22px 8px rgba(255,120,15,.35),
-    0 0 55px 22px rgba(255,70,5,.2),
-    0 0 110px 45px rgba(190,40,0,.12),
-    0 0 200px 90px rgba(130,20,0,.06);
-  transition:box-shadow .8s ease;
-}
-.eclipse-disc.lunar{
-  background:radial-gradient(circle at 55% 55%, rgba(160,30,10,.9), #030304 75%);
-  box-shadow:
-    0 0 0 1px rgba(180,40,10,.2),
-    0 0 22px 8px rgba(180,30,10,.3),
-    0 0 55px 22px rgba(130,15,5,.15),
-    0 0 110px 45px rgba(90,10,0,.09);
-}
-.eclipse-disc.annular{
-  background:#030304;
-  box-shadow:
-    0 0 0 11px rgba(255,200,40,.65),
-    0 0 0 12px rgba(255,180,20,.4),
-    0 0 30px 14px rgba(255,160,30,.35),
-    0 0 70px 28px rgba(255,100,0,.2),
-    0 0 140px 60px rgba(200,60,0,.1);
-}
-@keyframes discFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
-.corona-pulse{
-  position:absolute;
-  border-radius:50%;
-  animation:coronaPulse 5s ease-in-out infinite;
-  pointer-events:none;
-}
-@keyframes coronaPulse{0%,100%{opacity:.7;}50%{opacity:1;}}
-
-.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.65);margin-bottom:.5rem;text-align:center;}
-h1.eclipse-name{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4.5vw,2.6rem);color:rgba(255,248,228,.88);letter-spacing:.04em;margin-bottom:.35rem;text-align:center;}
-.eclipse-date-line{font-size:1.1rem;font-style:italic;color:rgba(220,160,50,.62);margin-bottom:.3rem;text-align:center;}
-.eclipse-vis{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.46);margin-bottom:2rem;text-align:center;}
-
-.countdown{display:flex;gap:clamp(.8rem,2.5vw,1.8rem);justify-content:center;margin:1rem 0 1.8rem;flex-wrap:wrap;}
-.cunit{text-align:center;min-width:56px;}
-.cnum{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(2.4rem,6.5vw,3.8rem);color:rgba(255,248,228,.92);line-height:1;letter-spacing:.02em;}
-.clabel{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.45);margin-top:.4rem;}
-.csep{font-family:'Cinzel',serif;font-size:clamp(2rem,5.5vw,3.2rem);color:rgba(220,160,50,.25);align-self:flex-start;padding-top:.12rem;}
-
-.detail-box{border:1px solid rgba(220,160,50,.1);border-radius:3px;padding:.9rem 1.3rem;margin:0 0 2rem;background:rgba(220,160,50,.025);}
-.detail-box p{font-size:1.12rem;color:rgba(220,200,140,.73);margin:0;text-align:center;}
-
-hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
-
-h2{font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.52);margin:1.8rem 0 1rem;}
-.eclipse-list{display:flex;flex-direction:column;gap:.45rem;}
-.eclipse-row{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;border-radius:2px;border:1px solid rgba(220,160,50,.06);background:rgba(220,160,50,.018);text-decoration:none;}
-.row-icon{font-size:.95rem;flex-shrink:0;width:1.4rem;text-align:center;}
-.row-name{font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,248,220,.65);flex:1;}
-.row-date{font-size:.92rem;font-style:italic;color:rgba(220,160,50,.65);white-space:nowrap;}
-
-.crosslink{display:flex;align-items:center;justify-content:space-between;margin-top:2rem;padding:.9rem 1.3rem;border:1px solid rgba(196,196,255,.07);border-radius:3px;text-decoration:none;color:inherit;transition:border-color .2s;}
-.crosslink:hover{border-color:rgba(196,196,255,.16);}
-.cl-left .cl-label{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,196,255,.38);}
-.cl-left .cl-name{font-size:1rem;font-style:italic;color:rgba(196,196,255,.52);margin-top:.1rem;}
-.cl-icon{font-size:1.4rem;opacity:.4;}
-
-footer{margin-top:4rem;width:100vw;margin-left:50%;transform:translateX(-50%);text-align:center;padding:1.2rem 1rem 2rem;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.19em;color:#c4c4d8;opacity:.19;text-transform:uppercase;}
-footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196,240,.13);}
-
-/* ── sticky mobile bar ── */
-.mob-bar{
-  display:none;
-  position:fixed;bottom:0;left:0;right:0;
-  background:rgba(3,3,4,.92);
-  border-top:1px solid rgba(220,160,50,.12);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  padding:.55rem 1.2rem .65rem;
-  z-index:200;
-  align-items:center;gap:.9rem;
-}
-@media(max-width:640px){
-  .mob-bar{display:flex;}
-  body{padding-bottom:4.5rem;}
-}
-.mob-disc{
-  width:34px;height:34px;border-radius:50%;flex-shrink:0;
-  background:#030304;
-  box-shadow:0 0 0 1px rgba(255,150,20,.2),0 0 8px 3px rgba(255,110,10,.28),0 0 18px 7px rgba(255,60,0,.15);
-  animation:discFloat 8s ease-in-out infinite;
-  cursor:pointer;
-}
-.mob-disc.lunar{
-  background:radial-gradient(circle at 55% 55%,rgba(150,30,10,.85),#030304 80%);
-  box-shadow:0 0 8px 3px rgba(160,25,8,.28),0 0 18px 7px rgba(100,10,2,.15);
-}
-.mob-disc.annular{
-  background:#030304;
-  box-shadow:0 0 0 4px rgba(255,195,35,.55),0 0 12px 5px rgba(255,140,20,.3);
-}
-.mob-info{flex:1;min-width:0;}
-.mob-name{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,248,220,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.mob-cd{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:.12em;color:rgba(220,160,50,.82);margin-top:.1rem;}
-.mob-install{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.55);background:none;border:1px solid rgba(220,160,50,.2);padding:.3rem .65rem;border-radius:2px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0;}
-.mob-install:hover{color:rgba(220,160,50,.85);border-color:rgba(220,160,50,.45);}
-.mob-install.hidden{display:none;}
 .share-btn{display:flex;align-items:center;gap:.35rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.62);background:none;border:1px solid rgba(220,160,50,.22);padding:.26rem .6rem;border-radius:2px;cursor:pointer;transition:all .2s;}
 .share-btn:hover{color:rgba(220,160,50,.9);border-color:rgba(220,160,50,.45);background:rgba(220,160,50,.05);}
 .share-btn .share-icon{flex-shrink:0;display:block;}
@@ -175,29 +72,74 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
   .share-btn .share-label{display:none;}
   .share-btn .share-icon{width:18px;height:18px;}
 }
-/* ── PWA install banner ── */
-#ne-pwa-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(3,3,4,.97);border-top:1px solid rgba(220,160,50,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:.85rem 1.1rem;animation:pwaUp .35s cubic-bezier(.16,1,.3,1);}
-@keyframes pwaUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
-.ne-pwa-inner{display:flex;align-items:center;gap:.8rem;max-width:600px;margin:0 auto;}
-.ne-pwa-icon{width:40px;height:40px;border-radius:9px;flex-shrink:0;object-fit:cover;}
-.ne-pwa-text{flex:1;min-width:0;}
-.ne-pwa-title{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,220,.8);}
-.ne-pwa-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;color:rgba(220,190,120,.45);margin-top:.08rem;}
-.ne-pwa-add{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.44rem .95rem;border-radius:2px;border:1px solid rgba(220,160,50,.3);background:rgba(220,160,50,.08);color:rgba(220,160,50,.9);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s;}
-.ne-pwa-add:hover{background:rgba(220,160,50,.18);}
-.ne-pwa-close{background:none;border:none;color:rgba(220,160,50,.28);font-size:1rem;cursor:pointer;padding:.2rem .4rem;flex-shrink:0;transition:color .2s;}
-.ne-pwa-close:hover{color:rgba(220,160,50,.6);}
-#ne-ios-hint{display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(3,3,4,.98);border-top:1px solid rgba(220,160,50,.12);padding:1.5rem 1.3rem;text-align:center;}
-.ne-ios-arrow{font-size:1.4rem;margin-bottom:.6rem;animation:pwaArrow 1.5s ease-in-out infinite;}
-@keyframes pwaArrow{0%,100%{transform:translateY(0);}50%{transform:translateY(7px);}}
-.ne-ios-steps{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:rgba(220,200,160,.6);line-height:1.9;}
-.ne-ios-steps strong{color:rgba(255,220,140,.8);font-style:normal;font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.08em;}
-.ne-ios-close{margin-top:.9rem;display:block;margin-left:auto;margin-right:auto;background:transparent;border:1px solid rgba(220,160,50,.1);color:rgba(220,160,50,.55);font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;padding:.45rem 1.2rem;border-radius:2px;cursor:pointer;}
-@media(min-width:769px){#ne-pwa-banner,#ne-ios-hint{display:none!important;}}
 
-.ad-slot{width:100%;max-width:728px;margin:2rem auto;text-align:center;}
-.eclipse-cta{display:inline-block;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.75);border:1px solid rgba(220,160,50,.22);padding:.5rem 1.2rem;border-radius:2px;text-decoration:none;transition:background .2s,border-color .2s;}
-.eclipse-cta:hover{background:rgba(220,160,50,.07);border-color:rgba(220,160,50,.45);}
+.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.65);margin-bottom:.5rem;}
+h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.7rem,4.5vw,2.6rem);color:rgba(255,248,228,.9);letter-spacing:.04em;margin-bottom:.45rem;line-height:1.2;}
+.subtitle{font-size:1.12rem;font-style:italic;color:rgba(220,160,50,.55);margin-bottom:2.5rem;max-width:54ch;}
+h2{font-family:'Cinzel',serif;font-weight:400;font-size:.92rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.46);margin:3rem 0 1.2rem;}
+.lead{font-size:1.15rem;color:rgba(230,218,195,.78);max-width:60ch;margin-bottom:1.6rem;}
+hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:3rem 0;}
+
+/* ── NEXT-EVENT HERO COUNTDOWN ── */
+.next-hero{position:relative;border:1px solid rgba(220,160,50,.16);border-radius:6px;padding:2rem 1.8rem 1.8rem;background:radial-gradient(120% 140% at 80% 10%,rgba(220,160,50,.06),rgba(220,160,50,.015) 55%,transparent);overflow:hidden;margin-bottom:1.4rem;}
+.next-hero .nh-grid{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;}
+.nh-diagram{flex:0 0 auto;}
+.nh-body{flex:1 1 260px;min-width:240px;}
+.nh-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(220,180,100,.6);margin-bottom:.5rem;}
+.nh-title{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.15rem,3vw,1.5rem);color:rgba(255,248,220,.9);letter-spacing:.05em;margin-bottom:.25rem;}
+.nh-date{font-size:1.1rem;font-style:italic;color:rgba(220,160,50,.66);margin-bottom:1.1rem;}
+.countdown-box{display:flex;gap:clamp(.55rem,2.5vw,1.3rem);flex-wrap:wrap;align-items:flex-start;}
+.cunit{text-align:center;min-width:48px;}
+.cnum{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.9rem,5.5vw,3rem);color:rgba(255,248,228,.94);line-height:1;letter-spacing:.02em;}
+.clabel{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-top:.45rem;}
+.csep{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4.5vw,2.6rem);color:rgba(220,160,50,.22);padding-top:.06rem;}
+.nh-cta{display:inline-block;margin-top:1.3rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.85);border:1px solid rgba(220,160,50,.28);padding:.55rem 1.3rem;border-radius:2px;text-decoration:none;transition:background .2s,border-color .2s;}
+.nh-cta:hover{background:rgba(220,160,50,.08);border-color:rgba(220,160,50,.5);}
+
+/* ── GEOMETRY DIAGRAM CARD ── */
+.geo-card{border:1px solid rgba(220,160,50,.1);border-radius:6px;background:rgba(220,160,50,.018);padding:1.6rem 1.4rem;margin-bottom:1rem;}
+.geo-card svg{display:block;width:100%;height:auto;}
+.geo-cap{font-size:.98rem;font-style:italic;color:rgba(220,200,160,.55);text-align:center;margin-top:.9rem;max-width:52ch;margin-left:auto;margin-right:auto;}
+
+/* ── ECLIPSE CARD ── */
+.ec-card{border:1px solid rgba(220,160,50,.09);border-radius:5px;background:rgba(220,160,50,.018);padding:1.1rem 1.2rem 1.15rem;transition:border-color .2s,background .2s;}
+.ec-card:hover{border-color:rgba(220,160,50,.2);background:rgba(220,160,50,.03);}
+.ec-card.is-next{border-color:rgba(220,160,50,.3);background:rgba(220,160,50,.045);}
+.ec-top{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem;flex-wrap:wrap;margin-bottom:.45rem;}
+.ec-name{font-family:'Cinzel',serif;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,248,220,.82);}
+.ec-date{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(220,160,50,.7);white-space:nowrap;}
+.ec-badge{display:inline-block;font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;padding:.16rem .55rem;border-radius:2px;background:rgba(220,160,50,.14);color:rgba(220,180,90,.85);border:1px solid rgba(220,160,50,.28);margin-left:.4rem;vertical-align:middle;}
+.ec-vis{font-size:1.06rem;color:rgba(224,206,168,.72);margin-bottom:.55rem;}
+.ec-chips{display:flex;gap:.4rem;flex-wrap:wrap;}
+.ec-chip{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.26rem .6rem;border:1px solid rgba(220,160,50,.14);border-radius:2px;color:rgba(220,180,120,.7);}
+.ec-chip strong{color:rgba(255,222,142,.86);font-family:inherit;font-weight:400;}
+.ec-link{display:inline-block;margin-top:.7rem;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(220,160,50,.78);text-decoration:none;border-bottom:1px solid rgba(220,160,50,.25);padding-bottom:1px;transition:color .2s,border-color .2s;}
+.ec-link:hover{color:rgba(255,222,142,.95);border-color:rgba(220,160,50,.5);}
+
+/* ── UPCOMING CARDS GRID ── */
+.upcoming-grid{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem;}
+
+/* ── TYPES GRID ── */
+.types-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.7rem;margin:.5rem 0 1rem;}
+.type-card{padding:1rem;border:1px solid rgba(220,160,50,.08);border-radius:4px;background:rgba(220,160,50,.015);display:flex;flex-direction:column;gap:.55rem;}
+.type-card svg{width:40px;height:40px;}
+.type-name{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,248,220,.66);}
+.type-desc{font-size:.98rem;color:rgba(222,204,168,.62);line-height:1.55;}
+
+/* ── CROSSLINKS ── */
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:1rem 0 1.5rem;}
+.crosslink-cal{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border:1px solid rgba(220,160,50,.12);border-radius:3px;text-decoration:none;transition:border-color .2s;background:rgba(220,160,50,.02);}
+.crosslink-cal:hover{border-color:rgba(220,160,50,.3);}
+.cl-label{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
+.cl-title{font-size:1.1rem;font-style:italic;color:rgba(255,240,200,.78);margin-top:.2rem;}
+.cl-arrow{color:rgba(220,160,50,.4);font-size:1.2rem;}
+
+.ad-slot{width:100%;max-width:728px;margin:2.5rem auto;text-align:center;}
+.source{font-size:1rem;font-style:italic;color:rgba(195,180,145,.55);margin-top:1rem;}
+.source a{color:rgba(220,160,50,.6);text-decoration:none;border-bottom:1px solid rgba(220,160,50,.2);}
+footer{margin-top:4rem;width:100vw;margin-left:50%;transform:translateX(-50%);text-align:center;padding:1.2rem 1rem 2rem;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.19em;color:#c4c4d8;opacity:.19;text-transform:uppercase;}
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196,240,.13);}
+.hidden{display:none!important;}
 
 /* ── mobile hamburger ── */
 .menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.45rem .35rem;flex-shrink:0;}
@@ -215,87 +157,52 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
 .drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}
 @media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}}
 
-/* ── readability patch: +2px body text, higher contrast ── */
-body{color:rgba(236,228,210,.88);}
-p{font-size:1.13rem;color:rgba(230,218,195,.84);}
-footer,footer p,footer a{font-size:.62rem !important;letter-spacing:.19em !important;line-height:1.7 !important;text-transform:uppercase !important;}
-td{font-size:1.07rem;color:rgba(226,212,182,.78);}
-.faq-a{font-size:1.13rem !important;color:rgba(226,210,180,.76) !important;}
-.disclaimer{font-size:1.04rem;color:rgba(195,180,145,.62);}
-.path-banner-text{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cl-title{font-size:1.1rem;color:rgba(255,240,200,.76);}
-.source{font-size:1.0rem;color:rgba(195,180,145,.58);}
-.subtitle{font-size:1.1rem;}
-.detail-box p{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cov-pct{font-size:.97rem;color:rgba(226,206,170,.66);}
-#intro-in,#intro-out,.intro-text{font-size:1.13rem;}
-.row-name{color:rgba(255,248,220,.80);}
-.row-date{color:rgba(220,160,50,.65);}
-.tip-box{font-size:1.07rem;color:rgba(220,200,150,.75);}
+/* ── sticky mobile bar ── */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(3,3,4,.92);border-top:1px solid rgba(220,160,50,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:.55rem 1.2rem .65rem;z-index:200;align-items:center;gap:.9rem;}
+@media(max-width:640px){.mob-bar{display:flex;}body{padding-bottom:4.5rem;}}
+.mob-disc{width:34px;height:34px;border-radius:50%;flex-shrink:0;background:#030304;box-shadow:0 0 0 1px rgba(255,150,20,.2),0 0 8px 3px rgba(255,110,10,.28),0 0 18px 7px rgba(255,60,0,.15);cursor:pointer;}
+.mob-disc.lunar{background:radial-gradient(circle at 55% 55%,rgba(150,30,10,.85),#030304 80%);box-shadow:0 0 8px 3px rgba(160,25,8,.28),0 0 18px 7px rgba(100,10,2,.15);}
+.mob-disc.annular{background:#030304;box-shadow:0 0 0 4px rgba(255,195,35,.55),0 0 12px 5px rgba(255,140,20,.3);}
+.mob-info{flex:1;min-width:0;}
+.mob-name{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,248,220,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mob-cd{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:.12em;color:rgba(220,160,50,.82);margin-top:.1rem;}
+.mob-install{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,160,50,.55);background:none;border:1px solid rgba(220,160,50,.2);padding:.3rem .65rem;border-radius:2px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0;}
+.mob-install:hover{color:rgba(220,160,50,.85);border-color:rgba(220,160,50,.45);}
+.mob-install.hidden{display:none;}
 
-/* ── light mode (dawn sky) ── */
+/* ── PWA install banner ── */
+#ne-pwa-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(3,3,4,.97);border-top:1px solid rgba(220,160,50,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:.85rem 1.1rem;}
+.ne-pwa-inner{display:flex;align-items:center;gap:.8rem;max-width:600px;margin:0 auto;}
+.ne-pwa-icon{width:40px;height:40px;border-radius:9px;flex-shrink:0;object-fit:cover;}
+.ne-pwa-text{flex:1;min-width:0;}
+.ne-pwa-title{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,220,.8);}
+.ne-pwa-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;color:rgba(220,190,120,.45);margin-top:.08rem;}
+.ne-pwa-add{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.44rem .95rem;border-radius:2px;border:1px solid rgba(220,160,50,.3);background:rgba(220,160,50,.08);color:rgba(220,160,50,.9);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s;}
+.ne-pwa-add:hover{background:rgba(220,160,50,.18);}
+.ne-pwa-close{background:none;border:none;color:rgba(220,160,50,.28);font-size:1rem;cursor:pointer;padding:.2rem .4rem;flex-shrink:0;transition:color .2s;}
+.ne-pwa-close:hover{color:rgba(220,160,50,.6);}
+#ne-ios-hint{display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(3,3,4,.98);border-top:1px solid rgba(220,160,50,.12);padding:1.5rem 1.3rem;text-align:center;}
+.ne-ios-arrow{font-size:1.4rem;margin-bottom:.6rem;}
+.ne-ios-steps{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:rgba(220,200,160,.6);line-height:1.9;}
+.ne-ios-steps strong{color:rgba(255,220,140,.8);font-style:normal;font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.08em;}
+.ne-ios-close{margin-top:.9rem;display:block;margin-left:auto;margin-right:auto;background:transparent;border:1px solid rgba(220,160,50,.1);color:rgba(220,160,50,.55);font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;padding:.45rem 1.2rem;border-radius:2px;cursor:pointer;}
+@media(min-width:769px){#ne-pwa-banner,#ne-ios-hint{display:none!important;}}
+
+@media(max-width:520px){
+  .nh-grid{gap:1.1rem;}
+  .types-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+}
+:focus-visible{outline:2px solid rgba(220,180,100,.7);outline-offset:2px;border-radius:2px;}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Next Eclipse",
-  "url": "https://www.next-eclipse.com",
-  "description": "Countdown to the next solar and lunar eclipses. Dates, maps, visibility paths and eclipse data.",
-  "inLanguage": ["es", "en"],
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.next-eclipse.com/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Furiosa Studio",
-    "url": "https://www.next-eclipse.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Next Total Solar Eclipse — August 12, 2026",
-  "startDate": "2026-08-12",
-  "endDate": "2026-08-12",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": "Greenland, Iceland, Spain, North Africa",
-    "address": "Path of totality: Greenland · Iceland · Spain · North Africa"
-  },
-  "description": "Total solar eclipse visible from Spain. The path of totality crosses Greenland, Iceland, Spain and northern Africa. Maximum duration: 2 min 18 sec.",
-  "url": "https://www.next-eclipse.com",
-  "organizer": {
-    "@type": "Organization",
-    "name": "Furiosa Studio",
-    "url": "https://www.next-eclipse.com"
-  },
-  "performer": {
-    "@type": "Organization",
-    "name": "NASA / ESA",
-    "url": "https://science.nasa.gov/eclipses/"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2026-01-01",
-    "url": "https://www.next-eclipse.com"
-  }
-}
-</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RJ7B4VQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 <nav class="topbar">
   <a class="site-name" href="/">NEXT ECLIPSE</a>
   <div class="nav-links">
@@ -324,55 +231,154 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
 <div class="wrap">
 
-  <div class="eclipse-stage">
-    <div class="eclipse-disc" id="eclipse-disc"></div>
-  </div>
-
   <p class="eyebrow" id="eyebrow">Next Eclipse</p>
-  <h1 class="eclipse-name" id="eclipse-name">Total Solar Eclipse</h1>
-  <p class="eclipse-date-line" id="eclipse-date">August 12, 2026</p>
-  <p class="eclipse-vis" id="eclipse-vis">Spain · Iceland · Greenland · North Africa</p>
+  <h1 id="h1">Total Solar Eclipse · Spain 2026</h1>
+  <p class="subtitle" id="subtitle">Countdown to the next total solar eclipse — August 12, 2026 over Spain and North Africa.</p>
 
-  <div class="countdown">
-    <div class="cunit"><div class="cnum" id="cd-d">--</div><div class="clabel" id="cd-dl">days</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-h">--</div><div class="clabel" id="cd-hl">hours</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-m">--</div><div class="clabel" id="cd-ml">min</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-s">--</div><div class="clabel" id="cd-sl">sec</div></div>
-  </div>
-
-  <div class="detail-box">
-    <p id="eclipse-detail">Totality: 2 min 18 sec · Path crosses Salamanca and Zamora, Spain</p>
-  </div>
-  <p style="text-align:center;margin-top:-.5rem;margin-bottom:2rem;">
-    <a href="/eclipse-solar-espana-2026.html" class="eclipse-cta" id="spain-hero-cta">Spain 2026 — Full guide →</a>
-  </p>
-
-  <hr>
-  <h2 id="h-upcoming">Upcoming Eclipses</h2>
-  <div class="eclipse-list" id="upcoming-list"></div>
-  <p style="text-align:center;margin-top:1rem;">
-    <a href="/upcoming.html" id="see-all-link" style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.55);text-decoration:none;">See full calendar →</a>
-  </p>
-
-  <hr>
-  <a class="crosslink" href="https://www.nextfullmoon.co" target="_blank" rel="noopener">
-    <div class="cl-left">
-      <div class="cl-label" id="cl-label">Also track</div>
-      <div class="cl-name" id="cl-name">Next Full Moon →</div>
+  <!-- ── NEXT EVENT HERO ── -->
+  <section class="next-hero" aria-labelledby="nh-title">
+    <div class="nh-grid">
+      <div class="nh-diagram" aria-hidden="true">
+        <svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Total solar eclipse corona diagram">
+          <defs>
+            <radialGradient id="coronaG" cx="50%" cy="50%" r="50%">
+              <stop offset="42%" stop-color="rgba(220,160,50,0)"/>
+              <stop offset="50%" stop-color="rgba(255,228,150,.85)"/>
+              <stop offset="62%" stop-color="rgba(220,160,50,.25)"/>
+              <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+            </radialGradient>
+          </defs>
+          <circle cx="60" cy="60" r="56" fill="url(#coronaG)"/>
+          <circle cx="60" cy="60" r="27" fill="#030304" stroke="rgba(255,236,180,.6)" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="nh-body">
+        <p class="nh-eyebrow" id="nh-eyebrow">The next eclipse</p>
+        <p class="nh-title" id="nh-title">Total Solar Eclipse · Spain</p>
+        <p class="nh-date" id="nh-date">August 12, 2026 · 17:47 UTC</p>
+        <div class="countdown-box" aria-live="off">
+          <div class="cunit"><div class="cnum" id="cd-d">—</div><div class="clabel" id="cd-dl">days</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-h">—</div><div class="clabel" id="cd-hl">hrs</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-m">—</div><div class="clabel" id="cd-ml">min</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-s">—</div><div class="clabel" id="cd-sl">sec</div></div>
+        </div>
+        <a class="nh-cta" id="nh-cta" href="/eclipse-solar-espana-2026.html">Spain 2026 — Full guide →</a>
+      </div>
     </div>
-    <span class="cl-icon">🌕</span>
-  </a>
+  </section>
 
-  <footer>
-    <p>© 2026 Furiosa Studio · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
-  </footer>
+  <!-- ── HOW AN ECLIPSE WORKS ── -->
+  <h2 id="h-geo">How an eclipse works</h2>
+  <div class="geo-card">
+    <svg viewBox="0 0 720 220" role="img" aria-labelledby="geo-svg-title">
+      <title id="geo-svg-title">Diagram of a solar eclipse: the Moon casts its umbra and penumbra onto the Earth</title>
+      <defs>
+        <radialGradient id="sunG" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,236,170,.95)"/>
+          <stop offset="70%" stop-color="rgba(230,170,60,.9)"/>
+          <stop offset="100%" stop-color="rgba(200,130,40,.55)"/>
+        </radialGradient>
+        <linearGradient id="penG" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(220,160,50,.22)"/>
+          <stop offset="100%" stop-color="rgba(220,160,50,.05)"/>
+        </linearGradient>
+      </defs>
+      <polygon points="120,70 540,150 120,150" fill="url(#penG)"/>
+      <polygon points="120,150 540,70 120,150" fill="url(#penG)"/>
+      <polygon points="120,90 120,130 470,110" fill="rgba(3,3,4,.9)" stroke="rgba(220,160,50,.3)" stroke-width="1"/>
+      <circle cx="70" cy="110" r="48" fill="url(#sunG)"/>
+      <circle cx="120" cy="110" r="20" fill="#0a0a0c" stroke="rgba(220,200,150,.5)" stroke-width="1.2"/>
+      <circle cx="540" cy="110" r="34" fill="rgba(40,60,90,.55)" stroke="rgba(150,180,220,.4)" stroke-width="1.2"/>
+      <circle cx="508" cy="110" r="4" fill="rgba(255,228,150,.95)"/>
+      <text x="70" y="178" text-anchor="middle" font-family="Cinzel,serif" font-size="11" letter-spacing="2" fill="rgba(220,180,110,.7)" id="geo-sun">SUN</text>
+      <text x="120" y="178" text-anchor="middle" font-family="Cinzel,serif" font-size="11" letter-spacing="2" fill="rgba(220,180,110,.7)" id="geo-moon">MOON</text>
+      <text x="295" y="105" text-anchor="middle" font-family="Cinzel,serif" font-size="10" letter-spacing="2" fill="rgba(220,160,50,.75)" id="geo-umbra">UMBRA</text>
+      <text x="320" y="56" text-anchor="middle" font-family="Cinzel,serif" font-size="10" letter-spacing="2" fill="rgba(220,160,50,.45)" id="geo-penumbra">PENUMBRA</text>
+      <text x="540" y="178" text-anchor="middle" font-family="Cinzel,serif" font-size="11" letter-spacing="2" fill="rgba(150,180,220,.7)" id="geo-earth">EARTH</text>
+    </svg>
+    <p class="geo-cap" id="geo-cap">When the Moon slips exactly between the Sun and Earth, its dark inner shadow — the umbra — traces a narrow path. Stand inside it and the Sun vanishes. Stand in the fainter penumbra and you see only a partial bite.</p>
+  </div>
+
+  <hr>
+
+  <!-- ── UPCOMING ECLIPSES CARDS ── -->
+  <h2 id="h-upcoming">Upcoming Eclipses · 2026–2028</h2>
+  <p class="lead" id="upcoming-lead">Three major eclipses are coming. Spain gets two of them.</p>
+  <div class="upcoming-grid" id="upcoming-grid"></div>
 
   <div class="ad-slot">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6498215334315959" data-ad-slot="8529908501" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </div>
+
+  <!-- ── ECLIPSE TYPES ── -->
+  <hr>
+  <h2 id="h-types">The four kinds of eclipse</h2>
+  <div class="types-grid">
+    <div class="type-card">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="url(#coronaG)"/><circle cx="20" cy="20" r="11" fill="#030304" stroke="rgba(255,236,180,.5)" stroke-width="1"/></svg>
+      <div class="type-name" id="t1-name">Total Solar</div>
+      <div class="type-desc" id="t1-desc">The Moon fully hides the Sun; the corona blazes out. Day turns to night on a path ~150 km wide.</div>
+    </div>
+    <div class="type-card">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="rgba(230,170,60,.9)"/><circle cx="20" cy="20" r="11" fill="#030304"/></svg>
+      <div class="type-name" id="t2-name">Annular Solar</div>
+      <div class="type-desc" id="t2-desc">The Moon is too far to cover the Sun fully. A brilliant "ring of fire" rims the lunar disc.</div>
+    </div>
+    <div class="type-card">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="rgba(150,55,40,.85)" stroke="rgba(200,90,70,.6)" stroke-width="1"/></svg>
+      <div class="type-name" id="t3-name">Total Lunar</div>
+      <div class="type-desc" id="t3-desc">Earth's shadow swallows the Moon, which glows blood-red. Totality can last up to 1h 47min.</div>
+    </div>
+    <div class="type-card">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="rgba(200,196,180,.8)"/><path d="M20 4 a16 16 0 0 1 0 32 a11 11 0 0 0 0 -32" fill="rgba(60,55,50,.85)"/></svg>
+      <div class="type-name" id="t4-name">Partial Lunar</div>
+      <div class="type-desc" id="t4-desc">Only part of the Moon enters Earth's umbra — a dark bite, visible to the naked eye.</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ── CROSSLINKS ── -->
+  <h2 id="h-explore">Explore</h2>
+  <div class="crosslinks">
+    <a class="crosslink-cal" href="/upcoming.html">
+      <div>
+        <div class="cl-label" id="cl-upcoming-label">All Eclipses</div>
+        <div class="cl-title" id="cl-upcoming-title">Full Timeline 2026–2028</div>
+      </div>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a class="crosslink-cal" href="/eclipse-solar-espana-2026.html">
+      <div>
+        <div class="cl-label" id="cl-spain-label">Spain · Aug 2026</div>
+        <div class="cl-title" id="cl-spain-title">Total Solar Eclipse Guide</div>
+      </div>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a class="crosslink-cal" href="/how-to-watch.html">
+      <div>
+        <div class="cl-label" id="cl-safety-label">Eye Safety</div>
+        <div class="cl-title" id="cl-safety-title">How to Watch Safely</div>
+      </div>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a class="crosslink-cal" href="/cities.html">
+      <div>
+        <div class="cl-label" id="cl-cities-label">Path of Totality</div>
+        <div class="cl-title" id="cl-cities-title">Cities &amp; Visibility</div>
+      </div>
+      <span class="cl-arrow">→</span>
+    </a>
+  </div>
+
+  <p class="source" id="source-note">Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a></p>
+
+  <footer>
+    <p>© 2026 Furiosa Studio · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
+  </footer>
 
 </div>
 
@@ -416,108 +422,111 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 </div>
 
 <script>
-const ECLIPSES = [
-  { utc:'2026-08-12T17:47:00Z', type:'solar_total',
-    en:{name:'Total Solar Eclipse',date:'August 12, 2026',vis:'Spain · Iceland · Greenland · North Africa',detail:'Totality: 2 min 18 sec · Path crosses Salamanca and Zamora, Spain'},
-    es:{name:'Eclipse Solar Total',date:'12 de agosto de 2026',vis:'España · Islandia · Groenlandia · Norte de África',detail:'Totalidad: 2 min 18 seg · El camino de totalidad cruza Salamanca y Zamora, España'}
-  },
-  { utc:'2026-08-28T04:12:00Z', type:'lunar_partial',
-    en:{name:'Partial Lunar Eclipse',date:'August 28, 2026',vis:'Western hemisphere',detail:'Penumbral eclipse — subtle darkening of the lunar disc'},
-    es:{name:'Eclipse Lunar Parcial',date:'28 de agosto de 2026',vis:'Hemisferio occidental',detail:'Eclipse penumbral — leve oscurecimiento del disco lunar'}
-  },
-  { utc:'2027-02-17T00:01:00Z', type:'solar_annular',
-    en:{name:'Annular Solar Eclipse',date:'February 17, 2027',vis:'South America · West Africa',detail:'Ring of fire visible along the annular path'},
-    es:{name:'Eclipse Solar Anular',date:'17 de febrero de 2027',vis:'Sudamérica · África Occidental',detail:'Anillo de fuego visible a lo largo del camino anular'}
-  },
-  { utc:'2027-08-02T10:07:00Z', type:'solar_total',
-    en:{name:'Total Solar Eclipse',date:'August 2, 2027',vis:'Morocco · Spain · Middle East · India',detail:'Longest totality this century — 6 min 23 sec over Luxor, Egypt'},
-    es:{name:'Eclipse Solar Total',date:'2 de agosto de 2027',vis:'Marruecos · España · Oriente Medio · India',detail:'La totalidad más larga del siglo — 6 min 23 seg sobre Luxor, Egipto'}
-  },
-  { utc:'2028-01-26T15:09:00Z', type:'solar_annular',
-    en:{name:'Annular Solar Eclipse',date:'January 26, 2028',vis:'South America · Europe · North Africa',detail:'Ring of fire visible across Atlantic regions'},
-    es:{name:'Eclipse Solar Anular',date:'26 de enero de 2028',vis:'Sudamérica · Europa · Norte de África',detail:'Anillo de fuego visible en regiones atlánticas'}
-  },
-  { utc:'2028-07-22T02:56:00Z', type:'solar_total',
-    en:{name:'Total Solar Eclipse',date:'July 22, 2028',vis:'Australia · New Zealand',detail:'5 min 10 sec totality over southeastern Australia'},
-    es:{name:'Eclipse Solar Total',date:'22 de julio de 2028',vis:'Australia · Nueva Zelanda',detail:'5 min 10 seg de totalidad sobre el sureste de Australia'}
-  },
+/* ───────── ECLIPSE DATA ───────── */
+const FEATURED = [
+  { utc:'2026-08-12T17:47:00Z', kind:'solar_total', link:'/eclipse-solar-espana-2026.html',
+    en:{name:'Total Solar Eclipse · Spain',date:'Aug 12, 2026',vis:'Iceland · N. Spain · Algeria · Libya',c1:'Totality',c1v:'2 min 18 s',c2:'Path',c2v:'~160 km wide',linkLabel:'Spain 2026 — Full guide →'},
+    es:{name:'Eclipse Solar Total · España',date:'12 ago 2026',vis:'Islandia · Norte de España · Argelia · Libia',c1:'Totalidad',c1v:'2 min 18 s',c2:'Camino',c2v:'~160 km ancho',linkLabel:'Guía España 2026 →'} },
+  { utc:'2027-08-02T10:07:00Z', kind:'solar_total', link:'/eclipse-solar-2027-egipto.html',
+    en:{name:'Total Solar Eclipse · Century\'s Longest',date:'Aug 2, 2027',vis:'Morocco · Egypt · Saudi Arabia · Yemen · India',c1:'Totality',c1v:'6 min 23 s',c2:'Record',c2v:'Longest of 21st c.',linkLabel:'Egypt 2027 guide →'},
+    es:{name:'Eclipse Solar Total · El Más Largo del Siglo',date:'2 ago 2027',vis:'Marruecos · Egipto · Arabia Saudí · Yemen · India',c1:'Totalidad',c1v:'6 min 23 s',c2:'Récord',c2v:'El más largo del s. XXI',linkLabel:'Guía Egipto 2027 →'} },
+  { utc:'2028-01-26T15:09:00Z', kind:'solar_annular', link:'/eclipse-anular-espana-2028.html',
+    en:{name:'Annular Solar Eclipse · Spain',date:'Jan 26, 2028',vis:'S. America · Portugal · Spain · N. Africa',c1:'Ring over Iberia',c1v:'~4 min',c2:'Type',c2v:'Ring of Fire',linkLabel:'Spain 2028 guide →'},
+    es:{name:'Eclipse Solar Anular · España',date:'26 ene 2028',vis:'Sudamérica · Portugal · España · Norte de África',c1:'Anillo sobre Iberia',c1v:'~4 min',c2:'Tipo',c2v:'Anillo de Fuego',linkLabel:'Guía España 2028 →'} },
 ];
 
-const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',lunar_partial:'🌗',lunar_penumbral:'🌕'};
-const DISC_CLASS = {solar_total:'',solar_annular:'annular',lunar_total:'lunar',lunar_partial:'lunar',lunar_penumbral:'lunar'};
+/* SVG glyphs */
+function glyph(kind){
+  switch(kind){
+    case 'solar_total': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="url(#coronaG)"/><circle cx="20" cy="20" r="10" fill="#030304" stroke="rgba(255,236,180,.55)" stroke-width="1"/></svg>';
+    case 'solar_annular': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="rgba(230,170,60,.9)"/><circle cx="20" cy="20" r="9" fill="#030304"/></svg>';
+    case 'lunar_total': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(150,55,40,.85)" stroke="rgba(200,90,70,.55)" stroke-width="1"/></svg>';
+    case 'lunar_partial': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(200,196,180,.78)"/><path d="M20 6 a14 14 0 0 1 0 28 a9 9 0 0 0 0 -28" fill="rgba(55,50,45,.85)"/></svg>';
+    default: return '';
+  }
+}
 
+const DISC_CLASS = {solar_total:'',solar_annular:'annular',lunar_total:'lunar',lunar_partial:'lunar'};
+
+/* ───────── i18n STRINGS ───────── */
 const STRINGS = {
-  en:{eyebrow:'Next Eclipse',hUpcoming:'Upcoming Eclipses',seeAll:'See full calendar →',clLabel:'Also track',clName:'Next Full Moon →',days:'days',hours:'hours',min:'min',sec:'sec',navSpain:'Spain 2026',navCities:'Cities',navSafety:'Safety',navUpcoming:'Upcoming',navHistory:'History',share:'Share',langBtn:'ES',fPrivacy:'Privacy',fUpcoming:'Upcoming',fHistory:'History',fSupport:'Support',ctaSpain:'Spain 2026 — Full guide →',pwaTitle:'Install Next Eclipse',pwaSub:'Always one tap away · No App Store',iosSteps:'Tap <strong>Share</strong> in Safari, then <strong>Add to Home Screen</strong>'},
-  es:{eyebrow:'Próximo Eclipse',hUpcoming:'Próximos Eclipses',seeAll:'Ver calendario completo →',clLabel:'También sigue',clName:'Próxima Luna Llena →',days:'días',hours:'horas',min:'min',sec:'seg',navSpain:'España 2026',navCities:'Ciudades',navSafety:'Seguridad',navUpcoming:'Próximos',navHistory:'Historia',share:'Compartir',langBtn:'EN',fPrivacy:'Privacidad',fUpcoming:'Próximos',fHistory:'Historia',fSupport:'Apoya',ctaSpain:'España 2026 — Guía completa →',pwaTitle:'Instalar Next Eclipse',pwaSub:'Siempre a un toque',iosSteps:'Pulsa <strong>Compartir</strong> en Safari, luego <strong>Añadir a pantalla de inicio</strong>'}
+  en:{
+    eyebrow:'Next Eclipse',
+    h1:'Total Solar Eclipse · Spain 2026',
+    subtitle:'Countdown to the next total solar eclipse — August 12, 2026 over Spain and North Africa.',
+    nhEyebrow:'The next eclipse',
+    cdD:'days',cdH:'hrs',cdM:'min',cdS:'sec',
+    nhCta:'Spain 2026 — Full guide →',
+    hGeo:'How an eclipse works',
+    geoCap:'When the Moon slips exactly between the Sun and Earth, its dark inner shadow — the umbra — traces a narrow path. Stand inside it and the Sun vanishes. Stand in the fainter penumbra and you see only a partial bite.',
+    geoSun:'SUN',geoMoon:'MOON',geoUmbra:'UMBRA',geoPenumbra:'PENUMBRA',geoEarth:'EARTH',
+    hUpcoming:'Upcoming Eclipses · 2026–2028',
+    upcomingLead:'Three major eclipses are coming. Spain gets two of them.',
+    nextBadge:'Next',
+    hTypes:'The four kinds of eclipse',
+    t1Name:'Total Solar',t1Desc:'The Moon fully hides the Sun; the corona blazes out. Day turns to night on a path ~150 km wide.',
+    t2Name:'Annular Solar',t2Desc:'The Moon is too far to cover the Sun fully. A brilliant "ring of fire" rims the lunar disc.',
+    t3Name:'Total Lunar',t3Desc:'Earth’s shadow swallows the Moon, which glows blood-red. Totality can last up to 1h 47min.',
+    t4Name:'Partial Lunar',t4Desc:'Only part of the Moon enters Earth’s umbra — a dark bite, visible to the naked eye.',
+    hExplore:'Explore',
+    clUpcomingLabel:'All Eclipses',clUpcomingTitle:'Full Timeline 2026–2028',
+    clSpainLabel:'Spain · Aug 2026',clSpainTitle:'Total Solar Eclipse Guide',
+    clSafetyLabel:'Eye Safety',clSafetyTitle:'How to Watch Safely',
+    clCitiesLabel:'Path of Totality',clCitiesTitle:'Cities & Visibility',
+    source:'Source: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>',
+    nav:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'}
+  },
+  es:{
+    eyebrow:'Próximo Eclipse',
+    h1:'Eclipse Solar Total · España 2026',
+    subtitle:'Cuenta atrás para el próximo eclipse solar total — 12 de agosto de 2026 sobre España y el Norte de África.',
+    nhEyebrow:'El próximo eclipse',
+    cdD:'días',cdH:'h',cdM:'min',cdS:'seg',
+    nhCta:'Guía España 2026 →',
+    hGeo:'Cómo funciona un eclipse',
+    geoCap:'Cuando la Luna se interpone exactamente entre el Sol y la Tierra, su sombra interior — la umbra — traza una franja estrecha. Dentro de ella, el Sol desaparece. En la penumbra, más tenue, solo ves un mordisco parcial.',
+    geoSun:'SOL',geoMoon:'LUNA',geoUmbra:'UMBRA',geoPenumbra:'PENUMBRA',geoEarth:'TIERRA',
+    hUpcoming:'Próximos Eclipses · 2026–2028',
+    upcomingLead:'Tres grandes eclipses se aproximan. España protagoniza dos de ellos.',
+    nextBadge:'Próximo',
+    hTypes:'Los cuatro tipos de eclipse',
+    t1Name:'Solar Total',t1Desc:'La Luna oculta el Sol por completo; la corona resplandece. El día se vuelve noche en un camino de ~150 km.',
+    t2Name:'Solar Anular',t2Desc:'La Luna está demasiado lejos para cubrir el Sol entero. Un brillante “anillo de fuego” rodea el disco lunar.',
+    t3Name:'Lunar Total',t3Desc:'La sombra de la Tierra engulle la Luna, que brilla roja como la sangre. La totalidad dura hasta 1h 47min.',
+    t4Name:'Lunar Parcial',t4Desc:'Solo parte de la Luna entra en la umbra terrestre — un mordisco oscuro, visible a simple vista.',
+    hExplore:'Explorar',
+    clUpcomingLabel:'Todos los Eclipses',clUpcomingTitle:'Calendario Completo 2026–2028',
+    clSpainLabel:'España · Ago 2026',clSpainTitle:'Guía del Eclipse Solar Total',
+    clSafetyLabel:'Seguridad ocular',clSafetyTitle:'Cómo verlo con seguridad',
+    clCitiesLabel:'Camino de Totalidad',clCitiesTitle:'Ciudades y Visibilidad',
+    source:'Fuente: NASA Goddard Space Flight Center · <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">eclipse.gsfc.nasa.gov</a>',
+    nav:{spain:'España 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Próximos',history:'Historia',share:'Compartir',lang:'EN'}
+  }
 };
 
-let lang = localStorage.getItem('ne-lang') || (navigator.language.startsWith('es')?'es':'en');
-let nextEclipse = null;
-let target = 0;
+let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
 
+/* Countdown target: next eclipse by date */
 function findNext(){
-  const now = Date.now();
-  return ECLIPSES.find(e=>new Date(e.utc).getTime()>now) || ECLIPSES[ECLIPSES.length-1];
-}
-
-function render(){
-  const e = nextEclipse;
-  const L = lang;
-  const S = STRINGS[L];
-  document.getElementById('eclipse-disc').className='eclipse-disc '+(DISC_CLASS[e.type]||'');
-  document.getElementById('eyebrow').textContent=S.eyebrow;
-  document.getElementById('eclipse-name').textContent=e[L].name;
-  document.getElementById('eclipse-date').textContent=e[L].date;
-  document.getElementById('eclipse-vis').textContent=e[L].vis;
-  document.getElementById('eclipse-detail').textContent=e[L].detail;
-  document.getElementById('h-upcoming').textContent=S.hUpcoming;
-  document.getElementById('see-all-link').textContent=S.seeAll;
-  document.getElementById('cd-dl').textContent=S.days;
-  document.getElementById('cd-hl').textContent=S.hours;
-  document.getElementById('cd-ml').textContent=S.min;
-  document.getElementById('cd-sl').textContent=S.sec;
-  document.getElementById('cl-label').textContent=S.clLabel;
-  document.getElementById('cl-name').textContent=S.clName;
-  document.getElementById('lang-btn').textContent=S.langBtn;
-  document.getElementById('share-label').textContent=S.share;
-  document.getElementById('nav-spain').textContent=S.navSpain;
-  document.getElementById('nav-cities').textContent=S.navCities;
-  document.getElementById('nav-safety').textContent=S.navSafety;
-  document.getElementById('nav-upcoming').textContent=S.navUpcoming;
-  document.getElementById('nav-history').textContent=S.navHistory;
-  if(document.getElementById('spain-hero-cta'))document.getElementById('spain-hero-cta').textContent=S.ctaSpain;
-  if(document.getElementById('pwa-title'))document.getElementById('pwa-title').textContent=S.pwaTitle;
-  if(document.getElementById('pwa-sub'))document.getElementById('pwa-sub').textContent=S.pwaSub;
-  if(document.getElementById('ios-steps'))document.getElementById('ios-steps').innerHTML=S.iosSteps;
-  renderUpcoming();
-}
-
-function renderUpcoming(){
   const now=Date.now();
-  const L=lang;
-  const future=ECLIPSES.filter(e=>new Date(e.utc).getTime()>now&&e!==nextEclipse).slice(0,4);
-  const ECLIPSE_LINKS={'2026-08-12T17:47:00Z':'/eclipse-solar-espana-2026.html'};
-  document.getElementById('upcoming-list').innerHTML=future.map(e=>{
-    const href=ECLIPSE_LINKS[e.utc]||'/upcoming.html';
-    return `<a class="eclipse-row" href="${href}">
-      <span class="row-icon">${ICONS[e.type]||'🌑'}</span>
-      <span class="row-name">${e[L].name}</span>
-      <span class="row-date">${e[L].date}</span>
-    </a>`;
-  }).join('');
+  return FEATURED.find(e=>new Date(e.utc).getTime()>now)||FEATURED[0];
 }
+
+let cdTarget = null;
 
 function tick(){
-  const diff=target-Date.now();
-  if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>{document.getElementById(id).textContent='0';});tickMob(0);return;}
-  const d=Math.floor(diff/86400000);
-  const h=Math.floor((diff%86400000)/3600000);
-  const m=Math.floor((diff%3600000)/60000);
-  const s=Math.floor((diff%60000)/1000);
-  document.getElementById('cd-d').textContent=d;
-  document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  if(!cdTarget)return;
+  let diff=cdTarget-Date.now();
+  if(diff<0)diff=0;
+  const d=Math.floor(diff/864e5); diff-=d*864e5;
+  const h=Math.floor(diff/36e5); diff-=h*36e5;
+  const m=Math.floor(diff/6e4); diff-=m*6e4;
+  const s=Math.floor(diff/1e3);
+  const setN=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  setN('cd-d',d);
+  setN('cd-h',String(h).padStart(2,'0'));
+  setN('cd-m',String(m).padStart(2,'0'));
+  setN('cd-s',String(s).padStart(2,'0'));
   tickMob(diff);
 }
 
@@ -525,18 +534,92 @@ function tickMob(diff){
   const mc=document.getElementById('mob-cd');
   if(!mc)return;
   if(diff<=0){mc.textContent='—';return;}
-  const d=Math.floor(diff/86400000);
-  const h=Math.floor((diff%86400000)/3600000);
-  const m=Math.floor((diff%3600000)/60000);
+  const d=Math.floor(diff/864e5);
+  const h=Math.floor((diff%864e5)/36e5);
+  const m=Math.floor((diff%36e5)/6e4);
   mc.textContent=d+'d · '+String(h).padStart(2,'0')+'h · '+String(m).padStart(2,'0')+'m';
 }
 
-function updateMobBar(){
+function renderUpcomingGrid(){
+  const S=STRINGS[lang];
+  const now=Date.now();
+  const nxt=findNext();
+  let html='';
+  FEATURED.forEach(e=>{
+    const L=e[lang];
+    const isNext=(e===nxt);
+    const past=new Date(e.utc).getTime()<now;
+    let cls='ec-card'+(isNext?' is-next':'')+(past?' is-past':'');
+    const badge=isNext?'<span class="ec-badge">'+S.nextBadge+'</span>':'';
+    const linkHtml=e.link?'<a class="ec-link" href="'+e.link+'">'+(L.linkLabel||'')+'</a>':'';
+    html+='<div class="'+cls+'" style="display:flex;gap:1rem;align-items:flex-start;">'
+      +'<div style="flex:0 0 40px;padding-top:.15rem;">'+glyph(e.kind)+'</div>'
+      +'<div style="flex:1;min-width:0;">'
+      +'<div class="ec-top"><span class="ec-name">'+L.name+badge+'</span><span class="ec-date">'+L.date+'</span></div>'
+      +'<p class="ec-vis">'+L.vis+'</p>'
+      +'<div class="ec-chips"><span class="ec-chip">'+L.c1+' · <strong>'+L.c1v+'</strong></span><span class="ec-chip">'+L.c2+' · <strong>'+L.c2v+'</strong></span></div>'
+      +linkHtml
+      +'</div></div>';
+  });
+  const grid=document.getElementById('upcoming-grid');
+  if(grid)grid.innerHTML=html;
+}
+
+function render(){
+  const S=STRINGS[lang];
+  document.documentElement.lang=lang;
+  const setT=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  const setH=(id,v)=>{const el=document.getElementById(id);if(el)el.innerHTML=v;};
+
+  setT('eyebrow',S.eyebrow);
+  setT('h1',S.h1);
+  setT('subtitle',S.subtitle);
+  setT('nh-eyebrow',S.nhEyebrow);
+  setT('cd-dl',S.cdD);setT('cd-hl',S.cdH);setT('cd-ml',S.cdM);setT('cd-sl',S.cdS);
+
+  /* Update hero title/date/cta to the actual next eclipse */
+  const nxt=findNext();
+  const nL=nxt[lang];
+  setT('nh-title',nL.name);
+  /* format date from utc */
+  const d=new Date(nxt.utc);
+  const months={en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                es:['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic']};
+  const dateStr=months[lang][d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear()+' · '+String(d.getUTCHours()).padStart(2,'0')+':'+String(d.getUTCMinutes()).padStart(2,'0')+' UTC';
+  setT('nh-date',dateStr);
+  const cta=document.getElementById('nh-cta');
+  if(cta){cta.textContent=nL.linkLabel||S.nhCta;if(nxt.link)cta.setAttribute('href',nxt.link);}
+
+  setT('h-geo',S.hGeo);setT('geo-cap',S.geoCap);
+  setT('geo-sun',S.geoSun);setT('geo-moon',S.geoMoon);setT('geo-umbra',S.geoUmbra);setT('geo-penumbra',S.geoPenumbra);setT('geo-earth',S.geoEarth);
+  setT('h-upcoming',S.hUpcoming);setT('upcoming-lead',S.upcomingLead);
+  setT('h-types',S.hTypes);
+  setT('t1-name',S.t1Name);setT('t1-desc',S.t1Desc);setT('t2-name',S.t2Name);setT('t2-desc',S.t2Desc);
+  setT('t3-name',S.t3Name);setT('t3-desc',S.t3Desc);setT('t4-name',S.t4Name);setT('t4-desc',S.t4Desc);
+  setT('h-explore',S.hExplore);
+  setT('cl-upcoming-label',S.clUpcomingLabel);setT('cl-upcoming-title',S.clUpcomingTitle);
+  setT('cl-spain-label',S.clSpainLabel);setT('cl-spain-title',S.clSpainTitle);
+  setT('cl-safety-label',S.clSafetyLabel);setT('cl-safety-title',S.clSafetyTitle);
+  setT('cl-cities-label',S.clCitiesLabel);setT('cl-cities-title',S.clCitiesTitle);
+  setH('source-note',S.source);
+  setT('lang-btn',S.nav.lang);
+  const sl=document.getElementById('share-label');if(sl)sl.textContent=S.nav.share;
+
+  renderUpcomingGrid();
+  cdTarget=new Date(findNext().utc).getTime();
+  tick();
+
+  /* mob bar */
   const disc=document.getElementById('mob-disc');
-  const name=document.getElementById('mob-name');
-  if(!disc||!name)return;
-  disc.className='mob-disc '+(DISC_CLASS[nextEclipse.type]||'');
-  name.textContent=nextEclipse[lang].name;
+  const mobName=document.getElementById('mob-name');
+  if(disc)disc.className='mob-disc '+(DISC_CLASS[nxt.kind]||'');
+  if(mobName)mobName.textContent=nL.name;
+}
+
+function toggleLang(){
+  lang=lang==='en'?'es':'en';
+  localStorage.setItem('ne-lang',lang);
+  render();
 }
 
 // PWA install prompt
@@ -571,17 +654,8 @@ function shareApp(){
     .catch(()=>{window.open('https://x.com/intent/tweet?url='+encodeURIComponent(data.url),'_blank');});
   }
 }
-function toggleLang(){
-  lang=lang==='en'?'es':'en';
-  localStorage.setItem('ne-lang',lang);
-  render();
-  updateMobBar();
-}
-nextEclipse=findNext();
-target=new Date(nextEclipse.utc).getTime();
+
 render();
-updateMobBar();
-tick();
 setInterval(tick,1000);
 
 // ── PWA Install Banner ──
@@ -598,10 +672,8 @@ setInterval(tick,1000);
   };
   function applyBannerLang(){
     const s=T[lang]||T.en;
-    document.getElementById('pwa-sub').textContent=s.sub;
-    document.getElementById('ne-pwa-add').textContent=s.add;
-    document.getElementById('ios-steps').innerHTML=s.steps;
-    document.getElementById('ne-ios-close').textContent=s.close;
+    const sub=document.getElementById('pwa-sub');const add=document.getElementById('ne-pwa-add');const steps=document.getElementById('ios-steps');const cls=document.getElementById('ne-ios-close');
+    if(sub)sub.textContent=s.sub;if(add)add.textContent=s.add;if(steps)steps.innerHTML=s.steps;if(cls)cls.textContent=s.close;
   }
   window.addEventListener('beforeinstallprompt',e=>{
     e.preventDefault();
@@ -611,17 +683,17 @@ setInterval(tick,1000);
     setTimeout(()=>{applyBannerLang();banner.style.display='block';},3000);
   });
   if(isIOS)setTimeout(()=>{applyBannerLang();banner.style.display='block';},3000);
-  document.getElementById('ne-pwa-add').addEventListener('click',()=>{
-    if(isIOS){banner.style.display='none';applyBannerLang();iosHint.style.display='block';return;}
+  const addBtn=document.getElementById('ne-pwa-add');
+  if(addBtn)addBtn.addEventListener('click',()=>{
+    if(isIOS){banner.style.display='none';applyBannerLang();if(iosHint)iosHint.style.display='block';return;}
     if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(()=>{deferredPrompt=null;});}
     banner.style.display='none';sessionStorage.setItem('ne-pwa-d','1');
   });
-  document.getElementById('ne-pwa-close').addEventListener('click',()=>{
-    banner.style.display='none';sessionStorage.setItem('ne-pwa-d','1');
-  });
-  document.getElementById('ne-ios-close').addEventListener('click',()=>{iosHint.style.display='none';});
+  const closeBtn=document.getElementById('ne-pwa-close');
+  if(closeBtn)closeBtn.addEventListener('click',()=>{banner.style.display='none';sessionStorage.setItem('ne-pwa-d','1');});
+  const iosClose=document.getElementById('ne-ios-close');
+  if(iosClose)iosClose.addEventListener('click',()=>{if(iosHint)iosHint.style.display='none';});
   window.addEventListener('appinstalled',()=>{banner.style.display='none';});
-  // keep lang toggle in sync
   const _origToggle=window.toggleLang;
   window.toggleLang=function(){_origToggle();applyBannerLang();};
 })();
@@ -630,7 +702,7 @@ setInterval(tick,1000);
 <!-- PWA INSTALL BANNER -->
 <div id="ne-pwa-banner">
   <div class="ne-pwa-inner">
-    <img src="/icon-192.png" alt="Next Eclipse" class="ne-pwa-icon" width="40" height="40">
+    <img src="/icon-192.png" alt="Next Eclipse" class="ne-pwa-icon" width="40" height="40" loading="lazy">
     <div class="ne-pwa-text">
       <p class="ne-pwa-title" id="pwa-title">Next Eclipse</p>
       <p class="ne-pwa-sub" id="pwa-sub">Añadir a pantalla de inicio</p>
@@ -644,6 +716,7 @@ setInterval(tick,1000);
   <div class="ne-ios-steps" id="ios-steps">Pulsa <strong>Compartir</strong> en Safari<br>y luego <strong>"Añadir a pantalla de inicio"</strong></div>
   <button class="ne-ios-close" id="ne-ios-close">Cerrar</button>
 </div>
+
 <script>
 (function(){
   var btn=document.getElementById('menu-btn');
@@ -657,7 +730,6 @@ setInterval(tick,1000);
   if(close)close.addEventListener('click',closeD);
   backdrop.addEventListener('click',closeD);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD();});
-  // sync drawer link labels with current lang
   function updateDrawerLang(){
     var l=localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
     document.querySelectorAll('.drawer-link[data-en]').forEach(function(el){
@@ -680,7 +752,7 @@ if('serviceWorker' in navigator) {
 /* ── Canonical header/footer i18n — shared across all pages ── */
 (function(){
   var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
-           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+           es:{spain:'España 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Próximos',history:'Historia',share:'Compartir',lang:'EN'}};
   function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
   function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
   function apply(){

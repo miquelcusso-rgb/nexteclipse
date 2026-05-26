@@ -95,7 +95,7 @@
   "description": "El 26 de enero de 2028 el anillo de fuego cruzará Portugal y España. Guía completa: camino de anularidad, ciudades, horarios y cómo prepararse.",
   "url": "https://www.next-eclipse.com/eclipse-anular-espana-2028",
   "datePublished": "2026-05-21",
-  "dateModified": "2026-05-21",
+  "dateModified": "2026-05-26",
   "publisher": {"@type": "Organization","name": "Next Eclipse","url": "https://www.next-eclipse.com"},
   "inLanguage": "es"
 }
@@ -112,11 +112,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}html{background:#030304;overflow-x:clip;}body{overflow-x:clip;}
-body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.72);min-height:100vh;padding:0 0 4rem;line-height:1.75;}
-.wrap{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 0;}
+body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.88);min-height:100vh;padding:0 0 4rem;line-height:1.75;}
+.wrap{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 0;}
 
-/* topbar */
-nav.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
+/* ── TOPBAR ── */
+.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
 .site-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(220,160,50,.42);text-decoration:none;}
 .site-name:hover{color:rgba(220,160,50,.85);}
 .nav-links{display:flex;gap:1rem;align-items:center;}
@@ -134,116 +134,109 @@ nav.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop
   .share-btn .share-icon{width:18px;height:18px;}
 }
 
-/* hero */
-.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-bottom:.5rem;}
-h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.6rem);color:rgba(255,248,228,.9);letter-spacing:.03em;margin-bottom:.5rem;line-height:1.25;}
-.subtitle{font-size:1.1rem;font-style:italic;color:rgba(220,160,50,.55);margin-bottom:1rem;}
-.badge-ring{display:inline-block;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.28rem .8rem;border-radius:2px;background:rgba(255,180,30,.1);color:rgba(255,200,60,.8);border:1px solid rgba(255,180,30,.25);margin-bottom:1.5rem;}
+/* ── TYPOGRAPHY ── */
+.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.65);margin-bottom:.5rem;}
+h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.7rem,4.5vw,2.6rem);color:rgba(255,248,228,.9);letter-spacing:.04em;margin-bottom:.45rem;line-height:1.2;}
+.subtitle{font-size:1.12rem;font-style:italic;color:rgba(220,160,50,.55);margin-bottom:2rem;max-width:54ch;}
+h2{font-family:'Cinzel',serif;font-weight:400;font-size:.92rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.46);margin:3rem 0 1.2rem;}
+.lead{font-size:1.15rem;color:rgba(230,218,195,.78);max-width:60ch;margin-bottom:1.6rem;}
+hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:3rem 0;}
+p{font-size:1.13rem;color:rgba(230,218,195,.84);margin-bottom:1rem;max-width:68ch;}
+strong{color:rgba(255,240,200,.85);font-weight:400;}
 
-/* countdown */
-.countdown-box{display:flex;gap:clamp(.6rem,2.5vw,1.5rem);margin:1.5rem 0 2rem;flex-wrap:wrap;}
-.cunit{text-align:center;min-width:52px;}
-.cnum{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(2rem,5.5vw,3.2rem);color:rgba(255,248,228,.92);line-height:1;letter-spacing:.02em;}
-.clabel{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.45);margin-top:.4rem;}
-.csep{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);color:rgba(220,160,50,.25);align-self:flex-start;padding-top:.08rem;}
-.countdown-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.35);margin-bottom:.6rem;}
+/* ── NEXT-HERO COUNTDOWN ── */
+.next-hero{position:relative;border:1px solid rgba(220,160,50,.16);border-radius:6px;padding:2rem 1.8rem 1.8rem;background:radial-gradient(120% 140% at 80% 10%,rgba(220,160,50,.06),rgba(220,160,50,.015) 55%,transparent);overflow:hidden;margin-bottom:2rem;}
+.next-hero .nh-grid{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;}
+.nh-diagram{flex:0 0 auto;}
+.nh-body{flex:1 1 260px;min-width:240px;}
+.nh-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(220,180,100,.6);margin-bottom:.5rem;}
+.nh-title{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.15rem,3vw,1.5rem);color:rgba(255,248,220,.9);letter-spacing:.05em;margin-bottom:.25rem;}
+.nh-date{font-size:1.1rem;font-style:italic;color:rgba(220,160,50,.66);margin-bottom:1.1rem;}
+.countdown-box{display:flex;gap:clamp(.55rem,2.5vw,1.3rem);flex-wrap:wrap;align-items:flex-start;}
+.cunit{text-align:center;min-width:48px;}
+.cnum{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.9rem,5.5vw,3rem);color:rgba(255,248,228,.94);line-height:1;letter-spacing:.02em;}
+.clabel{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-top:.45rem;}
+.csep{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4.5vw,2.6rem);color:rgba(220,160,50,.22);padding-top:.06rem;}
 
-/* key specs */
-.specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.75rem;margin:1.5rem 0 2.5rem;}
-.spec-card{padding:.9rem 1.1rem;border:1px solid rgba(220,160,50,.1);border-radius:3px;background:rgba(220,160,50,.025);}
-.spec-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.38);margin-bottom:.3rem;}
-.spec-value{font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(255,240,200,.78);letter-spacing:.02em;}
+/* ec-chips for hero facts */
+.hero-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem;}
+.ec-chip{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.26rem .6rem;border:1px solid rgba(220,160,50,.14);border-radius:2px;color:rgba(220,180,120,.7);}
+.ec-chip strong{color:rgba(255,222,142,.86);font-family:inherit;font-weight:400;}
 
-hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2.5rem 0;}
-h2{font-family:'Cinzel',serif;font-weight:400;font-size:.88rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.45);margin:2.5rem 0 1rem;}
-p{font-size:1.05rem;color:rgba(220,210,180,.6);margin-bottom:1rem;max-width:68ch;}
-strong{color:rgba(255,240,200,.75);font-weight:400;}
+/* ── GEO CARD ── */
+.geo-card{border:1px solid rgba(220,160,50,.1);border-radius:6px;background:rgba(220,160,50,.018);padding:1.6rem 1.4rem;margin-bottom:1rem;}
+.geo-card svg{display:block;width:100%;height:auto;}
+.geo-cap{font-size:.98rem;font-style:italic;color:rgba(220,200,160,.55);text-align:center;margin-top:.9rem;max-width:52ch;margin-left:auto;margin-right:auto;}
 
-/* eclipse type visual */
-.eclipse-compare{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0 2rem;}
-.eclipse-type-box{text-align:center;padding:1.5rem 1rem;}
-.eclipse-visual{width:90px;height:90px;border-radius:50%;margin:0 auto 1rem;position:relative;}
-.eclipse-total-vis{background:#030304;box-shadow:0 0 0 1px rgba(255,150,20,.2),0 0 18px 6px rgba(255,110,10,.28),0 0 40px 16px rgba(255,60,0,.15),0 0 80px 35px rgba(190,40,0,.08);}
-.eclipse-annular-vis{background:#030304;box-shadow:0 0 0 10px rgba(255,195,35,.7),0 0 0 11px rgba(255,180,20,.45),0 0 22px 12px rgba(255,150,20,.3),0 0 50px 22px rgba(255,80,0,.15);}
-.eclipse-type-label{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,240,200,.6);margin-bottom:.4rem;}
-.eclipse-type-desc{font-size:.92rem;color:rgba(220,200,160,.48);font-style:italic;}
+/* ── EC-CARD (comparison + destinations) ── */
+.ec-card{border:1px solid rgba(220,160,50,.09);border-radius:5px;background:rgba(220,160,50,.018);padding:1.3rem 1.4rem;transition:border-color .2s,background .2s;}
+.ec-card:hover{border-color:rgba(220,160,50,.2);background:rgba(220,160,50,.03);}
+.ec-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.ec-name{font-family:'Cinzel',serif;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,248,220,.82);margin-bottom:.6rem;}
+.ec-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem;}
 
-/* warning box */
-.warning-box{padding:1rem 1.2rem;background:rgba(220,60,50,.06);border-left:2px solid rgba(220,60,50,.4);margin:1.5rem 0;font-size:1rem;color:rgba(240,200,190,.65);}
-.warning-box strong{color:rgba(255,180,170,.8);}
+/* ── WARNING / TIP BOXES ── */
+.warning-box{padding:1rem 1.2rem;background:rgba(220,60,50,.06);border-left:2px solid rgba(220,60,50,.4);margin:1.5rem 0;font-size:1.06rem;color:rgba(240,200,190,.76);}
+.warning-box strong{color:rgba(255,180,170,.88);}
+.tip-box{padding:.85rem 1.1rem;background:rgba(220,160,50,.04);border-left:2px solid rgba(220,160,50,.25);margin:1.2rem 0;font-size:1.06rem;color:rgba(220,200,150,.78);font-style:italic;}
 
-/* path section */
-.path-intro{font-size:1.08rem;color:rgba(220,210,180,.62);margin-bottom:1.5rem;max-width:68ch;}
-.path-list{list-style:none;padding:0;margin:0 0 1.5rem;}
-.path-list li{display:flex;align-items:baseline;gap:.75rem;padding:.55rem 0;border-bottom:1px solid rgba(220,160,50,.06);}
-.path-list li:last-child{border-bottom:none;}
-.path-dot{width:.5rem;height:.5rem;border-radius:50%;background:rgba(255,195,35,.45);flex-shrink:0;margin-top:.3rem;}
-.path-place{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.7);min-width:160px;}
-.path-detail{font-size:.95rem;color:rgba(220,200,160,.45);font-style:italic;}
-.path-tag{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:.15rem .5rem;border-radius:2px;margin-left:.5rem;}
-.path-tag.center{background:rgba(255,195,35,.1);color:rgba(255,200,60,.8);border:1px solid rgba(255,195,35,.22);}
-.path-tag.edge{background:rgba(220,160,50,.04);color:rgba(220,160,50,.45);border:1px solid rgba(220,160,50,.1);}
+/* ── MAP CARD ── */
+.map-card{border:1px solid rgba(220,160,50,.1);border-radius:6px;background:rgba(220,160,50,.018);padding:1.4rem;margin-bottom:1rem;overflow:hidden;}
+.map-card svg{display:block;width:100%;height:auto;}
 
-/* cities table */
-.cities-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.95rem;}
+/* ── TABLES ── */
+.cities-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:1rem;}
 .cities-table thead tr{border-bottom:1px solid rgba(220,160,50,.15);}
-.cities-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);padding:.5rem .75rem;text-align:left;font-weight:400;}
-.cities-table td{padding:.55rem .75rem;color:rgba(220,200,160,.55);border-bottom:1px solid rgba(220,160,50,.05);}
-.cities-table td.city{color:rgba(255,240,200,.72);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.08em;}
-.cities-table td.duration{color:rgba(255,195,35,.72);font-family:'Cinzel',serif;}
+.cities-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);padding:.5rem .6rem;text-align:left;font-weight:400;}
+.cities-table td{padding:.5rem .6rem;color:rgba(220,200,160,.65);border-bottom:1px solid rgba(220,160,50,.05);}
+.cities-table td.city{color:rgba(255,240,200,.82);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.08em;}
+.cities-table td.duration{color:rgba(255,195,35,.78);font-family:'Cinzel',serif;}
 .cities-table tr.highlight td{background:rgba(255,195,35,.03);}
-.cities-table tr.highlight td.city{color:rgba(255,248,220,.88);}
+.cities-table tr.highlight td.city{color:rgba(255,248,220,.92);}
+.partial-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:1rem;}
+.partial-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);padding:.5rem .6rem;text-align:left;font-weight:400;border-bottom:1px solid rgba(220,160,50,.12);}
+.partial-table td{padding:.48rem .6rem;color:rgba(220,200,160,.6);border-bottom:1px solid rgba(220,160,50,.04);}
+.partial-table td.city{color:rgba(255,240,200,.76);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.08em;}
+.partial-table td.pct{color:rgba(220,160,50,.72);font-family:'Cinzel',serif;}
 
-/* partial table */
-.partial-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.95rem;}
-.partial-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);padding:.5rem .75rem;text-align:left;font-weight:400;border-bottom:1px solid rgba(220,160,50,.12);}
-.partial-table td{padding:.5rem .75rem;color:rgba(220,200,160,.5);border-bottom:1px solid rgba(220,160,50,.04);}
-.partial-table td.city{color:rgba(255,240,200,.65);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.08em;}
-.partial-table td.pct{color:rgba(220,160,50,.65);font-family:'Cinzel',serif;}
+/* ── SAFETY STEPS ── */
+.step-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:.5rem 0 1.5rem;}
+.step-card{padding:1rem 1.1rem;border:1px solid rgba(220,160,50,.08);border-radius:4px;background:rgba(220,160,50,.015);display:flex;gap:.75rem;align-items:flex-start;}
+.step-icon{flex-shrink:0;margin-top:.15rem;}
+.step-text{font-size:1.06rem;color:rgba(230,215,185,.76);}
+.step-text strong{color:rgba(255,240,200,.88);font-weight:400;}
 
-/* tip box */
-.tip-box{padding:.85rem 1.1rem;background:rgba(220,160,50,.04);border-left:2px solid rgba(220,160,50,.25);margin:1.2rem 0;font-size:.98rem;color:rgba(220,210,180,.58);font-style:italic;}
-
-/* prepare list */
-.prepare-list{list-style:none;padding:0;margin:.5rem 0 1.5rem;}
-.prepare-list li{padding:.4rem 0 .4rem 1.4rem;position:relative;font-size:1rem;color:rgba(220,200,160,.55);}
-.prepare-list li::before{content:'·';position:absolute;left:0;color:rgba(220,160,50,.4);font-size:1.2rem;line-height:1.5;}
-
-/* FAQ */
+/* ── FAQ ── */
 .faq-item{border-bottom:1px solid rgba(220,160,50,.07);padding:1.2rem 0;}
 .faq-item:first-child{border-top:1px solid rgba(220,160,50,.07);}
-.faq-q{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:.05em;color:rgba(255,240,200,.72);margin-bottom:.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+.faq-q{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:.05em;color:rgba(255,240,200,.78);margin-bottom:.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
 .faq-q::after{content:'+';font-size:1rem;color:rgba(220,160,50,.4);flex-shrink:0;}
 .faq-item.open .faq-q::after{content:'−';}
-.faq-a{font-size:1rem;color:rgba(220,200,160,.52);display:none;padding-top:.2rem;}
+.faq-a{font-size:1.06rem;color:rgba(226,210,180,.76);display:none;padding-top:.2rem;}
 .faq-item.open .faq-a{display:block;}
 
-/* ad */
+/* ── CROSSLINKS / SOURCE ── */
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:1rem 0 1.5rem;}
+.crosslink-cal{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border:1px solid rgba(220,160,50,.12);border-radius:3px;text-decoration:none;transition:border-color .2s;background:rgba(220,160,50,.02);}
+.crosslink-cal:hover{border-color:rgba(220,160,50,.3);}
+.cl-label{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
+.cl-title{font-size:1.1rem;font-style:italic;color:rgba(255,240,200,.78);margin-top:.2rem;}
+.cl-arrow{color:rgba(220,160,50,.4);font-size:1.2rem;}
+.source{font-size:1rem;font-style:italic;color:rgba(195,180,145,.55);margin-top:1rem;}
+.source a{color:rgba(220,160,50,.6);text-decoration:none;border-bottom:1px solid rgba(220,160,50,.2);}
 .ad-slot{width:100%;max-width:728px;margin:2.5rem auto;text-align:center;}
 
-/* sister */
+/* ── SISTER BOX ── */
 .sister-box{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:2.5rem;padding:1.2rem 1.5rem;border:1px solid rgba(196,196,255,.1);border-radius:3px;background:rgba(196,196,255,.02);text-decoration:none;transition:border-color .2s,background .2s;}
 .sister-box:hover{border-color:rgba(196,196,255,.22);background:rgba(196,196,255,.05);}
 .sister-eyebrow{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(196,196,255,.3);margin-bottom:.4rem;}
 .sister-name{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.06em;color:rgba(220,216,255,.65);}
 
-/* crosslinks */
-.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:2rem 0;}
-.crosslink{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;border:1px solid rgba(220,160,50,.1);border-radius:3px;text-decoration:none;transition:border-color .2s;}
-.crosslink:hover{border-color:rgba(220,160,50,.28);}
-.cl-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
-.cl-title{font-size:1rem;font-style:italic;color:rgba(255,240,200,.6);margin-top:.2rem;}
-.cl-arrow{color:rgba(220,160,50,.4);font-size:1.1rem;}
+/* ── FOOTER ── */
 footer{margin-top:4rem;width:100vw;margin-left:50%;transform:translateX(-50%);text-align:center;padding:1.2rem 1rem 2rem;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.19em;color:#c4c4d8;opacity:.19;text-transform:uppercase;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196,240,.13);}
 
-@media(max-width:480px){
-  .specs-grid{grid-template-columns:1fr 1fr;}
-  .cities-table th:nth-child(3),.cities-table td:nth-child(3){display:none;}
-  .eclipse-compare{grid-template-columns:1fr;}
-}
-
-/* ── mobile hamburger ── */
+/* ── MOBILE HAMBURGER ── */
 .menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.45rem .35rem;flex-shrink:0;}
 .menu-btn span{display:block;width:19px;height:1.5px;background:rgba(220,160,50,.65);border-radius:1px;transition:all .25s;}
 #nav-backdrop{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,5,.55);}
@@ -259,28 +252,25 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
 .drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}
 @media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}}
 
-/* ── readability patch: +2px body text, higher contrast ── */
-body{color:rgba(236,228,210,.88);}
-p{font-size:1.13rem;color:rgba(230,218,195,.84);}
-footer,footer p,footer a{font-size:.62rem !important;letter-spacing:.19em !important;line-height:1.7 !important;text-transform:uppercase !important;}
-td{font-size:1.07rem;color:rgba(226,212,182,.78);}
-.faq-a{font-size:1.13rem !important;color:rgba(226,210,180,.76) !important;}
-.disclaimer{font-size:1.04rem;color:rgba(195,180,145,.62);}
-.path-banner-text{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cl-title{font-size:1.1rem;color:rgba(255,240,200,.76);}
-.source{font-size:1.0rem;color:rgba(195,180,145,.58);}
-.subtitle{font-size:1.1rem;}
-.detail-box p{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cov-pct{font-size:.97rem;color:rgba(226,206,170,.66);}
-#intro-in,#intro-out,.intro-text{font-size:1.13rem;}
-.row-name{color:rgba(255,248,220,.80);}
-.row-date{color:rgba(220,160,50,.65);}
-.tip-box{font-size:1.07rem;color:rgba(220,200,150,.75);}
+/* ── RESPONSIVE ── */
+@media(max-width:520px){
+  .ec-card-grid{grid-template-columns:1fr;}
+  .nh-grid{gap:1.1rem;}
+  .cities-table th:nth-child(3),.cities-table td:nth-child(3){display:none;}
+}
+@media(max-width:400px){
+  .cities-table th:nth-child(5),.cities-table td:nth-child(5){display:none;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+}
+:focus-visible{outline:2px solid rgba(220,180,100,.7);outline-offset:2px;border-radius:2px;}
 </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RJ7B4VQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav class="topbar">
   <a class="site-name" href="/">NEXT ECLIPSE</a>
@@ -298,7 +288,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
 <div id="nav-backdrop"></div>
 <div id="nav-drawer">
-  <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
+  <div class="drawer-header"><button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button></div>
   <nav class="drawer-nav">
     <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
     <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
@@ -311,46 +301,99 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 <div class="wrap">
 
   <p class="eyebrow" id="eyebrow">Eclipse Solar Anular · España &amp; Portugal</p>
-  <h1 id="h1">El Anillo de Fuego<br>sobre España</h1>
+  <h1 id="h1">El Anillo de Fuego sobre España</h1>
   <p class="subtitle" id="subtitle">26 de enero de 2028 · Sevilla · Valencia · Barcelona · Lisboa</p>
-  <div class="badge-ring" id="badge">💍 Anillo de Fuego · Enero 2028</div>
 
-  <p class="countdown-label" id="cd-label">Cuenta atrás</p>
-  <div class="countdown-box">
-    <div class="cunit"><div class="cnum" id="cd-d">—</div><div class="clabel" id="cd-dl">días</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-h">—</div><div class="clabel" id="cd-hl">horas</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-m">—</div><div class="clabel" id="cd-ml">min</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-s">—</div><div class="clabel" id="cd-sl">seg</div></div>
-  </div>
-
-  <div class="specs-grid">
-    <div class="spec-card"><div class="spec-label" id="sl-1">Duración del anillo</div><div class="spec-value" id="sv-1">~4–5 minutos</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-2">Pico (UTC)</div><div class="spec-value">~09:20 UTC</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-3">Hora española</div><div class="spec-value">10:20 CET</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-4">Tipo</div><div class="spec-value" id="sv-4">Solar Anular</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-5">Altitud solar</div><div class="spec-value">~15–20°</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-6">Próximo total ES</div><div class="spec-value" id="sv-6">2026 · 2 años antes</div></div>
-  </div>
+  <!-- ── HERO COUNTDOWN ── -->
+  <section class="next-hero" aria-labelledby="nh-title">
+    <div class="nh-grid">
+      <div class="nh-diagram" aria-hidden="true">
+        <!-- Ring of fire SVG: gold ring with dark center -->
+        <svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Anillo de fuego solar">
+          <defs>
+            <radialGradient id="ringG" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="rgba(220,160,50,0)"/>
+              <stop offset="40%" stop-color="rgba(220,160,50,0)"/>
+              <stop offset="48%" stop-color="rgba(255,195,35,.9)"/>
+              <stop offset="54%" stop-color="rgba(255,160,30,.95)"/>
+              <stop offset="60%" stop-color="rgba(255,195,35,.7)"/>
+              <stop offset="72%" stop-color="rgba(220,160,50,.18)"/>
+              <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+            </radialGradient>
+          </defs>
+          <circle cx="60" cy="60" r="56" fill="url(#ringG)"/>
+          <circle cx="60" cy="60" r="30" fill="#030304"/>
+        </svg>
+      </div>
+      <div class="nh-body">
+        <p class="nh-eyebrow" id="nh-eyebrow">Cuenta atrás</p>
+        <p class="nh-title" id="nh-title">Anillo de Fuego · España 2028</p>
+        <p class="nh-date" id="nh-date">26 ene 2028 · ~09:20 UTC</p>
+        <div class="countdown-box" aria-live="off">
+          <div class="cunit"><div class="cnum" id="cd-d">—</div><div class="clabel" id="cd-dl">días</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-h">—</div><div class="clabel" id="cd-hl">h</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-m">—</div><div class="clabel" id="cd-ml">min</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-s">—</div><div class="clabel" id="cd-sl">seg</div></div>
+        </div>
+        <div class="hero-chips">
+          <span class="ec-chip" id="chip-dur"><strong>~4 min</strong> anillo</span>
+          <span class="ec-chip" id="chip-type">Solar Anular</span>
+          <span class="ec-chip" id="chip-date">26 ene 2028</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <hr>
 
-  <!-- ECLIPSE ANULAR VS TOTAL -->
+  <!-- ── ANULAR VS TOTAL ── -->
   <h2 id="h-compare">Eclipse anular vs eclipse total</h2>
   <p id="compare-p1">Un eclipse anular se produce cuando la Luna se encuentra cerca de su punto más lejano de la Tierra — el <strong>apogeo</strong>. En ese momento, el disco lunar parece ligeramente más pequeño que el del Sol y no puede cubrirlo completamente. El resultado es un brillante <strong>anillo de fuego</strong> alrededor de la Luna. Es un espectáculo extraordinario, pero <strong>muy diferente a un eclipse total</strong>.</p>
 
-  <div class="eclipse-compare">
-    <div class="eclipse-type-box">
-      <div class="eclipse-visual eclipse-annular-vis"></div>
-      <div class="eclipse-type-label" id="etl-1">Eclipse Anular</div>
-      <div class="eclipse-type-desc" id="etd-1">Anillo de fuego visible.<br>Gafas siempre obligatorias.<br>Sin corona solar.</div>
+  <div class="ec-card-grid">
+    <div class="ec-card">
+      <div class="ec-name" id="etl-1">Eclipse Anular</div>
+      <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" style="margin:.5rem 0">
+        <defs>
+          <radialGradient id="ringG2" cx="50%" cy="50%" r="50%">
+            <stop offset="38%" stop-color="rgba(220,160,50,0)"/>
+            <stop offset="45%" stop-color="rgba(255,195,35,.9)"/>
+            <stop offset="52%" stop-color="rgba(255,160,30,.9)"/>
+            <stop offset="60%" stop-color="rgba(220,160,50,.2)"/>
+            <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#ringG2)"/>
+        <circle cx="32" cy="32" r="16" fill="#030304"/>
+      </svg>
+      <div class="ec-chips">
+        <span class="ec-chip" id="etd-chip-1a">Anillo visible</span>
+        <span class="ec-chip" id="etd-chip-1b">Gafas siempre</span>
+        <span class="ec-chip" id="etd-chip-1c">Sin corona</span>
+      </div>
     </div>
-    <div class="eclipse-type-box">
-      <div class="eclipse-visual eclipse-total-vis"></div>
-      <div class="eclipse-type-label" id="etl-2">Eclipse Total</div>
-      <div class="eclipse-type-desc" id="etd-2">Sol completamente cubierto.<br>Corona solar visible.<br>Momentos sin gafas.</div>
+    <div class="ec-card">
+      <div class="ec-name" id="etl-2">Eclipse Total</div>
+      <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" style="margin:.5rem 0">
+        <defs>
+          <radialGradient id="coronaG2" cx="50%" cy="50%" r="50%">
+            <stop offset="42%" stop-color="rgba(220,160,50,0)"/>
+            <stop offset="50%" stop-color="rgba(255,228,150,.85)"/>
+            <stop offset="62%" stop-color="rgba(220,160,50,.25)"/>
+            <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#coronaG2)"/>
+        <circle cx="32" cy="32" r="14" fill="#030304" stroke="rgba(255,236,180,.6)" stroke-width="1"/>
+      </svg>
+      <div class="ec-chips">
+        <span class="ec-chip" id="etd-chip-2a">Sol cubierto</span>
+        <span class="ec-chip" id="etd-chip-2b">Corona visible</span>
+        <span class="ec-chip" id="etd-chip-2c">Sin gafas breve</span>
+      </div>
     </div>
   </div>
 
@@ -360,39 +403,137 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <hr>
 
-  <!-- CAMINO DE ANULARIDAD -->
+  <!-- ── CAMINO DE ANULARIDAD — SVG MAP ── -->
   <h2 id="h-path">El camino de anularidad</h2>
-  <p class="path-intro" id="path-intro">El camino de anularidad cruza el Atlántico desde Sudamérica, toca Portugal por el sur y atraviesa la Península Ibérica de oeste a este, saliendo por el noreste hacia el sur de Francia y el norte de Italia. El sol estará bajo en el horizonte invernal — entre 15 y 20 grados — lo que creará un efecto visual dramático al amanecer.</p>
+  <p class="lead" id="path-intro">El camino de anularidad cruza el Atlántico desde Sudamérica, toca Portugal por el sur y atraviesa la Península Ibérica de oeste a este, saliendo por el noreste hacia el sur de Francia y el norte de Italia. El Sol estará bajo en el horizonte invernal — entre 15 y 20 grados — lo que creará un efecto visual dramático.</p>
 
-  <ul class="path-list">
-    <li><span class="path-dot"></span><span class="path-place" id="pp-1">Lisboa</span><span class="path-detail" id="pd-1">Entrada en Portugal. Centro del camino.</span><span class="path-tag center" id="pt-1">✦ anularidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-2">Setúbal · Évora · Beja</span><span class="path-detail" id="pd-2">Sur de Portugal en el camino central.</span><span class="path-tag center" id="pt-2">anularidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-3">Huelva</span><span class="path-detail" id="pd-3">~09:14 UTC · Primera ciudad española.</span><span class="path-tag center" id="pt-3">anularidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-4">Sevilla</span><span class="path-detail" id="pd-4">~09:15 UTC · Centro del camino.</span><span class="path-tag center" id="pt-4">✦ óptimo</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-5">Granada · Almería</span><span class="path-detail" id="pd-5">~09:19–09:21 UTC</span><span class="path-tag center" id="pt-5">anularidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-6">Murcia · Alicante</span><span class="path-detail" id="pd-6">~09:24–09:26 UTC</span><span class="path-tag center" id="pt-6">anularidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-7">Valencia</span><span class="path-detail" id="pd-7">~09:28 UTC · Excelente acceso.</span><span class="path-tag center" id="pt-7">✦ óptimo</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-8">Castellón · Tarragona</span><span class="path-detail" id="pd-8">~09:30–09:32 UTC</span><span class="path-tag center" id="pt-8">anularidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-9">Barcelona</span><span class="path-detail" id="pd-9">~09:33 UTC · Norte del camino.</span><span class="path-tag edge" id="pt-9">borde norte</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-10">Sur de Francia · Norte de Italia</span><span class="path-detail" id="pd-10">El camino sale por los Pirineos.</span><span class="path-tag edge" id="pt-10">salida</span></li>
-  </ul>
-
-  <div class="tip-box" id="path-tip">El eclipse ocurre a media mañana de enero. El Sol estará <strong>bajo en el horizonte</strong> — unos 15–20 grados — lo que crea un ambiente visual espectacular con la luz invernal. Elige un lugar con el horizonte este completamente despejado y llega antes del amanecer.
+  <div class="map-card">
+    <svg viewBox="0 0 700 300" role="img" aria-label="Mapa del camino de anularidad del eclipse de 2028 sobre la Península Ibérica" style="max-height:280px;">
+      <defs>
+        <linearGradient id="pathBand" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(255,195,35,.08)"/>
+          <stop offset="30%" stop-color="rgba(255,195,35,.18)"/>
+          <stop offset="60%" stop-color="rgba(255,195,35,.18)"/>
+          <stop offset="100%" stop-color="rgba(255,195,35,.06)"/>
+        </linearGradient>
+      </defs>
+      <!-- ocean background -->
+      <rect width="700" height="300" fill="rgba(10,14,22,.6)" rx="4"/>
+      <!-- Abstract Iberia shape -->
+      <path d="M120,80 C150,60 230,55 290,65 C350,75 390,70 440,80 C490,90 530,100 560,130 C580,150 570,190 540,210 C510,230 460,240 410,245 C360,250 310,245 270,235 C230,225 180,210 155,185 C130,160 110,140 115,110 Z" fill="rgba(30,40,55,.7)" stroke="rgba(220,160,50,.12)" stroke-width="1"/>
+      <!-- Portugal sub-region -->
+      <path d="M120,80 C125,70 140,65 155,70 C165,75 170,85 165,100 C160,115 150,140 148,165 C146,185 148,205 155,220 C145,210 132,190 125,165 C118,140 115,110 120,80 Z" fill="rgba(25,35,50,.9)" stroke="rgba(220,160,50,.08)" stroke-width=".8"/>
+      <!-- Gold annularity band -->
+      <path d="M30,155 C80,130 160,115 240,120 C310,124 380,128 450,132 C520,136 590,138 670,136" fill="none" stroke="rgba(255,195,35,.55)" stroke-width="32" stroke-linecap="round" opacity=".35"/>
+      <path d="M30,155 C80,130 160,115 240,120 C310,124 380,128 450,132 C520,136 590,138 670,136" fill="none" stroke="rgba(255,220,80,.9)" stroke-width="2" stroke-linecap="round"/>
+      <!-- City dots -->
+      <!-- Lisboa -->
+      <circle cx="138" cy="142" r="5" fill="rgba(255,195,35,.85)" stroke="rgba(255,220,100,.5)" stroke-width="1.5"/>
+      <text x="138" y="132" text-anchor="middle" font-family="Cinzel,serif" font-size="9" fill="rgba(255,225,140,.85)" letter-spacing="1">Lisboa</text>
+      <!-- Sevilla -->
+      <circle cx="205" cy="198" r="5" fill="rgba(255,195,35,.85)" stroke="rgba(255,220,100,.5)" stroke-width="1.5"/>
+      <text x="205" y="188" text-anchor="middle" font-family="Cinzel,serif" font-size="9" fill="rgba(255,225,140,.85)" letter-spacing="1">Sevilla</text>
+      <!-- Valencia -->
+      <circle cx="390" cy="152" r="5" fill="rgba(255,195,35,.85)" stroke="rgba(255,220,100,.5)" stroke-width="1.5"/>
+      <text x="390" y="142" text-anchor="middle" font-family="Cinzel,serif" font-size="9" fill="rgba(255,225,140,.85)" letter-spacing="1">Valencia</text>
+      <!-- Barcelona -->
+      <circle cx="480" cy="108" r="4" fill="rgba(255,195,35,.65)" stroke="rgba(255,220,100,.4)" stroke-width="1.2"/>
+      <text x="480" y="98" text-anchor="middle" font-family="Cinzel,serif" font-size="9" fill="rgba(255,215,120,.72)" letter-spacing="1">Barcelona</text>
+      <!-- Madrid (partial) -->
+      <circle cx="295" cy="155" r="3" fill="rgba(220,160,50,.3)" stroke="rgba(220,160,50,.2)" stroke-width="1"/>
+      <text x="295" y="175" text-anchor="middle" font-family="Cinzel,serif" font-size="8" fill="rgba(200,180,120,.45)" letter-spacing="1">Madrid</text>
+      <text x="295" y="185" text-anchor="middle" font-family="Cinzel,serif" font-size="7" fill="rgba(200,180,120,.32)" letter-spacing="1">(parcial ~80%)</text>
+      <!-- Legend -->
+      <rect x="18" y="264" width="18" height="3" fill="rgba(255,220,80,.8)" rx="1"/>
+      <text x="42" y="268" font-family="Cinzel,serif" font-size="8" fill="rgba(220,180,100,.6)" letter-spacing="1">Camino de anularidad</text>
+      <circle cx="24" cy="282" r="3" fill="rgba(255,195,35,.8)"/>
+      <text x="42" y="285" font-family="Cinzel,serif" font-size="8" fill="rgba(220,180,100,.6)" letter-spacing="1">Ciudad en anularidad</text>
+    </svg>
+    <p class="geo-cap" id="map-cap">El camino de anularidad entra desde el Atlántico por Portugal y barre la Península Ibérica de suroeste a noreste. Sevilla, Valencia y Barcelona quedan en el corredor central.</p>
   </div>
+
+  <!-- path list -->
+  <div class="ec-card" style="margin-bottom:1rem;">
+    <div style="display:flex;flex-direction:column;gap:.1rem;">
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:160px" id="pp-1">Lisboa</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-1">Entrada en Portugal. Centro del camino.</span>
+        <span class="ec-chip" id="pt-1" style="margin-left:auto;white-space:nowrap">✦ anularidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:160px" id="pp-2">Setúbal · Évora · Beja</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-2">Sur de Portugal en el camino central.</span>
+        <span class="ec-chip" id="pt-2" style="margin-left:auto;white-space:nowrap">anularidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:160px" id="pp-3">Huelva</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-3">~09:14 UTC · Primera ciudad española.</span>
+        <span class="ec-chip" id="pt-3" style="margin-left:auto;white-space:nowrap">anularidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.85)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,248,220,.92);min-width:160px" id="pp-4">Sevilla</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-4">~09:15 UTC · Centro del camino.</span>
+        <span class="ec-chip" id="pt-4" style="margin-left:auto;white-space:nowrap;border-color:rgba(255,195,35,.3);color:rgba(255,210,80,.85)">✦ óptimo</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:160px" id="pp-5">Granada · Almería</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-5">~09:19–09:21 UTC</span>
+        <span class="ec-chip" id="pt-5" style="margin-left:auto;white-space:nowrap">anularidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:160px" id="pp-6">Murcia · Alicante</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-6">~09:24–09:26 UTC</span>
+        <span class="ec-chip" id="pt-6" style="margin-left:auto;white-space:nowrap">anularidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.85)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,248,220,.92);min-width:160px" id="pp-7">Valencia</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-7">~09:28 UTC · Excelente acceso.</span>
+        <span class="ec-chip" id="pt-7" style="margin-left:auto;white-space:nowrap;border-color:rgba(255,195,35,.3);color:rgba(255,210,80,.85)">✦ óptimo</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:160px" id="pp-8">Castellón · Tarragona</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-8">~09:30–09:32 UTC</span>
+        <span class="ec-chip" id="pt-8" style="margin-left:auto;white-space:nowrap">anularidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(220,160,50,.4)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:160px" id="pp-9">Barcelona</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-9">~09:33 UTC · Norte del camino.</span>
+        <span class="ec-chip" id="pt-9" style="margin-left:auto;white-space:nowrap">borde norte</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(180,140,60,.3)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(200,180,140,.5);min-width:160px" id="pp-10">Sur de Francia · Norte de Italia</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.4);font-style:italic" id="pd-10">El camino sale por los Pirineos.</span>
+        <span class="ec-chip" id="pt-10" style="margin-left:auto;white-space:nowrap;opacity:.6">salida</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box" id="path-tip">El eclipse ocurre a media mañana de enero. El Sol estará <strong>bajo en el horizonte</strong> — unos 15–20 grados — lo que crea un ambiente visual espectacular con la luz invernal. Elige un lugar con el horizonte este completamente despejado y llega antes del amanecer.</div>
 
   <hr>
 
-  <!-- TABLA CIUDADES EN ANULARIDAD -->
-  <h2 id="h-cities"><span id="h-cities-main">Ciudades en el camino de anularidad</span> <span id="h-cities-sub" style="font-family:'Cormorant Garamond';font-size:.9rem;text-transform:none;letter-spacing:0;color:rgba(220,160,50,.3);font-weight:300;">(horarios aprox. UTC)</span></h2>
+  <!-- ── TABLA CIUDADES EN ANULARIDAD ── -->
+  <h2 id="h-cities">Ciudades en el camino de anularidad <span id="h-cities-sub" style="font-family:'Cormorant Garamond';font-size:.9rem;text-transform:none;letter-spacing:0;color:rgba(220,160,50,.3);font-weight:300;"> (horarios aprox. UTC)</span></h2>
 
-  <table class="cities-table">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+  <table class="cities-table" aria-label="Horarios del eclipse anular por ciudad">
     <thead>
       <tr>
         <th id="cit-h1">Ciudad</th>
-        <th id="cit-h2">C2 (inicio anillo)</th>
+        <th id="cit-h2">C2 inicio anillo</th>
         <th id="cit-h3">Máximo</th>
         <th id="cit-h4">Duración anillo</th>
-        <th id="cit-h5">C3 (fin anillo)</th>
+        <th id="cit-h5">C3 fin anillo</th>
       </tr>
     </thead>
     <tbody>
@@ -407,14 +548,16 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
       <tr><td class="city">Barcelona</td><td>~09:32</td><td>~09:34</td><td class="duration" id="cit-dur9">~3 min 30 seg</td><td>~09:36</td></tr>
     </tbody>
   </table>
+  </div>
 
   <hr>
 
-  <!-- CIUDADES CON ECLIPSE PARCIAL -->
+  <!-- ── CIUDADES CON ECLIPSE PARCIAL ── -->
   <h2 id="h-partial">Ciudades con eclipse parcial</h2>
   <p id="partial-intro">Fuera del camino de anularidad, el resto de España y Portugal verán un eclipse parcial — en algunos casos muy profundo. No habrá anillo de fuego, pero la cobertura solar será significativa. <strong>Las gafas son igualmente obligatorias.</strong></p>
 
-  <table class="partial-table">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+  <table class="partial-table" aria-label="Eclipse parcial por ciudad fuera del camino de anularidad">
     <thead>
       <tr>
         <th id="par-h1">Ciudad</th>
@@ -431,24 +574,55 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
       <tr><td class="city" id="par-c6">Oporto</td><td class="pct">~85%</td><td id="par-v6">Eclipse parcial profundo</td></tr>
     </tbody>
   </table>
+  </div>
 
   <hr>
 
-  <!-- SEGURIDAD -->
+  <!-- ── SEGURIDAD ── -->
   <h2 id="h-safety">Seguridad — reglas de oro</h2>
 
   <div class="warning-box" id="warn-2" style="margin-bottom:1.5rem;">
     <strong>Regla fundamental del eclipse anular:</strong> durante todo el eclipse — incluyendo el momento del anillo de fuego — el Sol emite suficiente radiación para dañar la retina de forma permanente e irreversible. <strong>Las gafas de eclipse son obligatorias en todo momento.</strong>
   </div>
 
-  <ul class="prepare-list">
-    <li id="prep-1"><strong>Gafas ISO 12312-2</strong> — Usa solo gafas con esta certificación. No sirven gafas de sol normales, radiografías, ni filtros no certificados. Cómpralas con antelación.</li>
-    <li id="prep-2"><strong>Llega con tiempo</strong> — El eclipse ocurre a media mañana. Los accesos a las ciudades pueden saturarse. Planifica llegar 1 hora antes del inicio del eclipse parcial (~08:30 UTC).</li>
-    <li id="prep-3"><strong>Horizonte este libre</strong> — El Sol estará bajo (~15-20°). Necesitas una posición con el horizonte este completamente despejado: playa, campo abierto, mirador elevado.</li>
-    <li id="prep-4"><strong>Temperatura invernal</strong> — Es enero. Prepárate para frío, especialmente al amanecer. Lleva ropa de abrigo.</li>
-    <li id="prep-5"><strong>Nunca uses cámara sin filtro</strong> — Si quieres fotografiar el anillo, necesitas un filtro solar para el objetivo. Sin filtro, el sensor de tu cámara se dañará irreparablemente en segundos.</li>
-    <li id="prep-6"><strong>Plan meteorológico</strong> — Enero puede traer nubes. Ten un plan B en ciudad cercana. Sevilla y el sur tienen mayor probabilidad de cielos despejados en invierno.</li>
-  </ul>
+  <div class="step-cards">
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><circle cx="11" cy="11" r="5" fill="rgba(255,195,35,.15)" stroke="rgba(255,195,35,.5)" stroke-width="1"/></svg>
+      </div>
+      <div class="step-text" id="prep-1"><strong>Gafas ISO 12312-2</strong> — Usa solo gafas con esta certificación. No sirven gafas de sol normales, radiografías, ni filtros no certificados. Cómpralas con antelación.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><rect x="2" y="4" width="18" height="14" rx="2" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><line x1="11" y1="4" x2="11" y2="18" stroke="rgba(255,195,35,.25)" stroke-width="1"/><line x1="2" y1="11" x2="20" y2="11" stroke="rgba(255,195,35,.25)" stroke-width="1"/></svg>
+      </div>
+      <div class="step-text" id="prep-2"><strong>Llega con tiempo</strong> — El eclipse ocurre a media mañana. Los accesos a las ciudades pueden saturarse. Planifica llegar 1 hora antes del inicio parcial (~08:30 UTC).</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M4 18 L11 4 L18 18" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5" stroke-linejoin="round"/><line x1="6" y1="14" x2="16" y2="14" stroke="rgba(255,195,35,.3)" stroke-width="1"/></svg>
+      </div>
+      <div class="step-text" id="prep-3"><strong>Horizonte este libre</strong> — El Sol estará bajo (~15–20°). Necesitas una posición con el horizonte este completamente despejado: playa, campo abierto, mirador elevado.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 3 Q18 8 18 14 A7 7 0 0 1 4 14 Q4 8 11 3Z" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/></svg>
+      </div>
+      <div class="step-text" id="prep-4"><strong>Temperatura invernal</strong> — Es enero. Prepárate para frío, especialmente al amanecer. Lleva ropa de abrigo.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><rect x="7" y="3" width="8" height="12" rx="1.5" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><circle cx="11" cy="18" r="2.5" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><line x1="11" y1="15" x2="11" y2="15.5" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/></svg>
+      </div>
+      <div class="step-text" id="prep-5"><strong>Nunca uses cámara sin filtro</strong> — Si quieres fotografiar el anillo, necesitas un filtro solar para el objetivo. Sin filtro, el sensor de tu cámara se dañará en segundos.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M4 11 Q4 4 11 4 Q18 4 18 11 Q18 18 11 18 Q4 18 4 11Z" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><path d="M8 14 Q11 18 14 14" fill="none" stroke="rgba(255,195,35,.35)" stroke-width="1.2"/><circle cx="8.5" cy="10" r="1.2" fill="rgba(255,195,35,.45)"/><circle cx="13.5" cy="10" r="1.2" fill="rgba(255,195,35,.45)"/></svg>
+      </div>
+      <div class="step-text" id="prep-6"><strong>Plan meteorológico</strong> — Enero puede traer nubes. Ten un plan B en ciudad cercana. Sevilla y el sur tienen mayor probabilidad de cielos despejados en invierno.</div>
+    </div>
+  </div>
 
   <div class="ad-slot">
     <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-6498215334315959" data-ad-slot="6148807658"></ins>
@@ -456,7 +630,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <hr>
 
-  <!-- FAQ -->
+  <!-- ── FAQ ── -->
   <h2 id="h-faq">Preguntas frecuentes</h2>
   <div id="faq-list">
     <div class="faq-item open">
@@ -483,16 +657,20 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <hr>
 
-  <p id="source-note" style="font-size:.85rem;color:rgba(220,160,50,.28);margin-top:1.5rem;">Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(220,160,50,.15);text-decoration:none;">NASA Goddard Space Flight Center</a>. Los tiempos por ciudad son aproximados — consulta las efemérides exactas para tu ubicación.</p>
+  <p class="source" id="source-note">Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA Goddard Space Flight Center</a>. Los tiempos por ciudad son aproximados — consulta las efemérides exactas para tu ubicación.</p>
 
-  <h2 id="h-more" style="font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.42);margin:2.5rem 0 .9rem;">Más eclipses</h2>
+  <h2 id="h-more">Más eclipses</h2>
   <div class="crosslinks">
-    <a class="crosslink" href="/eclipse-solar-espana-2026.html">
-      <div><span class="cl-label" id="cl1-label">Eclipse Total · España</span><div class="cl-title" id="cl1-title">Eclipse Solar Total 2026</div></div>
+    <a class="crosslink-cal" href="/eclipse-solar-espana-2026.html">
+      <div><div class="cl-label" id="cl1-label">Eclipse Total · España</div><div class="cl-title" id="cl1-title">Eclipse Solar Total 2026</div></div>
       <span class="cl-arrow">→</span>
     </a>
-    <a class="crosslink" href="/calendar.html">
-      <div><span class="cl-label" id="cl2-label">Todos los eclipses</span><div class="cl-title" id="cl2-title">Calendario 2026–2028</div></div>
+    <a class="crosslink-cal" href="/how-to-watch.html">
+      <div><div class="cl-label" id="cl2-label">Seguridad</div><div class="cl-title" id="cl2-title">Cómo observar un eclipse</div></div>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a class="crosslink-cal" href="/upcoming.html">
+      <div><div class="cl-label" id="cl3-label">Próximos eclipses</div><div class="cl-title" id="cl3-title">Línea de tiempo 2026–2028</div></div>
       <span class="cl-arrow">→</span>
     </a>
   </div>
@@ -502,7 +680,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
       <p class="sister-eyebrow" id="sister-eyebrow">También sigue</p>
       <p class="sister-name" id="sister-name">Próxima Luna Llena →</p>
     </div>
-    <span style="font-size:1.8rem;opacity:.45;line-height:1;">🌕</span>
+    <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="opacity:.45"><circle cx="16" cy="16" r="14" fill="rgba(200,196,180,.55)"/><path d="M16 2 a14 14 0 0 0 0 28 a9 9 0 0 1 0 -28" fill="rgba(20,20,28,.6)"/></svg>
   </a>
 
   <footer>
@@ -512,82 +690,65 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 </div><!-- /wrap -->
 
 <script>
-// === COUNTDOWN ===
-const TARGET = new Date('2028-01-26T09:20:00Z');
+/* ── COUNTDOWN ── */
+const TARGET_ANNULAR = new Date('2028-01-26T15:09:00Z');
 function tick(){
-  const now = new Date();
-  let diff = TARGET - now;
-  if(diff < 0){
-    document.getElementById('cd-d').textContent='0';
-    document.getElementById('cd-h').textContent='00';
-    document.getElementById('cd-m').textContent='00';
-    document.getElementById('cd-s').textContent='00';
-    return;
-  }
-  const d = Math.floor(diff/864e5);
-  diff -= d*864e5;
-  const h = Math.floor(diff/36e5);
-  diff -= h*36e5;
-  const m = Math.floor(diff/6e4);
-  diff -= m*6e4;
-  const s = Math.floor(diff/1e3);
+  const now=new Date();
+  let diff=TARGET_ANNULAR-now;
+  if(diff<0)diff=0;
+  const d=Math.floor(diff/864e5);diff-=d*864e5;
+  const h=Math.floor(diff/36e5);diff-=h*36e5;
+  const m=Math.floor(diff/6e4);diff-=m*6e4;
+  const s=Math.floor(diff/1e3);
   document.getElementById('cd-d').textContent=d;
   document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
   document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
   document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
 }
-tick(); setInterval(tick,1000);
+tick();setInterval(tick,1000);
 
-// === LANG ===
-const STRINGS = {
+/* ── i18n ── */
+const STRINGS={
   es:{
     lang:'es',langBtn:'EN',share:'Compartir',
-    cdLabel:'Cuenta atrás',cdD:'días',cdH:'horas',cdM:'min',cdS:'seg',
+    nhEyebrow:'Cuenta atrás',nhTitle:'Anillo de Fuego · España 2028',nhDate:'26 ene 2028 · ~09:20 UTC',
+    cdDl:'días',cdHl:'h',cdMl:'min',cdSl:'seg',
+    chipDur:'~4 min anillo',chipType:'Solar Anular',chipDate:'26 ene 2028',
+    eyebrow:'Eclipse Solar Anular · España &amp; Portugal',
+    h1:'El Anillo de Fuego sobre España',
+    subtitle:'26 de enero de 2028 · Sevilla · Valencia · Barcelona · Lisboa',
     title:'Eclipse Anular España 2028: El Anillo de Fuego · Next Eclipse',
     desc:'Eclipse anular sobre España y Portugal el 26 de enero de 2028. El anillo de fuego cruzará Lisboa, Sevilla, Valencia y Barcelona. Guía completa con horarios.',
-    eyebrow:'Eclipse Solar Anular · España &amp; Portugal',
-    h1:'El Anillo de Fuego<br>sobre España',
-    subtitle:'26 de enero de 2028 · Sevilla · Valencia · Barcelona · Lisboa',
-    badge:'💍 Anillo de Fuego · Enero 2028',
-    // specs
-    sl1:'Duración del anillo',sv1:'~4–5 minutos',
-    sl2:'Pico (UTC)',sl3:'Hora española',
-    sl4:'Tipo',sv4:'Solar Anular',
-    sl5:'Altitud solar',sl6:'Próximo total ES',sv6:'2026 · 2 años antes',
-    // anular vs total
     hCompare:'Eclipse anular vs eclipse total',
     compareP1:'Un eclipse anular se produce cuando la Luna se encuentra cerca de su punto más lejano de la Tierra — el <strong>apogeo</strong>. En ese momento, el disco lunar parece ligeramente más pequeño que el del Sol y no puede cubrirlo completamente. El resultado es un brillante <strong>anillo de fuego</strong> alrededor de la Luna. Es un espectáculo extraordinario, pero <strong>muy diferente a un eclipse total</strong>.',
-    etl1:'Eclipse Anular',etd1:'Anillo de fuego visible.<br>Gafas siempre obligatorias.<br>Sin corona solar.',
-    etl2:'Eclipse Total',etd2:'Sol completamente cubierto.<br>Corona solar visible.<br>Momentos sin gafas.',
+    etl1:'Eclipse Anular',etl2:'Eclipse Total',
+    etdChip1a:'Anillo visible',etdChip1b:'Gafas siempre',etdChip1c:'Sin corona',
+    etdChip2a:'Sol cubierto',etdChip2b:'Corona visible',etdChip2c:'Sin gafas breve',
     warn1:'<strong>Advertencia de seguridad:</strong> A diferencia de un eclipse total, durante un eclipse anular <strong>NUNCA es seguro mirar sin filtros</strong>. El Sol nunca queda completamente cubierto. Usa gafas de eclipse homologadas (ISO 12312-2) durante todo el evento, incluido el momento del anillo.',
-    // path
     hPath:'El camino de anularidad',
-    pathIntro:'El camino de anularidad cruza el Atlántico desde Sudamérica, toca Portugal por el sur y atraviesa la Península Ibérica de oeste a este, saliendo por el noreste hacia el sur de Francia y el norte de Italia. El sol estará bajo en el horizonte invernal — entre 15 y 20 grados — lo que creará un efecto visual dramático al amanecer.',
+    pathIntro:'El camino de anularidad cruza el Atlántico desde Sudamérica, toca Portugal por el sur y atraviesa la Península Ibérica de oeste a este, saliendo por el noreste hacia el sur de Francia y el norte de Italia. El Sol estará bajo en el horizonte invernal — entre 15 y 20 grados — lo que creará un efecto visual dramático.',
     pp1:'Lisboa',pp2:'Setúbal · Évora · Beja',pp3:'Huelva',pp4:'Sevilla',pp5:'Granada · Almería',pp6:'Murcia · Alicante',pp7:'Valencia',pp8:'Castellón · Tarragona',pp9:'Barcelona',pp10:'Sur de Francia · Norte de Italia',
     pd1:'Entrada en Portugal. Centro del camino.',pd2:'Sur de Portugal en el camino central.',pd3:'~09:14 UTC · Primera ciudad española.',pd4:'~09:15 UTC · Centro del camino.',pd5:'~09:19–09:21 UTC',pd6:'~09:24–09:26 UTC',pd7:'~09:28 UTC · Excelente acceso.',pd8:'~09:30–09:32 UTC',pd9:'~09:33 UTC · Norte del camino.',pd10:'El camino sale por los Pirineos.',
     pt1:'✦ anularidad',pt2:'anularidad',pt3:'anularidad',pt4:'✦ óptimo',pt5:'anularidad',pt6:'anularidad',pt7:'✦ óptimo',pt8:'anularidad',pt9:'borde norte',pt10:'salida',
     pathTip:'El eclipse ocurre a media mañana de enero. El Sol estará <strong>bajo en el horizonte</strong> — unos 15–20 grados — lo que crea un ambiente visual espectacular con la luz invernal. Elige un lugar con el horizonte este completamente despejado y llega antes del amanecer.',
-    // anularity cities table
-    hCitiesMain:'Ciudades en el camino de anularidad',hCitiesSub:'(horarios aprox. UTC)',
-    citH1:'Ciudad',citH2:'C2 (inicio anillo)',citH3:'Máximo',citH4:'Duración anillo',citH5:'C3 (fin anillo)',
+    mapCap:'El camino de anularidad entra desde el Atlántico por Portugal y barre la Península Ibérica de suroeste a noreste. Sevilla, Valencia y Barcelona quedan en el corredor central.',
+    hCitiesSub:'(horarios aprox. UTC)',
+    citH1:'Ciudad',citH2:'C2 inicio anillo',citH3:'Máximo',citH4:'Duración anillo',citH5:'C3 fin anillo',
     citDur1:'~4 min 50 seg',citDur2:'~4 min 40 seg',citDur3:'~4 min 50 seg',citDur4:'~4 min 30 seg',citDur5:'~4 min 20 seg',citDur6:'~4 min 10 seg',citDur7:'~4 min 40 seg',citDur8:'~4 min 00 seg',citDur9:'~3 min 30 seg',
-    // partial cities
     hPartial:'Ciudades con eclipse parcial',
     partialIntro:'Fuera del camino de anularidad, el resto de España y Portugal verán un eclipse parcial — en algunos casos muy profundo. No habrá anillo de fuego, pero la cobertura solar será significativa. <strong>Las gafas son igualmente obligatorias.</strong>',
     parH1:'Ciudad',parH2:'Cobertura solar aprox.',parH3:'Tipo de vista',
     parC1:'Zaragoza',parC6:'Oporto',
     parV1:'Eclipse parcial muy profundo',parV2:'Eclipse parcial',parV3:'Eclipse parcial',parV4:'Eclipse parcial',parV5:'Eclipse parcial',parV6:'Eclipse parcial profundo',
-    // safety
     hSafety:'Seguridad — reglas de oro',
-    hFaq:'Preguntas frecuentes',
     warn2:'<strong>Regla fundamental del eclipse anular:</strong> durante todo el eclipse — incluyendo el momento del anillo de fuego — el Sol emite suficiente radiación para dañar la retina de forma permanente e irreversible. <strong>Las gafas de eclipse son obligatorias en todo momento.</strong>',
     prep1:'<strong>Gafas ISO 12312-2</strong> — Usa solo gafas con esta certificación. No sirven gafas de sol normales, radiografías, ni filtros no certificados. Cómpralas con antelación.',
-    prep2:'<strong>Llega con tiempo</strong> — El eclipse ocurre a media mañana. Los accesos a las ciudades pueden saturarse. Planifica llegar 1 hora antes del inicio del eclipse parcial (~08:30 UTC).',
-    prep3:'<strong>Horizonte este libre</strong> — El Sol estará bajo (~15-20°). Necesitas una posición con el horizonte este completamente despejado: playa, campo abierto, mirador elevado.',
+    prep2:'<strong>Llega con tiempo</strong> — El eclipse ocurre a media mañana. Los accesos a las ciudades pueden saturarse. Planifica llegar 1 hora antes del inicio parcial (~08:30 UTC).',
+    prep3:'<strong>Horizonte este libre</strong> — El Sol estará bajo (~15–20°). Necesitas una posición con el horizonte este completamente despejado: playa, campo abierto, mirador elevado.',
     prep4:'<strong>Temperatura invernal</strong> — Es enero. Prepárate para frío, especialmente al amanecer. Lleva ropa de abrigo.',
-    prep5:'<strong>Nunca uses cámara sin filtro</strong> — Si quieres fotografiar el anillo, necesitas un filtro solar para el objetivo. Sin filtro, el sensor de tu cámara se dañará irreparablemente en segundos.',
+    prep5:'<strong>Nunca uses cámara sin filtro</strong> — Si quieres fotografiar el anillo, necesitas un filtro solar para el objetivo. Sin filtro, el sensor de tu cámara se dañará en segundos.',
     prep6:'<strong>Plan meteorológico</strong> — Enero puede traer nubes. Ten un plan B en ciudad cercana. Sevilla y el sur tienen mayor probabilidad de cielos despejados en invierno.',
-    // FAQ
+    hFaq:'Preguntas frecuentes',
     fq1:'¿Qué diferencia hay entre un eclipse anular y uno total?',
     fa1:'En un eclipse total, la Luna cubre completamente el Sol y vemos la corona solar durante unos minutos de oscuridad. En un eclipse anular, la Luna está más lejos de la Tierra (cerca del apogeo) y su disco parece ligeramente más pequeño que el del Sol, dejando visible un <strong>brillante anillo de fuego</strong>. La diferencia visual es enorme: el eclipse total oscurece el cielo completamente, mientras que el anular mantiene la luz diurna. Además, durante la totalidad de un eclipse total se pueden quitar las gafas, mientras que en uno anular <strong>nunca es seguro hacerlo</strong>.',
     fq2:'¿Puedo quitarme las gafas durante el anillo de fuego?',
@@ -598,63 +759,55 @@ const STRINGS = {
     fa4:'Sí. El <strong>12 de agosto de 2026</strong> habrá un eclipse solar <strong>total</strong> — mucho más espectacular — que cruzará España por Galicia, Zamora y Salamanca. Es el primer eclipse total en la Península Ibérica en más de 120 años. Si puedes elegir entre los dos, el eclipse total de 2026 es una experiencia astronómica incomparable. El anular de 2028 también es extraordinario, pero de naturaleza diferente.',
     fq5:'¿Se verá el anillo completo en toda España?',
     fa5:'No. Solo las ciudades dentro del <strong>camino de anularidad</strong> verán el anillo completo: principalmente el sur y este de España (Huelva, Sevilla, Granada, Almería, Murcia, Alicante, Valencia, Castellón, Tarragona, Barcelona) y el sur de Portugal (Lisboa, Évora). El resto de España verá un eclipse parcial: Madrid ~80%, Bilbao ~70%, Pamplona ~78%. <strong>En todas estas zonas son igualmente obligatorias las gafas.</strong>',
-    // footer / links
-    sourceNote:'Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(220,160,50,.15);text-decoration:none;">NASA Goddard Space Flight Center</a>. Los tiempos por ciudad son aproximados — consulta las efemérides exactas para tu ubicación.',
+    sourceNote:'Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA Goddard Space Flight Center</a>. Los tiempos por ciudad son aproximados — consulta las efemérides exactas para tu ubicación.',
     hMore:'Más eclipses',
     cl1Label:'Eclipse Total · España',cl1Title:'Eclipse Solar Total 2026',
-    cl2Label:'Todos los eclipses',cl2Title:'Calendario 2026–2028',
+    cl2Label:'Seguridad',cl2Title:'Cómo observar un eclipse',
+    cl3Label:'Próximos eclipses',cl3Title:'Línea de tiempo 2026–2028',
     sisterEyebrow:'También sigue',sisterName:'Próxima Luna Llena →'
   },
   en:{
     lang:'en',langBtn:'ES',share:'Share',
-    cdLabel:'Countdown',cdD:'days',cdH:'hours',cdM:'min',cdS:'sec',
+    nhEyebrow:'Countdown',nhTitle:'Ring of Fire · Spain 2028',nhDate:'Jan 26 2028 · ~09:20 UTC',
+    cdDl:'days',cdHl:'hrs',cdMl:'min',cdSl:'sec',
+    chipDur:'~4 min ring',chipType:'Annular Solar',chipDate:'Jan 26 2028',
+    eyebrow:'Annular Solar Eclipse · Spain &amp; Portugal',
+    h1:'The Ring of Fire over Spain',
+    subtitle:'January 26, 2028 · Seville · Valencia · Barcelona · Lisbon',
     title:'Annular Eclipse Spain 2028: The Ring of Fire · Next Eclipse',
     desc:'Annular eclipse over Spain and Portugal on January 26, 2028. The ring of fire will cross Lisbon, Seville, Valencia and Barcelona. Complete guide with timings.',
-    eyebrow:'Annular Solar Eclipse · Spain &amp; Portugal',
-    h1:'The Ring of Fire<br>over Spain',
-    subtitle:'January 26, 2028 · Seville · Valencia · Barcelona · Lisbon',
-    badge:'💍 Ring of Fire · January 2028',
-    // specs
-    sl1:'Ring duration',sv1:'~4–5 minutes',
-    sl2:'Peak (UTC)',sl3:'Spanish time',
-    sl4:'Type',sv4:'Annular Solar',
-    sl5:'Solar altitude',sl6:'Next total (Spain)',sv6:'2026 · 2 years earlier',
-    // anular vs total
     hCompare:'Annular eclipse vs total eclipse',
-    compareP1:'An annular eclipse occurs when the Moon is near its farthest point from Earth — the <strong>apogee</strong>. At that moment, the lunar disc looks slightly smaller than the Sun’s and cannot cover it completely. The result is a brilliant <strong>ring of fire</strong> around the Moon. It is an extraordinary sight, but <strong>very different from a total eclipse</strong>.',
-    etl1:'Annular Eclipse',etd1:'Ring of fire visible.<br>Glasses always required.<br>No solar corona.',
-    etl2:'Total Eclipse',etd2:'Sun completely covered.<br>Solar corona visible.<br>Moments without glasses.',
+    compareP1:'An annular eclipse occurs when the Moon is near its farthest point from Earth — the <strong>apogee</strong>. At that moment, the lunar disc looks slightly smaller than the Sun\'s and cannot cover it completely. The result is a brilliant <strong>ring of fire</strong> around the Moon. It is an extraordinary sight, but <strong>very different from a total eclipse</strong>.',
+    etl1:'Annular Eclipse',etl2:'Total Eclipse',
+    etdChip1a:'Ring visible',etdChip1b:'Glasses always',etdChip1c:'No corona',
+    etdChip2a:'Sun covered',etdChip2b:'Corona visible',etdChip2c:'Brief no glasses',
     warn1:'<strong>Safety warning:</strong> Unlike a total eclipse, during an annular eclipse it is <strong>NEVER safe to look without filters</strong>. The Sun is never completely covered. Use certified eclipse glasses (ISO 12312-2) throughout the entire event, including the ring phase.',
-    // path
     hPath:'The path of annularity',
-    pathIntro:'The path of annularity crosses the Atlantic from South America, touches southern Portugal and sweeps across the Iberian Peninsula from west to east, exiting to the northeast toward southern France and northern Italy. The Sun will be low on the winter horizon — between 15 and 20 degrees — creating a dramatic visual effect at dawn.',
+    pathIntro:'The path of annularity crosses the Atlantic from South America, touches southern Portugal and sweeps across the Iberian Peninsula from west to east, exiting to the northeast toward southern France and northern Italy. The Sun will be low on the winter horizon — between 15 and 20 degrees — creating a dramatic visual effect.',
     pp1:'Lisbon',pp2:'Setúbal · Évora · Beja',pp3:'Huelva',pp4:'Seville',pp5:'Granada · Almería',pp6:'Murcia · Alicante',pp7:'Valencia',pp8:'Castellón · Tarragona',pp9:'Barcelona',pp10:'Southern France · Northern Italy',
     pd1:'Entry into Portugal. Center of the path.',pd2:'Southern Portugal on the central path.',pd3:'~09:14 UTC · First Spanish city.',pd4:'~09:15 UTC · Center of the path.',pd5:'~09:19–09:21 UTC',pd6:'~09:24–09:26 UTC',pd7:'~09:28 UTC · Excellent access.',pd8:'~09:30–09:32 UTC',pd9:'~09:33 UTC · North of the path.',pd10:'The path exits over the Pyrenees.',
     pt1:'✦ annularity',pt2:'annularity',pt3:'annularity',pt4:'✦ optimal',pt5:'annularity',pt6:'annularity',pt7:'✦ optimal',pt8:'annularity',pt9:'northern edge',pt10:'exit',
     pathTip:'The eclipse happens in mid-morning in January. The Sun will be <strong>low on the horizon</strong> — about 15–20 degrees — which creates a spectacular visual atmosphere in the winter light. Choose a spot with a completely clear eastern horizon and arrive before dawn.',
-    // annularity cities table
-    hCitiesMain:'Cities in the path of annularity',hCitiesSub:'(approx. UTC times)',
-    citH1:'City',citH2:'C2 (ring start)',citH3:'Maximum',citH4:'Ring duration',citH5:'C3 (ring end)',
+    mapCap:'The path of annularity enters from the Atlantic through Portugal and sweeps the Iberian Peninsula from southwest to northeast. Seville, Valencia and Barcelona lie within the central corridor.',
+    hCitiesSub:'(approx. UTC times)',
+    citH1:'City',citH2:'C2 ring start',citH3:'Maximum',citH4:'Ring duration',citH5:'C3 ring end',
     citDur1:'~4 min 50 sec',citDur2:'~4 min 40 sec',citDur3:'~4 min 50 sec',citDur4:'~4 min 30 sec',citDur5:'~4 min 20 sec',citDur6:'~4 min 10 sec',citDur7:'~4 min 40 sec',citDur8:'~4 min 00 sec',citDur9:'~3 min 30 sec',
-    // partial cities
     hPartial:'Cities with a partial eclipse',
     partialIntro:'Outside the path of annularity, the rest of Spain and Portugal will see a partial eclipse — in some cases a very deep one. There will be no ring of fire, but solar coverage will be significant. <strong>Glasses are equally mandatory.</strong>',
     parH1:'City',parH2:'Approx. solar coverage',parH3:'Type of view',
     parC1:'Zaragoza',parC6:'Porto',
     parV1:'Very deep partial eclipse',parV2:'Partial eclipse',parV3:'Partial eclipse',parV4:'Partial eclipse',parV5:'Partial eclipse',parV6:'Deep partial eclipse',
-    // safety
     hSafety:'Safety — the golden rules',
-    hFaq:'Frequently asked questions',
     warn2:'<strong>Fundamental rule of the annular eclipse:</strong> throughout the entire eclipse — including the ring of fire phase — the Sun emits enough radiation to damage the retina permanently and irreversibly. <strong>Eclipse glasses are mandatory at all times.</strong>',
     prep1:'<strong>ISO 12312-2 glasses</strong> — Use only glasses with this certification. Ordinary sunglasses, X-rays, or uncertified filters do not work. Buy them in advance.',
     prep2:'<strong>Arrive early</strong> — The eclipse happens in mid-morning. Access roads to cities can get congested. Plan to arrive 1 hour before the start of the partial eclipse (~08:30 UTC).',
-    prep3:'<strong>Clear eastern horizon</strong> — The Sun will be low (~15-20°). You need a position with a completely clear eastern horizon: a beach, open countryside, or an elevated viewpoint.',
-    prep4:'<strong>Winter temperatures</strong> — It’s January. Be prepared for cold, especially at dawn. Bring warm clothing.',
-    prep5:'<strong>Never use a camera without a filter</strong> — If you want to photograph the ring, you need a solar filter for the lens. Without a filter, your camera’s sensor will be irreparably damaged within seconds.',
+    prep3:'<strong>Clear eastern horizon</strong> — The Sun will be low (~15–20°). You need a position with a completely clear eastern horizon: a beach, open countryside, or an elevated viewpoint.',
+    prep4:'<strong>Winter temperatures</strong> — It\'s January. Be prepared for cold, especially at dawn. Bring warm clothing.',
+    prep5:'<strong>Never use a camera without a filter</strong> — If you want to photograph the ring, you need a solar filter for the lens. Without a filter, your camera\'s sensor will be irreparably damaged within seconds.',
     prep6:'<strong>Weather plan</strong> — January can bring clouds. Have a plan B in a nearby city. Seville and the south have a higher probability of clear skies in winter.',
-    // FAQ
-    fq1:'What’s the difference between an annular and a total eclipse?',
-    fa1:'In a total eclipse, the Moon completely covers the Sun and we see the solar corona for a few minutes of darkness. In an annular eclipse, the Moon is farther from Earth (near apogee) and its disc looks slightly smaller than the Sun’s, leaving a <strong>brilliant ring of fire</strong> visible. The visual difference is enormous: a total eclipse darkens the sky completely, while an annular one keeps daylight. Also, during the totality of a total eclipse you can remove your glasses, whereas in an annular one <strong>it is never safe to do so</strong>.',
+    hFaq:'Frequently asked questions',
+    fq1:'What\'s the difference between an annular and a total eclipse?',
+    fa1:'In a total eclipse, the Moon completely covers the Sun and we see the solar corona for a few minutes of darkness. In an annular eclipse, the Moon is farther from Earth (near apogee) and its disc looks slightly smaller than the Sun\'s, leaving a <strong>brilliant ring of fire</strong> visible. The visual difference is enormous: a total eclipse darkens the sky completely, while an annular one keeps daylight. Also, during the totality of a total eclipse you can remove your glasses, whereas in an annular one <strong>it is never safe to do so</strong>.',
     fq2:'Can I take off my glasses during the ring of fire?',
     fa2:'<strong>No, never.</strong> During an annular eclipse the Sun is never completely covered. At the moment of maximum annularity, the ring of fire surrounding the Moon is the Sun itself, emitting the same intensity of radiation as on a normal day. Looking directly without certified protection (ISO 12312-2) can cause permanent retinal damage — <strong>solar retinopathy</strong> — which in many cases is irreversible.',
     fq3:'Where is the best place to position yourself in Spain?',
@@ -663,75 +816,70 @@ const STRINGS = {
     fa4:'Yes. On <strong>August 12, 2026</strong> there will be a <strong>total</strong> solar eclipse — far more spectacular — that will cross Spain through Galicia, Zamora and Salamanca. It is the first total eclipse in the Iberian Peninsula in more than 120 years. If you can choose between the two, the 2026 total eclipse is an unmatched astronomical experience. The 2028 annular one is also extraordinary, but different in nature.',
     fq5:'Will the full ring be visible across all of Spain?',
     fa5:'No. Only cities within the <strong>path of annularity</strong> will see the full ring: mainly southern and eastern Spain (Huelva, Seville, Granada, Almería, Murcia, Alicante, Valencia, Castellón, Tarragona, Barcelona) and southern Portugal (Lisbon, Évora). The rest of Spain will see a partial eclipse: Madrid ~80%, Bilbao ~70%, Pamplona ~78%. <strong>In all these areas glasses are equally mandatory.</strong>',
-    // footer / links
-    sourceNote:'Data based on calculations from the <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(220,160,50,.15);text-decoration:none;">NASA Goddard Space Flight Center</a>. City-by-city times are approximate — check the exact ephemeris for your location.',
+    sourceNote:'Data based on calculations from the <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA Goddard Space Flight Center</a>. City-by-city times are approximate — check the exact ephemeris for your location.',
     hMore:'More eclipses',
     cl1Label:'Total Eclipse · Spain',cl1Title:'Total Solar Eclipse 2026',
-    cl2Label:'All eclipses',cl2Title:'Calendar 2026–2028',
+    cl2Label:'Safety',cl2Title:'How to watch an eclipse',
+    cl3Label:'Upcoming eclipses',cl3Title:'Timeline 2026–2028',
     sisterEyebrow:'Also follow',sisterName:'Next Full Moon →'
   }
 };
-let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
+
+let lang=localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
 function set(id,val,html=false){const el=document.getElementById(id);if(el){if(html)el.innerHTML=val;else el.textContent=val;}}
 function setAttr(sel,attr,val){const el=document.querySelector(sel);if(el)el.setAttribute(attr,val);}
+
 function render(){
   const S=STRINGS[lang];
   document.documentElement.lang=S.lang;
-  // meta
   document.title=S.title;
   setAttr('meta[name="description"]','content',S.desc);
-  set('pg-title',S.title);set('og-title',S.title);set('tw-title',S.title);
   setAttr('meta[property="og:description"]','content',S.desc);
   setAttr('meta[name="twitter:description"]','content',S.desc);
+  set('pg-title',S.title);set('og-title',S.title);set('tw-title',S.title);
   // header
-  set('lang-btn',S.langBtn);
-  set('share-label',S.share);
-  set('cd-label',S.cdLabel);
-  set('cd-dl',S.cdD);set('cd-hl',S.cdH);set('cd-ml',S.cdM);set('cd-sl',S.cdS);
+  set('lang-btn',S.langBtn);set('share-label',S.share);
   // hero
-  set('eyebrow',S.eyebrow,true);set('h1',S.h1,true);set('subtitle',S.subtitle);set('badge',S.badge);
-  // specs
-  set('sl-1',S.sl1);set('sv-1',S.sv1);set('sl-2',S.sl2);set('sl-3',S.sl3);
-  set('sl-4',S.sl4);set('sv-4',S.sv4);set('sl-5',S.sl5);set('sl-6',S.sl6);set('sv-6',S.sv6);
-  // anular vs total
+  set('nh-eyebrow',S.nhEyebrow);set('nh-title',S.nhTitle);set('nh-date',S.nhDate);
+  set('cd-dl',S.cdDl);set('cd-hl',S.cdHl);set('cd-ml',S.cdMl);set('cd-sl',S.cdSl);
+  set('chip-dur',S.chipDur);set('chip-type',S.chipType);set('chip-date',S.chipDate);
+  // content
+  set('eyebrow',S.eyebrow,true);set('h1',S.h1);set('subtitle',S.subtitle);
   set('h-compare',S.hCompare);set('compare-p1',S.compareP1,true);
-  set('etl-1',S.etl1);set('etd-1',S.etd1,true);set('etl-2',S.etl2);set('etd-2',S.etd2,true);
+  set('etl-1',S.etl1);set('etl-2',S.etl2);
+  set('etd-chip-1a',S.etdChip1a);set('etd-chip-1b',S.etdChip1b);set('etd-chip-1c',S.etdChip1c);
+  set('etd-chip-2a',S.etdChip2a);set('etd-chip-2b',S.etdChip2b);set('etd-chip-2c',S.etdChip2c);
   set('warn-1',S.warn1,true);
-  // path
   set('h-path',S.hPath);set('path-intro',S.pathIntro);
   for(var i=1;i<=10;i++){set('pp-'+i,S['pp'+i]);set('pd-'+i,S['pd'+i]);set('pt-'+i,S['pt'+i]);}
-  set('path-tip',S.pathTip,true);
-  // anularity cities
-  set('h-cities-main',S.hCitiesMain);set('h-cities-sub',S.hCitiesSub);
+  set('path-tip',S.pathTip,true);set('map-cap',S.mapCap);
+  set('h-cities-sub',S.hCitiesSub);
   set('cit-h1',S.citH1);set('cit-h2',S.citH2);set('cit-h3',S.citH3);set('cit-h4',S.citH4);set('cit-h5',S.citH5);
   for(var c=1;c<=9;c++){set('cit-dur'+c,S['citDur'+c]);}
-  // partial cities
   set('h-partial',S.hPartial);set('partial-intro',S.partialIntro,true);
   set('par-h1',S.parH1);set('par-h2',S.parH2);set('par-h3',S.parH3);
   set('par-c1',S.parC1);set('par-c6',S.parC6);
   for(var v=1;v<=6;v++){set('par-v'+v,S['parV'+v]);}
-  // safety
-  set('h-safety',S.hSafety);set('h-faq',S.hFaq);set('warn-2',S.warn2,true);
+  set('h-safety',S.hSafety);set('warn-2',S.warn2,true);
   for(var p=1;p<=6;p++){set('prep-'+p,S['prep'+p],true);}
-  // FAQ
+  set('h-faq',S.hFaq);
   for(var f=1;f<=5;f++){set('fq-'+f,S['fq'+f]);set('fa-'+f,S['fa'+f],true);}
-  // footer / links
   set('source-note',S.sourceNote,true);set('h-more',S.hMore);
-  set('cl1-label',S.cl1Label);set('cl1-title',S.cl1Title);set('cl2-label',S.cl2Label);set('cl2-title',S.cl2Title);
+  set('cl1-label',S.cl1Label);set('cl1-title',S.cl1Title);
+  set('cl2-label',S.cl2Label);set('cl2-title',S.cl2Title);
+  set('cl3-label',S.cl3Label);set('cl3-title',S.cl3Title);
   set('sister-eyebrow',S.sisterEyebrow);set('sister-name',S.sisterName);
 }
+
 function toggleLang(){lang=lang==='es'?'en':'es';localStorage.setItem('ne-lang',lang);render();}
 render();
 
-// === FAQ accordion ===
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.closest('.faq-item');
-    item.classList.toggle('open');
-  });
+  q.addEventListener('click',()=>{q.closest('.faq-item').classList.toggle('open');});
 });
 
-// === SHARE ===
+// Share
 function shareApp(){
   const d=document.querySelector('meta[name="description"]');
   const data={title:document.title,text:d?d.getAttribute('content'):'',url:window.location.href};
@@ -746,7 +894,7 @@ function shareApp(){
 
 <!-- cookie consent -->
 <div id="ck" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(3,3,4,.97);border-top:1px solid rgba(220,160,50,.12);padding:.75rem 1.5rem;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between;font-family:'Cinzel',serif;">
-  <span id="ck-t" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:.95rem;color:rgba(220,205,170,.58);flex:1;min-width:200px;line-height:1.5;"></span>
+  <span id="ck-t" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:.95rem;color:rgba(220,205,170,.76);flex:1;min-width:200px;line-height:1.5;"></span>
   <div style="display:flex;gap:.5rem;flex-shrink:0;">
     <button onclick="neConsent(1)" id="ck-y" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:rgba(220,160,50,.1);border:1px solid rgba(220,160,50,.28);color:rgba(220,160,50,.82);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
     <button onclick="neConsent(0)" id="ck-n" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:none;border:1px solid rgba(220,160,50,.1);color:rgba(220,160,50,.38);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
@@ -797,10 +945,15 @@ function shareApp(){
 })();
 </script>
 <script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});
+}
+</script>
+<script>
 /* ── Canonical header/footer i18n — shared across all pages ── */
 (function(){
   var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
-           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+           es:{spain:'España 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Próximos',history:'Historia',share:'Compartir',lang:'EN'}};
   function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
   function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
   function apply(){

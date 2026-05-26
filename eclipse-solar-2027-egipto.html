@@ -95,7 +95,7 @@
   "description": "El 2 de agosto de 2027, 6 minutos 23 segundos de totalidad sobre Luxor, Egipto. El eclipse solar total más largo del siglo XXI. Guía completa: dónde verlo, cuándo reservar y qué esperar.",
   "url": "https://www.next-eclipse.com/eclipse-solar-2027-egipto",
   "datePublished": "2026-05-21",
-  "dateModified": "2026-05-21",
+  "dateModified": "2026-05-26",
   "publisher": {"@type": "Organization","name": "Next Eclipse","url": "https://www.next-eclipse.com"},
   "inLanguage": "es"
 }
@@ -112,11 +112,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}html{background:#030304;overflow-x:clip;}body{overflow-x:clip;}
-body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.72);min-height:100vh;padding:0 0 4rem;line-height:1.75;}
-.wrap{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 0;}
+body{background:#030304;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(236,228,210,.88);min-height:100vh;padding:0 0 4rem;line-height:1.75;}
+.wrap{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 0;}
 
-/* topbar */
-nav.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
+/* ── TOPBAR ── */
+.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:1.3rem clamp(1.5rem,4vw,3.5rem);padding-top:calc(env(safe-area-inset-top) + 1.3rem);border-bottom:1px solid rgba(220,160,50,.07);}
 .site-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(220,160,50,.42);text-decoration:none;}
 .site-name:hover{color:rgba(220,160,50,.85);}
 .nav-links{display:flex;gap:1rem;align-items:center;}
@@ -134,108 +134,104 @@ nav.topbar{position:sticky;top:0;z-index:250;background:rgba(3,3,4,.97);backdrop
   .share-btn .share-icon{width:18px;height:18px;}
 }
 
-/* hero */
-.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-bottom:.5rem;}
-h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.6rem);color:rgba(255,248,228,.9);letter-spacing:.03em;margin-bottom:.5rem;line-height:1.25;}
-.subtitle{font-size:1.1rem;font-style:italic;color:rgba(220,160,50,.55);margin-bottom:1rem;}
-.badge-record{display:inline-block;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.28rem .8rem;border-radius:2px;background:rgba(220,160,50,.1);color:rgba(255,220,130,.8);border:1px solid rgba(220,160,50,.25);margin-bottom:1.5rem;}
+/* ── TYPOGRAPHY ── */
+.eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(220,160,50,.65);margin-bottom:.5rem;}
+h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.7rem,4.5vw,2.6rem);color:rgba(255,248,228,.9);letter-spacing:.04em;margin-bottom:.45rem;line-height:1.2;}
+.subtitle{font-size:1.12rem;font-style:italic;color:rgba(220,160,50,.55);margin-bottom:2rem;max-width:54ch;}
+h2{font-family:'Cinzel',serif;font-weight:400;font-size:.92rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.46);margin:3rem 0 1.2rem;}
+.lead{font-size:1.15rem;color:rgba(230,218,195,.78);max-width:60ch;margin-bottom:1.6rem;}
+hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:3rem 0;}
+p{font-size:1.13rem;color:rgba(230,218,195,.84);margin-bottom:1rem;max-width:68ch;}
+strong{color:rgba(255,240,200,.85);font-weight:400;}
 
-/* countdown */
-.countdown-box{display:flex;gap:clamp(.6rem,2.5vw,1.5rem);margin:1.5rem 0 2rem;flex-wrap:wrap;}
-.cunit{text-align:center;min-width:52px;}
-.cnum{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(2rem,5.5vw,3.2rem);color:rgba(255,248,228,.92);line-height:1;letter-spacing:.02em;}
-.clabel{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.45);margin-top:.4rem;}
-.csep{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);color:rgba(220,160,50,.25);align-self:flex-start;padding-top:.08rem;}
-.countdown-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.35);margin-bottom:.6rem;}
+/* ── NEXT-HERO COUNTDOWN ── */
+.next-hero{position:relative;border:1px solid rgba(220,160,50,.16);border-radius:6px;padding:2rem 1.8rem 1.8rem;background:radial-gradient(120% 140% at 80% 10%,rgba(220,160,50,.06),rgba(220,160,50,.015) 55%,transparent);overflow:hidden;margin-bottom:2rem;}
+.next-hero .nh-grid{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;}
+.nh-diagram{flex:0 0 auto;}
+.nh-body{flex:1 1 260px;min-width:240px;}
+.nh-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(220,180,100,.6);margin-bottom:.5rem;}
+.nh-title{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.15rem,3vw,1.5rem);color:rgba(255,248,220,.9);letter-spacing:.05em;margin-bottom:.25rem;}
+.nh-date{font-size:1.1rem;font-style:italic;color:rgba(220,160,50,.66);margin-bottom:1.1rem;}
+.countdown-box{display:flex;gap:clamp(.55rem,2.5vw,1.3rem);flex-wrap:wrap;align-items:flex-start;}
+.cunit{text-align:center;min-width:48px;}
+.cnum{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.9rem,5.5vw,3rem);color:rgba(255,248,228,.94);line-height:1;letter-spacing:.02em;}
+.clabel{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(220,160,50,.48);margin-top:.45rem;}
+.csep{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4.5vw,2.6rem);color:rgba(220,160,50,.22);padding-top:.06rem;}
 
-/* key specs */
-.specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.75rem;margin:1.5rem 0 2.5rem;}
-.spec-card{padding:.9rem 1.1rem;border:1px solid rgba(220,160,50,.1);border-radius:3px;background:rgba(220,160,50,.025);}
-.spec-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.38);margin-bottom:.3rem;}
-.spec-value{font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(255,240,200,.78);letter-spacing:.02em;}
-.spec-card.highlight{border-color:rgba(220,160,50,.25);background:rgba(220,160,50,.05);}
-.spec-card.highlight .spec-value{color:rgba(255,230,150,.9);}
+/* ec-chips for hero facts */
+.hero-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem;}
+.ec-chip{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.26rem .6rem;border:1px solid rgba(220,160,50,.14);border-radius:2px;color:rgba(220,180,120,.7);}
+.ec-chip strong{color:rgba(255,222,142,.86);font-family:inherit;font-weight:400;}
+.ec-chip.gold{border-color:rgba(255,195,35,.3);color:rgba(255,210,80,.88);}
 
-hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2.5rem 0;}
-h2{font-family:'Cinzel',serif;font-weight:400;font-size:.88rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.45);margin:2.5rem 0 1rem;}
-p{font-size:1.05rem;color:rgba(220,210,180,.6);margin-bottom:1rem;max-width:68ch;}
-strong{color:rgba(255,240,200,.75);font-weight:400;}
+/* ── GEO / MAP CARDS ── */
+.geo-card{border:1px solid rgba(220,160,50,.1);border-radius:6px;background:rgba(220,160,50,.018);padding:1.6rem 1.4rem;margin-bottom:1rem;}
+.geo-card svg{display:block;width:100%;height:auto;}
+.geo-cap{font-size:.98rem;font-style:italic;color:rgba(220,200,160,.55);text-align:center;margin-top:.9rem;max-width:52ch;margin-left:auto;margin-right:auto;}
+.map-card{border:1px solid rgba(220,160,50,.1);border-radius:6px;background:rgba(220,160,50,.018);padding:1.4rem;margin-bottom:1rem;overflow:hidden;}
+.map-card svg{display:block;width:100%;height:auto;}
 
-/* comparison table */
-.comp-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.95rem;}
-.comp-table thead tr{border-bottom:1px solid rgba(220,160,50,.15);}
-.comp-table th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.42);padding:.6rem .75rem;text-align:left;font-weight:400;}
-.comp-table td{padding:.6rem .75rem;color:rgba(220,200,160,.55);border-bottom:1px solid rgba(220,160,50,.05);}
-.comp-table td.dest{color:rgba(255,240,200,.75);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.08em;}
-.comp-table td.dur{color:rgba(220,160,50,.72);font-family:'Cinzel',serif;}
-.comp-table tr.top td{background:rgba(220,160,50,.04);}
-.comp-table tr.top td.dest{color:rgba(255,248,220,.9);}
+/* ── EC-CARD (destination cards) ── */
+.ec-card{border:1px solid rgba(220,160,50,.09);border-radius:5px;background:rgba(220,160,50,.018);padding:1.3rem 1.4rem;transition:border-color .2s,background .2s;}
+.ec-card:hover{border-color:rgba(220,160,50,.2);background:rgba(220,160,50,.03);}
+.ec-card.highlight{border-color:rgba(220,160,50,.22);background:rgba(220,160,50,.035);}
+.ec-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin:.5rem 0 1rem;}
+.ec-name{font-family:'Cinzel',serif;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,248,220,.82);margin-bottom:.5rem;}
+.ec-vis{font-size:1.06rem;color:rgba(224,206,168,.72);margin-bottom:.5rem;}
+.ec-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem;}
+.ec-card-grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
 
-/* path list */
-.path-list{list-style:none;padding:0;margin:0 0 1.5rem;}
-.path-list li{display:flex;align-items:baseline;gap:.75rem;padding:.55rem 0;border-bottom:1px solid rgba(220,160,50,.06);}
-.path-list li:last-child{border-bottom:none;}
-.path-dot{width:.5rem;height:.5rem;border-radius:50%;background:rgba(220,160,50,.4);flex-shrink:0;margin-top:.3rem;}
-.path-place{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.7);min-width:180px;}
-.path-detail{font-size:.95rem;color:rgba(220,200,160,.45);font-style:italic;}
-.path-tag{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:.15rem .5rem;border-radius:2px;margin-left:.5rem;}
-.path-tag.center{background:rgba(220,160,50,.12);color:rgba(220,160,50,.75);border:1px solid rgba(220,160,50,.2);}
-.path-tag.max{background:rgba(255,200,50,.15);color:rgba(255,210,80,.85);border:1px solid rgba(255,200,50,.3);}
-.path-tag.entry{background:rgba(220,160,50,.04);color:rgba(220,160,50,.45);border:1px solid rgba(220,160,50,.1);}
+/* ── TIP / WARNING ── */
+.tip-box{padding:.85rem 1.1rem;background:rgba(220,160,50,.04);border-left:2px solid rgba(220,160,50,.25);margin:1.2rem 0;font-size:1.06rem;color:rgba(220,200,150,.78);font-style:italic;}
 
-/* tip box */
-.tip-box{padding:.85rem 1.1rem;background:rgba(220,160,50,.04);border-left:2px solid rgba(220,160,50,.25);margin:1.2rem 0;font-size:.98rem;color:rgba(220,210,180,.58);font-style:italic;}
-
-/* compare bar */
+/* ── DURATION BAR ── */
 .compare-bar{margin:1.5rem 0 2rem;}
-.bar-label{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,200,160,.5);margin-bottom:.4rem;}
+.bar-label{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,200,160,.5);margin-bottom:.9rem;}
 .bar-row{display:flex;align-items:center;gap:.8rem;margin-bottom:.7rem;}
-.bar-name{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.1em;color:rgba(255,240,200,.65);min-width:120px;}
-.bar-track{flex:1;height:8px;background:rgba(220,160,50,.07);border-radius:2px;overflow:hidden;}
+.bar-name{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.1em;color:rgba(255,240,200,.65);min-width:100px;}
+.bar-track{flex:1;height:7px;background:rgba(220,160,50,.07);border-radius:2px;overflow:hidden;}
 .bar-fill{height:100%;border-radius:2px;background:rgba(220,160,50,.45);}
 .bar-fill.gold{background:rgba(255,200,50,.65);}
 .bar-val{font-family:'Cinzel',serif;font-size:.78rem;color:rgba(220,160,50,.65);white-space:nowrap;min-width:70px;text-align:right;}
 
-/* prepare list */
-.prepare-list{list-style:none;padding:0;margin:.5rem 0 1.5rem;}
-.prepare-list li{padding:.4rem 0 .4rem 1.4rem;position:relative;font-size:1rem;color:rgba(220,200,160,.55);}
-.prepare-list li::before{content:'·';position:absolute;left:0;color:rgba(220,160,50,.4);font-size:1.2rem;line-height:1.5;}
+/* ── TRAVELER GUIDE STEPS ── */
+.step-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:.5rem 0 1.5rem;}
+.step-card{padding:1rem 1.1rem;border:1px solid rgba(220,160,50,.08);border-radius:4px;background:rgba(220,160,50,.015);display:flex;gap:.75rem;align-items:flex-start;}
+.step-icon{flex-shrink:0;margin-top:.15rem;}
+.step-text{font-size:1.06rem;color:rgba(230,215,185,.76);}
+.step-text strong{color:rgba(255,240,200,.88);font-weight:400;}
 
-/* FAQ */
+/* ── FAQ ── */
 .faq-item{border-bottom:1px solid rgba(220,160,50,.07);padding:1.2rem 0;}
 .faq-item:first-child{border-top:1px solid rgba(220,160,50,.07);}
-.faq-q{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:.05em;color:rgba(255,240,200,.72);margin-bottom:.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+.faq-q{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:.05em;color:rgba(255,240,200,.78);margin-bottom:.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
 .faq-q::after{content:'+';font-size:1rem;color:rgba(220,160,50,.4);flex-shrink:0;}
 .faq-item.open .faq-q::after{content:'−';}
-.faq-a{font-size:1rem;color:rgba(220,200,160,.52);display:none;padding-top:.2rem;}
+.faq-a{font-size:1.06rem;color:rgba(226,210,180,.76);display:none;padding-top:.2rem;}
 .faq-item.open .faq-a{display:block;}
 
-/* ad */
+/* ── CROSSLINKS / SOURCE ── */
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:1rem 0 1.5rem;}
+.crosslink-cal{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border:1px solid rgba(220,160,50,.12);border-radius:3px;text-decoration:none;transition:border-color .2s;background:rgba(220,160,50,.02);}
+.crosslink-cal:hover{border-color:rgba(220,160,50,.3);}
+.cl-label{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
+.cl-title{font-size:1.1rem;font-style:italic;color:rgba(255,240,200,.78);margin-top:.2rem;}
+.cl-arrow{color:rgba(220,160,50,.4);font-size:1.2rem;}
+.source{font-size:1rem;font-style:italic;color:rgba(195,180,145,.55);margin-top:1rem;}
+.source a{color:rgba(220,160,50,.6);text-decoration:none;border-bottom:1px solid rgba(220,160,50,.2);}
 .ad-slot{width:100%;max-width:728px;margin:2.5rem auto;text-align:center;}
 
-/* sister */
+/* ── SISTER BOX ── */
 .sister-box{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:2.5rem;padding:1.2rem 1.5rem;border:1px solid rgba(196,196,255,.1);border-radius:3px;background:rgba(196,196,255,.02);text-decoration:none;transition:border-color .2s,background .2s;}
 .sister-box:hover{border-color:rgba(196,196,255,.22);background:rgba(196,196,255,.05);}
 .sister-eyebrow{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(196,196,255,.3);margin-bottom:.4rem;}
 .sister-name{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.06em;color:rgba(220,216,255,.65);}
 
-/* crosslinks */
-.crosslinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:2rem 0;}
-.crosslink{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;border:1px solid rgba(220,160,50,.1);border-radius:3px;text-decoration:none;transition:border-color .2s;}
-.crosslink:hover{border-color:rgba(220,160,50,.28);}
-.cl-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);}
-.cl-title{font-size:1rem;font-style:italic;color:rgba(255,240,200,.6);margin-top:.2rem;}
-.cl-arrow{color:rgba(220,160,50,.4);font-size:1.1rem;}
+/* ── FOOTER ── */
 footer{margin-top:4rem;width:100vw;margin-left:50%;transform:translateX(-50%);text-align:center;padding:1.2rem 1rem 2rem;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.19em;color:#c4c4d8;opacity:.19;text-transform:uppercase;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196,240,.13);}
 
-@media(max-width:480px){
-  .specs-grid{grid-template-columns:1fr 1fr;}
-  .comp-table th:nth-child(3),.comp-table td:nth-child(3){display:none;}
-  .bar-name{min-width:80px;}
-}
-
-/* ── mobile hamburger ── */
+/* ── MOBILE HAMBURGER ── */
 .menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.45rem .35rem;flex-shrink:0;}
 .menu-btn span{display:block;width:19px;height:1.5px;background:rgba(220,160,50,.65);border-radius:1px;transition:all .25s;}
 #nav-backdrop{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,5,.55);}
@@ -251,28 +247,23 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
 .drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}
 @media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}}
 
-/* ── readability patch: +2px body text, higher contrast ── */
-body{color:rgba(236,228,210,.88);}
-p{font-size:1.13rem;color:rgba(230,218,195,.84);}
-footer,footer p,footer a{font-size:.62rem !important;letter-spacing:.19em !important;line-height:1.7 !important;text-transform:uppercase !important;}
-td{font-size:1.07rem;color:rgba(226,212,182,.78);}
-.faq-a{font-size:1.13rem !important;color:rgba(226,210,180,.76) !important;}
-.disclaimer{font-size:1.04rem;color:rgba(195,180,145,.62);}
-.path-banner-text{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cl-title{font-size:1.1rem;color:rgba(255,240,200,.76);}
-.source{font-size:1.0rem;color:rgba(195,180,145,.58);}
-.subtitle{font-size:1.1rem;}
-.detail-box p{font-size:1.1rem;color:rgba(226,206,160,.76);}
-.cov-pct{font-size:.97rem;color:rgba(226,206,170,.66);}
-#intro-in,#intro-out,.intro-text{font-size:1.13rem;}
-.row-name{color:rgba(255,248,220,.80);}
-.row-date{color:rgba(220,160,50,.65);}
-.tip-box{font-size:1.07rem;color:rgba(220,200,150,.75);}
+/* ── RESPONSIVE ── */
+@media(max-width:520px){
+  .ec-card-grid{grid-template-columns:1fr;}
+  .ec-card-grid2{grid-template-columns:1fr;}
+  .nh-grid{gap:1.1rem;}
+  .bar-name{min-width:80px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+}
+:focus-visible{outline:2px solid rgba(220,180,100,.7);outline-offset:2px;border-radius:2px;}
 </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RJ7B4VQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav class="topbar">
   <a class="site-name" href="/">NEXT ECLIPSE</a>
@@ -290,7 +281,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
 <div id="nav-backdrop"></div>
 <div id="nav-drawer">
-  <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
+  <div class="drawer-header"><button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button></div>
   <nav class="drawer-nav">
     <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
     <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
@@ -303,33 +294,52 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 <div class="wrap">
 
   <p class="eyebrow" id="eyebrow">Eclipse Solar Total · Egipto &amp; Marruecos</p>
-  <h1 id="h1">El Eclipse Más Largo<br>del Siglo XXI</h1>
+  <h1 id="h1">El Eclipse Más Largo del Siglo XXI</h1>
   <p class="subtitle" id="subtitle">2 de agosto de 2027 · Luxor · Marruecos · Mar Rojo</p>
-  <div class="badge-record" id="badge">☀️ 6 min 23 s — El Más Largo del Siglo</div>
 
-  <p class="countdown-label" id="cd-label">Cuenta atrás</p>
-  <div class="countdown-box">
-    <div class="cunit"><div class="cnum" id="cd-d">—</div><div class="clabel" id="cd-dl">días</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-h">—</div><div class="clabel" id="cd-hl">horas</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-m">—</div><div class="clabel" id="cd-ml">min</div></div>
-    <div class="csep">·</div>
-    <div class="cunit"><div class="cnum" id="cd-s">—</div><div class="clabel" id="cd-sl">seg</div></div>
-  </div>
-
-  <div class="specs-grid">
-    <div class="spec-card highlight"><div class="spec-label" id="sl-1">Duración máxima</div><div class="spec-value" id="sv-1">6 min 23 seg</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-2">Pico (UTC)</div><div class="spec-value">~09:06 UTC</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-3">Ubicación pico</div><div class="spec-value" id="sv-3">Luxor, Egipto</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-4">Tipo</div><div class="spec-value" id="sv-4">Solar Total</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-5">España</div><div class="spec-value" id="sv-5">Parcial ~45–55%</div></div>
-    <div class="spec-card"><div class="spec-label" id="sl-6">Próximo eclipse largo</div><div class="spec-value" id="sv-6">2114 · 87 años</div></div>
-  </div>
+  <!-- ── HERO COUNTDOWN ── -->
+  <section class="next-hero" aria-labelledby="nh-title">
+    <div class="nh-grid">
+      <div class="nh-diagram" aria-hidden="true">
+        <!-- Corona SVG: totality glyph -->
+        <svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Corona solar de eclipse total">
+          <defs>
+            <radialGradient id="coronaG" cx="50%" cy="50%" r="50%">
+              <stop offset="42%" stop-color="rgba(220,160,50,0)"/>
+              <stop offset="50%" stop-color="rgba(255,228,150,.85)"/>
+              <stop offset="62%" stop-color="rgba(220,160,50,.25)"/>
+              <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+            </radialGradient>
+          </defs>
+          <circle cx="60" cy="60" r="56" fill="url(#coronaG)"/>
+          <circle cx="60" cy="60" r="27" fill="#030304" stroke="rgba(255,236,180,.6)" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="nh-body">
+        <p class="nh-eyebrow" id="nh-eyebrow">Cuenta atrás</p>
+        <p class="nh-title" id="nh-title">Eclipse Total · Luxor 2027</p>
+        <p class="nh-date" id="nh-date">2 ago 2027 · ~09:06 UTC</p>
+        <div class="countdown-box" aria-live="off">
+          <div class="cunit"><div class="cnum" id="cd-d">—</div><div class="clabel" id="cd-dl">días</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-h">—</div><div class="clabel" id="cd-hl">h</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-m">—</div><div class="clabel" id="cd-ml">min</div></div>
+          <div class="csep">·</div>
+          <div class="cunit"><div class="cnum" id="cd-s">—</div><div class="clabel" id="cd-sl">seg</div></div>
+        </div>
+        <div class="hero-chips">
+          <span class="ec-chip gold" id="chip-dur"><strong>6 min 23 s</strong> totalidad</span>
+          <span class="ec-chip" id="chip-record">El más largo del s. XXI</span>
+          <span class="ec-chip" id="chip-date">2 ago 2027</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <hr>
 
-  <!-- POR QUÉ ESTE ECLIPSE ES EXTRAORDINARIO -->
+  <!-- ── POR QUÉ EXTRAORDINARIO ── -->
   <h2 id="h-why">Por qué este eclipse es extraordinario</h2>
 
   <p id="why-p1">El 2 de agosto de 2027 ocurrirá algo que no ha sucedido en más de un siglo: un eclipse solar total con una duración de <strong>6 minutos y 23 segundos</strong>. Para entender por qué es tan largo, hay que comprender la geometría del sistema solar.</p>
@@ -338,33 +348,61 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <p id="why-p3">Para comparar: el eclipse total de España de agosto de 2026 dura <strong>2 minutos 18 segundos</strong>. El de 2027 en Luxor dura casi <strong>tres veces más</strong>. Con 6 minutos, los observadores tendrán tiempo de ver los anillos de diamante, la corona solar en detalle, las prominencias, y incluso los planetas asomar en el cielo oscurecido del mediodía.</p>
 
-  <div class="tip-box" id="why-tip">La duración media de los eclipses totales es de 2–3 minutos. El de agosto de 2027 es excepcional. El siguiente eclipse de duración comparable no ocurrirá hasta 2114.
+  <div class="tip-box" id="why-tip">La duración media de los eclipses totales es de 2–3 minutos. El de agosto de 2027 es excepcional. El siguiente eclipse de duración comparable no ocurrirá hasta 2114.</div>
+
+  <!-- fact chips row -->
+  <div class="hero-chips" style="margin-bottom:1.5rem;">
+    <span class="ec-chip gold" id="fact-1"><strong>6 min 23 s</strong> Luxor</span>
+    <span class="ec-chip" id="fact-2">Perigeo lunar + afelio solar</span>
+    <span class="ec-chip" id="fact-3">2 ago 2027 · 09:06 UTC</span>
+    <span class="ec-chip" id="fact-4">Próximo comparable: 2114</span>
   </div>
 
   <hr>
 
-  <!-- MEJORES DESTINOS -->
+  <!-- ── MEJORES DESTINOS ── -->
   <h2 id="h-dest">Los mejores destinos de observación</h2>
 
-  <table class="comp-table">
-    <thead>
-      <tr>
-        <th id="ct-h1">Destino</th>
-        <th id="ct-h2">Totalidad</th>
-        <th id="ct-h3">Temperatura</th>
-        <th id="ct-h4">Logística</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="top"><td class="dest" id="ct-d1">Luxor, Egipto ✦</td><td class="dur">6 min 23 seg</td><td>~43°C</td><td id="ct-l1">Vuelos directos · Alojamiento limitado</td></tr>
-      <tr class="top"><td class="dest" id="ct-d2">Aswan, Egipto ✦</td><td class="dur">6 min 20 seg</td><td>~44°C</td><td id="ct-l2">Cerca de Luxor · Abu Simbel cercano</td></tr>
-      <tr><td class="dest" id="ct-d3">Fez, Marruecos</td><td class="dur">~5 min 50 seg</td><td>~35°C</td><td id="ct-l3">Vuelos directos Europa · Buen acceso</td></tr>
-      <tr><td class="dest" id="ct-d4">Agadir, Marruecos</td><td class="dur">~5 min 40 seg</td><td>~30°C</td><td id="ct-l4">Vuelos chárter · Costa atlántica</td></tr>
-    </tbody>
-  </table>
+  <div class="ec-card-grid">
+    <div class="ec-card highlight">
+      <div class="ec-name" id="ct-d1">Luxor, Egipto ✦</div>
+      <div class="ec-vis" id="ct-l1">Vuelos directos · Alojamiento limitado</div>
+      <div class="ec-chips">
+        <span class="ec-chip gold"><strong>6 min 23 s</strong></span>
+        <span class="ec-chip" id="ct-t1">~43°C</span>
+        <span class="ec-chip" id="ct-sky1">&gt;95% cielo despejado</span>
+      </div>
+    </div>
+    <div class="ec-card highlight">
+      <div class="ec-name" id="ct-d2">Aswan, Egipto ✦</div>
+      <div class="ec-vis" id="ct-l2">Cerca de Luxor · Abu Simbel cercano</div>
+      <div class="ec-chips">
+        <span class="ec-chip gold"><strong>6 min 20 s</strong></span>
+        <span class="ec-chip" id="ct-t2">~44°C</span>
+        <span class="ec-chip" id="ct-sky2">&gt;95% cielo despejado</span>
+      </div>
+    </div>
+    <div class="ec-card">
+      <div class="ec-name" id="ct-d3">Fez, Marruecos</div>
+      <div class="ec-vis" id="ct-l3">Vuelos directos Europa · Buen acceso</div>
+      <div class="ec-chips">
+        <span class="ec-chip"><strong>~5 min 50 s</strong></span>
+        <span class="ec-chip" id="ct-t3">~35°C</span>
+      </div>
+    </div>
+    <div class="ec-card">
+      <div class="ec-name" id="ct-d4">Agadir, Marruecos</div>
+      <div class="ec-vis" id="ct-l4">Vuelos chárter · Costa atlántica</div>
+      <div class="ec-chips">
+        <span class="ec-chip"><strong>~5 min 40 s</strong></span>
+        <span class="ec-chip" id="ct-t4">~30°C</span>
+      </div>
+    </div>
+  </div>
 
+  <!-- duration comparison bar -->
   <div class="compare-bar">
-    <div class="bar-label" id="bar-label">Comparativa de duración</div>
+    <div class="bar-label" id="bar-label">Comparativa de duración de totalidad</div>
     <div class="bar-row">
       <div class="bar-name" id="bar-n1">Luxor 2027</div>
       <div class="bar-track"><div class="bar-fill gold" style="width:100%"></div></div>
@@ -389,36 +427,162 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <hr>
 
-  <!-- CAMINO DE TOTALIDAD -->
+  <!-- ── CAMINO DE TOTALIDAD — SVG MAP ── -->
   <h2 id="h-path">El camino de totalidad</h2>
-  <p id="path-intro">La sombra de la Luna entra en la Tierra por el Atlántico al oeste de Marruecos y recorre el norte de África de oeste a este, cruzando el corazón del Sáhara, el Nilo y el Mar Rojo antes de internarse en Arabia y terminar en el océano Índico.</p>
+  <p class="lead" id="path-intro">La sombra de la Luna entra en la Tierra por el Atlántico al oeste de Marruecos y recorre el norte de África de oeste a este, cruzando el corazón del Sáhara, el Nilo y el Mar Rojo antes de internarse en Arabia y terminar en el océano Índico.</p>
 
-  <ul class="path-list">
-    <li><span class="path-dot"></span><span class="path-place" id="pp-1">Agadir, Marruecos</span><span class="path-detail" id="pd-1">~08:48 UTC · Duración ~5 min 40 seg</span><span class="path-tag entry" id="pt-1">entrada</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-2">Casablanca</span><span class="path-detail" id="pd-2">~08:51 UTC · Cerca del borde norte.</span><span class="path-tag center" id="pt-2">totalidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-3">Fez · Meknès</span><span class="path-detail" id="pd-3">~08:53–08:54 UTC · Duración ~5 min 50 seg</span><span class="path-tag center" id="pt-3">✦ óptimo</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-4">Argelia · Sahara</span><span class="path-detail" id="pd-4">El camino cruza el Gran Erg Oriental.</span><span class="path-tag center" id="pt-4">totalidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-5">Trípoli, Libia</span><span class="path-detail" id="pd-5">~09:00 UTC · Borde norte del camino.</span><span class="path-tag center" id="pt-5">totalidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-6">Luxor, Egipto</span><span class="path-detail" id="pd-6">~09:06 UTC · 6 min 23 seg · Máximo global</span><span class="path-tag max" id="pt-6">✦ MÁXIMO</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-7">Aswan · Abu Simbel</span><span class="path-detail" id="pd-7">~09:07 UTC · Karnak y el Nilo en la franja.</span><span class="path-tag max" id="pt-7">✦ máximo</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-8">Arabia Saudí · Yemen</span><span class="path-detail" id="pd-8">La sombra cruza la Península Arábiga.</span><span class="path-tag center" id="pt-8">totalidad</span></li>
-    <li><span class="path-dot"></span><span class="path-place" id="pp-9">Océano Índico</span><span class="path-detail" id="pd-9">El camino termina en el golfo de Bengala.</span><span class="path-tag entry" id="pt-9">salida</span></li>
-  </ul>
+  <div class="map-card">
+    <svg viewBox="0 0 700 260" role="img" aria-label="Mapa del camino de totalidad del eclipse solar total de 2027 sobre el norte de África" style="max-height:260px;">
+      <defs>
+        <linearGradient id="shadowBand" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(220,160,50,.06)"/>
+          <stop offset="20%" stop-color="rgba(220,160,50,.16)"/>
+          <stop offset="50%" stop-color="rgba(255,200,60,.18)"/>
+          <stop offset="80%" stop-color="rgba(220,160,50,.16)"/>
+          <stop offset="100%" stop-color="rgba(220,160,50,.04)"/>
+        </linearGradient>
+      </defs>
+      <!-- dark background -->
+      <rect width="700" height="260" fill="rgba(8,12,18,.65)" rx="4"/>
+      <!-- abstract Africa / Med region -->
+      <path d="M0,80 C50,70 130,65 220,75 C290,82 360,78 440,85 C500,90 560,100 620,110 C660,116 695,120 700,122 L700,260 L0,260 Z" fill="rgba(28,38,52,.75)" stroke="rgba(220,160,50,.1)" stroke-width=".8"/>
+      <!-- Mediterranean suggestion -->
+      <ellipse cx="350" cy="62" rx="300" ry="28" fill="rgba(20,32,55,.5)" opacity=".8"/>
+      <!-- Totality band -->
+      <path d="M20,110 C80,98 160,90 240,100 C310,108 380,118 460,122 C530,126 600,128 690,124" fill="none" stroke="rgba(220,160,50,.35)" stroke-width="38" stroke-linecap="round" opacity=".5"/>
+      <path d="M20,110 C80,98 160,90 240,100 C310,108 380,118 460,122 C530,126 600,128 690,124" fill="none" stroke="rgba(255,220,80,.85)" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- City dots -->
+      <!-- Agadir -->
+      <circle cx="55" cy="105" r="4" fill="rgba(220,160,50,.65)" stroke="rgba(255,200,100,.4)" stroke-width="1.2"/>
+      <text x="55" y="94" text-anchor="middle" font-family="Cinzel,serif" font-size="8" fill="rgba(220,180,100,.7)" letter-spacing="1">Agadir</text>
+      <!-- Fez -->
+      <circle cx="130" cy="93" r="4" fill="rgba(220,160,50,.65)" stroke="rgba(255,200,100,.4)" stroke-width="1.2"/>
+      <text x="130" y="82" text-anchor="middle" font-family="Cinzel,serif" font-size="8" fill="rgba(220,180,100,.7)" letter-spacing="1">Fez</text>
+      <!-- Luxor (max) -->
+      <circle cx="460" cy="122" r="6" fill="rgba(255,200,50,.9)" stroke="rgba(255,230,130,.6)" stroke-width="2"/>
+      <text x="460" y="110" text-anchor="middle" font-family="Cinzel,serif" font-size="9" fill="rgba(255,230,140,.95)" letter-spacing="1">Luxor</text>
+      <text x="460" y="144" text-anchor="middle" font-family="Cinzel,serif" font-size="8" fill="rgba(255,210,80,.7)" letter-spacing="1">✦ MÁXIMO</text>
+      <!-- Aswan -->
+      <circle cx="500" cy="126" r="5" fill="rgba(255,195,35,.78)" stroke="rgba(255,220,100,.5)" stroke-width="1.5"/>
+      <text x="500" y="115" text-anchor="middle" font-family="Cinzel,serif" font-size="8" fill="rgba(255,220,120,.82)" letter-spacing="1">Aswan</text>
+      <!-- Legend -->
+      <rect x="18" y="228" width="18" height="3" fill="rgba(255,220,80,.8)" rx="1"/>
+      <text x="42" y="232" font-family="Cinzel,serif" font-size="8" fill="rgba(220,180,100,.6)" letter-spacing="1">Camino de totalidad</text>
+      <circle cx="24" cy="246" r="3" fill="rgba(255,195,35,.85)"/>
+      <text x="42" y="249" font-family="Cinzel,serif" font-size="8" fill="rgba(220,180,100,.6)" letter-spacing="1">Ciudad en totalidad · ✦ Máximo global</text>
+    </svg>
+    <p class="geo-cap" id="map-cap">La sombra de la Luna barre el norte de África de oeste a este: desde Agadir y Fez en Marruecos hasta Luxor y Aswan en Egipto, donde alcanza su máximo de 6 min 23 s.</p>
+  </div>
+
+  <!-- path list -->
+  <div class="ec-card" style="margin-bottom:1rem;">
+    <div style="display:flex;flex-direction:column;gap:.1rem;">
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(220,160,50,.35)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:180px" id="pp-1">Agadir, Marruecos</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-1">~08:48 UTC · Duración ~5 min 40 seg</span>
+        <span class="ec-chip" id="pt-1" style="margin-left:auto;white-space:nowrap">entrada</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(220,160,50,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:180px" id="pp-2">Casablanca</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-2">~08:51 UTC · Cerca del borde norte.</span>
+        <span class="ec-chip" id="pt-2" style="margin-left:auto;white-space:nowrap">totalidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,195,35,.7)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,248,220,.88);min-width:180px" id="pp-3">Fez · Meknès</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-3">~08:53–08:54 UTC · Duración ~5 min 50 seg</span>
+        <span class="ec-chip" id="pt-3" style="margin-left:auto;white-space:nowrap;border-color:rgba(255,195,35,.3);color:rgba(255,210,80,.85)">✦ óptimo</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(220,160,50,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:180px" id="pp-4">Argelia · Sahara</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-4">El camino cruza el Gran Erg Oriental.</span>
+        <span class="ec-chip" id="pt-4" style="margin-left:auto;white-space:nowrap">totalidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(220,160,50,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:180px" id="pp-5">Trípoli, Libia</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-5">~09:00 UTC · Borde norte del camino.</span>
+        <span class="ec-chip" id="pt-5" style="margin-left:auto;white-space:nowrap">totalidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,200,50,.95)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,248,220,.95);min-width:180px" id="pp-6">Luxor, Egipto</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-6">~09:06 UTC · 6 min 23 seg · Máximo global</span>
+        <span class="ec-chip" id="pt-6" style="margin-left:auto;white-space:nowrap;border-color:rgba(255,200,50,.4);color:rgba(255,220,80,.95)">✦ MÁXIMO</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(255,200,50,.85)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,248,220,.88);min-width:180px" id="pp-7">Aswan · Abu Simbel</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-7">~09:07 UTC · Karnak y el Nilo en la franja.</span>
+        <span class="ec-chip" id="pt-7" style="margin-left:auto;white-space:nowrap;border-color:rgba(255,195,35,.3);color:rgba(255,210,80,.85)">✦ máximo</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;border-bottom:1px solid rgba(220,160,50,.06);">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(220,160,50,.5)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(255,240,200,.78);min-width:180px" id="pp-8">Arabia Saudí · Yemen</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.5);font-style:italic" id="pd-8">La sombra cruza la Península Arábiga.</span>
+        <span class="ec-chip" id="pt-8" style="margin-left:auto;white-space:nowrap">totalidad</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:.75rem;padding:.5rem 0;">
+        <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" style="flex-shrink:0;margin-top:.3rem"><circle cx="4" cy="4" r="4" fill="rgba(180,140,60,.3)"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;color:rgba(200,180,140,.5);min-width:180px" id="pp-9">Océano Índico</span>
+        <span style="font-size:.98rem;color:rgba(220,200,160,.4);font-style:italic" id="pd-9">El camino termina en el golfo de Bengala.</span>
+        <span class="ec-chip" id="pt-9" style="margin-left:auto;white-space:nowrap;opacity:.6">salida</span>
+      </div>
+    </div>
+  </div>
 
   <hr>
 
-  <!-- GUÍA PRÁCTICA DEL VIAJERO -->
+  <!-- ── GUÍA PRÁCTICA ── -->
   <h2 id="h-guide">Guía práctica del viajero</h2>
 
-  <ul class="prepare-list">
-    <li id="gd-1"><strong>Reserva ahora</strong> — Los hoteles en Luxor y Aswan se agotarán 18–24 meses antes. Si tienes este libro en mente, reserva antes de que acabe 2025. Los paquetes de turismo astronómico aparecerán pronto.</li>
-    <li id="gd-2"><strong>Vuelos directos a Luxor</strong> — Existen vuelos directos desde Madrid, Barcelona y otras capitales europeas. También desde Ammán y El Cairo. Compara con conectar en El Cairo (~1h).</li>
-    <li id="gd-3"><strong>Marruecos como alternativa accesible</strong> — Si el calor extremo de Egipto te preocupa, Fez y Agadir ofrecen vuelos directos baratos y temperaturas más llevaderas (~35°C). La diferencia de totalidad es de unos 30 segundos — un compromiso muy razonable.</li>
-    <li id="gd-4"><strong>Posicionamiento en Luxor</strong> — El templo de Karnak, el de Luxor y la orilla occidental del Nilo están todos en el camino central. Llegá la noche anterior. El eclipse ocurre a las 11:06 hora local — plena mañana.</li>
-    <li id="gd-5"><strong>Equipo básico</strong> — Gafas de eclipse ISO 12312-2, filtro solar para cámara, trípode, ropa clara de algodón, protección solar SPF 50+, agua abundante (mínimo 3 litros), sombrero. En agosto en Luxor el calor puede ser peligroso sin preparación.</li>
-    <li id="gd-6"><strong>Planifica el día completo</strong> — El eclipse parcial comienza ~1h antes de la totalidad. El día completo: visitar Karnak o la orilla occidental por la mañana temprano, posicionarte antes del inicio parcial (~08:00 local), disfrutar la totalidad (~11:06 local), recuperarte del calor por la tarde.</li>
-    <li id="gd-7"><strong>Seguro médico y sanidad</strong> — Vacúnate con antelación si viajas a Egipto (hepatitis A/B, tifoidea). El calor extremo es un riesgo real: la hipertermia es peligrosa. Ten seguro médico internacional.</li>
-  </ul>
+  <div class="step-cards">
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" rx="2" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><line x1="3" y1="8" x2="19" y2="8" stroke="rgba(255,195,35,.3)" stroke-width="1"/><line x1="8" y1="3" x2="8" y2="8" stroke="rgba(255,195,35,.25)" stroke-width="1"/><line x1="14" y1="3" x2="14" y2="8" stroke="rgba(255,195,35,.25)" stroke-width="1"/></svg>
+      </div>
+      <div class="step-text" id="gd-1"><strong>Reserva ahora</strong> — Los hoteles en Luxor y Aswan se agotarán 18–24 meses antes. Reserva antes de que acabe 2025. Los paquetes de turismo astronómico aparecerán pronto.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 3 L19 19 L3 19 Z" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5" stroke-linejoin="round"/><line x1="11" y1="9" x2="11" y2="14" stroke="rgba(255,195,35,.4)" stroke-width="1.2"/><circle cx="11" cy="16.5" r=".9" fill="rgba(255,195,35,.6)"/></svg>
+      </div>
+      <div class="step-text" id="gd-2"><strong>Vuelos directos a Luxor</strong> — Existen vuelos directos desde Madrid, Barcelona y otras capitales europeas. También desde Ammán y El Cairo. Compara con conectar en El Cairo (~1h).</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><path d="M6 11 Q9 7 11 11 Q13 15 16 11" fill="none" stroke="rgba(255,195,35,.35)" stroke-width="1.2"/></svg>
+      </div>
+      <div class="step-text" id="gd-3"><strong>Marruecos como alternativa</strong> — Si el calor de Egipto te preocupa, Fez y Agadir ofrecen vuelos directos baratos y temperaturas más llevaderas (~35°C). La diferencia de totalidad es de unos 30 segundos — un compromiso razonable.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="8" r="4" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><path d="M5 19 Q5 14 11 14 Q17 14 17 19" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/></svg>
+      </div>
+      <div class="step-text" id="gd-4"><strong>Posicionamiento en Luxor</strong> — El templo de Karnak, el de Luxor y la orilla occidental del Nilo están todos en el camino central. Llega la noche anterior. El eclipse ocurre a las 11:06 hora local — plena mañana.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><circle cx="11" cy="11" r="5" fill="rgba(255,195,35,.12)" stroke="rgba(255,195,35,.5)" stroke-width="1"/></svg>
+      </div>
+      <div class="step-text" id="gd-5"><strong>Equipo básico</strong> — Gafas de eclipse ISO 12312-2, filtro solar para cámara, trípode, ropa clara de algodón, protección solar SPF 50+, agua abundante (mínimo 3 litros), sombrero. El calor puede ser peligroso sin preparación.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><rect x="2" y="4" width="18" height="14" rx="2" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><line x1="11" y1="4" x2="11" y2="18" stroke="rgba(255,195,35,.25)" stroke-width="1"/><line x1="2" y1="11" x2="20" y2="11" stroke="rgba(255,195,35,.25)" stroke-width="1"/></svg>
+      </div>
+      <div class="step-text" id="gd-6"><strong>Planifica el día completo</strong> — El eclipse parcial comienza ~1h antes de la totalidad. Visitar Karnak de madrugada, posicionarte antes del inicio parcial (~08:00 local), disfrutar la totalidad (~11:06 local), recuperarte del calor por la tarde.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 3 Q18 7 18 14 A7 7 0 0 1 4 14 Q4 7 11 3Z" fill="none" stroke="rgba(255,195,35,.4)" stroke-width="1.5"/><line x1="11" y1="8" x2="11" y2="13" stroke="rgba(255,195,35,.4)" stroke-width="1.2"/><circle cx="11" cy="15" r=".9" fill="rgba(255,195,35,.6)"/></svg>
+      </div>
+      <div class="step-text" id="gd-7"><strong>Seguro médico y sanidad</strong> — Vacúnate con antelación si viajas a Egipto (hepatitis A/B, tifoidea). El calor extremo es un riesgo real: la hipertermia es peligrosa. Ten seguro médico internacional.</div>
+    </div>
+  </div>
 
   <div class="ad-slot">
     <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-6498215334315959" data-ad-slot="6148807658"></ins>
@@ -426,23 +590,39 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <hr>
 
-  <!-- COMPARATIVA ESPAÑA VS EGIPTO -->
+  <!-- ── ESPAÑA 2026 VS EGIPTO 2027 ── -->
   <h2 id="h-compare">España 2026 vs Egipto 2027 — ¿cuál elegir?</h2>
 
   <p id="compare-intro">Si tienes la suerte de poder elegir, estas son las diferencias clave:</p>
 
-  <ul class="prepare-list">
-    <li id="cmp-1"><strong>España 2026</strong> — 2 min 18 seg de totalidad · Temperaturas veraniegas agradables (~28°C en Salamanca) · Sin viaje internacional · Destino familiar · Primera totalidad española en 120 años. Ideal para quien nunca ha visto un eclipse total.</li>
-    <li id="cmp-2"><strong>Egipto 2027</strong> — 6 min 23 seg de totalidad · Calor extremo (43°C) · Viaje internacional necesario · Reservar con mucha antelación · Escenario arqueológico incomparable. Para cazadores de eclipses avanzados y viajeros aventureros.</li>
-    <li id="cmp-3"><strong>La recomendación</strong> — Si puedes, ve a los dos. Son experiencias totalmente diferentes. El de España de 2026 es extraordinariamente accesible. El de Egipto 2027 es irrepetible en intensidad y duración.</li>
-  </ul>
-
-  <div class="tip-box" id="compare-tip">Con 6 minutos completos de oscuridad, los observadores en Luxor verán la corona solar en detalle, distinguirán los planetas Mercurio y Venus asomar en el cielo ennegrecido, y escucharán a los animales reaccionar al eclipse como si fuera anochecer. Es una experiencia que no se repite en toda una vida.
+  <div class="ec-card-grid2">
+    <div class="ec-card">
+      <div class="ec-name" id="cmp-name-1">España 2026</div>
+      <div class="ec-chips" style="margin-top:.5rem;">
+        <span class="ec-chip"><strong>2 min 18 s</strong></span>
+        <span class="ec-chip" id="cmp-chip-1a">~28°C Salamanca</span>
+        <span class="ec-chip" id="cmp-chip-1b">Sin viaje intl.</span>
+        <span class="ec-chip" id="cmp-chip-1c">1ª totalidad ES en 120 años</span>
+      </div>
+      <p style="font-size:1rem;color:rgba(220,200,160,.6);margin-top:.7rem;" id="cmp-1-desc">Ideal para quien nunca ha visto un eclipse total. Extraordinariamente accesible.</p>
+    </div>
+    <div class="ec-card highlight">
+      <div class="ec-name" id="cmp-name-2">Egipto 2027</div>
+      <div class="ec-chips" style="margin-top:.5rem;">
+        <span class="ec-chip gold"><strong>6 min 23 s</strong></span>
+        <span class="ec-chip" id="cmp-chip-2a">~43°C Luxor</span>
+        <span class="ec-chip" id="cmp-chip-2b">Viaje intl.</span>
+        <span class="ec-chip" id="cmp-chip-2c">Escenario faraónico</span>
+      </div>
+      <p style="font-size:1rem;color:rgba(220,200,160,.6);margin-top:.7rem;" id="cmp-2-desc">Para cazadores de eclipses avanzados. Irrepetible en intensidad y duración.</p>
+    </div>
   </div>
+
+  <div class="tip-box" id="compare-tip">Con 6 minutos completos de oscuridad, los observadores en Luxor verán la corona solar en detalle, distinguirán los planetas Mercurio y Venus asomar en el cielo ennegrecido, y escucharán a los animales reaccionar al eclipse como si fuera anochecer. Es una experiencia que no se repite en toda una vida.</div>
 
   <hr>
 
-  <!-- FAQ -->
+  <!-- ── FAQ ── -->
   <h2 id="h-faq">Preguntas frecuentes</h2>
   <div id="faq-list">
     <div class="faq-item open">
@@ -451,7 +631,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
     </div>
     <div class="faq-item">
       <div class="faq-q" id="fq-2">¿Luxor o Marruecos — cuál es mejor para verlo?</div>
-      <div class="faq-a" id="fa-2"><strong>Luxor</strong> ofrece la experiencia definitiva: la máxima duración posible (6 min 23 s), más del 95% de probabilidad de cielo despejado, y el eclipse sobre los templos faraónicos del Nilo. La desventaja es el calor extremo (~43°C) y la necesidad de reservar con mucha antelación. <strong>Marruecos</strong> (Fez, Agadir) es más accesible desde Europa, con temperatura más llevaderas (~30–35°C) y buena duración (~5 min 40 – 5 min 50 seg). Para la mayoría de europeos, Marruecos es el equilibrio perfecto entre accesibilidad y espectáculo.</div>
+      <div class="faq-a" id="fa-2"><strong>Luxor</strong> ofrece la experiencia definitiva: la máxima duración posible (6 min 23 s), más del 95% de probabilidad de cielo despejado, y el eclipse sobre los templos faraónicos del Nilo. La desventaja es el calor extremo (~43°C) y la necesidad de reservar con mucha antelación. <strong>Marruecos</strong> (Fez, Agadir) es más accesible desde Europa, con temperaturas más llevaderas (~30–35°C) y buena duración (~5 min 40 – 5 min 50 seg). Para la mayoría de europeos, Marruecos es el equilibrio perfecto entre accesibilidad y espectáculo.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" id="fq-3">¿Cuándo debería reservar el viaje?</div>
@@ -469,16 +649,20 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 
   <hr>
 
-  <p id="source-note" style="font-size:.85rem;color:rgba(220,160,50,.28);margin-top:1.5rem;">Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(220,160,50,.15);text-decoration:none;">NASA Goddard Space Flight Center</a>. Los tiempos son aproximados — consulta las efemérides exactas para tu ubicación.</p>
+  <p class="source" id="source-note">Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA Goddard Space Flight Center</a>. Los tiempos son aproximados — consulta las efemérides exactas para tu ubicación.</p>
 
-  <h2 id="h-more" style="font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.42);margin:2.5rem 0 .9rem;">Más eclipses</h2>
+  <h2 id="h-more">Más eclipses</h2>
   <div class="crosslinks">
-    <a class="crosslink" href="/eclipse-solar-espana-2026.html">
-      <div><span class="cl-label" id="cl1-label">Eclipse Total · España</span><div class="cl-title" id="cl1-title">Eclipse Solar Total 2026</div></div>
+    <a class="crosslink-cal" href="/eclipse-solar-espana-2026.html">
+      <div><div class="cl-label" id="cl1-label">Eclipse Total · España</div><div class="cl-title" id="cl1-title">Eclipse Solar Total 2026</div></div>
       <span class="cl-arrow">→</span>
     </a>
-    <a class="crosslink" href="/calendar.html">
-      <div><span class="cl-label" id="cl2-label">Todos los eclipses</span><div class="cl-title" id="cl2-title">Calendario 2026–2028</div></div>
+    <a class="crosslink-cal" href="/upcoming.html">
+      <div><div class="cl-label" id="cl2-label">Próximos eclipses</div><div class="cl-title" id="cl2-title">Línea de tiempo 2026–2028</div></div>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a class="crosslink-cal" href="/how-to-watch.html">
+      <div><div class="cl-label" id="cl3-label">Seguridad</div><div class="cl-title" id="cl3-title">Cómo observar un eclipse</div></div>
       <span class="cl-arrow">→</span>
     </a>
   </div>
@@ -488,7 +672,7 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
       <p class="sister-eyebrow" id="sister-eyebrow">También sigue</p>
       <p class="sister-name" id="sister-name">Próxima Luna Llena →</p>
     </div>
-    <span style="font-size:1.8rem;opacity:.45;line-height:1;">🌕</span>
+    <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="opacity:.45"><circle cx="16" cy="16" r="14" fill="rgba(200,196,180,.55)"/><path d="M16 2 a14 14 0 0 0 0 28 a9 9 0 0 1 0 -28" fill="rgba(20,20,28,.6)"/></svg>
   </a>
 
   <footer>
@@ -498,89 +682,69 @@ td{font-size:1.07rem;color:rgba(226,212,182,.78);}
 </div><!-- /wrap -->
 
 <script>
-// === COUNTDOWN ===
-const TARGET = new Date('2027-08-02T09:06:00Z');
+/* ── COUNTDOWN ── */
+const TARGET_EGYPT = new Date('2027-08-02T10:07:00Z');
 function tick(){
-  const now = new Date();
-  let diff = TARGET - now;
-  if(diff < 0){
-    document.getElementById('cd-d').textContent='0';
-    document.getElementById('cd-h').textContent='00';
-    document.getElementById('cd-m').textContent='00';
-    document.getElementById('cd-s').textContent='00';
-    return;
-  }
-  const d = Math.floor(diff/864e5);
-  diff -= d*864e5;
-  const h = Math.floor(diff/36e5);
-  diff -= h*36e5;
-  const m = Math.floor(diff/6e4);
-  diff -= m*6e4;
-  const s = Math.floor(diff/1e3);
+  const now=new Date();
+  let diff=TARGET_EGYPT-now;
+  if(diff<0)diff=0;
+  const d=Math.floor(diff/864e5);diff-=d*864e5;
+  const h=Math.floor(diff/36e5);diff-=h*36e5;
+  const m=Math.floor(diff/6e4);diff-=m*6e4;
+  const s=Math.floor(diff/1e3);
   document.getElementById('cd-d').textContent=d;
   document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
   document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
   document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
 }
-tick(); setInterval(tick,1000);
+tick();setInterval(tick,1000);
 
-// === LANG ===
-const STRINGS = {
+/* ── i18n ── */
+const STRINGS={
   es:{
-    lang:'es',langBtn:'EN',share:'Compartir',cdLabel:'Cuenta atrás',cdD:'días',cdH:'horas',cdM:'min',cdS:'seg',
+    lang:'es',langBtn:'EN',share:'Compartir',
+    nhEyebrow:'Cuenta atrás',nhTitle:'Eclipse Total · Luxor 2027',nhDate:'2 ago 2027 · ~09:06 UTC',
+    cdDl:'días',cdHl:'h',cdMl:'min',cdSl:'seg',
+    chipDur:'6 min 23 s totalidad',chipRecord:'El más largo del s. XXI',chipDate:'2 ago 2027',
+    eyebrow:'Eclipse Solar Total · Egipto &amp; Marruecos',
+    h1:'El Eclipse Más Largo del Siglo XXI',
+    subtitle:'2 de agosto de 2027 · Luxor · Marruecos · Mar Rojo',
     title:'Eclipse Solar Total 2027 — El Más Largo del Siglo · Next Eclipse',
     desc:'El eclipse solar total del 2 de agosto de 2027 durará 6 minutos 23 segundos sobre Luxor y Marruecos. El más largo del siglo XXI. Guía completa para viajeros.',
-    eyebrow:'Eclipse Solar Total · Egipto &amp; Marruecos',
-    h1:'El Eclipse Más Largo<br>del Siglo XXI',
-    subtitle:'2 de agosto de 2027 · Luxor · Marruecos · Mar Rojo',
-    badge:'☀️ 6 min 23 s — El Más Largo del Siglo',
-    // specs
-    sl1:'Duración máxima',sv1:'6 min 23 seg',
-    sl2:'Pico (UTC)',
-    sl3:'Ubicación pico',sv3:'Luxor, Egipto',
-    sl4:'Tipo',sv4:'Solar Total',
-    sl5:'España',sv5:'Parcial ~45–55%',
-    sl6:'Próximo eclipse largo',sv6:'2114 · 87 años',
-    // why
     hWhy:'Por qué este eclipse es extraordinario',
     whyP1:'El 2 de agosto de 2027 ocurrirá algo que no ha sucedido en más de un siglo: un eclipse solar total con una duración de <strong>6 minutos y 23 segundos</strong>. Para entender por qué es tan largo, hay que comprender la geometría del sistema solar.',
     whyP2:'La duración de un eclipse depende del tamaño aparente de la Luna y del Sol en el cielo. Cuando la Luna está cerca de su <strong>perigeo</strong> (punto más cercano a la Tierra), su disco parece más grande. Cuando el Sol está cerca de su <strong>afelio</strong> (punto más alejado de la Tierra, que ocurre en julio), su disco parece ligeramente más pequeño. En agosto de 2027 se dan ambas condiciones simultáneamente, maximizando el tiempo de cobertura.',
     whyP3:'Para comparar: el eclipse total de España de agosto de 2026 dura <strong>2 minutos 18 segundos</strong>. El de 2027 en Luxor dura casi <strong>tres veces más</strong>. Con 6 minutos, los observadores tendrán tiempo de ver los anillos de diamante, la corona solar en detalle, las prominencias, y incluso los planetas asomar en el cielo oscurecido del mediodía.',
     whyTip:'La duración media de los eclipses totales es de 2–3 minutos. El de agosto de 2027 es excepcional. El siguiente eclipse de duración comparable no ocurrirá hasta 2114.',
-    // destinations
+    fact1:'6 min 23 s Luxor',fact2:'Perigeo lunar + afelio solar',fact3:'2 ago 2027 · 09:06 UTC',fact4:'Próximo comparable: 2114',
     hDest:'Los mejores destinos de observación',
-    ctH1:'Destino',ctH2:'Totalidad',ctH3:'Temperatura',ctH4:'Logística',
     ctD1:'Luxor, Egipto ✦',ctD2:'Aswan, Egipto ✦',ctD3:'Fez, Marruecos',ctD4:'Agadir, Marruecos',
-    ctL1:'Vuelos directos · Alojamiento limitado',
-    ctL2:'Cerca de Luxor · Abu Simbel cercano',
-    ctL3:'Vuelos directos Europa · Buen acceso',
-    ctL4:'Vuelos chárter · Costa atlántica',
-    // compare bar
-    barLabel:'Comparativa de duración',
-    barN1:'Luxor 2027',barN2:'Fez 2027',barN3:'España 2026',barN4:'Media mundial',
-    // path
+    ctL1:'Vuelos directos · Alojamiento limitado',ctL2:'Cerca de Luxor · Abu Simbel cercano',ctL3:'Vuelos directos Europa · Buen acceso',ctL4:'Vuelos chárter · Costa atlántica',
+    ctT1:'~43°C',ctT2:'~44°C',ctT3:'~35°C',ctT4:'~30°C',
+    ctSky1:'&gt;95% cielo despejado',ctSky2:'&gt;95% cielo despejado',
+    barLabel:'Comparativa de duración de totalidad',barN1:'Luxor 2027',barN2:'Fez 2027',barN3:'España 2026',barN4:'Media mundial',
     hPath:'El camino de totalidad',
     pathIntro:'La sombra de la Luna entra en la Tierra por el Atlántico al oeste de Marruecos y recorre el norte de África de oeste a este, cruzando el corazón del Sáhara, el Nilo y el Mar Rojo antes de internarse en Arabia y terminar en el océano Índico.',
     pp1:'Agadir, Marruecos',pp2:'Casablanca',pp3:'Fez · Meknès',pp4:'Argelia · Sahara',pp5:'Trípoli, Libia',pp6:'Luxor, Egipto',pp7:'Aswan · Abu Simbel',pp8:'Arabia Saudí · Yemen',pp9:'Océano Índico',
     pd1:'~08:48 UTC · Duración ~5 min 40 seg',pd2:'~08:51 UTC · Cerca del borde norte.',pd3:'~08:53–08:54 UTC · Duración ~5 min 50 seg',pd4:'El camino cruza el Gran Erg Oriental.',pd5:'~09:00 UTC · Borde norte del camino.',pd6:'~09:06 UTC · 6 min 23 seg · Máximo global',pd7:'~09:07 UTC · Karnak y el Nilo en la franja.',pd8:'La sombra cruza la Península Arábiga.',pd9:'El camino termina en el golfo de Bengala.',
     pt1:'entrada',pt2:'totalidad',pt3:'✦ óptimo',pt4:'totalidad',pt5:'totalidad',pt6:'✦ MÁXIMO',pt7:'✦ máximo',pt8:'totalidad',pt9:'salida',
-    // traveler guide
+    mapCap:'La sombra de la Luna barre el norte de África de oeste a este: desde Agadir y Fez en Marruecos hasta Luxor y Aswan en Egipto, donde alcanza su máximo de 6 min 23 s.',
     hGuide:'Guía práctica del viajero',
-    gd1:'<strong>Reserva ahora</strong> — Los hoteles en Luxor y Aswan se agotarán 18–24 meses antes. Si tienes este viaje en mente, reserva antes de que acabe 2025. Los paquetes de turismo astronómico aparecerán pronto.',
+    gd1:'<strong>Reserva ahora</strong> — Los hoteles en Luxor y Aswan se agotarán 18–24 meses antes. Reserva antes de que acabe 2025. Los paquetes de turismo astronómico aparecerán pronto.',
     gd2:'<strong>Vuelos directos a Luxor</strong> — Existen vuelos directos desde Madrid, Barcelona y otras capitales europeas. También desde Ammán y El Cairo. Compara con conectar en El Cairo (~1h).',
-    gd3:'<strong>Marruecos como alternativa accesible</strong> — Si el calor extremo de Egipto te preocupa, Fez y Agadir ofrecen vuelos directos baratos y temperaturas más llevaderas (~35°C). La diferencia de totalidad es de unos 30 segundos — un compromiso muy razonable.',
+    gd3:'<strong>Marruecos como alternativa</strong> — Si el calor de Egipto te preocupa, Fez y Agadir ofrecen vuelos directos baratos y temperaturas más llevaderas (~35°C). La diferencia de totalidad es de unos 30 segundos — un compromiso razonable.',
     gd4:'<strong>Posicionamiento en Luxor</strong> — El templo de Karnak, el de Luxor y la orilla occidental del Nilo están todos en el camino central. Llega la noche anterior. El eclipse ocurre a las 11:06 hora local — plena mañana.',
-    gd5:'<strong>Equipo básico</strong> — Gafas de eclipse ISO 12312-2, filtro solar para cámara, trípode, ropa clara de algodón, protección solar SPF 50+, agua abundante (mínimo 3 litros), sombrero. En agosto en Luxor el calor puede ser peligroso sin preparación.',
-    gd6:'<strong>Planifica el día completo</strong> — El eclipse parcial comienza ~1h antes de la totalidad. El día completo: visitar Karnak o la orilla occidental por la mañana temprano, posicionarte antes del inicio parcial (~08:00 local), disfrutar la totalidad (~11:06 local), recuperarte del calor por la tarde.',
+    gd5:'<strong>Equipo básico</strong> — Gafas de eclipse ISO 12312-2, filtro solar para cámara, trípode, ropa clara de algodón, protección solar SPF 50+, agua abundante (mínimo 3 litros), sombrero. El calor puede ser peligroso sin preparación.',
+    gd6:'<strong>Planifica el día completo</strong> — El eclipse parcial comienza ~1h antes de la totalidad. Visitar Karnak de madrugada, posicionarte antes del inicio parcial (~08:00 local), disfrutar la totalidad (~11:06 local), recuperarte del calor por la tarde.',
     gd7:'<strong>Seguro médico y sanidad</strong> — Vacúnate con antelación si viajas a Egipto (hepatitis A/B, tifoidea). El calor extremo es un riesgo real: la hipertermia es peligrosa. Ten seguro médico internacional.',
-    // compare ES vs EG
     hCompare:'España 2026 vs Egipto 2027 — ¿cuál elegir?',
     compareIntro:'Si tienes la suerte de poder elegir, estas son las diferencias clave:',
-    cmp1:'<strong>España 2026</strong> — 2 min 18 seg de totalidad · Temperaturas veraniegas agradables (~28°C en Salamanca) · Sin viaje internacional · Destino familiar · Primera totalidad española en 120 años. Ideal para quien nunca ha visto un eclipse total.',
-    cmp2:'<strong>Egipto 2027</strong> — 6 min 23 seg de totalidad · Calor extremo (43°C) · Viaje internacional necesario · Reservar con mucha antelación · Escenario arqueológico incomparable. Para cazadores de eclipses avanzados y viajeros aventureros.',
-    cmp3:'<strong>La recomendación</strong> — Si puedes, ve a los dos. Son experiencias totalmente diferentes. El de España de 2026 es extraordinariamente accesible. El de Egipto 2027 es irrepetible en intensidad y duración.',
+    cmpName1:'España 2026',cmpName2:'Egipto 2027',
+    cmpChip1a:'~28°C Salamanca',cmpChip1b:'Sin viaje intl.',cmpChip1c:'1ª totalidad ES en 120 años',
+    cmpChip2a:'~43°C Luxor',cmpChip2b:'Viaje intl.',cmpChip2c:'Escenario faraónico',
+    cmp1Desc:'Ideal para quien nunca ha visto un eclipse total. Extraordinariamente accesible.',
+    cmp2Desc:'Para cazadores de eclipses avanzados. Irrepetible en intensidad y duración.',
     compareTip:'Con 6 minutos completos de oscuridad, los observadores en Luxor verán la corona solar en detalle, distinguirán los planetas Mercurio y Venus asomar en el cielo ennegrecido, y escucharán a los animales reaccionar al eclipse como si fuera anochecer. Es una experiencia que no se repite en toda una vida.',
-    // FAQ
     hFaq:'Preguntas frecuentes',
     fq1:'¿Por qué dura tanto este eclipse?',
     fa1:'El eclipse del 2 de agosto de 2027 dura 6 minutos y 23 segundos porque coinciden dos factores: la Luna está cerca de su <strong>perigeo</strong> (punto más cercano a la Tierra), lo que hace que su disco parezca más grande de lo normal, y el Sol está cerca de su <strong>afelio</strong> (punto más alejado), haciendo que el disco solar sea ligeramente más pequeño. Esta combinación maximiza el tiempo de cobertura. La geometría perfecta ocurre exactamente sobre Luxor y el Mar Rojo.',
@@ -592,68 +756,57 @@ const STRINGS = {
     fa4:'En Luxor en agosto la temperatura diurna oscila entre <strong>43°C y 47°C</strong>. Es uno de los lugares más calurosos del planeta. A cambio, el cielo está despejado más del 95% del tiempo — prácticamente garantizado. Si eliges Luxor, planifica bien: sal temprano, lleva ropa clara y transpirable, sombrero, protección solar máxima, y mucha agua. Considera alojarte en un hotel con piscina para recuperarte antes y después del eclipse. El riesgo de golpe de calor es real.',
     fq5:'¿Habrá otro eclipse tan largo pronto?',
     fa5:'No en nuestra vida. El eclipse del 2 de agosto de 2027 es el más largo del siglo XXI. El siguiente eclipse de duración comparable no ocurrirá hasta el <strong>5 de junio de 2114</strong> — dentro de 87 años. En la práctica, quien vea el eclipse de 2027 habrá vivido el eclipse más largo de su siglo. No habrá otra oportunidad similar.',
-    // footer / links
-    sourceNote:'Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(220,160,50,.15);text-decoration:none;">NASA Goddard Space Flight Center</a>. Los tiempos son aproximados — consulta las efemérides exactas para tu ubicación.',
+    sourceNote:'Datos basados en los cálculos del <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA Goddard Space Flight Center</a>. Los tiempos son aproximados — consulta las efemérides exactas para tu ubicación.',
     hMore:'Más eclipses',
     cl1Label:'Eclipse Total · España',cl1Title:'Eclipse Solar Total 2026',
-    cl2Label:'Todos los eclipses',cl2Title:'Calendario 2026–2028',
+    cl2Label:'Próximos eclipses',cl2Title:'Línea de tiempo 2026–2028',
+    cl3Label:'Seguridad',cl3Title:'Cómo observar un eclipse',
     sisterEyebrow:'También sigue',sisterName:'Próxima Luna Llena →'
   },
   en:{
-    lang:'en',langBtn:'ES',share:'Share',cdLabel:'Countdown',cdD:'days',cdH:'hours',cdM:'min',cdS:'sec',
-    title:'Total Solar Eclipse 2027 — The Longest of the Century · Next Eclipse',
-    desc:'The total solar eclipse of August 2, 2027 will last 6 minutes 23 seconds over Luxor and Morocco. The longest of the 21st century. Complete travelers’ guide.',
+    lang:'en',langBtn:'ES',share:'Share',
+    nhEyebrow:'Countdown',nhTitle:'Total Eclipse · Luxor 2027',nhDate:'Aug 2 2027 · ~09:06 UTC',
+    cdDl:'days',cdHl:'hrs',cdMl:'min',cdSl:'sec',
+    chipDur:'6 min 23 s totality',chipRecord:'Longest of the 21st c.',chipDate:'Aug 2 2027',
     eyebrow:'Total Solar Eclipse · Egypt &amp; Morocco',
-    h1:'The Longest Eclipse<br>of the 21st Century',
+    h1:'The Longest Eclipse of the 21st Century',
     subtitle:'August 2, 2027 · Luxor · Morocco · Red Sea',
-    badge:'☀️ 6 min 23 s — The Longest of the Century',
-    // specs
-    sl1:'Maximum duration',sv1:'6 min 23 sec',
-    sl2:'Peak (UTC)',
-    sl3:'Peak location',sv3:'Luxor, Egypt',
-    sl4:'Type',sv4:'Total Solar',
-    sl5:'Spain',sv5:'Partial ~45–55%',
-    sl6:'Next long eclipse',sv6:'2114 · 87 years',
-    // why
+    title:'Total Solar Eclipse 2027 — The Longest of the Century · Next Eclipse',
+    desc:'The total solar eclipse of August 2, 2027 will last 6 minutes 23 seconds over Luxor and Morocco. The longest of the 21st century. Complete travelers\' guide.',
     hWhy:'Why this eclipse is extraordinary',
-    whyP1:'On August 2, 2027, something will happen that hasn’t occurred in over a century: a total solar eclipse lasting <strong>6 minutes and 23 seconds</strong>. To understand why it’s so long, you need to grasp the geometry of the solar system.',
+    whyP1:'On August 2, 2027, something will happen that hasn\'t occurred in over a century: a total solar eclipse lasting <strong>6 minutes and 23 seconds</strong>. To understand why it\'s so long, you need to grasp the geometry of the solar system.',
     whyP2:'The duration of an eclipse depends on the apparent size of the Moon and the Sun in the sky. When the Moon is near its <strong>perigee</strong> (its closest point to Earth), its disc looks larger. When the Sun is near its <strong>aphelion</strong> (its farthest point from Earth, which happens in July), its disc looks slightly smaller. In August 2027 both conditions occur simultaneously, maximizing the coverage time.',
     whyP3:'For comparison: the total eclipse over Spain in August 2026 lasts <strong>2 minutes 18 seconds</strong>. The 2027 one in Luxor lasts almost <strong>three times longer</strong>. With 6 minutes, observers will have time to see the diamond rings, the solar corona in detail, the prominences, and even the planets emerging in the darkened midday sky.',
-    whyTip:'The average duration of total eclipses is 2–3 minutes. The August 2027 one is exceptional. The next eclipse of comparable length won’t occur until 2114.',
-    // destinations
+    whyTip:'The average duration of total eclipses is 2–3 minutes. The August 2027 one is exceptional. The next eclipse of comparable length won\'t occur until 2114.',
+    fact1:'6 min 23 s Luxor',fact2:'Lunar perigee + solar aphelion',fact3:'Aug 2 2027 · 09:06 UTC',fact4:'Next comparable: 2114',
     hDest:'The best viewing destinations',
-    ctH1:'Destination',ctH2:'Totality',ctH3:'Temperature',ctH4:'Logistics',
     ctD1:'Luxor, Egypt ✦',ctD2:'Aswan, Egypt ✦',ctD3:'Fez, Morocco',ctD4:'Agadir, Morocco',
-    ctL1:'Direct flights · Limited lodging',
-    ctL2:'Near Luxor · Abu Simbel nearby',
-    ctL3:'Direct flights from Europe · Good access',
-    ctL4:'Charter flights · Atlantic coast',
-    // compare bar
-    barLabel:'Duration comparison',
-    barN1:'Luxor 2027',barN2:'Fez 2027',barN3:'Spain 2026',barN4:'World average',
-    // path
+    ctL1:'Direct flights · Limited lodging',ctL2:'Near Luxor · Abu Simbel nearby',ctL3:'Direct flights from Europe · Good access',ctL4:'Charter flights · Atlantic coast',
+    ctT1:'~43°C',ctT2:'~44°C',ctT3:'~35°C',ctT4:'~30°C',
+    ctSky1:'&gt;95% clear skies',ctSky2:'&gt;95% clear skies',
+    barLabel:'Totality duration comparison',barN1:'Luxor 2027',barN2:'Fez 2027',barN3:'Spain 2026',barN4:'World average',
     hPath:'The path of totality',
-    pathIntro:'The Moon’s shadow enters Earth over the Atlantic west of Morocco and sweeps across North Africa from west to east, crossing the heart of the Sahara, the Nile and the Red Sea before reaching Arabia and ending in the Indian Ocean.',
+    pathIntro:'The Moon\'s shadow enters Earth over the Atlantic west of Morocco and sweeps across North Africa from west to east, crossing the heart of the Sahara, the Nile and the Red Sea before reaching Arabia and ending in the Indian Ocean.',
     pp1:'Agadir, Morocco',pp2:'Casablanca',pp3:'Fez · Meknes',pp4:'Algeria · Sahara',pp5:'Tripoli, Libya',pp6:'Luxor, Egypt',pp7:'Aswan · Abu Simbel',pp8:'Saudi Arabia · Yemen',pp9:'Indian Ocean',
     pd1:'~08:48 UTC · Duration ~5 min 40 sec',pd2:'~08:51 UTC · Near the northern edge.',pd3:'~08:53–08:54 UTC · Duration ~5 min 50 sec',pd4:'The path crosses the Grand Erg Oriental.',pd5:'~09:00 UTC · Northern edge of the path.',pd6:'~09:06 UTC · 6 min 23 sec · Global maximum',pd7:'~09:07 UTC · Karnak and the Nile in the band.',pd8:'The shadow crosses the Arabian Peninsula.',pd9:'The path ends in the Bay of Bengal.',
     pt1:'entry',pt2:'totality',pt3:'✦ optimal',pt4:'totality',pt5:'totality',pt6:'✦ MAXIMUM',pt7:'✦ maximum',pt8:'totality',pt9:'exit',
-    // traveler guide
-    hGuide:'Practical travelers’ guide',
-    gd1:'<strong>Book now</strong> — Hotels in Luxor and Aswan will sell out 18–24 months in advance. If you have this trip in mind, book before the end of 2025. Astronomy-tourism packages will appear soon.',
+    mapCap:'The Moon\'s shadow sweeps North Africa from west to east: from Agadir and Fez in Morocco to Luxor and Aswan in Egypt, where it reaches its maximum of 6 min 23 s.',
+    hGuide:'Practical travelers\' guide',
+    gd1:'<strong>Book now</strong> — Hotels in Luxor and Aswan will sell out 18–24 months in advance. Book before the end of 2025. Astronomy-tourism packages will appear soon.',
     gd2:'<strong>Direct flights to Luxor</strong> — There are direct flights from Madrid, Barcelona and other European capitals. Also from Amman and Cairo. Compare against connecting through Cairo (~1h).',
-    gd3:'<strong>Morocco as an accessible alternative</strong> — If Egypt’s extreme heat worries you, Fez and Agadir offer cheap direct flights and more bearable temperatures (~35°C). The totality difference is about 30 seconds — a very reasonable trade-off.',
+    gd3:'<strong>Morocco as an accessible alternative</strong> — If Egypt\'s extreme heat worries you, Fez and Agadir offer cheap direct flights and more bearable temperatures (~35°C). The totality difference is about 30 seconds — a very reasonable trade-off.',
     gd4:'<strong>Positioning in Luxor</strong> — The Temple of Karnak, the Luxor Temple and the west bank of the Nile are all on the central path. Arrive the night before. The eclipse happens at 11:06 local time — late morning.',
-    gd5:'<strong>Essential gear</strong> — ISO 12312-2 eclipse glasses, a solar filter for your camera, a tripod, light cotton clothing, SPF 50+ sun protection, plenty of water (at least 3 liters), a hat. In August in Luxor the heat can be dangerous without preparation.',
-    gd6:'<strong>Plan the whole day</strong> — The partial eclipse begins ~1h before totality. The full day: visit Karnak or the west bank early in the morning, get into position before the partial start (~08:00 local), enjoy totality (~11:06 local), recover from the heat in the afternoon.',
+    gd5:'<strong>Essential gear</strong> — ISO 12312-2 eclipse glasses, a solar filter for your camera, a tripod, light cotton clothing, SPF 50+ sun protection, plenty of water (at least 3 liters), a hat. The heat can be dangerous without preparation.',
+    gd6:'<strong>Plan the whole day</strong> — The partial eclipse begins ~1h before totality. Visit Karnak early in the morning, get into position before the partial start (~08:00 local), enjoy totality (~11:06 local), recover from the heat in the afternoon.',
     gd7:'<strong>Health insurance and care</strong> — Get vaccinated in advance if you travel to Egypt (hepatitis A/B, typhoid). Extreme heat is a real risk: hyperthermia is dangerous. Carry international medical insurance.',
-    // compare ES vs EG
     hCompare:'Spain 2026 vs Egypt 2027 — which to choose?',
-    compareIntro:'If you’re lucky enough to be able to choose, these are the key differences:',
-    cmp1:'<strong>Spain 2026</strong> — 2 min 18 sec of totality · Pleasant summer temperatures (~28°C in Salamanca) · No international travel · Family-friendly destination · First Spanish totality in 120 years. Ideal for anyone who has never seen a total eclipse.',
-    cmp2:'<strong>Egypt 2027</strong> — 6 min 23 sec of totality · Extreme heat (43°C) · International travel required · Book well in advance · Unmatched archaeological setting. For advanced eclipse chasers and adventurous travelers.',
-    cmp3:'<strong>The recommendation</strong> — If you can, go to both. They are completely different experiences. Spain 2026 is remarkably accessible. Egypt 2027 is unrepeatable in intensity and duration.',
+    compareIntro:'If you\'re lucky enough to be able to choose, these are the key differences:',
+    cmpName1:'Spain 2026',cmpName2:'Egypt 2027',
+    cmpChip1a:'~28°C Salamanca',cmpChip1b:'No intl. travel',cmpChip1c:'1st Spanish totality in 120 yrs',
+    cmpChip2a:'~43°C Luxor',cmpChip2b:'Intl. travel req.',cmpChip2c:'Pharaonic setting',
+    cmp1Desc:'Ideal for anyone who has never seen a total eclipse. Remarkably accessible.',
+    cmp2Desc:'For advanced eclipse chasers. Unrepeatable in intensity and duration.',
     compareTip:'With a full 6 minutes of darkness, observers in Luxor will see the solar corona in detail, make out the planets Mercury and Venus emerging in the blackened sky, and hear animals react to the eclipse as if it were dusk. It is a once-in-a-lifetime experience.',
-    // FAQ
     hFaq:'Frequently asked questions',
     fq1:'Why does this eclipse last so long?',
     fa1:'The eclipse of August 2, 2027 lasts 6 minutes and 23 seconds because two factors coincide: the Moon is near its <strong>perigee</strong> (its closest point to Earth), which makes its disc look larger than usual, and the Sun is near its <strong>aphelion</strong> (its farthest point), making the solar disc slightly smaller. This combination maximizes the coverage time. The perfect geometry occurs exactly over Luxor and the Red Sea.',
@@ -664,76 +817,82 @@ const STRINGS = {
     fq4:'How hot is it in Luxor in August?',
     fa4:'In Luxor in August daytime temperatures range between <strong>43°C and 47°C</strong>. It is one of the hottest places on the planet. In return, the sky is clear more than 95% of the time — practically guaranteed. If you choose Luxor, plan well: leave early, wear light breathable clothing, a hat, maximum sun protection, and plenty of water. Consider staying at a hotel with a pool to recover before and after the eclipse. The risk of heatstroke is real.',
     fq5:'Will there be another eclipse this long soon?',
-    fa5:'Not in our lifetime. The eclipse of August 2, 2027 is the longest of the 21st century. The next eclipse of comparable duration won’t occur until <strong>June 5, 2114</strong> — 87 years away. In practice, anyone who sees the 2027 eclipse will have witnessed the longest eclipse of their century. There will be no similar opportunity.',
-    // footer / links
-    sourceNote:'Data based on calculations from the <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(220,160,50,.15);text-decoration:none;">NASA Goddard Space Flight Center</a>. Times are approximate — check the exact ephemeris for your location.',
+    fa5:'Not in our lifetime. The eclipse of August 2, 2027 is the longest of the 21st century. The next eclipse of comparable duration won\'t occur until <strong>June 5, 2114</strong> — 87 years away. In practice, anyone who sees the 2027 eclipse will have witnessed the longest eclipse of their century. There will be no similar opportunity.',
+    sourceNote:'Data based on calculations from the <a href="https://eclipse.gsfc.nasa.gov" target="_blank" rel="noopener">NASA Goddard Space Flight Center</a>. Times are approximate — check the exact ephemeris for your location.',
     hMore:'More eclipses',
     cl1Label:'Total Eclipse · Spain',cl1Title:'Total Solar Eclipse 2026',
-    cl2Label:'All eclipses',cl2Title:'Calendar 2026–2028',
+    cl2Label:'Upcoming eclipses',cl2Title:'Timeline 2026–2028',
+    cl3Label:'Safety',cl3Title:'How to watch an eclipse',
     sisterEyebrow:'Also follow',sisterName:'Next Full Moon →'
   }
 };
-let lang = localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
+
+let lang=localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
 function set(id,val,html=false){const el=document.getElementById(id);if(el){if(html)el.innerHTML=val;else el.textContent=val;}}
 function setAttr(sel,attr,val){const el=document.querySelector(sel);if(el)el.setAttribute(attr,val);}
+
 function render(){
   const S=STRINGS[lang];
   document.documentElement.lang=S.lang;
-  // meta
   document.title=S.title;
   setAttr('meta[name="description"]','content',S.desc);
-  set('pg-title',S.title);
-  set('og-title',S.title);set('tw-title',S.title);
   setAttr('meta[property="og:description"]','content',S.desc);
   setAttr('meta[name="twitter:description"]','content',S.desc);
+  set('pg-title',S.title);set('og-title',S.title);set('tw-title',S.title);
   // header
-  set('lang-btn',S.langBtn);
-  set('share-label',S.share);
-  set('cd-label',S.cdLabel);
-  set('cd-dl',S.cdD);set('cd-hl',S.cdH);set('cd-ml',S.cdM);set('cd-sl',S.cdS);
+  set('lang-btn',S.langBtn);set('share-label',S.share);
   // hero
-  set('eyebrow',S.eyebrow,true);set('h1',S.h1,true);set('subtitle',S.subtitle);set('badge',S.badge);
-  // specs
-  set('sl-1',S.sl1);set('sv-1',S.sv1);set('sl-2',S.sl2);set('sl-3',S.sl3);set('sv-3',S.sv3);
-  set('sl-4',S.sl4);set('sv-4',S.sv4);set('sl-5',S.sl5);set('sv-5',S.sv5);set('sl-6',S.sl6);set('sv-6',S.sv6);
-  // why
-  set('h-why',S.hWhy);set('why-p1',S.whyP1,true);set('why-p2',S.whyP2,true);set('why-p3',S.whyP3,true);set('why-tip',S.whyTip);
+  set('nh-eyebrow',S.nhEyebrow);set('nh-title',S.nhTitle);set('nh-date',S.nhDate);
+  set('cd-dl',S.cdDl);set('cd-hl',S.cdHl);set('cd-ml',S.cdMl);set('cd-sl',S.cdSl);
+  set('chip-dur',S.chipDur);set('chip-record',S.chipRecord);set('chip-date',S.chipDate);
+  // content
+  set('eyebrow',S.eyebrow,true);set('h1',S.h1);set('subtitle',S.subtitle);
+  set('h-why',S.hWhy);
+  set('why-p1',S.whyP1,true);set('why-p2',S.whyP2,true);set('why-p3',S.whyP3,true);
+  set('why-tip',S.whyTip);
+  set('fact-1',S.fact1);set('fact-2',S.fact2);set('fact-3',S.fact3);set('fact-4',S.fact4);
   // destinations
   set('h-dest',S.hDest);
-  set('ct-h1',S.ctH1);set('ct-h2',S.ctH2);set('ct-h3',S.ctH3);set('ct-h4',S.ctH4);
   set('ct-d1',S.ctD1);set('ct-d2',S.ctD2);set('ct-d3',S.ctD3);set('ct-d4',S.ctD4);
   set('ct-l1',S.ctL1);set('ct-l2',S.ctL2);set('ct-l3',S.ctL3);set('ct-l4',S.ctL4);
-  // compare bar
+  set('ct-t1',S.ctT1);set('ct-t2',S.ctT2);set('ct-t3',S.ctT3);set('ct-t4',S.ctT4);
+  set('ct-sky1',S.ctSky1,true);set('ct-sky2',S.ctSky2,true);
+  // bar
   set('bar-label',S.barLabel);set('bar-n1',S.barN1);set('bar-n2',S.barN2);set('bar-n3',S.barN3);set('bar-n4',S.barN4);
   // path
   set('h-path',S.hPath);set('path-intro',S.pathIntro);
   for(var i=1;i<=9;i++){set('pp-'+i,S['pp'+i]);set('pd-'+i,S['pd'+i]);set('pt-'+i,S['pt'+i]);}
-  // traveler guide
+  set('map-cap',S.mapCap);
+  // guide
   set('h-guide',S.hGuide);
   for(var g=1;g<=7;g++){set('gd-'+g,S['gd'+g],true);}
-  // compare ES vs EG
+  // compare
   set('h-compare',S.hCompare);set('compare-intro',S.compareIntro);
-  set('cmp-1',S.cmp1,true);set('cmp-2',S.cmp2,true);set('cmp-3',S.cmp3,true);set('compare-tip',S.compareTip);
+  set('cmp-name-1',S.cmpName1);set('cmp-name-2',S.cmpName2);
+  set('cmp-chip-1a',S.cmpChip1a);set('cmp-chip-1b',S.cmpChip1b);set('cmp-chip-1c',S.cmpChip1c);
+  set('cmp-chip-2a',S.cmpChip2a);set('cmp-chip-2b',S.cmpChip2b);set('cmp-chip-2c',S.cmpChip2c);
+  set('cmp-1-desc',S.cmp1Desc);set('cmp-2-desc',S.cmp2Desc);
+  set('compare-tip',S.compareTip);
   // FAQ
   set('h-faq',S.hFaq);
   for(var f=1;f<=5;f++){set('fq-'+f,S['fq'+f]);set('fa-'+f,S['fa'+f],true);}
-  // footer / links
+  // footer
   set('source-note',S.sourceNote,true);set('h-more',S.hMore);
-  set('cl1-label',S.cl1Label);set('cl1-title',S.cl1Title);set('cl2-label',S.cl2Label);set('cl2-title',S.cl2Title);
+  set('cl1-label',S.cl1Label);set('cl1-title',S.cl1Title);
+  set('cl2-label',S.cl2Label);set('cl2-title',S.cl2Title);
+  set('cl3-label',S.cl3Label);set('cl3-title',S.cl3Title);
   set('sister-eyebrow',S.sisterEyebrow);set('sister-name',S.sisterName);
 }
+
 function toggleLang(){lang=lang==='es'?'en':'es';localStorage.setItem('ne-lang',lang);render();}
 render();
 
-// === FAQ accordion ===
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.closest('.faq-item');
-    item.classList.toggle('open');
-  });
+  q.addEventListener('click',()=>{q.closest('.faq-item').classList.toggle('open');});
 });
 
-// === SHARE ===
+// Share
 function shareApp(){
   const d=document.querySelector('meta[name="description"]');
   const data={title:document.title,text:d?d.getAttribute('content'):'',url:window.location.href};
@@ -748,7 +907,7 @@ function shareApp(){
 
 <!-- cookie consent -->
 <div id="ck" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(3,3,4,.97);border-top:1px solid rgba(220,160,50,.12);padding:.75rem 1.5rem;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between;font-family:'Cinzel',serif;">
-  <span id="ck-t" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:.95rem;color:rgba(220,205,170,.58);flex:1;min-width:200px;line-height:1.5;"></span>
+  <span id="ck-t" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:.95rem;color:rgba(220,205,170,.76);flex:1;min-width:200px;line-height:1.5;"></span>
   <div style="display:flex;gap:.5rem;flex-shrink:0;">
     <button onclick="neConsent(1)" id="ck-y" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:rgba(220,160,50,.1);border:1px solid rgba(220,160,50,.28);color:rgba(220,160,50,.82);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
     <button onclick="neConsent(0)" id="ck-n" style="font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:.38rem .9rem;background:none;border:1px solid rgba(220,160,50,.1);color:rgba(220,160,50,.38);border-radius:2px;cursor:pointer;font-family:inherit;"></button>
@@ -799,10 +958,15 @@ function shareApp(){
 })();
 </script>
 <script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});
+}
+</script>
+<script>
 /* ── Canonical header/footer i18n — shared across all pages ── */
 (function(){
   var NAV={en:{spain:'Spain 2026',cities:'Cities',safety:'Safety',upcoming:'Upcoming',history:'History',share:'Share',lang:'ES'},
-           es:{spain:'Espa\u00f1a 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Pr\u00f3ximos',history:'Historia',share:'Compartir',lang:'EN'}};
+           es:{spain:'España 2026',cities:'Ciudades',safety:'Seguridad',upcoming:'Próximos',history:'Historia',share:'Compartir',lang:'EN'}};
   function L(){return localStorage.getItem('ne-lang')||(navigator.language&&navigator.language.indexOf('es')===0?'es':'en');}
   function S(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
   function apply(){
