@@ -1,0 +1,21 @@
+# Next Eclipse
+
+> Next Eclipse es una web que muestra la cuenta atrás al próximo eclipse solar y lunar, con fechas, mapas, franjas de visibilidad y guías de observación para 2026–2028. Contenido en inglés y español. Publicada por Furiosa Studio.
+
+## Páginas clave
+
+- [Inicio — próximo eclipse](https://www.next-eclipse.com/): cuenta atrás en tiempo real al próximo eclipse y resumen del eclipse solar total del 12 de agosto de 2026.
+- [Próximos eclipses](https://www.next-eclipse.com/upcoming): lista de eclipses solares y lunares venideros con fechas y tipo.
+- [Calendario de eclipses](https://www.next-eclipse.com/calendar): calendario completo de eclipses por año.
+- [Cómo observar un eclipse](https://www.next-eclipse.com/how-to-watch): guía de seguridad para ver un eclipse solar (gafas certificadas ISO 12312-2) y consejos de observación.
+- [Ciudades](https://www.next-eclipse.com/cities): visibilidad del eclipse por ciudad y franja de totalidad.
+- [Eclipse solar en España 2026](https://www.next-eclipse.com/eclipse-solar-espana-2026): el eclipse solar total del 12 de agosto de 2026 visible desde España.
+- [Eclipse anular en España 2028](https://www.next-eclipse.com/eclipse-anular-espana-2028): el eclipse anular del 26 de enero de 2028.
+- [Eclipse solar 2027 — Egipto](https://www.next-eclipse.com/eclipse-solar-2027-egipto): el eclipse solar total del 2 de agosto de 2027, el más largo del siglo.
+- [Historia de los eclipses](https://www.next-eclipse.com/history): eclipses históricos notables.
+
+## Datos clave
+
+- Próximo eclipse solar total: 12 de agosto de 2026, visible desde Groenlandia, Islandia, España y norte de África. Duración máxima ~2 min 18 s.
+- Datos basados en efemérides de NASA/ESA.
+- Idiomas: inglés (next-eclipse.com) con contenido en español para los eclipses de España.
