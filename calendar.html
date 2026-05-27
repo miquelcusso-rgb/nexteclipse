@@ -79,7 +79,8 @@ hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 .eclipse-card-link{text-decoration:none;display:block;}
 .eclipse-card-link .eclipse-card{cursor:pointer;}
 .eclipse-card-link:hover .eclipse-card{border-color:rgba(220,160,50,.28);background:rgba(220,160,50,.04);}
-.card-icon{font-size:1.3rem;text-align:center;padding-top:.1rem;}
+.card-icon{display:flex;align-items:flex-start;justify-content:center;padding-top:.15rem;}
+.card-icon svg{display:block;width:30px;height:30px;}
 .card-name{font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,220,.72);margin-bottom:.25rem;}
 .card-vis{font-size:1rem;color:rgba(220,200,150,.55);margin-bottom:.15rem;}
 .card-detail{font-size:.95rem;font-style:italic;color:rgba(220,180,100,.42);}
@@ -90,7 +91,8 @@ hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 /* ── eclipse types ── */
 .types-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;margin:1rem 0 2rem;}
 .type-card{padding:1rem;border:1px solid rgba(220,160,50,.07);border-radius:3px;background:rgba(220,160,50,.015);}
-.type-icon{font-size:1.4rem;margin-bottom:.4rem;}
+.type-icon{margin-bottom:.5rem;}
+.type-icon svg{display:block;width:38px;height:38px;}
 .type-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,248,220,.6);margin-bottom:.4rem;}
 .type-desc{font-size:.92rem;color:rgba(220,200,160,.48);line-height:1.6;}
 .source{font-size:.9rem;font-style:italic;color:rgba(220,160,50,.55);margin-top:2rem;}
@@ -113,7 +115,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
 .drawer-link{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,248,220,.6);text-decoration:none;padding:.9rem 1rem;border-bottom:1px solid rgba(220,160,50,.06);transition:color .15s,background .15s;}
 .drawer-link:last-child{border-bottom:none;}
 .drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}
-@media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}}
+.nav-link{display:none!important;}.menu-btn{display:flex!important;}@media(max-width:768px){}
 
 /* ── readability patch: +2px body text, higher contrast ── */
 body{color:rgba(236,228,210,.88);}
@@ -178,6 +180,16 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
 <div class="wrap">
 
+  <!-- shared SVG gradient defs for eclipse glyphs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+    <radialGradient id="coronaG" cx="50%" cy="50%" r="50%">
+      <stop offset="42%" stop-color="rgba(220,160,50,0)"/>
+      <stop offset="50%" stop-color="rgba(255,228,150,.85)"/>
+      <stop offset="62%" stop-color="rgba(220,160,50,.25)"/>
+      <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+    </radialGradient>
+  </defs></svg>
+
   <p class="eyebrow" id="eyebrow">Astronomía</p>
   <h1 id="h1">Calendario Completo de Eclipses</h1>
   <p class="subtitle" id="subtitle">Eclipses solares y lunares 2026–2028</p>
@@ -203,22 +215,22 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
   <h2 id="h-types">Tipos de Eclipse</h2>
   <div class="types-grid">
     <div class="type-card">
-      <div class="type-icon">☀️</div>
+      <div class="type-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="url(#coronaG)"/><circle cx="20" cy="20" r="11" fill="#030304" stroke="rgba(255,236,180,.5)" stroke-width="1"/></svg></div>
       <div class="type-name" id="t1-name">Solar Total</div>
       <div class="type-desc" id="t1-desc">La Luna cubre completamente el Sol. La corona se vuelve visible. El día se convierte en noche en un camino estrecho (~150 km). Dura de segundos a más de 7 minutos.</div>
     </div>
     <div class="type-card">
-      <div class="type-icon">💍</div>
+      <div class="type-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="rgba(230,170,60,.9)"/><circle cx="20" cy="20" r="11" fill="#030304"/></svg></div>
       <div class="type-name" id="t2-name">Solar Anular</div>
       <div class="type-desc" id="t2-desc">La Luna está cerca del apogeo — demasiado pequeña para cubrir el Sol por completo. Un brillante anillo de fuego rodea el disco lunar.</div>
     </div>
     <div class="type-card">
-      <div class="type-icon">🌑</div>
+      <div class="type-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="rgba(150,55,40,.85)" stroke="rgba(200,90,70,.6)" stroke-width="1"/></svg></div>
       <div class="type-name" id="t3-name">Lunar Total</div>
       <div class="type-desc" id="t3-desc">La sombra de la Tierra cubre completamente la Luna. La luz roja se refracta a través de la atmósfera — el efecto Luna de Sangre. La totalidad dura hasta 1h 47min.</div>
     </div>
     <div class="type-card">
-      <div class="type-icon">🌗</div>
+      <div class="type-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="rgba(200,196,180,.8)"/><path d="M20 4 a16 16 0 0 1 0 32 a11 11 0 0 0 0 -32" fill="rgba(60,55,50,.85)"/></svg></div>
       <div class="type-name" id="t4-name">Lunar Parcial</div>
       <div class="type-desc" id="t4-desc">Solo parte de la Luna entra en la sombra umbral de la Tierra. El mordisco oscuro en la superficie lunar es visible a simple vista.</div>
     </div>
@@ -284,7 +296,17 @@ const ECLIPSES = [
   },
 ];
 
-const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',lunar_partial:'🌗',lunar_penumbral:'🌕'};
+/* SVG glyph per eclipse kind (matches /upcoming — no emoji) */
+function glyph(kind){
+  switch(kind){
+    case 'solar_total': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="url(#coronaG)"/><circle cx="20" cy="20" r="10" fill="#030304" stroke="rgba(255,236,180,.55)" stroke-width="1"/></svg>';
+    case 'solar_annular': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="rgba(230,170,60,.9)"/><circle cx="20" cy="20" r="9" fill="#030304"/></svg>';
+    case 'lunar_total': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(150,55,40,.85)" stroke="rgba(200,90,70,.55)" stroke-width="1"/></svg>';
+    case 'lunar_partial': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(200,196,180,.78)"/><path d="M20 6 a14 14 0 0 1 0 28 a9 9 0 0 0 0 -28" fill="rgba(55,50,45,.85)"/></svg>';
+    case 'lunar_penumbral': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(210,206,190,.82)"/></svg>';
+    default: return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(200,196,180,.7)"/></svg>';
+  }
+}
 const YEARS = ['2026','2027','2028'];
 
 const STRINGS = {
@@ -367,7 +389,7 @@ function renderGrid(){
       const past=new Date(e.utc).getTime()<now;
       const isNext=i===nextIdx&&!past;
       const cardHTML=`<div class="eclipse-card">
-          <div class="card-icon">${ICONS[e.type]||'🌑'}</div>
+          <div class="card-icon">${glyph(e.type)}</div>
           <div>
             <div class="card-name">${e[L].name}${isNext?`<span class="badge">${S.nextBadge}</span>`:''}</div>
             <div class="card-vis">${e[L].vis}</div>

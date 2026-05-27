@@ -71,13 +71,15 @@ p{font-size:1.06rem;color:rgba(220,210,180,.82);margin-bottom:.9rem;line-height:
 strong{font-family:'Cinzel',serif;font-weight:400;letter-spacing:.08em;font-size:.9em;text-transform:uppercase;color:rgba(255,240,180,.75);}
 /* Warning box */
 .warning{border:1px solid rgba(255,80,50,.28);border-radius:4px;background:rgba(255,60,20,.04);padding:1.2rem 1.4rem;margin:1.5rem 0 2rem;display:flex;gap:1rem;align-items:flex-start;}
-.warning-icon{font-size:1.4rem;flex-shrink:0;padding-top:.1rem;}
+.warning-icon{flex-shrink:0;padding-top:.1rem;display:flex;color:rgba(255,150,110,.9);}
+.warning-icon svg{display:block;width:26px;height:26px;}
 .warning-text{font-size:1.05rem;color:rgba(255,200,160,.65);line-height:1.7;}
 .warning-text strong{color:rgba(255,180,120,.85);}
 /* Method blocks */
 .method{border:1px solid rgba(220,160,50,.1);border-radius:4px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;background:rgba(220,160,50,.02);}
 .method-header{display:flex;align-items:center;gap:.9rem;margin-bottom:.9rem;}
-.method-icon{font-size:1.4rem;flex-shrink:0;}
+.method-icon{flex-shrink:0;display:flex;color:rgba(220,180,110,.85);}
+.method-icon svg{display:block;width:26px;height:26px;}
 .method-title{font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,248,220,.75);}
 .method-badge{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:.18rem .55rem;border-radius:2px;margin-left:auto;flex-shrink:0;}
 .badge-safe{background:rgba(80,200,80,.08);border:1px solid rgba(80,200,80,.25);color:rgba(140,230,140,.7);}
@@ -89,13 +91,16 @@ strong{font-family:'Cinzel',serif;font-weight:400;letter-spacing:.08em;font-size
 /* Totality phenomena grid */
 .pheno-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem;margin:1rem 0 1.5rem;}
 .pheno{padding:1.1rem 1.2rem;border:1px solid rgba(220,160,50,.08);border-radius:3px;background:rgba(220,160,50,.015);}
-.pheno-icon{font-size:1.3rem;margin-bottom:.4rem;}
+.pheno-icon{margin-bottom:.5rem;display:flex;}
+.pheno-icon svg{display:block;width:34px;height:34px;}
 .pheno-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,248,220,.6);margin-bottom:.4rem;}
 .pheno-desc{font-size:.95rem;color:rgba(220,200,160,.5);line-height:1.6;}
 /* Photo guide */
 .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;margin:1rem 0;}
 .photo-card{padding:1.2rem;border:1px solid rgba(220,160,50,.08);border-radius:3px;background:rgba(220,160,50,.015);}
-.photo-card-title{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,248,220,.6);margin-bottom:.6rem;}
+.photo-card-title{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,248,220,.6);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;}
+.pct-icon{flex-shrink:0;display:flex;color:rgba(220,180,110,.8);}
+.pct-icon svg{display:block;width:20px;height:20px;}
 .photo-card p{font-size:.95rem;color:rgba(220,200,160,.5);margin-bottom:.4rem;line-height:1.55;}
 /* timeline */
 .timeline{display:flex;flex-direction:column;gap:.5rem;margin:1rem 0 1.5rem;}
@@ -130,7 +135,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196
 .drawer-link{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,248,220,.6);text-decoration:none;padding:.9rem 1rem;border-bottom:1px solid rgba(220,160,50,.06);transition:color .15s,background .15s;}
 .drawer-link:last-child{border-bottom:none;}
 .drawer-link:hover{color:rgba(255,220,140,.9);background:rgba(220,160,50,.05);}
-@media(max-width:768px){.nav-link{display:none!important;}.menu-btn{display:flex!important;}}
+.nav-link{display:none!important;}.menu-btn{display:flex!important;}@media(max-width:768px){}
 
 /* ── readability patch: +2px body text, higher contrast ── */
 body{color:rgba(236,228,210,.88);}
@@ -195,13 +200,23 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
 <div class="wrap">
 
+  <!-- shared SVG gradient defs for eclipse glyphs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+    <radialGradient id="coronaG" cx="50%" cy="50%" r="50%">
+      <stop offset="42%" stop-color="rgba(220,160,50,0)"/>
+      <stop offset="50%" stop-color="rgba(255,228,150,.85)"/>
+      <stop offset="62%" stop-color="rgba(220,160,50,.25)"/>
+      <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+    </radialGradient>
+  </defs></svg>
+
   <p class="eyebrow" id="eyebrow">Eclipse Guide</p>
   <h1 id="h1">How to Watch the Solar Eclipse Safely</h1>
   <p class="subtitle" id="subtitle">Eye protection, what to look for, and how to photograph the August 12, 2026 eclipse.</p>
 
   <!-- Warning -->
   <div class="warning">
-    <span class="warning-icon">⚠️</span>
+    <span class="warning-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
     <span class="warning-text" id="warning-text">
       <strong>Never look directly at the sun</strong> during a partial eclipse without certified solar eclipse glasses. Ordinary sunglasses — even very dark ones — do not provide adequate protection. Permanent retinal damage can occur in seconds, and is painless until hours later.
     </span>
@@ -217,7 +232,7 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
   <div class="method">
     <div class="method-header">
-      <span class="method-icon">🕶️</span>
+      <span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11l2.5-5.5A2 2 0 0 1 6.3 4.3"/><path d="M22 11l-2.5-5.5a2 2 0 0 0-1.8-1.2"/><path d="M10.5 14a2 2 0 0 1 3 0"/><circle cx="6" cy="14" r="3.5"/><circle cx="18" cy="14" r="3.5"/></svg></span>
       <span class="method-title" id="glasses-title">Certified Eclipse Glasses</span>
       <span class="method-badge badge-safe" id="badge-glasses">Safe</span>
     </div>
@@ -232,7 +247,7 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
   <div class="method">
     <div class="method-header">
-      <span class="method-icon">📦</span>
+      <span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>
       <span class="method-title" id="pinhole-title">Pinhole Projector</span>
       <span class="method-badge badge-diy" id="badge-pinhole">DIY</span>
     </div>
@@ -245,9 +260,9 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
   <div class="method">
     <div class="method-header">
-      <span class="method-icon">🔭</span>
+      <span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m10.07 7.71 8.86-3.4a1 1 0 0 1 1.28.58l1.07 2.79a1 1 0 0 1-.58 1.3L11.7 12.4z"/><path d="m6.6 9.04 4.46 1.71"/><path d="m10.1 12.4-3.5 6.06"/><path d="M8.35 10.73 4.6 8.57a1 1 0 0 1-.37-1.37l1-1.73a1 1 0 0 1 1.36-.37l3.75 2.16"/><path d="M13.5 20.5 11 16"/><circle cx="6" cy="20" r="1.5"/></svg></span>
       <span class="method-title" id="scope-title">Telescope and Binoculars</span>
-      <span class="method-badge badge-caution" id="badge-scope">⚠ Filter required</span>
+      <span class="method-badge badge-caution" id="badge-scope">Filter required</span>
     </div>
     <p id="scope-p1">A telescope or binoculars will reveal extraordinary detail during the eclipse — but they concentrate sunlight dramatically, making them dangerous without the correct filter.</p>
     <p id="scope-p2"><strong>Always fit the solar filter to the objective (the front, large lens), never to the eyepiece.</strong> Eyepiece filters placed at the focal point absorb concentrated heat and can crack suddenly, exposing your eye to the full beam of magnified sunlight. Use dedicated white-light solar filter film (Baader AstroSolar is the standard) cut to fit the front of the instrument.</p>
@@ -291,42 +306,42 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
   <h2 id="h-pheno">Phenomena to Watch for During Totality</h2>
   <div class="pheno-grid">
     <div class="pheno">
-      <div class="pheno-icon">💍</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="rgba(255,236,180,.4)" stroke-width="1"/><circle cx="20" cy="20" r="13" fill="#030304"/><circle cx="9.6" cy="12.8" r="3.1" fill="rgba(255,242,205,.95)"/></svg></div>
       <div class="pheno-name" id="ph1-n">Diamond Ring</div>
       <div class="pheno-desc" id="ph1-d">The last bright bead of sunlight through a lunar valley, surrounded by the glowing inner corona. Lasts only a second at C2 and C3 — the most dramatic moment of any eclipse.</div>
     </div>
     <div class="pheno">
-      <div class="pheno-icon">✨</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="#030304" stroke="rgba(255,236,180,.32)" stroke-width="1"/><circle cx="12.6" cy="9" r="1.7" fill="rgba(255,242,205,.95)"/><circle cx="20" cy="6.6" r="1.5" fill="rgba(255,236,180,.85)"/><circle cx="27.4" cy="9" r="1.4" fill="rgba(255,236,180,.8)"/><circle cx="32" cy="15" r="1.2" fill="rgba(255,236,180,.7)"/></svg></div>
       <div class="pheno-name" id="ph2-n">Baily's Beads</div>
       <div class="pheno-desc" id="ph2-d">Just before and after totality, sunlight shines through valleys and craters on the lunar limb, creating a string of brilliant beads of light around the moon's edge.</div>
     </div>
     <div class="pheno">
-      <div class="pheno-icon">☀️</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="url(#coronaG)"/><circle cx="20" cy="20" r="10" fill="#030304" stroke="rgba(255,236,180,.5)" stroke-width="1"/></svg></div>
       <div class="pheno-name" id="ph3-n">Solar Corona</div>
       <div class="pheno-desc" id="ph3-d">The outer atmosphere of the sun — a pearly white halo of plasma extending several solar radii. Normally invisible, it is one of the most beautiful sights in all of astronomy.</div>
     </div>
     <div class="pheno">
-      <div class="pheno-icon">🔴</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="#050505" stroke="rgba(255,236,180,.28)" stroke-width="1"/><path d="M19 7.2 q5 -4 8.4 1.2" fill="none" stroke="rgba(232,96,74,.92)" stroke-width="2" stroke-linecap="round"/><path d="M32 16 q4.2 3.4 1 8.6" fill="none" stroke="rgba(232,96,74,.8)" stroke-width="2" stroke-linecap="round"/></svg></div>
       <div class="pheno-name" id="ph4-n">Prominences</div>
       <div class="pheno-desc" id="ph4-d">Bright pink-red flames of magnetised plasma looping off the chromosphere. Visible as vivid red arches at the edge of the lunar disc immediately after C2.</div>
     </div>
     <div class="pheno">
-      <div class="pheno-icon">🌊</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="rgba(220,180,110,.82)" stroke-width="2" stroke-linecap="round"><path d="M5 12 q4.4 -5 8.75 0 t8.75 0 t8.75 0"/><path d="M5 21 q4.4 -5 8.75 0 t8.75 0 t8.75 0"/><path d="M5 30 q4.4 -5 8.75 0 t8.75 0 t8.75 0"/></svg></div>
       <div class="pheno-name" id="ph5-n">Shadow Bands</div>
       <div class="pheno-desc" id="ph5-d">Just before totality, faint rippling bands of light and shadow sweep across pale surfaces — caused by atmospheric refraction of the narrowing solar crescent. Lay a white sheet on the ground to see them.</div>
     </div>
     <div class="pheno">
-      <div class="pheno-icon">🌡️</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(220,180,110,.85)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V4a2 2 0 1 0-4 0v10.76a4 4 0 1 0 4 0z"/></svg></div>
       <div class="pheno-name" id="ph6-n">Temperature Drop</div>
       <div class="pheno-desc" id="ph6-d">Air temperature drops 2–5°C during totality. A perceptible wind often develops. Birds fall silent, bees return to hives, and flowers begin to close — nature reads the sudden dusk as sunset.</div>
     </div>
     <div class="pheno">
-      <div class="pheno-icon">⭐</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(220,180,110,.85)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2.6 12.7 7l4.6.3-3.5 3 1.1 4.5L11 12.4 7.1 14.8l1.1-4.5-3.5-3L9.3 7z"/><circle cx="18.4" cy="18.4" r="1.4" fill="rgba(220,180,110,.85)" stroke="none"/><circle cx="5.2" cy="17.6" r="1" fill="rgba(220,180,110,.7)" stroke="none"/></svg></div>
       <div class="pheno-name" id="ph7-n">Stars and Planets</div>
       <div class="pheno-desc" id="ph7-d">The sky darkens to deep twilight. Venus will be visible near the eclipsed sun in 2026, and brighter stars and planets will appear briefly in the darkened sky.</div>
     </div>
     <div class="pheno">
-      <div class="pheno-icon">🌅</div>
+      <div class="pheno-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(220,180,110,.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="4.2" y1="9.4" x2="6.1" y2="11.3"/><line x1="19.8" y1="9.4" x2="17.9" y2="11.3"/><line x1="2" y1="18" x2="4.5" y2="18"/><line x1="19.5" y1="18" x2="22" y2="18"/><line x1="3" y1="22" x2="21" y2="22"/></svg></div>
       <div class="pheno-name" id="ph8-n">360° Horizon Glow</div>
       <div class="pheno-desc" id="ph8-d">The entire horizon glows with a 360° twilight ring — the light of partial eclipse zones beyond the totality path. One of the most alien and otherworldly sights of a total solar eclipse.</div>
     </div>
@@ -342,19 +357,19 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
   <div class="photo-grid">
     <div class="photo-card">
-      <div class="photo-card-title" id="photo1-title">📱 Smartphone</div>
+      <div class="photo-card-title"><span class="pct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span><span id="photo1-title">Smartphone</span></div>
       <p id="photo1-p1">Attach a sheet of solar filter film over the lens before C2 and after C3. Use <strong>manual mode</strong> if available: ISO 100, maximum shutter speed. Tap to focus on the sun and lock exposure.</p>
       <p id="photo1-p2">During totality: remove the filter and switch to auto. Point at the corona — the bright inner corona is easy to photograph. Use burst mode. The outer corona is much dimmer and may require a few test shots.</p>
       <p id="photo1-p3">Avoid digital zoom — it degrades quality sharply. Move your feet instead.</p>
     </div>
     <div class="photo-card">
-      <div class="photo-card-title" id="photo2-title">📷 DSLR / Mirrorless</div>
+      <div class="photo-card-title"><span class="pct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span id="photo2-title">DSLR / Mirrorless</span></div>
       <p id="photo2-p1">Before C2 and after C3: fit a dedicated solar filter (Baader AstroSolar ND 5.0 film is standard). Settings: ISO 100, f/8, 1/500–1/2000s. Test on the partial phases.</p>
       <p id="photo2-p2">During totality: remove the filter. Start at ISO 200, f/8, 1/500s for the inner corona. Bracket widely — the corona ranges over 10 stops of brightness from the inner limb to the outer streamers. Use a cable release or timer to avoid camera shake.</p>
       <p id="photo2-p3">Focal length: 300–500mm gives a solar disc of 3–5mm on a full-frame sensor — enough detail without losing the full corona. Wider lenses capture the darkened sky and landscape in one frame.</p>
     </div>
     <div class="photo-card">
-      <div class="photo-card-title" id="photo3-title">👁 A Final Note</div>
+      <div class="photo-card-title"><span class="pct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span><span id="photo3-title">A Final Note</span></div>
       <p id="photo3-p1">Consider putting the camera down for part of totality and simply watching with your naked eyes. The experience of seeing the corona, the 360° twilight and the sudden chill is visceral and unrepeatable.</p>
       <p id="photo3-p2">Many experienced eclipse chasers say their most vivid memories are from the eclipses they watched without a camera. Total solar eclipses visible from mainland Spain occur only once every few centuries — this is a genuinely rare event.</p>
     </div>
@@ -426,7 +441,7 @@ const STRINGS={
     pinholeP3:'<strong>Colander method:</strong> Hold a kitchen colander between the sun and a white surface — each hole projects a tiny image of the crescent sun, creating a beautiful pattern of crescent suns on the pavement.',
     pinholeP4:'<strong>Tree shadows:</strong> The gaps between leaves in a tree canopy act as natural pinhole projectors. As the eclipse advances, look at the ground beneath a leafy tree — hundreds of crescent suns will appear in the dappled shadows.',
     tipPinhole:'Tip: A cardboard box (like a shoebox) with a pinhole at one end and a white interior makes an even better projector — the box blocks ambient light, making the projected image much sharper and easier to see in bright sunlight.',
-    scopeTitle:'Telescope and Binoculars',badgeScope:'⚠ Filter required',
+    scopeTitle:'Telescope and Binoculars',badgeScope:'Filter required',
     scopeP1:'A telescope or binoculars will reveal extraordinary detail during the eclipse — but they concentrate sunlight dramatically, making them dangerous without the correct filter.',
     scopeP2:'<strong>Always fit the solar filter to the objective (the front, large lens), never to the eyepiece.</strong> Eyepiece filters placed at the focal point absorb concentrated heat and can crack suddenly, exposing your eye to the full beam of magnified sunlight. Use dedicated white-light solar filter film (Baader AstroSolar is the standard) cut to fit the front of the instrument.',
     scopeP3:'<strong>Safe projection:</strong> An alternative is to point an unfiltered telescope at the sun (without looking through it) and project the focused image through the eyepiece onto a white card held behind it. This gives a bright, detailed image and is safe for all bystanders.',
@@ -448,15 +463,15 @@ const STRINGS={
     ph7n:'Stars and Planets',ph7d:'The sky darkens to deep twilight. Venus will be visible near the eclipsed sun in 2026, and brighter stars and planets will appear briefly in the darkened sky.',
     ph8n:'360° Horizon Glow',ph8d:'The entire horizon glows with a 360° twilight ring — the light of partial eclipse zones beyond the totality path. One of the most alien and otherworldly sights of a total solar eclipse.',
     hPhoto:'Photography Guide',
-    photo1Title:'📱 Smartphone',
+    photo1Title:'Smartphone',
     photo1P1:'Attach a sheet of solar filter film over the lens before C2 and after C3. Use <strong>manual mode</strong> if available: ISO 100, maximum shutter speed. Tap to focus on the sun and lock exposure.',
     photo1P2:'During totality: remove the filter and switch to auto. Point at the corona — the bright inner corona is easy to photograph. Use burst mode. The outer corona is much dimmer and may require a few test shots.',
     photo1P3:'Avoid digital zoom — it degrades quality sharply. Move your feet instead.',
-    photo2Title:'📷 DSLR / Mirrorless',
+    photo2Title:'DSLR / Mirrorless',
     photo2P1:'Before C2 and after C3: fit a dedicated solar filter (Baader AstroSolar ND 5.0 film is standard). Settings: ISO 100, f/8, 1/500–1/2000s. Test on the partial phases.',
     photo2P2:'During totality: remove the filter. Start at ISO 200, f/8, 1/500s for the inner corona. Bracket widely — the corona ranges over 10 stops of brightness from the inner limb to the outer streamers. Use a cable release or timer to avoid camera shake.',
     photo2P3:'Focal length: 300–500mm gives a solar disc of 3–5mm on a full-frame sensor — enough detail without losing the full corona. Wider lenses capture the darkened sky and landscape in one frame.',
-    photo3Title:'👁 A Final Note',
+    photo3Title:'A Final Note',
     photo3P1:'Consider putting the camera down for part of totality and simply watching with your naked eyes. The experience of seeing the corona, the 360° twilight and the sudden chill is visceral and unrepeatable.',
     photo3P2:'Many experienced eclipse chasers say their most vivid memories are from the eclipses they watched without a camera. Total solar eclipses visible from mainland Spain occur only once every few centuries — this is a genuinely rare event.',
     hPlan:'Planning Your Eclipse Day',
@@ -493,7 +508,7 @@ const STRINGS={
     pinholeP3:'<strong>Método del colador:</strong> Coloca un colador de cocina entre el sol y una superficie blanca — cada agujero proyecta una pequeña imagen del sol en cuarto creciente, creando un bonito patrón de soles sobre el suelo.',
     pinholeP4:'<strong>Sombras de árboles:</strong> Los huecos entre las hojas de un árbol actúan como proyectores estenopeicos naturales. A medida que avanza el eclipse, mira el suelo bajo un árbol frondoso — cientos de soles crecientes aparecerán en la sombra moteada.',
     tipPinhole:'Consejo: Una caja de cartón (como una caja de zapatos) con un agujero estenopeico en un extremo y el interior blanco funciona aún mejor — la caja bloquea la luz ambiental, haciendo la imagen proyectada mucho más nítida y fácil de ver con sol brillante.',
-    scopeTitle:'Telescopio y Prismáticos',badgeScope:'⚠ Filtro obligatorio',
+    scopeTitle:'Telescopio y Prismáticos',badgeScope:'Filtro obligatorio',
     scopeP1:'Un telescopio o unos prismáticos revelarán detalles extraordinarios durante el eclipse — pero concentran la luz solar de forma dramática, lo que los hace peligrosos sin el filtro correcto.',
     scopeP2:'<strong>Instala siempre el filtro solar en el objetivo (el cristal delantero grande), nunca en el ocular.</strong> Los filtros de ocular colocados en el punto focal absorben el calor concentrado y pueden romperse súbitamente, exponiendo el ojo al haz completo de luz solar amplificada. Usa película de filtro solar de luz blanca (Baader AstroSolar es el estándar) cortada a medida para la parte frontal del instrumento.',
     scopeP3:'<strong>Proyección segura:</strong> Una alternativa es apuntar un telescopio sin filtro al sol (sin mirar por él) y proyectar la imagen enfocada a través del ocular sobre una cartulina blanca colocada detrás. Esto da una imagen brillante y detallada, segura para todos.',
@@ -515,15 +530,15 @@ const STRINGS={
     ph7n:'Estrellas y Planetas',ph7d:'El cielo se oscurece hasta el crepúsculo profundo. Venus será visible cerca del sol eclipsado en 2026, y las estrellas y planetas más brillantes aparecerán brevemente en el cielo oscurecido.',
     ph8n:'Resplandor de 360° en el Horizonte',ph8d:'Todo el horizonte brilla con un anillo de crepúsculo de 360° — la luz de las zonas de eclipse parcial más allá de la franja de totalidad. Una de las visiones más alienígenas de un eclipse solar total.',
     hPhoto:'Guía de Fotografía',
-    photo1Title:'📱 Smartphone',
+    photo1Title:'Smartphone',
     photo1P1:'Coloca una lámina de filtro solar sobre el objetivo antes de C2 y después de C3. Usa el <strong>modo manual</strong> si está disponible: ISO 100, velocidad de obturación máxima. Toca para enfocar el sol y bloquea la exposición.',
     photo1P2:'Durante la totalidad: retira el filtro y cambia a automático. Apunta a la corona — la corona interior brillante es fácil de fotografiar. Usa el modo ráfaga. La corona exterior es mucho más tenue y puede requerir algunas fotos de prueba.',
     photo1P3:'Evita el zoom digital — degrada mucho la calidad. Mueve los pies en su lugar.',
-    photo2Title:'📷 DSLR / Sin Espejo',
+    photo2Title:'DSLR / Sin Espejo',
     photo2P1:'Antes de C2 y después de C3: coloca un filtro solar dedicado (la película Baader AstroSolar ND 5.0 es el estándar). Ajustes: ISO 100, f/8, 1/500–1/2000s. Prueba durante las fases parciales.',
     photo2P2:'Durante la totalidad: retira el filtro. Empieza con ISO 200, f/8, 1/500s para la corona interior. Bracketing amplio — la corona abarca más de 10 pasos de brillo desde el limbo interior hasta los trazadores exteriores. Usa un disparador remoto o temporizador para evitar vibraciones.',
     photo2P3:'Distancia focal: 300–500mm da un disco solar de 3–5mm en un sensor full-frame — suficiente detalle sin perder la corona completa. Objetivos más angulares capturan el cielo oscurecido y el paisaje en el mismo encuadre.',
-    photo3Title:'👁 Una nota final',
+    photo3Title:'Una nota final',
     photo3P1:'Considera dejar la cámara un momento durante la totalidad y simplemente mirar con tus propios ojos. La experiencia de ver la corona, el crepúsculo de 360° y el frío repentino es visceral e irrepetible.',
     photo3P2:'Muchos cazadores de eclipses experimentados dicen que sus recuerdos más vívidos son de los eclipses que vieron sin cámara. Los eclipses solares totales visibles desde la España peninsular ocurren solo una vez cada varios siglos — este es un evento genuinamente excepcional.',
     hPlan:'Planificación del Día del Eclipse',
