@@ -117,7 +117,8 @@ hr{border:none;border-top:1px solid rgba(220,160,50,.07);margin:2rem 0;}
 h2{font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.52);margin:1.8rem 0 1rem;}
 .eclipse-list{display:flex;flex-direction:column;gap:.45rem;}
 .eclipse-row{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;border-radius:2px;border:1px solid rgba(220,160,50,.06);background:rgba(220,160,50,.018);text-decoration:none;}
-.row-icon{font-size:.95rem;flex-shrink:0;width:1.4rem;text-align:center;}
+.row-icon{flex-shrink:0;width:1.6rem;display:flex;align-items:center;justify-content:center;}
+.row-icon svg{display:block;width:24px;height:24px;}
 .row-name{font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,248,220,.65);flex:1;}
 .row-date{font-size:.92rem;font-style:italic;color:rgba(220,160,50,.65);white-space:nowrap;}
 
@@ -125,7 +126,8 @@ h2{font-family:'Cinzel',serif;font-weight:400;font-size:.9rem;letter-spacing:.25
 .crosslink:hover{border-color:rgba(196,196,255,.16);}
 .cl-left .cl-label{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,196,255,.38);}
 .cl-left .cl-name{font-size:1rem;font-style:italic;color:rgba(196,196,255,.52);margin-top:.1rem;}
-.cl-icon{font-size:1.4rem;opacity:.4;}
+.cl-icon{display:flex;align-items:center;opacity:.6;}
+.cl-icon svg{display:block;width:28px;height:28px;}
 
 footer{margin-top:4rem;width:100vw;margin-left:50%;transform:translateX(-50%);text-align:center;padding:1.2rem 1rem 2rem;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.19em;color:#c4c4d8;opacity:.19;text-transform:uppercase;}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(196,196,240,.13);}
@@ -335,6 +337,16 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
 <div class="wrap">
 
+  <!-- shared SVG gradient defs for eclipse glyphs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+    <radialGradient id="coronaG" cx="50%" cy="50%" r="50%">
+      <stop offset="42%" stop-color="rgba(220,160,50,0)"/>
+      <stop offset="50%" stop-color="rgba(255,228,150,.85)"/>
+      <stop offset="62%" stop-color="rgba(220,160,50,.25)"/>
+      <stop offset="100%" stop-color="rgba(220,160,50,0)"/>
+    </radialGradient>
+  </defs></svg>
+
   <div class="eclipse-stage">
     <div class="eclipse-disc" id="eclipse-disc"></div>
   </div>
@@ -374,7 +386,7 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
       <div class="cl-label" id="cl-label">Also track</div>
       <div class="cl-name" id="cl-name">Next Full Moon →</div>
     </div>
-    <span class="cl-icon">🌕</span>
+    <span class="cl-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="rgba(214,210,194,.88)"/><circle cx="14" cy="15" r="2.4" fill="rgba(120,116,104,.35)"/><circle cx="25" cy="22" r="3" fill="rgba(120,116,104,.3)"/><circle cx="19" cy="27" r="1.8" fill="rgba(120,116,104,.28)"/></svg></span>
   </a>
 
   <footer>
@@ -454,7 +466,17 @@ const ECLIPSES = [
   },
 ];
 
-const ICONS = {solar_total:'☀️',solar_annular:'💍',lunar_total:'🌑',lunar_partial:'🌗',lunar_penumbral:'🌕'};
+/* SVG glyph per eclipse kind (matches /upcoming — no emoji) */
+function glyph(kind){
+  switch(kind){
+    case 'solar_total': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="url(#coronaG)"/><circle cx="20" cy="20" r="10" fill="#030304" stroke="rgba(255,236,180,.55)" stroke-width="1"/></svg>';
+    case 'solar_annular': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="rgba(230,170,60,.9)"/><circle cx="20" cy="20" r="9" fill="#030304"/></svg>';
+    case 'lunar_total': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(150,55,40,.85)" stroke="rgba(200,90,70,.55)" stroke-width="1"/></svg>';
+    case 'lunar_partial': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(200,196,180,.78)"/><path d="M20 6 a14 14 0 0 1 0 28 a9 9 0 0 0 0 -28" fill="rgba(55,50,45,.85)"/></svg>';
+    case 'lunar_penumbral': return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(210,206,190,.82)"/></svg>';
+    default: return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="rgba(200,196,180,.7)"/></svg>';
+  }
+}
 const DISC_CLASS = {solar_total:'',solar_annular:'annular',lunar_total:'lunar',lunar_partial:'lunar',lunar_penumbral:'lunar'};
 
 const STRINGS = {
@@ -511,7 +533,7 @@ function renderUpcoming(){
   document.getElementById('upcoming-list').innerHTML=future.map(e=>{
     const href=ECLIPSE_LINKS[e.utc]||'/upcoming.html';
     return `<a class="eclipse-row" href="${href}">
-      <span class="row-icon">${ICONS[e.type]||'🌑'}</span>
+      <span class="row-icon">${glyph(e.type)}</span>
       <span class="row-name">${e[L].name}</span>
       <span class="row-date">${e[L].date}</span>
     </a>`;

@@ -71,7 +71,8 @@ p{font-size:1.06rem;color:rgba(220,210,180,.82);margin-bottom:.9rem;line-height:
 strong{font-family:'Cinzel',serif;font-weight:400;letter-spacing:.08em;font-size:.9em;text-transform:uppercase;color:rgba(255,240,180,.75);}
 /* Path banner */
 .path-banner{border:1px solid rgba(220,160,50,.12);border-radius:4px;background:rgba(220,160,50,.025);padding:1.2rem 1.6rem;margin:1.5rem 0 2rem;display:flex;gap:1rem;align-items:flex-start;}
-.path-banner-icon{font-size:1.5rem;flex-shrink:0;padding-top:.05rem;}
+.path-banner-icon{flex-shrink:0;padding-top:.15rem;display:flex;}
+.path-banner-icon svg{display:block;width:30px;height:30px;}
 .path-banner-text{font-size:1rem;color:rgba(220,200,150,.78);line-height:1.7;}
 .path-banner-text strong{color:rgba(255,220,130,.8);}
 /* Table wrapper */
@@ -203,7 +204,7 @@ li,th,label{font-size:1.13rem;}
   <p class="subtitle" id="subtitle">Eclipse solar total del 12 de agosto de 2026 · Horarios en hora CEST (UTC+2)</p>
 
   <div class="path-banner">
-    <span class="path-banner-icon">🌑</span>
+    <span class="path-banner-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="none" stroke="rgba(255,228,150,.7)" stroke-width="1.4"/><circle cx="20" cy="20" r="13" fill="#030304" stroke="rgba(255,236,180,.55)" stroke-width="1"/></svg></span>
     <span class="path-banner-text" id="path-banner-text">
       La franja de totalidad del eclipse del 12 de agosto de 2026 cruza España de noroeste a sureste: entra por <strong>Galicia</strong>, atraviesa <strong>Zamora</strong> y <strong>Salamanca</strong>, desciende por <strong>Extremadura</strong> y sale al Mediterráneo, cubriendo también <strong>Ibiza</strong> y <strong>Mallorca</strong>. La anchura de la franja es de aproximadamente 190 km en su cruce por la península.
     </span>
