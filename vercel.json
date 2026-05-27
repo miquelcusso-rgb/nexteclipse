@@ -1,12 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "next-eclipse.com" }],
-      "destination": "https://www.next-eclipse.com/:path*",
-      "permanent": true
-    }
-  ]
+  "trailingSlash": false
 }
