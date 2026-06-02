@@ -1,5 +1,5 @@
-// Next Eclipse Service Worker v3
-const CACHE = 'ne-v3';
+// Next Eclipse Service Worker v4
+const CACHE = 'ne-v4';
 const PRECACHE = ['/', '/index.html', '/manifest.json', '/icon-192.png'];
 
 self.addEventListener('install', e => {
