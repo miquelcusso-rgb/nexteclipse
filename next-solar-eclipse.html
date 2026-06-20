@@ -33,7 +33,7 @@
 
 <!-- Article Schema -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"When Is the Next Solar Eclipse? Date, Path and Visibility","description":"The next solar eclipse is the total solar eclipse of August 12, 2026 — visible from Greenland, Iceland and the north of Spain. Date, path of totality, exact local times for major cities, safety guide and upcoming solar eclipses 2026–2030.","datePublished":"2026-05-30","dateModified":"2026-05-30","author":{"@type":"Organization","name":"Furiosa Studio","url":"https://furiosadata.com"},"publisher":{"@type":"Organization","name":"Furiosa Studio","url":"https://furiosadata.com"},"mainEntityOfPage":"https://www.next-eclipse.com/next-solar-eclipse","image":"https://www.next-eclipse.com/og-eclipse.png"}
+{"@context":"https://schema.org","@type":"Article","headline":"When Is the Next Solar Eclipse? Date, Path and Visibility","description":"The next solar eclipse is the total solar eclipse of August 12, 2026 — visible from Greenland, Iceland and the north of Spain. Date, path of totality, exact local times for major cities, safety guide and upcoming solar eclipses 2026–2030.","datePublished":"2026-05-30","dateModified":"2026-06-21","author":{"@type":"Organization","name":"Furiosa Studio","url":"https://furiosadata.com"},"publisher":{"@type":"Organization","name":"Furiosa Studio","url":"https://furiosadata.com"},"mainEntityOfPage":"https://www.next-eclipse.com/next-solar-eclipse","image":"https://www.next-eclipse.com/og-eclipse.png"}
 </script>
 
 <!-- Event Schema: next solar eclipse -->
@@ -105,6 +105,14 @@ h1{font-family:'Cinzel',serif;font-weight:300;font-size:clamp(1.6rem,4vw,2.4rem)
 .answer-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.6);margin-bottom:.7rem;}
 .answer-text{font-size:1.1rem;color:rgba(255,240,200,.8);line-height:1.65;}
 .answer-text strong{color:rgba(255,248,228,.95);font-weight:400;}
+.countdown-box{padding:1.5rem 1.5rem;background:rgba(220,160,50,.045);border:1px solid rgba(220,160,50,.18);margin:1.5rem 0 2.5rem;border-radius:3px;text-align:center;}
+.countdown-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(220,160,50,.6);margin-bottom:1rem;}
+.countdown{display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1rem;}
+.cd-unit{display:flex;flex-direction:column;align-items:center;min-width:3.4rem;}
+.cd-num{font-family:'Cinzel',serif;font-size:clamp(1.7rem,6vw,2.4rem);font-weight:300;color:rgba(255,248,228,.92);line-height:1;letter-spacing:.02em;}
+.cd-label{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(220,160,50,.5);margin-top:.45rem;}
+.countdown-answer{font-size:1.06rem;color:rgba(255,240,200,.78);line-height:1.6;max-width:60ch;margin:0 auto;}
+.countdown-answer strong{color:rgba(255,248,228,.95);font-weight:400;}
 hr{border:none;border-top:1px solid rgba(220,160,50,.08);margin:2.5rem 0;}
 h2{font-family:'Cinzel',serif;font-weight:400;font-size:.88rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:2.5rem 0 1rem;}
 h3{font-family:'Cinzel',serif;font-weight:300;font-size:1.05rem;letter-spacing:.06em;color:rgba(255,240,200,.78);margin:1.5rem 0 .6rem;}
@@ -161,6 +169,18 @@ strong{color:rgba(255,240,200,.82);font-weight:400;}
 <div class="answer-box">
   <div class="answer-eyebrow" data-en="Short answer" data-es="Respuesta corta">Short answer</div>
   <div class="answer-text" data-en="The next solar eclipse is the <strong>total solar eclipse of August 12, 2026</strong> (17:31–19:22 UTC). The path of totality crosses <strong>western Greenland, western Iceland and the north of Spain</strong> — from A Coruña and Bilbao to Zaragoza, Valencia and Palma de Mallorca. Maximum totality lasts <strong>2 minutes 18 seconds</strong> near Salamanca and Zamora. The rest of Europe and North Africa see a deep partial eclipse. <strong>Eye protection (ISO 12312-2) is required</strong> at all times outside totality." data-es="El próximo eclipse solar es el <strong>eclipse solar total del 12 de agosto de 2026</strong> (17:31–19:22 UTC). La franja de totalidad cruza el <strong>oeste de Groenlandia, oeste de Islandia y el norte de España</strong> — desde A Coruña y Bilbao hasta Zaragoza, Valencia y Palma de Mallorca. La totalidad máxima dura <strong>2 minutos 18 segundos</strong> cerca de Salamanca y Zamora. El resto de Europa y norte de África ven un eclipse parcial profundo. <strong>Hace falta protección ocular (ISO 12312-2)</strong> en todo momento fuera de la totalidad.">The next solar eclipse is the <strong>total solar eclipse of August 12, 2026</strong> (17:31–19:22 UTC). The path of totality crosses <strong>western Greenland, western Iceland and the north of Spain</strong> — from A Coruña and Bilbao to Zaragoza, Valencia and Palma de Mallorca. Maximum totality lasts <strong>2 minutes 18 seconds</strong> near Salamanca and Zamora. The rest of Europe and North Africa see a deep partial eclipse. <strong>Eye protection (ISO 12312-2) is required</strong> at all times outside totality.</div>
+</div>
+
+<!-- Featured-snippet target: "how many days until the next solar eclipse" -->
+<div class="countdown-box">
+  <div class="countdown-eyebrow" data-en="How many days until the next solar eclipse" data-es="Cuántos días faltan para el próximo eclipse solar">How many days until the next solar eclipse</div>
+  <div class="countdown" id="countdown" aria-live="polite">
+    <div class="cd-unit"><span class="cd-num" id="cd-days">—</span><span class="cd-label" data-en="Days" data-es="Días">Days</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-hours">—</span><span class="cd-label" data-en="Hours" data-es="Horas">Hours</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-mins">—</span><span class="cd-label" data-en="Min" data-es="Min">Min</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-secs">—</span><span class="cd-label" data-en="Sec" data-es="Seg">Sec</span></div>
+  </div>
+  <div class="countdown-answer" id="cd-answer"></div>
 </div>
 
 <hr>
@@ -339,6 +359,37 @@ strong{color:rgba(255,240,200,.82);font-weight:400;}
   const saved = (function(){ try{return localStorage.getItem('ne-lang');}catch(e){return null;} })();
   const browser = (navigator.language||'en').slice(0,2);
   applyLang(saved || (browser==='es'?'es':'en'));
+})();
+
+// Live countdown to the next solar eclipse — "how many days until the next solar eclipse"
+(function(){
+  // Chronological upcoming solar eclipses (UTC, greatest eclipse). Source: NASA GSFC.
+  var EVENTS = [
+    {t:'2026-08-12T17:47:00Z', en:'total solar eclipse of August 12, 2026 — crossing western Iceland and the north of Spain, with up to 2 min 18 s of totality', es:'eclipse solar total del 12 de agosto de 2026 — que cruza el oeste de Islandia y el norte de España, con hasta 2 min 18 s de totalidad'},
+    {t:'2027-02-06T16:00:00Z', en:'annular solar eclipse of February 6, 2027 — a ring of fire across southern Argentina and Chile', es:'eclipse solar anular del 6 de febrero de 2027 — un anillo de fuego sobre el sur de Argentina y Chile'},
+    {t:'2027-08-02T10:07:00Z', en:'total solar eclipse of August 2, 2027 — the longest of the century, up to 6 min 23 s near Luxor, Egypt, also crossing southern Spain', es:'eclipse solar total del 2 de agosto de 2027 — el más largo del siglo, hasta 6 min 23 s cerca de Luxor (Egipto), que cruza también el sur de España'}
+  ];
+  function next(){ var now=Date.now(); for(var i=0;i<EVENTS.length;i++){ if(new Date(EVENTS[i].t).getTime()>now) return EVENTS[i]; } return null; }
+  var elD=document.getElementById('cd-days'), elH=document.getElementById('cd-hours'),
+      elM=document.getElementById('cd-mins'), elS=document.getElementById('cd-secs'),
+      elA=document.getElementById('cd-answer');
+  if(!elD||!elA) return;
+  function pad(n){ return n<10?('0'+n):(''+n); }
+  function tick(){
+    var ev=next(); if(!ev){ elA.textContent=''; return; }
+    var lang=(document.documentElement.lang==='es')?'es':'en';
+    var diff=new Date(ev.t).getTime()-Date.now(); if(diff<0) diff=0;
+    var d=Math.floor(diff/86400000),
+        h=Math.floor(diff%86400000/3600000),
+        m=Math.floor(diff%3600000/60000),
+        s=Math.floor(diff%60000/1000);
+    elD.textContent=d; elH.textContent=pad(h); elM.textContent=pad(m); elS.textContent=pad(s);
+    var desc=ev[lang];
+    elA.innerHTML = (lang==='es')
+      ? ('Faltan <strong>'+d+' días</strong> para el próximo eclipse solar: el '+desc+'.')
+      : ('The next solar eclipse is <strong>'+d+' days</strong> away — the '+desc+'.');
+  }
+  tick(); setInterval(tick,1000);
 })();
 </script>
 
