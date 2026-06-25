@@ -353,37 +353,10 @@ strong{color:rgba(255,240,200,.82);font-weight:400;}
   applyLang(saved || (browser==='es'?'es':'en'));
 })();
 
-// Live countdown to the next solar eclipse — "how many days until the next solar eclipse"
-(function(){
-  // Chronological upcoming solar eclipses (UTC, greatest eclipse). Source: NASA GSFC.
-  var EVENTS = [
-    {t:'2026-08-12T17:47:00Z', en:'total solar eclipse of August 12, 2026 — crossing western Iceland and the north of Spain, with up to 2 min 18 s of totality', es:'eclipse solar total del 12 de agosto de 2026 — que cruza el oeste de Islandia y el norte de España, con hasta 2 min 18 s de totalidad'},
-    {t:'2027-02-06T16:00:00Z', en:'annular solar eclipse of February 6, 2027 — a ring of fire across southern Argentina and Chile', es:'eclipse solar anular del 6 de febrero de 2027 — un anillo de fuego sobre el sur de Argentina y Chile'},
-    {t:'2027-08-02T10:07:00Z', en:'total solar eclipse of August 2, 2027 — the longest of the century, up to 6 min 23 s near Luxor, Egypt, also crossing southern Spain', es:'eclipse solar total del 2 de agosto de 2027 — el más largo del siglo, hasta 6 min 23 s cerca de Luxor (Egipto), que cruza también el sur de España'}
-  ];
-  function next(){ var now=Date.now(); for(var i=0;i<EVENTS.length;i++){ if(new Date(EVENTS[i].t).getTime()>now) return EVENTS[i]; } return null; }
-  var elD=document.getElementById('cd-days'), elH=document.getElementById('cd-hours'),
-      elM=document.getElementById('cd-mins'), elS=document.getElementById('cd-secs'),
-      elA=document.getElementById('cd-answer');
-  if(!elD||!elA) return;
-  function pad(n){ return n<10?('0'+n):(''+n); }
-  function tick(){
-    var ev=next(); if(!ev){ elA.textContent=''; return; }
-    var lang=(document.documentElement.lang==='es')?'es':'en';
-    var diff=new Date(ev.t).getTime()-Date.now(); if(diff<0) diff=0;
-    var d=Math.floor(diff/86400000),
-        h=Math.floor(diff%86400000/3600000),
-        m=Math.floor(diff%3600000/60000),
-        s=Math.floor(diff%60000/1000);
-    elD.textContent=d; elH.textContent=pad(h); elM.textContent=pad(m); elS.textContent=pad(s);
-    var desc=ev[lang];
-    elA.innerHTML = (lang==='es')
-      ? ('Faltan <strong>'+d+' días</strong> para el próximo eclipse solar: el '+desc+'.')
-      : ('The next solar eclipse is <strong>'+d+' days</strong> away — the '+desc+'.');
-  }
-  tick(); setInterval(tick,1000);
-})();
+/* countdown → /js/eclipse-countdown.js (window.NE_ECLIPSES por build.mjs) */
 </script>
+<!--NE:DATA--><script>window.NE_ECLIPSES=[{"start":"2026-08-12T17:31:00Z","end":"2026-08-12T19:22:00Z","type":"solar_total","en":"total solar eclipse of August 12, 2026 (Iceland and the north of Spain)","es":"eclipse solar total del 12 de agosto de 2026 (Islandia y el norte de España)"},{"start":"2026-08-28T04:13:00Z","end":"2026-08-28T07:22:00Z","type":"lunar_partial","en":"partial lunar eclipse of August 28, 2026 (the Americas, Europe and Africa)","es":"eclipse lunar parcial del 28 de agosto de 2026 (las Américas, Europa y África)"},{"start":"2027-02-06T16:00:00Z","end":"2027-02-06T18:30:00Z","type":"solar_annular","en":"annular solar eclipse of February 6, 2027 (southern Argentina and Chile)","es":"eclipse solar anular del 6 de febrero de 2027 (el sur de Argentina y Chile)"},{"start":"2027-08-02T10:07:00Z","end":"2027-08-02T13:53:00Z","type":"solar_total","en":"total solar eclipse of August 2, 2027 (southern Spain, North Africa and Egypt)","es":"eclipse solar total del 2 de agosto de 2027 (el sur de España, el norte de África y Egipto)"},{"start":"2028-01-26T15:09:00Z","end":"2028-01-26T17:30:00Z","type":"solar_annular","en":"annular solar eclipse of January 26, 2028 (Spain, Portugal, North Africa and South America)","es":"eclipse solar anular del 26 de enero de 2028 (España, Portugal, el norte de África y Sudamérica)"},{"start":"2028-07-22T02:56:00Z","end":"2028-07-22T05:30:00Z","type":"solar_total","en":"total solar eclipse of July 22, 2028 (Australia and New Zealand)","es":"eclipse solar total del 22 de julio de 2028 (Australia y Nueva Zelanda)"},{"start":"2028-12-31T16:52:00Z","end":"2028-12-31T18:30:00Z","type":"lunar_total","en":"total lunar eclipse (blood moon) of December 31, 2028 (the Americas, Europe and Africa)","es":"eclipse lunar total (luna de sangre) del 31 de diciembre de 2028 (las Américas, Europa y África)"}];</script><!--/NE:DATA-->
+<script src="/js/eclipse-countdown.js" defer></script>
 
 </body>
 </html>
