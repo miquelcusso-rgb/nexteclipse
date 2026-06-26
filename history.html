@@ -155,11 +155,11 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 <nav class="topbar">
   <a class="site-name" href="/">NEXT ECLIPSE</a>
   <div class="nav-links">
-    <a class="nav-link" href="/eclipse-solar-espana-2026.html" id="nav-spain">Spain 2026</a>
-    <a class="nav-link" href="/cities.html" id="nav-cities">Cities</a>
-    <a class="nav-link" href="/how-to-watch.html" id="nav-safety">Safety</a>
-    <a class="nav-link" href="/upcoming.html" id="nav-upcoming">Upcoming</a>
-    <a class="nav-link active" href="/history.html" id="nav-history">History</a>
+    <a class="nav-link" href="/eclipse-solar-espana-2026" id="nav-spain">Spain 2026</a>
+    <a class="nav-link" href="/cities" id="nav-cities">Cities</a>
+    <a class="nav-link" href="/how-to-watch" id="nav-safety">Safety</a>
+    <a class="nav-link" href="/upcoming" id="nav-upcoming">Upcoming</a>
+    <a class="nav-link active" href="/history" id="nav-history">History</a>
     <button class="share-btn" id="share-btn" onclick="shareApp()"><svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span class="share-label" id="share-label"></span></button>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
     <button class="menu-btn" id="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -170,12 +170,12 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 <div id="nav-drawer">
   <div class="drawer-header"><button class="drawer-close" id="drawer-close">✕</button></div>
   <nav class="drawer-nav">
-    <a class="drawer-link" href="/eclipse-solar-espana-2026.html" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
-    <a class="drawer-link" href="/cities.html" data-en="Cities" data-es="Ciudades">Cities</a>
-    <a class="drawer-link" href="/how-to-watch.html" data-en="Safety" data-es="Seguridad">Safety</a>
-    <a class="drawer-link" href="/upcoming.html" data-en="Upcoming" data-es="Próximos">Upcoming</a>
-    <a class="drawer-link" href="/history.html" data-en="History" data-es="Historia">History</a>
-    <a class="drawer-link" href="/apoya.html" data-en="Support" data-es="Apoya">Support</a>
+    <a class="drawer-link" href="/eclipse-solar-espana-2026" data-en="Spain 2026" data-es="España 2026">Spain 2026</a>
+    <a class="drawer-link" href="/cities" data-en="Cities" data-es="Ciudades">Cities</a>
+    <a class="drawer-link" href="/how-to-watch" data-en="Safety" data-es="Seguridad">Safety</a>
+    <a class="drawer-link" href="/upcoming" data-en="Upcoming" data-es="Próximos">Upcoming</a>
+    <a class="drawer-link" href="/history" data-en="History" data-es="Historia">History</a>
+    <a class="drawer-link" href="/apoya" data-en="Support" data-es="Apoya">Support</a>
   </nav>
 </div>
 
@@ -309,7 +309,7 @@ li,td,th,label,.intro-text,#intro-in,#intro-out{font-size:1.13rem !important;}
 
   <hr>
   <footer>
-    <p>© 2026 Furiosa Studio · <a href="/apoya.html" data-en="Support" data-es="Apoya">Support</a> · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion.html" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
+    <p>© 2026 Furiosa Studio · <a href="/apoya" data-en="Support" data-es="Apoya">Support</a> · <a href="/privacy" data-en="Privacy" data-es="Privacidad">Privacy</a> · <a href="/companion" data-en="Install App" data-es="Instalar app">Install App</a> · <span data-en="Data: NASA GSFC" data-es="Datos: NASA GSFC">Data: NASA GSFC</span></p>
   </footer>
 </div><!-- /wrap -->
 
@@ -490,8 +490,8 @@ render();
   const K='ne-consent';
   const L=localStorage.getItem('ne-lang')||(navigator.language.startsWith('es')?'es':'en');
   const T={
-    en:{t:'This site uses Google AdSense for contextual advertising. <a href="/privacy.html" style="color:rgba(220,160,50,.6);text-decoration:underline;">Privacy policy</a>.',y:'Accept',n:'Decline'},
-    es:{t:'Este sitio usa Google AdSense para publicidad contextual. <a href="/privacy.html" style="color:rgba(220,160,50,.6);text-decoration:underline;">Política de privacidad</a>.',y:'Aceptar',n:'Rechazar'}
+    en:{t:'This site uses Google AdSense for contextual advertising. <a href="/privacy" style="color:rgba(220,160,50,.6);text-decoration:underline;">Privacy policy</a>.',y:'Accept',n:'Decline'},
+    es:{t:'Este sitio usa Google AdSense para publicidad contextual. <a href="/privacy" style="color:rgba(220,160,50,.6);text-decoration:underline;">Política de privacidad</a>.',y:'Aceptar',n:'Rechazar'}
   };
   function push1(){(adsbygoogle=window.adsbygoogle||[]).push({});}
   function hide(){document.getElementById('ck').style.display='none';}

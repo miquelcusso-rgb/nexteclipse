@@ -38,6 +38,21 @@ const focus = current || next;
 const L = ['en', 'es'];
 const isSolar = t => t.startsWith('solar');
 
+// Fecha de build legible, por idioma. "June 26, 2026" / "26 de junio de 2026".
+const MES_ES =['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function humanDate(lang) {
+  const y = NOW.getUTCFullYear(), m = NOW.getUTCMonth(), day = NOW.getUTCDate();
+  return lang === 'es'
+    ? `${day} de ${MES_ES[m]} de ${y}`
+    : NOW.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+}
+// Región "Actualizado: <fecha>". esc evita romper el atributo data-*.
+function updatedEs() { return humanDate('es'); }
+function updatedBilingual() {
+  const en = humanDate('en'), es = humanDate('es');
+  return `<span data-en="${en}" data-es="${es}">${en}</span>`;
+}
+
 // ─── Generadores de texto (bilingüe) ───────────────────────────────────────
 function desc(e, lang) {           // "the total solar eclipse of August 12, 2026 (Iceland and the north of Spain)"
   const art = lang === 'en' ? 'the ' : 'el ';
@@ -146,10 +161,12 @@ function replaceMetaById(src, id, content) {
 const PAGES = [
   {
     file: 'when-is-the-next-eclipse.html',
-    regions: { DATA: dataScript, NEXT_HTML: nextSpan, ITEMLIST: itemListBlock, ARCHIVE: archiveHtml },
+    regions: { DATA: dataScript, NEXT_HTML: nextSpan, ITEMLIST: itemListBlock, ARCHIVE: archiveHtml, UPDATED: updatedBilingual },
     metaEn: { 'pg-desc': () => metaDesc('en'), 'og-desc': () => metaDesc('en'), 'tw-desc': () => metaDesc('en') },
   },
   { file: 'next-solar-eclipse.html', regions: { DATA: dataScript } },
+  // Pillar España (es): solo línea visible "Actualizado: <fecha>" (su countdown es propio).
+  { file: 'eclipse-solar-espana-2026.html', regions: { UPDATED: updatedEs } },
   // upcoming.html / index.html / calendar.html: countdowns propios ya auto-avanzan
   // (find start>now); se migrarán al motor (DATA/ARCHIVE) en el siguiente incremento.
 ];
@@ -176,16 +193,35 @@ for (const pg of PAGES) {
 // Event), NO en estáticas (privacidad, seguridad) → no falsear frescura.
 const today = NOW.toISOString().slice(0, 10);
 let stamped = 0;
+const liveLocs = new Set();   // URLs limpias de páginas vivas → lastmod fresco en sitemap
 for (const f of readdirSync(ROOT)) {
   if (!f.endsWith('.html')) continue;
   const fp = join(ROOT, f);
   const s = readFileSync(fp, 'utf8');
   const isLive = /id="cd-answer"|NE_ECLIPSES|"@type":\s*"Event"/.test(s);
   if (!isLive) continue;                                  // estática → no tocar
+  // URL limpia (cleanUrls:true): foo.html → /foo · index.html → /
+  liveLocs.add(f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, ''));
   const out = s.replace(/("dateModified":\s*")[^"]*(")/g, `$1${today}$2`);
   if (out !== s) { stamped++; if (!DRY) writeFileSync(fp, out); }
 }
 
-console.log(`[build.mjs] now=${NOW.toISOString()} | foco=${focus ? focus.id : 'ninguno'} (${current ? 'EN CURSO' : 'próximo'}) | pasados=${past.length} próximos=${upcoming.length} | dateModified estampado en ${stamped} págs`);
+// ─── Estampar lastmod = hoy en sitemap.xml, solo en las URLs de páginas vivas ──
+// (evento inminente = recrawl máximo). Estáticas conservan su lastmod editorial.
+let sitemapHits = 0;
+try {
+  const smPath = join(ROOT, 'sitemap.xml');
+  let sm = readFileSync(smPath, 'utf8');
+  sm = sm.replace(/<url>\s*<loc>([^<]+)<\/loc>([\s\S]*?)<\/url>/g, (block, loc, rest) => {
+    const path = loc.replace(/^https?:\/\/[^/]+/, '') || '/';
+    if (!liveLocs.has(path)) return block;                // estática → intacta
+    sitemapHits++;
+    const newRest = rest.replace(/<lastmod>[^<]*<\/lastmod>/, `<lastmod>${today}</lastmod>`);
+    return `<url>\n    <loc>${loc}</loc>${newRest}</url>`;
+  });
+  if (!DRY) writeFileSync(smPath, sm);
+} catch (e) { misses.push(`sitemap.xml: ${e.message}`); }
+
+console.log(`[build.mjs] now=${NOW.toISOString()} | foco=${focus ? focus.id : 'ninguno'} (${current ? 'EN CURSO' : 'próximo'}) | pasados=${past.length} próximos=${upcoming.length} | dateModified estampado en ${stamped} págs | sitemap lastmod en ${sitemapHits} URLs`);
 console.log(`[build.mjs] ${DRY ? '(dry) ' : ''}páginas modificadas: ${changed}`);
 if (misses.length) console.log('[build.mjs] avisos:\n  - ' + misses.join('\n  - '));
