@@ -14,7 +14,7 @@
  * Testear el auto-avance con una fecha simulada:
  *   NE_NOW=2026-08-13T00:00:00Z node build.mjs --dry   (próximo pasa a Aug 28)
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -171,6 +171,21 @@ for (const pg of PAGES) {
   if (src !== before) { changed++; if (!DRY) writeFileSync(fp, src); }
 }
 
-console.log(`[build.mjs] now=${NOW.toISOString()} | foco=${focus ? focus.id : 'ninguno'} (${current ? 'EN CURSO' : 'próximo'}) | pasados=${past.length} próximos=${upcoming.length}`);
+// ─── Estampar dateModified = hoy (señal de frescura; corre a diario vía Action) ──
+// SOLO en páginas con contenido de eclipse genuinamente vivo (countdown / lista /
+// Event), NO en estáticas (privacidad, seguridad) → no falsear frescura.
+const today = NOW.toISOString().slice(0, 10);
+let stamped = 0;
+for (const f of readdirSync(ROOT)) {
+  if (!f.endsWith('.html')) continue;
+  const fp = join(ROOT, f);
+  const s = readFileSync(fp, 'utf8');
+  const isLive = /id="cd-answer"|NE_ECLIPSES|"@type":\s*"Event"/.test(s);
+  if (!isLive) continue;                                  // estática → no tocar
+  const out = s.replace(/("dateModified":\s*")[^"]*(")/g, `$1${today}$2`);
+  if (out !== s) { stamped++; if (!DRY) writeFileSync(fp, out); }
+}
+
+console.log(`[build.mjs] now=${NOW.toISOString()} | foco=${focus ? focus.id : 'ninguno'} (${current ? 'EN CURSO' : 'próximo'}) | pasados=${past.length} próximos=${upcoming.length} | dateModified estampado en ${stamped} págs`);
 console.log(`[build.mjs] ${DRY ? '(dry) ' : ''}páginas modificadas: ${changed}`);
 if (misses.length) console.log('[build.mjs] avisos:\n  - ' + misses.join('\n  - '));
